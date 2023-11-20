@@ -98,7 +98,9 @@ Table of Contents
    IETF.
 
    Early version of the document includes *many placeholders on purpose*
-   as it intends to collect inputs from interested parties.
+   as it intends to collect inputs from interested parties.  Items
+   listed in Section 4 are provided to exemplify candidate items to
+   discuss in that section.
 
 2.  Summary of Achievements Since RFC 3535
 
