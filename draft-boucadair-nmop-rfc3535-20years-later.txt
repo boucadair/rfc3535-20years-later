@@ -70,16 +70,16 @@ Table of Contents
    3.  Assessment of RFC 3535 Recommendations
    4.  Some Observations
      4.1.  Fragmented Ecosystem
-   5.  Need for Profiling
-   6.  Lack of Agile Process for YANG Modules
-     6.1.  Integration Complexity
-     6.2.  Another Item
-     6.3.  Another Item
-     6.4.  Another Item
-   7.  Perspectives & Recommendations
-   8.  Security Considerations
-   9.  IANA Considerations
-   10. Informative References
+     4.2.  Need for Profiling
+     4.3.  Lack of Agile Process for YANG Modules
+     4.4.  Integration Complexity
+     4.5.  YANG-formatted Data Manipulation
+     4.6.  Another Item
+     4.7.  Another Item
+   5.  Perspectives & Recommendations
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  Informative References
    Acknowledgments
    Author's Address
 
@@ -243,7 +243,7 @@ Table of Contents
    models, IETF-defined device models are not widely implemented.  There
    is a need to rationalize this space and avoid redundant efforts.
 
-5.  Need for Profiling
+4.2.  Need for Profiling
 
    Many NETCONF-related tools are (being) specified by the IETF, but
    these tools are not widely supported (e.g., Push).  Editing a profile
@@ -256,7 +256,7 @@ Table of Contents
    Likewise, reassess the value of some IETF proposals vs. competing/
    emerging solution would be useful.
 
-6.  Lack of Agile Process for YANG Modules
+4.3.  Lack of Agile Process for YANG Modules
 
    RFCs might not be suited for documenting YANG modules.  In the
    meantime, there is a need for "reference models" and "sufficiently
@@ -265,35 +265,35 @@ Table of Contents
    to describe the initial module sketch and objectives and an official
    IETF repository for maintaining intermediate YANG versions.
 
-6.1.  Integration Complexity
+4.4.  Integration Complexity
 
    TBC.
 
-6.2.  Another Item
+4.5.  YANG-formatted Data Manipulation
 
    TBC.
 
-6.3.  Another Item
+4.6.  Another Item
 
    TBC.
 
-6.4.  Another Item
+4.7.  Another Item
 
    TBC.
 
-7.  Perspectives & Recommendations
+5.  Perspectives & Recommendations
 
    TBC
 
-8.  Security Considerations
+6.  Security Considerations
 
    TBC
 
-9.  IANA Considerations
+7.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  Informative References
+8.  Informative References
 
    [BCP127]   Audet, F., Ed. and C. Jennings, "Network Address
               Translation (NAT) Behavioral Requirements for Unicast
