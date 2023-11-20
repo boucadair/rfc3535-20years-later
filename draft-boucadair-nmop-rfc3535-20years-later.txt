@@ -8,8 +8,8 @@ Intended status: Informational                          20 November 2023
 Expires: 23 May 2024
 
 
-                                  Ref
-              draft-boucadair-rfc3535-20years-later-latest
+                        RFC 3535, 20 Years Later
+           draft-boucadair-nmop-rfc3535-20years-later-latest
 
 Abstract
 
@@ -66,14 +66,16 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Summary of Achievements Since RFC 3535
+   2.  Summary of Technology Advences Since RFC 3535
    3.  Assessment of RFC 3535 Recommendations
    4.  Some Observations
      4.1.  Fragmented Ecosystem
    5.  Need for Profiling
    6.  Lack of Agile Process for YANG Modules
-     6.1.  Another Item
+     6.1.  Integration Complexity
      6.2.  Another Item
+     6.3.  Another Item
+     6.4.  Another Item
    7.  Perspectives & Recommendations
    8.  Security Considerations
    9.  IANA Considerations
@@ -98,11 +100,11 @@ Table of Contents
    IETF.
 
    Early version of the document includes *many placeholders on purpose*
-   as it intends to collect inputs from interested parties.  Items
+   as the intent is to collect inputs from interested parties.  Items
    listed in Section 4 are provided to exemplify candidate items to
    discuss in that section.
 
-2.  Summary of Achievements Since RFC 3535
+2.  Summary of Technology Advences Since RFC 3535
 
    To be further elaborated:
 
@@ -263,11 +265,19 @@ Table of Contents
    to describe the initial module sketch and objectives and an official
    IETF repository for maintaining intermediate YANG versions.
 
-6.1.  Another Item
+6.1.  Integration Complexity
 
    TBC.
 
 6.2.  Another Item
+
+   TBC.
+
+6.3.  Another Item
+
+   TBC.
+
+6.4.  Another Item
 
    TBC.
 
