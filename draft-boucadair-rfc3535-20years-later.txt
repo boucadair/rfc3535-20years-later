@@ -15,9 +15,10 @@ Abstract
 
    The IAB has organized an important workshop to establish a dialog
    between network operators and protocol developers, and to guide the
-   IETF focus on work regarding network management.  That outcome of
-   that workshop was documented in "IAB Network Management Workshop"
-   (RFC 3535) and was instrumental for developing NETCONF and YANG.
+   IETF focus on work regarding network management.  The outcome of that
+   workshop was documented in the "IAB Network Management Workshop" (RFC
+   3535) which was instrumental for developing NETCONF and YANG, in
+   particular.
 
    20 years later, it is time to evaluate what has been achieved since
    then and identify the operational barriers for making these
@@ -82,19 +83,22 @@ Table of Contents
 
 1.  Introduction
 
-   The IAB has organized an important workshop (June 4-June 6, 2002) to
-   establish a dialog between network operators and protocol developers,
-   and to guide the IETF focus on work regarding network management.
-   That outcome of that workshop was documented in "IAB Network
+   The IAB has organized a workshop (June 4-June 6, 2002) to establish a
+   dialog between network operators and protocol developers, and to
+   guide the IETF focus on work regarding network management.  The
+   outcome of that workshop was documented in the "IAB Network
    Management Workshop" [RFC3535] which was instrumental for developing
    NETCONF [RFC6241], YANG [RFC6020][RFC7950], and RESTCONF [RFC8040].
 
-   20 years later, new requirements on network management operations
-   requirements are emerging from the operators.  This document intends
-   to capture these requirements
+   20 years later, new requirements on network management operations are
+   emerging from the operators.  This document intends to capture these
+   requirements that reflect the progress in this area.  The document
+   also provide an assessment of the RFC3535 recommendations and to what
+   extend that roadmap was driving network management efforts within the
+   IETF.
 
-   Early version of the document includes many placeholders on purpose
-   as it intends to collect inputs.
+   Early version of the document includes *many placeholders on purpose*
+   as it intends to collect inputs from interested parties.
 
 2.  Summary of Achievements Since RFC 3535
 
@@ -119,6 +123,9 @@ Table of Contents
    *  Network APIs
 
    *  Telemetry
+
+   See also "An Overview of the IETF Network Management Standards"
+   [RFC6632].
 
 3.  Assessment of RFC 3535 Recommendations
 
@@ -161,7 +168,8 @@ Table of Contents
        technologies (such as common XML configuration schemas, exchange
        protocols and so on).
 
-       *Status Update*: OK.
+       *Status Update*: OK.  This recommendation was also mirrored in
+       other documents such as [RFC5706].
 
    6.  The workshop recommends, with strong consensus from the operators
        and rough consensus from the protocol developers, that the IETF/
@@ -326,6 +334,11 @@ Table of Contents
               Feedback", RFC 3571, DOI 10.17487/RFC3571, August 2003,
               <https://www.rfc-editor.org/rfc/rfc3571>.
 
+   [RFC5706]  Harrington, D., "Guidelines for Considering Operations and
+              Management of New Protocols and Protocol Extensions",
+              RFC 5706, DOI 10.17487/RFC5706, November 2009,
+              <https://www.rfc-editor.org/rfc/rfc5706>.
+
    [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
               the Network Configuration Protocol (NETCONF)", RFC 6020,
               DOI 10.17487/RFC6020, October 2010,
@@ -340,6 +353,11 @@ Table of Contents
               Model for the Simple Network Management Protocol (SNMP)",
               STD 78, RFC 6353, DOI 10.17487/RFC6353, July 2011,
               <https://www.rfc-editor.org/rfc/rfc6353>.
+
+   [RFC6632]  Ersue, M., Ed. and B. Claise, "An Overview of the IETF
+              Network Management Standards", RFC 6632,
+              DOI 10.17487/RFC6632, June 2012,
+              <https://www.rfc-editor.org/rfc/rfc6632>.
 
    [RFC7860]  Merkle, J., Ed. and M. Lochter, "HMAC-SHA-2 Authentication
               Protocols in User-Based Security Model (USM) for SNMPv3",
