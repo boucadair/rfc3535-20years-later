@@ -65,18 +65,18 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
-   3.  Summary of Achievements Since RFC 3535
-   4.  Assessment of RFC 3535 Recommendations
-   5.  Some Observations
-     5.1.  Fragmented Ecosystem
-   6.  Need for Profiling
-   7.  Lack of Agile Process for YANG Modules
+   2.  Summary of Achievements Since RFC 3535
+   3.  Assessment of RFC 3535 Recommendations
+   4.  Some Observations
+     4.1.  Fragmented Ecosystem
+   5.  Need for Profiling
+   6.  Lack of Agile Process for YANG Modules
+     6.1.  Another Item
+     6.2.  Another Item
+   7.  Perspectives & Recommendations
    8.  Security Considerations
    9.  IANA Considerations
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
+   10. Informative References
    Acknowledgments
    Author's Address
 
@@ -96,19 +96,31 @@ Table of Contents
    Early version of the document includes many placeholders on purpose
    as it intends to collect inputs.
 
-2.  Conventions and Definitions
+2.  Summary of Achievements Since RFC 3535
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
+   To be further elaborated:
 
-3.  Summary of Achievements Since RFC 3535
+   *  NETCONF
 
-   TBC.
+   *  YANG
 
-4.  Assessment of RFC 3535 Recommendations
+   *  RESTCONF
+
+   *  SDN & Programmable Networks
+
+   *  Automation
+
+   *  Virtualization
+
+   *  Containerization
+
+   *  Intent-based
+
+   *  Network APIs
+
+   *  Telemetry
+
+3.  Assessment of RFC 3535 Recommendations
 
    Section 6 of [RFC3535] includes the following recommendations:
 
@@ -209,9 +221,9 @@ Table of Contents
        Information Bases ([RFC3317], [RFC3318], and [RFC3571]) to
        Historic status.
 
-5.  Some Observations
+4.  Some Observations
 
-5.1.  Fragmented Ecosystem
+4.1.  Fragmented Ecosystem
 
    The current YANG device models ecosystem is fragmented: some
    standards models are defined in the IETF while similar ones are
@@ -219,7 +231,7 @@ Table of Contents
    models, IETF-defined device models are not widely implemented.  There
    is a need to rationalize this space and avoid redundant efforts.
 
-6.  Need for Profiling
+5.  Need for Profiling
 
    Many NETCONF-related tools are (being) specified by the IETF, but
    these tools are not widely supported (e.g., Push).  Editing a profile
@@ -232,7 +244,7 @@ Table of Contents
    Likewise, reassess the value of some IETF proposals vs. competing/
    emerging solution would be useful.
 
-7.  Lack of Agile Process for YANG Modules
+6.  Lack of Agile Process for YANG Modules
 
    RFCs might not be suited for documenting YANG modules.  In the
    meantime, there is a need for "reference models" and "sufficiently
@@ -240,6 +252,18 @@ Table of Contents
    documenting IETF- endorsed YANG modules, such as considering an RFC
    to describe the initial module sketch and objectives and an official
    IETF repository for maintaining intermediate YANG versions.
+
+6.1.  Another Item
+
+   TBC.
+
+6.2.  Another Item
+
+   TBC.
+
+7.  Perspectives & Recommendations
+
+   TBC
 
 8.  Security Considerations
 
@@ -249,20 +273,7 @@ Table of Contents
 
    This document has no IANA actions.
 
-10.  References
-
-10.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
-
-10.2.  Informative References
+10.  Informative References
 
    [BCP127]   Audet, F., Ed. and C. Jennings, "Network Address
               Translation (NAT) Behavioral Requirements for Unicast
