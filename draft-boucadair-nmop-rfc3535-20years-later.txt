@@ -71,11 +71,14 @@ Table of Contents
    4.  Some Observations
      4.1.  Fragmented Ecosystem
      4.2.  Need for Profiling
-     4.3.  Lack of Agile Process for YANG Modules
+     4.3.  Lack of Agile Process for (Maintenance) YANG Modules
      4.4.  Integration Complexity
      4.5.  YANG-formatted Data Manipulation
-     4.6.  Another Item
+     4.6.  Translation and Mapping Between Service/Network and Device
+           Models
      4.7.  Another Item
+     4.8.  Another Item
+     4.9.  Another Item
    5.  Perspectives & Recommendations
    6.  Security Considerations
    7.  IANA Considerations
@@ -262,7 +265,7 @@ Table of Contents
    Likewise, reassess the value of some IETF proposals vs. competing/
    emerging solutions would be useful.
 
-4.3.  Lack of Agile Process for YANG Modules
+4.3.  Lack of Agile Process for (Maintenance) YANG Modules
 
    RFCs might not be suited for documenting YANG modules.  In the
    meantime, there is a need for "reference models" and "sufficiently
@@ -279,11 +282,19 @@ Table of Contents
 
    TBC.
 
-4.6.  Another Item
+4.6.  Translation and Mapping Between Service/Network and Device Models
 
    TBC.
 
 4.7.  Another Item
+
+   TBC.
+
+4.8.  Another Item
+
+   TBC.
+
+4.9.  Another Item
 
    TBC.
 
