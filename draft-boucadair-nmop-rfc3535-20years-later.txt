@@ -4,8 +4,8 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                          20 November 2023
-Expires: 23 May 2024
+Intended status: Informational                          21 November 2023
+Expires: 24 May 2024
 
 
                         RFC 3535, 20 Years Later
@@ -47,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 May 2024.
+   This Internet-Draft will expire on 24 May 2024.
 
 Copyright Notice
 
@@ -249,12 +249,18 @@ Table of Contents
    these tools are not widely supported (e.g., Push).  Editing a profile
    document with a set of recommendations about core/key features with
    the appropriate justification will help the emergence of more
-   implementations that meet the operators’ needs.  Examples of such
-   profile documents are RFCs that were published by the behave WG
-   [BCP127].
+   implementations that meet the operators’ needs.
+
+      Examples of such profile documents are the various RFCs that were
+      published by the behave WG [BCP127].  Another approach is to
+      consider an appraoch similar to the "Roadmap for Transmission
+      Control Protocol (TCP) Specification Documents" [RFC7414].  Such a
+      document would serve as a guide and reference for implementers and
+      any other parties who desire information contained in the
+      'NETCONF/RESTCONF/YANG'-related RFCs.
 
    Likewise, reassess the value of some IETF proposals vs. competing/
-   emerging solution would be useful.
+   emerging solutions would be useful.
 
 4.3.  Lack of Agile Process for YANG Modules
 
@@ -370,6 +376,12 @@ Table of Contents
               Network Management Standards", RFC 6632,
               DOI 10.17487/RFC6632, June 2012,
               <https://www.rfc-editor.org/rfc/rfc6632>.
+
+   [RFC7414]  Duke, M., Braden, R., Eddy, W., Blanton, E., and A.
+              Zimmermann, "A Roadmap for Transmission Control Protocol
+              (TCP) Specification Documents", RFC 7414,
+              DOI 10.17487/RFC7414, February 2015,
+              <https://www.rfc-editor.org/rfc/rfc7414>.
 
    [RFC7860]  Merkle, J., Ed. and M. Lochter, "HMAC-SHA-2 Authentication
               Protocols in User-Based Security Model (USM) for SNMPv3",
