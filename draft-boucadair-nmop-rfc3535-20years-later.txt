@@ -263,7 +263,7 @@ Table of Contents
       'NETCONF/RESTCONF/YANG'-related RFCs.
 
    Likewise, reassess the value of some IETF proposals vs. competing/
-   emerging solutions would be useful.
+   emerging solutions would be useful (e.g., gRPC vs. YANG-Push).
 
 4.3.  Lack of Agile Process for (Maintenance) YANG Modules
 
