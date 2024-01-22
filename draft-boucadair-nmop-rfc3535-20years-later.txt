@@ -4,8 +4,8 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                          29 November 2023
-Expires: 1 June 2024
+Intended status: Informational                           22 January 2024
+Expires: 25 July 2024
 
 
                         RFC 3535, 20 Years Later
@@ -47,11 +47,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2024.
+   This Internet-Draft will expire on 25 July 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -71,7 +71,7 @@ Table of Contents
    4.  Some Observations
      4.1.  Fragmented Ecosystem
      4.2.  Need for Profiling
-     4.3.  Lack of Agile Process for (Maintenance) YANG Modules
+     4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
      4.4.  Integration Complexity
      4.5.  YANG-formatted Data Manipulation
      4.6.  Translation and Mapping Between Service/Network and Device
@@ -265,7 +265,7 @@ Table of Contents
    Likewise, reassess the value of some IETF proposals vs. competing/
    emerging solutions would be useful (e.g., gRPC vs. YANG-Push).
 
-4.3.  Lack of Agile Process for (Maintenance) YANG Modules
+4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
 
    RFCs might not be suited for documenting YANG modules.  In the
    meantime, there is a need for "reference models" and "sufficiently
@@ -324,6 +324,8 @@ Table of Contents
               S., and K. Naito, "Updates to Network Address Translation
               (NAT) Behavioral Requirements", BCP 127, RFC 7857, April
               2016.
+
+              <https://www.rfc-editor.org/info/bcp127>
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
