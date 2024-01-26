@@ -4,11 +4,12 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           22 January 2024
-Expires: 25 July 2024
+Intended status: Informational                           26 January 2024
+Expires: 29 July 2024
 
 
-                        RFC 3535, 20 Years Later
+RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
+                   Management Protocols and Modelling
            draft-boucadair-nmop-rfc3535-20years-later-latest
 
 Abstract
@@ -47,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 July 2024.
+   This Internet-Draft will expire on 29 July 2024.
 
 Copyright Notice
 
