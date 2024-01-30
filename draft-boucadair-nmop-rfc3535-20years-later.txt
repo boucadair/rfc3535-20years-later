@@ -4,8 +4,8 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           26 January 2024
-Expires: 29 July 2024
+Intended status: Informational                           30 January 2024
+Expires: 2 August 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 July 2024.
+   This Internet-Draft will expire on 2 August 2024.
 
 Copyright Notice
 
@@ -73,13 +73,17 @@ Table of Contents
      4.1.  Fragmented Ecosystem
      4.2.  Need for Profiling
      4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
-     4.4.  Integration Complexity
-     4.5.  YANG-formatted Data Manipulation
+     4.4.  Integration Complexity (Thomas)
+     4.5.  YANG-formatted Data Manipulation (Med)
      4.6.  Translation and Mapping Between Service/Network and Device
-           Models
-     4.7.  Another Item
-     4.8.  Another Item
-     4.9.  Another Item
+            Models (Oscar)
+     4.7.  (In)Consistent Data Structures in Network Protocols for
+            Data Export (Thomas)
+     4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
+            (Oscar)
+     4.9.  Distinct Networks, Distinct Management Requirements (Luis)
+     4.10. Implications of External Dependency (Luis)
+     4.11. Another Item
    5.  Perspectives & Recommendations
    6.  Security Considerations
    7.  IANA Considerations
@@ -275,27 +279,49 @@ Table of Contents
    to describe the initial module sketch and objectives and an official
    IETF repository for maintaining intermediate YANG versions.
 
-4.4.  Integration Complexity
+4.4.  Integration Complexity (Thomas)
 
    TBC.
 
-4.5.  YANG-formatted Data Manipulation
+4.5.  YANG-formatted Data Manipulation (Med)
 
    TBC.
 
 4.6.  Translation and Mapping Between Service/Network and Device Models
+      (Oscar)
 
    TBC.
 
-4.7.  Another Item
+4.7.  (In)Consistent Data Structures in Network Protocols for Data
+      Export (Thomas)
 
    TBC.
 
-4.8.  Another Item
+4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction (Oscar)
+
+   Pluggins/Proxy YANG/CLI is still the rule in many operations.
+
+   Complexity in dev the pluggins (as you need to cover many OS/
+   vendors).
+
+   Network models for the realization provides some "level" of
+   abstraction and then automations.
 
    TBC.
 
-4.9.  Another Item
+4.9.  Distinct Networks, Distinct Management Requirements (Luis)
+
+   distinct scope than 3535.
+
+   TBC.
+
+4.10.  Implications of External Dependency (Luis)
+
+   TSN/detenet
+
+   TBC.
+
+4.11.  Another Item
 
    TBC.
 
