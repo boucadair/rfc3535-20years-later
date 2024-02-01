@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-30T01:02:37.773432+00:00",
+  "timestamp": "2024-02-01T01:06:09.586735+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOKqz7zs59mxJg",
+      "title": "IETF support for better yang integration (e.g., yangkit)",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/issues/1",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/yang-central/yangkit\r\n\r\nMore focus on libs",
+      "createdAt": "2024-01-30T09:16:14Z",
+      "updatedAt": "2024-01-30T09:16:35Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
