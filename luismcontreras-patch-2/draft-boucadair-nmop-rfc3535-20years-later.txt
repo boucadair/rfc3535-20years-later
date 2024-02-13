@@ -340,7 +340,8 @@ Table of Contents
 
    That convergence shown the last years also implies the need of an up-
    to-date refresh of management capabilities and tooling of the
-   traditional networks.
+   conventional networks.  Also, it highlights the need to easily map
+   the data models that are used to manage each specific segment.
 
 4.11.  Another Item
 
