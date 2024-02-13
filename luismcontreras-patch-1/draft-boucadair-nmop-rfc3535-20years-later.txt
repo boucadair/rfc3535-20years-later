@@ -328,8 +328,9 @@ Table of Contents
    management needs to be satisfied.
 
    This reality is different from the one existing at the time of
-   RFC3535, and as such, the new identifed needs can require from novel
-   approaches to guarantee the aforementioned co-existence of services.
+   [RFC3535], and as such, the new identified needs can require from
+   novel approaches to guarantee the aforementioned co-existence of
+   services.
 
 4.10.  Implications of External Dependency (Luis)
 
