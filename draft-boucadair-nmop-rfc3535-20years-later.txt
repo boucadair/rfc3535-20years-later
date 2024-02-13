@@ -311,9 +311,26 @@ Table of Contents
 
 4.9.  Distinct Networks, Distinct Management Requirements (Luis)
 
-   distinct scope than 3535.
+   From the time RFC 3535 was released up to now, new kind of services
+   and applications have been developed and deployed over the time, with
+   very diverse, and some times contradicting, requirements.  Those
+   services have been engineered on top of multi-service networks for
+   the sake of efficiency and simplicity, accommodating such a variety
+   of needs.  As a result, services requiring mobility, data
+   replication, large capacity, adaptability, multi-path support,
+   determinism, etc., coexist on the same shared network, needing from
+   it mechanisms for graceful operation.
 
-   TBC.
+   Likewise, such diversity of services also require different
+   management capabilities.  For example, session continuity,
+   distribution trees, traffic engineering, congestion status
+   notification, reordering, or on-time delivery impose very different
+   management needs to be satisfied.
+
+   This reality is different from the one existing at the time of
+   [RFC3535], and as such, the new identified needs can require from
+   novel approaches to guarantee the aforementioned co-existence of
+   services.
 
 4.10.  Implications of External Dependency (Luis)
 
