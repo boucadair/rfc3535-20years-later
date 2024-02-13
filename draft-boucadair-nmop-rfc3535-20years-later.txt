@@ -4,8 +4,12 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                          13 February 2024
-Expires: 16 August 2024
+Intended status: Informational                          L. M. C. Murillo
+Expires: 16 August 2024                                    O. G. D. Dios
+                                                              Telefonica
+                                                                 T. Graf
+                                                                Swisscom
+                                                        13 February 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -81,15 +85,16 @@ Table of Contents
             Data Export (Thomas)
      4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
             (Oscar)
-     4.9.  Distinct Networks, Distinct Management Requirements (Luis)
-     4.10. Implications of External Dependency (Luis)
+     4.9.  Distinct Networks, Distinct Management Requirements
+     4.10. Implications of External Dependency
      4.11. Another Item
+     4.12. Another Item
    5.  Perspectives & Recommendations
    6.  Security Considerations
    7.  IANA Considerations
    8.  Informative References
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -245,11 +250,12 @@ Table of Contents
 
 4.1.  Fragmented Ecosystem
 
-   The current YANG device models ecosystem is fragmented: some
+   The current YANG device models ecosystem is *fragmented*: some
    standards models are defined in the IETF while similar ones are
-   defined in other fora such as Openconfig.  Unlike service and network
-   models, IETF-defined device models are not widely implemented.  There
-   is a need to rationalize this space and avoid redundant efforts.
+   defined in other fora such as Openconfig or ONF.  Unlike service and
+   network models, IETF-defined device models are not widely
+   implemented.  There is a need to rationalize this space and avoid
+   redundant efforts.
 
 4.2.  Need for Profiling
 
@@ -309,7 +315,7 @@ Table of Contents
 
    TBC.
 
-4.9.  Distinct Networks, Distinct Management Requirements (Luis)
+4.9.  Distinct Networks, Distinct Management Requirements
 
    From the time RFC 3535 was released up to now, new kind of services
    and applications have been developed and deployed over the time, with
@@ -332,7 +338,7 @@ Table of Contents
    novel approaches to guarantee the aforementioned co-existence of
    services.
 
-4.10.  Implications of External Dependency (Luis)
+4.10.  Implications of External Dependency
 
    Networks are being updated to abandon the silo approach from the past
    towards an increasing convergence.  Specifically, there are trends
@@ -364,13 +370,17 @@ Table of Contents
 
    TBC.
 
+4.12.  Another Item
+
+   TBC.
+
 5.  Perspectives & Recommendations
 
    TBC
 
 6.  Security Considerations
 
-   TBC
+   TBC.
 
 7.  IANA Considerations
 
@@ -486,8 +496,23 @@ Acknowledgments
 
    TODO acknowledge.
 
-Author's Address
+Authors' Addresses
 
    Mohamed Boucadair
    Orange
    Email: mohamed.boucadair@orange.com
+
+
+   Luis Miguel Contreras Murillo
+   Telefonica
+   Email: luismiguel.contrerasmurillo@telefonica.com
+
+
+   Oscar Gonzalez de Dios
+   Telefonica
+   Email: oscar.gonzalezdedios@telefonica.co
+
+
+   Thomas Graf
+   Swisscom
+   Email: thomas.graf@swisscom.com

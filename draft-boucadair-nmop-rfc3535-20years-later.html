@@ -6,6 +6,9 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling</title>
 <meta content="Mohamed Boucadair" name="author">
+<meta content="Luis Miguel Contreras Murillo" name="author">
+<meta content="Oscar Gonzalez de Dios" name="author">
+<meta content="Thomas Graf" name="author">
 <meta content='
        The IAB has organized an important workshop
 to establish a dialog between network operators and
@@ -1038,7 +1041,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">February 2024</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Boucadair</td>
+<td class="left">Boucadair, et al.</td>
 <td class="center">Expires 16 August 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1058,11 +1061,23 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
 <dd class="expires"><time datetime="2024-08-16">16 August 2024</time></dd>
-<dt class="label-authors">Author:</dt>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
       <div class="author-name">M. Boucadair</div>
 <div class="org">Orange</div>
+</div>
+<div class="author">
+      <div class="author-name">L. M. C. Murillo</div>
+<div class="org">Telefonica</div>
+</div>
+<div class="author">
+      <div class="author-name">O. G. D. Dios</div>
+<div class="org">Telefonica</div>
+</div>
+<div class="author">
+      <div class="author-name">T. Graf</div>
+<div class="org">Swisscom</div>
 </div>
 </dd>
 </dl>
@@ -1174,13 +1189,16 @@ requirements for network management operations.<a href="#section-abstract-2" cla
                 <p id="section-toc.1-1.4.2.8.1"><a href="#section-4.8" class="auto internal xref">4.8</a>.  <a href="#name-proprietary-yang-modules-cl" class="internal xref">Proprietary YANG Modules, CLI, and Limited Abstraction (Oscar)</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.9">
-                <p id="section-toc.1-1.4.2.9.1"><a href="#section-4.9" class="auto internal xref">4.9</a>.  <a href="#name-distinct-networks-distinct-" class="internal xref">Distinct Networks, Distinct Management Requirements (Luis)</a></p>
+                <p id="section-toc.1-1.4.2.9.1"><a href="#section-4.9" class="auto internal xref">4.9</a>.  <a href="#name-distinct-networks-distinct-" class="internal xref">Distinct Networks, Distinct Management Requirements</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.10">
-                <p id="section-toc.1-1.4.2.10.1"><a href="#section-4.10" class="auto internal xref">4.10</a>. <a href="#name-implications-of-external-de" class="internal xref">Implications of External Dependency (Luis)</a></p>
+                <p id="section-toc.1-1.4.2.10.1"><a href="#section-4.10" class="auto internal xref">4.10</a>. <a href="#name-implications-of-external-de" class="internal xref">Implications of External Dependency</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.11">
                 <p id="section-toc.1-1.4.2.11.1"><a href="#section-4.11" class="auto internal xref">4.11</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.12">
+                <p id="section-toc.1-1.4.2.12.1"><a href="#section-4.12" class="auto internal xref">4.12</a>. <a href="#name-another-item-2" class="internal xref">Another Item</a></p>
 </li>
             </ul>
 </li>
@@ -1200,7 +1218,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
             <p id="section-toc.1-1.9.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1370,9 +1388,9 @@ Historic status.<a href="#section-3-4.3.2" class="pilcrow">¶</a></p>
         <h3 id="name-fragmented-ecosystem">
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-fragmented-ecosystem" class="section-name selfRef">Fragmented Ecosystem</a>
         </h3>
-<p id="section-4.1-1">The current YANG device models ecosystem is fragmented: some
+<p id="section-4.1-1">The current YANG device models ecosystem is <strong>fragmented</strong>: some
 standards models are defined in the IETF while similar ones are
-defined in other fora such as Openconfig.  Unlike service and
+defined in other fora such as Openconfig or ONF. Unlike service and
 network models, IETF-defined device models are not widely
 implemented. There is a need to rationalize this space and
 avoid redundant efforts.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
@@ -1456,20 +1474,20 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.8-4">TBC.<a href="#section-4.8-4" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="distinct-networks-distinct-management-requirements-luis">
+<div id="distinct-networks-distinct-management-requirements">
 <section id="section-4.9">
         <h3 id="name-distinct-networks-distinct-">
-<a href="#section-4.9" class="section-number selfRef">4.9. </a><a href="#name-distinct-networks-distinct-" class="section-name selfRef">Distinct Networks, Distinct Management Requirements (Luis)</a>
+<a href="#section-4.9" class="section-number selfRef">4.9. </a><a href="#name-distinct-networks-distinct-" class="section-name selfRef">Distinct Networks, Distinct Management Requirements</a>
         </h3>
 <p id="section-4.9-1">From the time RFC 3535 was released up to now, new kind of services and applications have been developed and deployed over the time, with very diverse, and some times contradicting, requirements. Those services have been engineered on top of multi-service networks for the sake of efficiency and simplicity, accommodating such a variety of needs. As a result, services requiring mobility, data replication, large capacity, adaptability, multi-path support, determinism, etc., coexist on the same shared network, needing from it mechanisms for graceful operation.<a href="#section-4.9-1" class="pilcrow">¶</a></p>
 <p id="section-4.9-2">Likewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.<a href="#section-4.9-2" class="pilcrow">¶</a></p>
 <p id="section-4.9-3">This reality is different from the one existing at the time of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services.<a href="#section-4.9-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="implications-of-external-dependency-luis">
+<div id="implications-of-external-dependency">
 <section id="section-4.10">
         <h3 id="name-implications-of-external-de">
-<a href="#section-4.10" class="section-number selfRef">4.10. </a><a href="#name-implications-of-external-de" class="section-name selfRef">Implications of External Dependency (Luis)</a>
+<a href="#section-4.10" class="section-number selfRef">4.10. </a><a href="#name-implications-of-external-de" class="section-name selfRef">Implications of External Dependency</a>
         </h3>
 <p id="section-4.10-1">Networks are being updated to abandon the silo approach from the past towards an increasing convergence. Specifically, there are trends towards a tighter interaction and integration of different technologies previously considered as totally separated from an operational perspective. Examples of that trends are the IP and Optical integration (e.g., the introduction of colored interfaces on routers), or the extension of deterministic-behavior features to Layer 3 networks. This kind of convergence in most cases creates dependencies on the conventional network management features, which require to incorporate or integrate functionality from other technological domains.<a href="#section-4.10-1" class="pilcrow">¶</a></p>
 <p id="section-4.10-2">Furthermore, such convergence is also reflected on the need of interacting and interworking with distinct network parts participating in the end-to-end service delivery. Mobile access, fixed access, data center, enterprise, radio functional split (i.e., fronthaul and midhaul), neutral exchanges, intensive data networks (e.g., scientific academic networks), content distribution, etc., represent network parts constituent of end-to-end services that can impose dependencies of the management of an intermediate network.<a href="#section-4.10-2" class="pilcrow">¶</a></p>
@@ -1482,6 +1500,14 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <a href="#section-4.11" class="section-number selfRef">4.11. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
         </h3>
 <p id="section-4.11-1">TBC.<a href="#section-4.11-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="another-item-1">
+<section id="section-4.12">
+        <h3 id="name-another-item-2">
+<a href="#section-4.12" class="section-number selfRef">4.12. </a><a href="#name-another-item-2" class="section-name selfRef">Another Item</a>
+        </h3>
+<p id="section-4.12-1">TBC.<a href="#section-4.12-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1499,7 +1525,7 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
       <h2 id="name-security-considerations">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-6-1">TBC<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">TBC.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1608,8 +1634,8 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 </div>
 <div id="authors-addresses">
 <section id="appendix-B">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Mohamed Boucadair</span></div>
@@ -1617,6 +1643,30 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:mohamed.boucadair@orange.com" class="email">mohamed.boucadair@orange.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Luis Miguel Contreras Murillo</span></div>
+<div dir="auto" class="left"><span class="org">Telefonica</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:luismiguel.contrerasmurillo@telefonica.com" class="email">luismiguel.contrerasmurillo@telefonica.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Oscar Gonzalez de Dios</span></div>
+<div dir="auto" class="left"><span class="org">Telefonica</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:oscar.gonzalezdedios@telefonica.co" class="email">oscar.gonzalezdedios@telefonica.co</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Thomas Graf</span></div>
+<div dir="auto" class="left"><span class="org">Swisscom</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:thomas.graf@swisscom.com" class="email">thomas.graf@swisscom.com</a>
 </div>
 </address>
 </section>
