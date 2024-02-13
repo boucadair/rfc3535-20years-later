@@ -4,8 +4,8 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                          12 February 2024
-Expires: 15 August 2024
+Intended status: Informational                          13 February 2024
+Expires: 16 August 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 August 2024.
+   This Internet-Draft will expire on 16 August 2024.
 
 Copyright Notice
 
@@ -317,16 +317,16 @@ Table of Contents
 
 4.10.  Implications of External Dependency (Luis)
 
-   Current networks are abandoning the silo approach from the past
-   towards an increasing convergence.  On one hand, there are trends
+   Networks are being updated to abandon the silo approach from the past
+   towards an increasing convergence.  Specifically, there are trends
    towards a tighter interaction and integration of different
    technologies previously considered as totally separated from an
-   operational perspective.  Examples of that are the IP and Optical
-   integration (e.g., the introduction of coloured interfaces on
+   operational perspective.  Examples of that trends are the IP and
+   Optical integration (e.g., the introduction of colored interfaces on
    routers), or the extension of deterministic-behavior features to
-   layer 3 networks.  This kind of convergence in most cases creates
-   dependecies on the traditional network management features, which
-   require to incoprorate or integrate functionality from other
+   Layer 3 networks.  This kind of convergence in most cases creates
+   dependencies on the conventional network management features, which
+   require to incorporate or integrate functionality from other
    technological domains.
 
    Furthermore, such convergence is also reflected on the need of
