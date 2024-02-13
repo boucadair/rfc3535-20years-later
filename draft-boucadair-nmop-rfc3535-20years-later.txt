@@ -4,8 +4,8 @@
 
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
-Intended status: Informational                           30 January 2024
-Expires: 2 August 2024
+Intended status: Informational                          13 February 2024
+Expires: 16 August 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 August 2024.
+   This Internet-Draft will expire on 16 August 2024.
 
 Copyright Notice
 
@@ -317,9 +317,31 @@ Table of Contents
 
 4.10.  Implications of External Dependency (Luis)
 
-   TSN/detenet
+   Networks are being updated to abandon the silo approach from the past
+   towards an increasing convergence.  Specifically, there are trends
+   towards a tighter interaction and integration of different
+   technologies previously considered as totally separated from an
+   operational perspective.  Examples of that trends are the IP and
+   Optical integration (e.g., the introduction of colored interfaces on
+   routers), or the extension of deterministic-behavior features to
+   Layer 3 networks.  This kind of convergence in most cases creates
+   dependencies on the conventional network management features, which
+   require to incorporate or integrate functionality from other
+   technological domains.
 
-   TBC.
+   Furthermore, such convergence is also reflected on the need of
+   interacting and interworking with distinct network parts
+   participating in the end-to-end service delivery.  Mobile access,
+   fixed access, data center, enterprise, radio functional split (i.e.,
+   fronthaul and midhaul), neutral exchanges, intensive data networks
+   (e.g., scientific academic networks), content distribution, etc.,
+   represent network parts constituent of end-to-end services that can
+   impose dependencies of the management of an intermediate network.
+
+   That convergence shown the last years also implies the need of an up-
+   to-date refresh of management capabilities and tooling of the
+   conventional networks.  Also, it highlights the need to easily map
+   the data models that are used to manage each specific segment.
 
 4.11.  Another Item
 
@@ -341,16 +363,19 @@ Table of Contents
 
    [BCP127]   Audet, F., Ed. and C. Jennings, "Network Address
               Translation (NAT) Behavioral Requirements for Unicast
-              UDP", BCP 127, RFC 4787, January 2007.
+              UDP", BCP 127, RFC 4787, DOI 10.17487/RFC4787, January
+              2007, <https://www.rfc-editor.org/info/rfc4787>.
 
               Perreault, S., Ed., Yamagata, I., Miyakawa, S., Nakagawa,
               A., and H. Ashida, "Common Requirements for Carrier-Grade
-              NATs (CGNs)", BCP 127, RFC 6888, April 2013.
+              NATs (CGNs)", BCP 127, RFC 6888, DOI 10.17487/RFC6888,
+              April 2013, <https://www.rfc-editor.org/info/rfc6888>.
 
               Penno, R., Perreault, S., Boucadair, M., Ed., Sivakumar,
               S., and K. Naito, "Updates to Network Address Translation
-              (NAT) Behavioral Requirements", BCP 127, RFC 7857, April
-              2016.
+              (NAT) Behavioral Requirements", BCP 127, RFC 7857,
+              DOI 10.17487/RFC7857, April 2016,
+              <https://www.rfc-editor.org/info/rfc7857>.
 
               <https://www.rfc-editor.org/info/bcp127>
 
