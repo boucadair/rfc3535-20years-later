@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-11T01:06:56.835285+00:00",
+  "timestamp": "2024-02-13T01:02:53.712512+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -67,5 +67,58 @@
       "comments": []
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDOKqz7zs5mrIpY",
+      "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md - section on Distinct Networks, Distinct Management Requirements",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/2",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Content proposed, to be reviewed by the team.",
+      "createdAt": "2024-02-12T19:39:40Z",
+      "updatedAt": "2024-02-12T19:39:40Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "2c8a09cd0d600fe884f27afe4c7c30a24ac3e02a",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "luismcontreras-patch-1",
+      "headRefOid": "3186ca37d334a9061a10eb74255e22e5104087c8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOKqz7zs5mrQTN",
+      "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md - External depen\u2026",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/3",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "\u2026dencies\r\n\r\nProposed content in External dependecies",
+      "createdAt": "2024-02-12T19:56:48Z",
+      "updatedAt": "2024-02-12T19:56:48Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "2c8a09cd0d600fe884f27afe4c7c30a24ac3e02a",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "luismcontreras-patch-2",
+      "headRefOid": "aff3dc73c93eca7a588e44020b216a0a17569f82",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
