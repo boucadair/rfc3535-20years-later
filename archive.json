@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-13T01:02:53.712512+00:00",
+  "timestamp": "2024-02-15T01:02:40.094062+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -73,52 +73,138 @@
       "id": "PR_kwDOKqz7zs5mrIpY",
       "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md - section on Distinct Networks, Distinct Management Requirements",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "luismcontreras",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Content proposed, to be reviewed by the team.",
       "createdAt": "2024-02-12T19:39:40Z",
-      "updatedAt": "2024-02-12T19:39:40Z",
+      "updatedAt": "2024-02-13T08:13:08Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "2c8a09cd0d600fe884f27afe4c7c30a24ac3e02a",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "luismcontreras-patch-1",
-      "headRefOid": "3186ca37d334a9061a10eb74255e22e5104087c8",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "headRefOid": "c2bbb56fda98a01c4cf4795a3583f94eb9fbd282",
+      "closedAt": "2024-02-13T08:13:08Z",
+      "mergedAt": "2024-02-13T08:13:08Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "af9429ceede5d53359ac8b2ff10c3a66b7a502a2"
+      },
+      "comments": [
+        {
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Suggested changes are fine for me, Thanks Med!",
+          "createdAt": "2024-02-13T07:36:36Z",
+          "updatedAt": "2024-02-13T07:36:36Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs5v4IO7",
+          "commit": {
+            "abbreviatedOid": "3186ca3"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks Luis",
+          "createdAt": "2024-02-13T06:53:56Z",
+          "updatedAt": "2024-02-13T06:57:03Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nFrom the time RFC 3535 was released up to now, new kind of services and applications have been developed and deployed over the time, with very diverse, and some times contradicting, requirements. Those services have been engineered on top of multi-service networks for the sake of efficiency and simplicity, accommodating such a variety of needs. As a result, services requiring mobility, data replication, large capacity, adaptability, multi-path support, determinism, etc., coexist on the same shared network, needing from it mechanisms for graceful operation.\r\n```",
+              "createdAt": "2024-02-13T06:53:56Z",
+              "updatedAt": "2024-02-13T06:57:03Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\r\nLikewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.\r\n```",
+              "createdAt": "2024-02-13T06:55:19Z",
+              "updatedAt": "2024-02-13T06:57:03Z"
+            },
+            {
+              "originalPosition": 17,
+              "body": "```suggestion\r\nThis reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services.\r\n```",
+              "createdAt": "2024-02-13T06:56:39Z",
+              "updatedAt": "2024-02-13T06:57:03Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 3,
       "id": "PR_kwDOKqz7zs5mrQTN",
       "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md - External depen\u2026",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "luismcontreras",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "\u2026dencies\r\n\r\nProposed content in External dependecies",
       "createdAt": "2024-02-12T19:56:48Z",
-      "updatedAt": "2024-02-12T19:56:48Z",
+      "updatedAt": "2024-02-13T08:12:54Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "2c8a09cd0d600fe884f27afe4c7c30a24ac3e02a",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "luismcontreras-patch-2",
-      "headRefOid": "aff3dc73c93eca7a588e44020b216a0a17569f82",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "headRefOid": "179b0168b3a3273f8f1288fd5c4df5c066b80881",
+      "closedAt": "2024-02-13T08:12:54Z",
+      "mergedAt": "2024-02-13T08:12:54Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "8b9aca9af0a2dded3296dac16d9d162af09ef409"
+      },
+      "comments": [
+        {
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Suggested changes are fine for me, thanks!",
+          "createdAt": "2024-02-13T07:35:18Z",
+          "updatedAt": "2024-02-13T07:35:18Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs5v4Goh",
+          "commit": {
+            "abbreviatedOid": "aff3dc7"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks, Luis. Please find some change proposals. ",
+          "createdAt": "2024-02-13T06:49:25Z",
+          "updatedAt": "2024-02-13T06:52:36Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nNetworks are being updated to abandon the silo approach from the past towards an increasing convergence. Specifically, there are trends towards a tighter interaction and integration of different technologies previously considered as totally separated from an operational perspective. Examples of that trends are the IP and Optical integration (e.g., the introduction of colored interfaces on routers), or the extension of deterministic-behavior features to Layer 3 networks. This kind of convergence in most cases creates dependencies on the conventional network management features, which require to incorporate or integrate functionality from other technological domains.\r\n```",
+              "createdAt": "2024-02-13T06:49:25Z",
+              "updatedAt": "2024-02-13T06:52:36Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\nFurthermore, such convergence is also reflected on the need of interacting and interworking with distinct network parts participating in the end-to-end service delivery. Mobile access, fixed access, data center, enterprise, radio functional split (i.e., fronthaul and midhaul), neutral exchanges, intensive data networks (e.g., scientific academic networks), content distribution, etc., represent network parts constituent of end-to-end services that can impose dependencies of the management of an intermediate network.\r\n```",
+              "createdAt": "2024-02-13T06:50:38Z",
+              "updatedAt": "2024-02-13T06:52:36Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\r\nThat convergence shown the last years also implies the need of an up-to-date refresh of management capabilities and tooling of the conventional networks. Also, it highlights the need to easily map the data models that are used to manage each specific segment.\r\n```",
+              "createdAt": "2024-02-13T06:52:02Z",
+              "updatedAt": "2024-02-13T06:52:36Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
