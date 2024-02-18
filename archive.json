@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-15T01:02:40.094062+00:00",
+  "timestamp": "2024-02-18T01:06:11.812190+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -63,6 +63,22 @@
       "body": "https://github.com/yang-central/yangkit\r\n\r\nMore focus on libs",
       "createdAt": "2024-01-30T09:16:14Z",
       "updatedAt": "2024-01-30T09:16:35Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOKqz7zs5_cs9C",
+      "title": "draft-ietf-dtn-dtnma",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/issues/4",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-16T09:46:11Z",
+      "updatedAt": "2024-02-16T09:46:11Z",
       "closedAt": null,
       "comments": []
     }
