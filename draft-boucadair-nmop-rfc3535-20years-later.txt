@@ -5,11 +5,11 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 16 August 2024                                    O. G. D. Dios
+Expires: 24 August 2024                                    O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
-                                                        13 February 2024
+                                                        21 February 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 August 2024.
+   This Internet-Draft will expire on 24 August 2024.
 
 Copyright Notice
 
@@ -77,12 +77,12 @@ Table of Contents
      4.1.  Fragmented Ecosystem
      4.2.  Need for Profiling
      4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
-     4.4.  Integration Complexity (Thomas)
+     4.4.  Integration Complexity
      4.5.  YANG-formatted Data Manipulation (Med)
      4.6.  Translation and Mapping Between Service/Network and Device
             Models (Oscar)
      4.7.  (In)Consistent Data Structures in Network Protocols for
-            Data Export (Thomas)
+            Data Export
      4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
             (Oscar)
      4.9.  Distinct Networks, Distinct Management Requirements
@@ -285,9 +285,45 @@ Table of Contents
    to describe the initial module sketch and objectives and an official
    IETF repository for maintaining intermediate YANG versions.
 
-4.4.  Integration Complexity (Thomas)
+4.4.  Integration Complexity
 
-   TBC.
+   Section 3 of [RFC3535] describes a set of network operator
+   requirements.  One of the requirements is the ease of use which,
+   according to Section 3.2 of [RFC6244], is addressed by NETCONF and
+   YANG.  For configuration this holds true, for network observability
+   it is unfortunately not yet.  This has been confirmed with a set of
+   network operators asking how long it takes from subscribing YANG data
+   to make it accessible to the operator.  Minutes, Hours, Days, or
+   Weeks.  None of them answered Minutes or Hours.  All of them
+   responded Days or Weeks.  Hinting manual post processing of YANG
+   data.
+
+   Collecting YANG metrics from networks is already a struggle due to
+   late arrival of [RFC8639], [RFC8640], [RFC8641],
+   [I-D.ietf-netconf-https-notif], and [I-D.ietf-netconf-udp-notif] for
+   configured subscription transport protocols which defined YANG-Push
+   in the industry.  This caused network vendors to implement
+   alternative solutions to collect real-time streaming data in the
+   meanwhile, such as gNMI which was proposed in 2018 in
+   [I-D.openconfig-rtgwg-gnmi-spec] to the IETF but not followed up on.
+   Unfortunately, these implementations differ between network Operating
+   Systems due to the lack of standardization, specifically for the
+   metadata which would ensure machine readability.
+
+   When a set of network operators where asked to where operational YANG
+   data needs to be integrated to, the answer homogeneously was Apache
+   Kafka Message Broker and Time Series Databases.  There is a need to
+   specify how YANG-Push can be integrated into Apache Kafka and
+   references needed YANG-Push extensions and YANG schema registry
+   development.  The YANG-Push extensions addressing needs to make YANG-
+   Push messages machine readable and against semantic validate able to
+   ensure a consistent data processing.
+
+   Another challenge is that the subscribed YANG data referenced with
+   datastore-subtree-filter or datastore-xpath-filter breaks semantic
+   integrity which needs to be addressed by either updating Section 4 of
+   [RFC8641] or proposing a new YANG module being used at the YANG-Push
+   receiver.
 
 4.5.  YANG-formatted Data Manipulation (Med)
 
@@ -299,9 +335,48 @@ Table of Contents
    TBC.
 
 4.7.  (In)Consistent Data Structures in Network Protocols for Data
-      Export (Thomas)
+      Export
 
-   TBC.
+   Network Telemetry, as described in [RFC9232], involve a set of
+   protocols.  Due to the different requirements, one Network Telemetry
+   protocol doesn't address all needs.  This is mainly due to the nature
+   of the subscribed data.  BGP Monitoring Protocol (BMP) [RFC7854] adds
+   monitoring and tracing capabilities natively to the BGP process to
+   minimize the processing overhead.  While IPFIX [RFC7011][RFC7012] can
+   be applied according to [RFC5472] to gain visibility into the data
+   and forwarding planes, due to the amount of data, sampling as defined
+   in [RFC5476] and applied to IPFIX in [RFC5477] and aggregation as
+   defined in [RFC7015] for IPFIX is needed to reduce the amount of
+   exposed data.  While YANG-Push focuses on exposing already YANG
+   modelled data, which eases the correlation among network
+   configuration and operational data.
+
+   [RFC9232] is an informational document and does not specify what
+   these Network Telemetry protocols should have in common to ensure
+   consistent data structures for data export.  While data types are
+   fairly good aligned, a lack of metadata standardization among the
+   Network Telemetry protocols is observed.  In particular describing
+   from where the metrics has been exported from and timestamping.  In
+   Section 4.2 of [RFC7854] timestamps are optional and sysName
+   [RFC1213] is only carried in the BMP initiation message (Section 4.3
+   of [RFC7854]), while the message header of IPFIX defined in
+   Section 4.3 of [RFC7011] lacks the sysName definition.
+
+   The lack of information from where the data is being pushed from is
+   only known to the Network Telemetry data collection due to the
+   transport session being established from the network node exporting
+   the information.  When Network Telemetry messages are being
+   transformed and forwarded, this information is being lost.
+   Therefore, it is common among network operators to augment sysName
+   and other metadata at the data collection.
+
+   The same common principle applies to when observation timestamping is
+   missing in the Network Telemetry message.  Since the data collection
+   is the closest element to the network, a time stamp is added to give
+   the network operator at least the information when the Network
+   Telemetry message was collected.  However, since Network Telemetry
+   addresses real-time streaming needs, this is often not accurate
+   enough for data correlation.
 
 4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction (Oscar)
 
@@ -390,19 +465,16 @@ Table of Contents
 
    [BCP127]   Audet, F., Ed. and C. Jennings, "Network Address
               Translation (NAT) Behavioral Requirements for Unicast
-              UDP", BCP 127, RFC 4787, DOI 10.17487/RFC4787, January
-              2007, <https://www.rfc-editor.org/info/rfc4787>.
+              UDP", BCP 127, RFC 4787, January 2007.
 
               Perreault, S., Ed., Yamagata, I., Miyakawa, S., Nakagawa,
               A., and H. Ashida, "Common Requirements for Carrier-Grade
-              NATs (CGNs)", BCP 127, RFC 6888, DOI 10.17487/RFC6888,
-              April 2013, <https://www.rfc-editor.org/info/rfc6888>.
+              NATs (CGNs)", BCP 127, RFC 6888, April 2013.
 
               Penno, R., Perreault, S., Boucadair, M., Ed., Sivakumar,
               S., and K. Naito, "Updates to Network Address Translation
-              (NAT) Behavioral Requirements", BCP 127, RFC 7857,
-              DOI 10.17487/RFC7857, April 2016,
-              <https://www.rfc-editor.org/info/rfc7857>.
+              (NAT) Behavioral Requirements", BCP 127, RFC 7857, April
+              2016.
 
               <https://www.rfc-editor.org/info/bcp127>
 
@@ -412,6 +484,34 @@ Table of Contents
               Work in Progress, Internet-Draft, draft-ietf-core-comi-16,
               4 September 2023, <https://datatracker.ietf.org/doc/html/
               draft-ietf-core-comi-16>.
+
+   [I-D.ietf-netconf-https-notif]
+              Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
+              for YANG Notifications", Work in Progress, Internet-Draft,
+              draft-ietf-netconf-https-notif-15, 1 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
+              https-notif-15>.
+
+   [I-D.ietf-netconf-udp-notif]
+              Zheng, G., Zhou, T., Graf, T., Francois, P., Feng, A. H.,
+              and P. Lucente, "UDP-based Transport for Configured
+              Subscriptions", Work in Progress, Internet-Draft, draft-
+              ietf-netconf-udp-notif-12, 21 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
+              udp-notif-12>.
+
+   [I-D.openconfig-rtgwg-gnmi-spec]
+              Shakir, R., Shaikh, A., Borman, P., Hines, M., Lebsack,
+              C., and C. Morrow, "gRPC Network Management Interface
+              (gNMI)", Work in Progress, Internet-Draft, draft-
+              openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
+              <https://datatracker.ietf.org/doc/html/draft-openconfig-
+              rtgwg-gnmi-spec-01>.
+
+   [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
+              for Network Management of TCP/IP-based internets: MIB-II",
+              STD 17, RFC 1213, DOI 10.17487/RFC1213, March 1991,
+              <https://www.rfc-editor.org/rfc/rfc1213>.
 
    [RFC3084]  Chan, K., Seligson, J., Durham, D., Gai, S., McCloghrie,
               K., Herzog, S., Reichmeyer, F., Yavatkar, R., and A.
@@ -444,6 +544,21 @@ Table of Contents
               Feedback", RFC 3571, DOI 10.17487/RFC3571, August 2003,
               <https://www.rfc-editor.org/rfc/rfc3571>.
 
+   [RFC5472]  Zseby, T., Boschi, E., Brownlee, N., and B. Claise, "IP
+              Flow Information Export (IPFIX) Applicability", RFC 5472,
+              DOI 10.17487/RFC5472, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5472>.
+
+   [RFC5476]  Claise, B., Ed., Johnson, A., and J. Quittek, "Packet
+              Sampling (PSAMP) Protocol Specifications", RFC 5476,
+              DOI 10.17487/RFC5476, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5476>.
+
+   [RFC5477]  Dietz, T., Claise, B., Aitken, P., Dressler, F., and G.
+              Carle, "Information Model for Packet Sampling Exports",
+              RFC 5477, DOI 10.17487/RFC5477, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5477>.
+
    [RFC5706]  Harrington, D., "Guidelines for Considering Operations and
               Management of New Protocols and Protocol Extensions",
               RFC 5706, DOI 10.17487/RFC5706, November 2009,
@@ -459,6 +574,10 @@ Table of Contents
               (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
               <https://www.rfc-editor.org/rfc/rfc6241>.
 
+   [RFC6244]  Shafer, P., "An Architecture for Network Management Using
+              NETCONF and YANG", RFC 6244, DOI 10.17487/RFC6244, June
+              2011, <https://www.rfc-editor.org/rfc/rfc6244>.
+
    [RFC6353]  Hardaker, W., "Transport Layer Security (TLS) Transport
               Model for the Simple Network Management Protocol (SNMP)",
               STD 78, RFC 6353, DOI 10.17487/RFC6353, July 2011,
@@ -469,11 +588,32 @@ Table of Contents
               DOI 10.17487/RFC6632, June 2012,
               <https://www.rfc-editor.org/rfc/rfc6632>.
 
+   [RFC7011]  Claise, B., Ed., Trammell, B., Ed., and P. Aitken,
+              "Specification of the IP Flow Information Export (IPFIX)
+              Protocol for the Exchange of Flow Information", STD 77,
+              RFC 7011, DOI 10.17487/RFC7011, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7011>.
+
+   [RFC7012]  Claise, B., Ed. and B. Trammell, Ed., "Information Model
+              for IP Flow Information Export (IPFIX)", RFC 7012,
+              DOI 10.17487/RFC7012, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7012>.
+
+   [RFC7015]  Trammell, B., Wagner, A., and B. Claise, "Flow Aggregation
+              for the IP Flow Information Export (IPFIX) Protocol",
+              RFC 7015, DOI 10.17487/RFC7015, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7015>.
+
    [RFC7414]  Duke, M., Braden, R., Eddy, W., Blanton, E., and A.
               Zimmermann, "A Roadmap for Transmission Control Protocol
               (TCP) Specification Documents", RFC 7414,
               DOI 10.17487/RFC7414, February 2015,
               <https://www.rfc-editor.org/rfc/rfc7414>.
+
+   [RFC7854]  Scudder, J., Ed., Fernando, R., and S. Stuart, "BGP
+              Monitoring Protocol (BMP)", RFC 7854,
+              DOI 10.17487/RFC7854, June 2016,
+              <https://www.rfc-editor.org/rfc/rfc7854>.
 
    [RFC7860]  Merkle, J., Ed. and M. Lochter, "HMAC-SHA-2 Authentication
               Protocols in User-Based Security Model (USM) for SNMPv3",
@@ -487,6 +627,26 @@ Table of Contents
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/rfc/rfc8040>.
+
+   [RFC8639]  Voit, E., Clemm, A., Gonzalez Prieto, A., Nilsen-Nygaard,
+              E., and A. Tripathy, "Subscription to YANG Notifications",
+              RFC 8639, DOI 10.17487/RFC8639, September 2019,
+              <https://www.rfc-editor.org/rfc/rfc8639>.
+
+   [RFC8640]  Voit, E., Clemm, A., Gonzalez Prieto, A., Nilsen-Nygaard,
+              E., and A. Tripathy, "Dynamic Subscription to YANG Events
+              and Datastores over NETCONF", RFC 8640,
+              DOI 10.17487/RFC8640, September 2019,
+              <https://www.rfc-editor.org/rfc/rfc8640>.
+
+   [RFC8641]  Clemm, A. and E. Voit, "Subscription to YANG Notifications
+              for Datastore Updates", RFC 8641, DOI 10.17487/RFC8641,
+              September 2019, <https://www.rfc-editor.org/rfc/rfc8641>.
+
+   [RFC9232]  Song, H., Qin, F., Martinez-Julia, P., Ciavaglia, L., and
+              A. Wang, "Network Telemetry Framework", RFC 9232,
+              DOI 10.17487/RFC9232, May 2022,
+              <https://www.rfc-editor.org/rfc/rfc9232>.
 
    [RFC9456]  Vaughn, K., Ed., "Updates to the TLS Transport Model for
               SNMP", RFC 9456, DOI 10.17487/RFC9456, November 2023,
