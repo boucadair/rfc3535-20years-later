@@ -413,6 +413,11 @@ Table of Contents
    novel approaches to guarantee the aforementioned co-existence of
    services.
 
+   Also, some networks have specific network management requirements
+   such as the need for asynchronous operations or constraints on data
+   compactness.  An example of such networks is Delay-Tolerant
+   Networking (DTN) [RFC838].
+
 4.10.  Implications of External Dependency
 
    Networks are being updated to abandon the silo approach from the past
@@ -627,6 +632,10 @@ Table of Contents
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/rfc/rfc8040>.
+
+   [RFC838]   Smallberg, D., "Who talks TCP?", RFC 838,
+              DOI 10.17487/RFC0838, January 1983,
+              <https://www.rfc-editor.org/rfc/rfc838>.
 
    [RFC8639]  Voit, E., Clemm, A., Gonzalez Prieto, A., Nilsen-Nygaard,
               E., and A. Tripathy, "Subscription to YANG Notifications",
