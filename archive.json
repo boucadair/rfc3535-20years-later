@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-20T01:01:15.966815+00:00",
+  "timestamp": "2024-02-22T01:01:37.644484+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -71,15 +71,15 @@
       "id": "I_kwDOKqz7zs5_cs9C",
       "title": "draft-ietf-dtn-dtnma",
       "url": "https://github.com/boucadair/rfc3535-20years-later/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-02-16T09:46:11Z",
-      "updatedAt": "2024-02-16T09:46:11Z",
-      "closedAt": null,
+      "updatedAt": "2024-02-21T16:00:47Z",
+      "closedAt": "2024-02-21T16:00:47Z",
       "comments": []
     }
   ],
@@ -221,6 +221,86 @@
           ]
         }
       ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOKqz7zs5naEdb",
+      "title": "Some edits to Thomas Text",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/5",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "avoid including too much solutions in the @graf3net text.",
+      "createdAt": "2024-02-20T15:10:50Z",
+      "updatedAt": "2024-02-21T15:52:11Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "47b0b0b37d33d35f879b6ac8ea9d29224b215aff",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "boucadair-patch-1",
+      "headRefOid": "595635257d4651dbeaa4ecfe22092a22ad8269d1",
+      "closedAt": "2024-02-21T15:52:11Z",
+      "mergedAt": "2024-02-21T15:52:10Z",
+      "mergedBy": "graf3net",
+      "mergeCommit": {
+        "oid": "a7f743454b4fd76e28e557894da63e2b0d0c34ee"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOKqz7zs5nfRyb",
+      "title": "asynchronous operations",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/6",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-21T08:34:54Z",
+      "updatedAt": "2024-02-21T15:59:53Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "47b0b0b37d33d35f879b6ac8ea9d29224b215aff",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "boucadair-patch-2",
+      "headRefOid": "50af74be88b7c2303f5e53930d5ae7493515e0f5",
+      "closedAt": "2024-02-21T15:59:53Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOKqz7zs5niwzL",
+      "title": "UP",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/7",
+      "state": "CLOSED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-21T15:59:33Z",
+      "updatedAt": "2024-02-21T15:59:45Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "boucadair-patch-2",
+      "baseRefOid": "50af74be88b7c2303f5e53930d5ae7493515e0f5",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "main",
+      "headRefOid": "a7f743454b4fd76e28e557894da63e2b0d0c34ee",
+      "closedAt": "2024-02-21T15:59:45Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
