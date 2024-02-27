@@ -218,10 +218,9 @@ Table of Contents
        SPPI data definition languages as being done in the SMIng working
        group.
 
-      **Status Update**:
-      : SMIng WG was concluded in 2003-04-04.
+       *Status Update*:  SMIng WG was concluded in 2003-04-04.
 
-   1.  The workshop recommends, with split consensus from the operators
+   8.  The workshop recommends, with split consensus from the operators
        and rough consensus from the protocol developers, that the IETF
        should spend resources on fixing the MIB development and
        standardization processs.
