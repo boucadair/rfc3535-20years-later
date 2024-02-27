@@ -341,7 +341,9 @@ Table of Contents
 
 4.5.  YANG-formatted Data Manipulation
 
-   TBC.
+   The use of a flat tree hierarchy in YANG models may induce some
+   performance issues compared to other graph models.  See, for example,
+   [ODL].
 
 4.6.  Translation and Mapping Between Service/Network and Device Models
 
@@ -540,6 +542,10 @@ Table of Contents
               openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
               <https://datatracker.ietf.org/doc/html/draft-openconfig-
               rtgwg-gnmi-spec-01>.
+
+   [ODL]      "Graph Model Overview", 2023,
+              <https://docs.opendaylight.org/projects/bgpcep/en/latest/
+              graph/graph-user-guide-graph-model.html#>.
 
    [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
               for Network Management of TCP/IP-based internets: MIB-II",
