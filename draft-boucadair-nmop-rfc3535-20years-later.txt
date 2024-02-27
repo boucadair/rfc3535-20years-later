@@ -226,9 +226,11 @@ Table of Contents
        should spend resources on fixing the MIB development and
        standardization processs.
 
-   **Status Update**:
-   : The IETF dedicated some resources to fix some SNMP shortcomings with a focus on security (e.g., Transport Layer Security (TLS) Transport Model for
-   the SNMP {{RFC6353}} or {{RFC9456}}, HMAC-SHA-2 Authentication Protocols in User-Based Security Model (USM) for SNMPv3 {{RFC7860}}).
+       *Status Update*:  The IETF dedicated some resources to fix some
+          SNMP shortcomings with a focus on security (e.g., Transport
+          Layer Security (TLS) Transport Model for the SNMP [RFC6353] or
+          [RFC9456], HMAC-SHA-2 Authentication Protocols in User-Based
+          Security Model (USM) for SNMPv3 [RFC7860]).
 
    Section 6 of [RFC3535] also includes the following but without
    tagging them as recommendations:
