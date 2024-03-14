@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-12T01:01:37.087464+00:00",
+  "timestamp": "2024-03-14T01:02:15.783818+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -80,6 +80,22 @@
       "createdAt": "2024-02-16T09:46:11Z",
       "updatedAt": "2024-02-21T16:00:47Z",
       "closedAt": "2024-02-21T16:00:47Z",
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOKqz7zs6CASYZ",
+      "title": "integration with \"native\" IT tooling",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/issues/8",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://opentelemetry.io/",
+      "createdAt": "2024-03-12T09:20:05Z",
+      "updatedAt": "2024-03-12T09:20:05Z",
+      "closedAt": null,
       "comments": []
     }
   ],
