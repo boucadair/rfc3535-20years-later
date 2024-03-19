@@ -9,6 +9,7 @@
 <meta content="Luis Miguel Contreras Murillo" name="author">
 <meta content="Oscar Gonzalez de Dios" name="author">
 <meta content="Thomas Graf" name="author">
+<meta content="Reshad Rahman" name="author">
 <meta content='
        The IAB has organized an important workshop
 to establish a dialog between network operators and
@@ -21,13 +22,13 @@ identify the operational barriers for making these
 technologies widely implemented. Also, this document intends to capture new
 requirements for network management operations. 
     ' name="description">
-<meta content="xml2rfc 3.19.4" name="generator">
+<meta content="xml2rfc 3.20.1" name="generator">
 <meta content="network management" name="keyword">
 <meta content="future networks" name="keyword">
 <meta content="draft-boucadair-nmop-rfc3535-20years-later-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.19.4
-    Python 3.11.6
+  xml2rfc 3.20.1
+    Python 3.11.8
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
@@ -1038,11 +1039,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RFC 3535, 20 Years Later</td>
-<td class="right">February 2024</td>
+<td class="right">March 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair, et al.</td>
-<td class="center">Expires 30 August 2024</td>
+<td class="center">Expires 20 September 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1055,12 +1056,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-boucadair-nmop-rfc3535-20years-later-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-02-27" class="published">27 February 2024</time>
+<time datetime="2024-03-19" class="published">19 March 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-08-30">30 August 2024</time></dd>
+<dd class="expires"><time datetime="2024-09-20">20 September 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1078,6 +1079,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div class="author">
       <div class="author-name">T. Graf</div>
 <div class="org">Swisscom</div>
+</div>
+<div class="author">
+      <div class="author-name">R. Rahman</div>
+<div class="org">Equinix</div>
 </div>
 </dd>
 </dl>
@@ -1123,7 +1128,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 30 August 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 20 September 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1156,7 +1161,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-summary-of-technology-adven" class="internal xref">Summary of Technology Advences Since RFC 3535</a></p>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-summary-of-technology-advan" class="internal xref">Summary of Technology Advances Since RFC 3535</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-assessment-of-rfc-3535-reco" class="internal xref">Assessment of RFC 3535 Recommendations</a></p>
@@ -1195,10 +1200,13 @@ requirements for network management operations.<a href="#section-abstract-2" cla
                 <p id="section-toc.1-1.4.2.10.1"><a href="#section-4.10" class="auto internal xref">4.10</a>. <a href="#name-implications-of-external-de" class="internal xref">Implications of External Dependency</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.11">
-                <p id="section-toc.1-1.4.2.11.1"><a href="#section-4.11" class="auto internal xref">4.11</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
+                <p id="section-toc.1-1.4.2.11.1"><a href="#section-4.11" class="auto internal xref">4.11</a>. <a href="#name-too-much-time-between-publi" class="internal xref">Too Much Time Between Publication of New Networking Functionality and the Associated YANG</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.12">
-                <p id="section-toc.1-1.4.2.12.1"><a href="#section-4.12" class="auto internal xref">4.12</a>. <a href="#name-another-item-2" class="internal xref">Another Item</a></p>
+                <p id="section-toc.1-1.4.2.12.1"><a href="#section-4.12" class="auto internal xref">4.12</a>. <a href="#name-open-source-tools" class="internal xref">Open-source Tools</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.13">
+                <p id="section-toc.1-1.4.2.13.1"><a href="#section-4.13" class="auto internal xref">4.13</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
 </li>
             </ul>
 </li>
@@ -1239,10 +1247,10 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
 <p id="section-1-3">Early version of the document includes <strong>many placeholders on purpose</strong> as the intent is to collect inputs from interested parties. Items listed in <a href="#sec-obs" class="auto internal xref">Section 4</a> are provided to exemplify candidate items to discuss in that section.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="summary-of-technology-advences-since-rfc-3535">
+<div id="summary-of-technology-advances-since-rfc-3535">
 <section id="section-2">
-      <h2 id="name-summary-of-technology-adven">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-summary-of-technology-adven" class="section-name selfRef">Summary of Technology Advences Since RFC 3535</a>
+      <h2 id="name-summary-of-technology-advan">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-summary-of-technology-advan" class="section-name selfRef">Summary of Technology Advances Since RFC 3535</a>
       </h2>
 <p id="section-2-1">To be further elaborated:<a href="#section-2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1483,8 +1491,8 @@ avoid redundant efforts.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
         <h3 id="name-lack-of-profiling">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-lack-of-profiling" class="section-name selfRef">Lack of Profiling</a>
         </h3>
-<p id="section-4.2-1">Many NETCONF-related tools are (being) specified by the IETF,
-but these tools are not widely supported (e.g., Push). Editing a
+<p id="section-4.2-1">Many NETCONF-related features are (being) specified by the IETF,
+but these features are not widely supported (e.g., Push). Editing a
 profile document with a set of recommendations about core/key
 features with the appropriate justification will help the
 emergence of more implementations that meet the operators’
@@ -1492,7 +1500,7 @@ needs.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-4.2-2.1">
             <p id="section-4.2-2.1.1">Examples of such profile documents are the various RFCs that were published by the behave WG <span>[<a href="#BCP127" class="cite xref">BCP127</a>]</span>.
-Another approach is to consider an appraoch similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" <span>[<a href="#RFC7414" class="cite xref">RFC7414</a>]</span>. Such a document
+Another approach is to consider an approach similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" <span>[<a href="#RFC7414" class="cite xref">RFC7414</a>]</span>. Such a document
 would serve as a guide and reference for implementers and any other parties who desire information contained in the 'NETCONF/RESTCONF/YANG'-related RFCs.<a href="#section-4.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1504,7 +1512,7 @@ would serve as a guide and reference for implementers and any other parties who 
         <h3 id="name-lack-of-agile-process-for-t">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-lack-of-agile-process-for-t" class="section-name selfRef">Lack of Agile Process for (The Maintenance of) YANG Modules</a>
         </h3>
-<p id="section-4.3-1">RFCs might not be suited for documenting YANG modules. In the meantime, there is a need for
+<p id="section-4.3-1">RFCs might not be suited for documenting YANG modules (it takes much too long, especiallly for updates). In the meantime, there is a need for
 "reference models" and "sufficiently stable models". An
 hybrid approach might be investigated for documenting IETF-
 endorsed YANG modules, such as considering an RFC to
@@ -1583,20 +1591,31 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.10-3">That convergence shown the last years also implies the need of an up-to-date refresh of management capabilities and tooling of the conventional networks. Also, it highlights the need to easily map the data models that are used to manage each specific segment.<a href="#section-4.10-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="another-item">
+<div id="too-much-time-between-publication-of-new-networking-functionality-and-the-associated-yang">
 <section id="section-4.11">
-        <h3 id="name-another-item">
-<a href="#section-4.11" class="section-number selfRef">4.11. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
+        <h3 id="name-too-much-time-between-publi">
+<a href="#section-4.11" class="section-number selfRef">4.11. </a><a href="#name-too-much-time-between-publi" class="section-name selfRef">Too Much Time Between Publication of New Networking Functionality and the Associated YANG</a>
         </h3>
-<p id="section-4.11-1">TBC.<a href="#section-4.11-1" class="pilcrow">¶</a></p>
+<p id="section-4.11-1">For example, <span>[<a href="#RFC8667" class="cite xref">RFC8667</a>]</span> (IS-IS extensions for SR) was published in December 2019, while <span>[<a href="#I-D.ietf-isis-sr-yang" class="cite xref">I-D.ietf-isis-sr-yang</a>]</span> will be published ~5 years after.<a href="#section-4.11-1" class="pilcrow">¶</a></p>
+<p id="section-4.11-2">Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
+That may slow down the protocol specification, though.<a href="#section-4.11-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="another-item-1">
+<div id="open-source-tools">
 <section id="section-4.12">
-        <h3 id="name-another-item-2">
-<a href="#section-4.12" class="section-number selfRef">4.12. </a><a href="#name-another-item-2" class="section-name selfRef">Another Item</a>
+        <h3 id="name-open-source-tools">
+<a href="#section-4.12" class="section-number selfRef">4.12. </a><a href="#name-open-source-tools" class="section-name selfRef">Open-source Tools</a>
         </h3>
-<p id="section-4.12-1">TBC.<a href="#section-4.12-1" class="pilcrow">¶</a></p>
+<p id="section-4.12-1">While there are open-source implementations for NETCONF (e.g., NETOPEER), the gRPC/gNMI suite seems to have more support for tools on the client side.
+For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).<a href="#section-4.12-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="another-item">
+<section id="section-4.13">
+        <h3 id="name-another-item">
+<a href="#section-4.13" class="section-number selfRef">4.13. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
+        </h3>
+<p id="section-4.13-1">TBC.<a href="#section-4.13-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1633,13 +1652,14 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <dl class="references">
 <dt id="BCP127">[BCP127]</dt>
       <dd>
+<div class="refInstance">Best Current Practice 127, <span>&lt;<a href="https://www.rfc-editor.org/info/bcp127">https://www.rfc-editor.org/info/bcp127</a>&gt;</span>.<br><span>At the time of writing, this BCP comprises the following:</span>
+</div>
 <div class="refInstance" id="RFC4787">
-          <span class="refAuthor">Audet, F., Ed.</span> and <span class="refAuthor">C. Jennings</span>, <span class="refTitle">"Network Address Translation (NAT) Behavioral Requirements for Unicast UDP"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 4787</span>, <time datetime="2007-01" class="refDate">January 2007</time>. </div>
+          <span class="refAuthor">Audet, F., Ed.</span> and <span class="refAuthor">C. Jennings</span>, <span class="refTitle">"Network Address Translation (NAT) Behavioral Requirements for Unicast UDP"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 4787</span>, <span class="seriesInfo">DOI 10.17487/RFC4787</span>, <time datetime="2007-01" class="refDate">January 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4787">https://www.rfc-editor.org/info/rfc4787</a>&gt;</span>. </div>
 <div class="refInstance" id="RFC6888">
-          <span class="refAuthor">Perreault, S., Ed.</span>, <span class="refAuthor">Yamagata, I.</span>, <span class="refAuthor">Miyakawa, S.</span>, <span class="refAuthor">Nakagawa, A.</span>, and <span class="refAuthor">H. Ashida</span>, <span class="refTitle">"Common Requirements for Carrier-Grade NATs (CGNs)"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 6888</span>, <time datetime="2013-04" class="refDate">April 2013</time>. </div>
+          <span class="refAuthor">Perreault, S., Ed.</span>, <span class="refAuthor">Yamagata, I.</span>, <span class="refAuthor">Miyakawa, S.</span>, <span class="refAuthor">Nakagawa, A.</span>, and <span class="refAuthor">H. Ashida</span>, <span class="refTitle">"Common Requirements for Carrier-Grade NATs (CGNs)"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 6888</span>, <span class="seriesInfo">DOI 10.17487/RFC6888</span>, <time datetime="2013-04" class="refDate">April 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6888">https://www.rfc-editor.org/info/rfc6888</a>&gt;</span>. </div>
 <div class="refInstance" id="RFC7857">
-          <span class="refAuthor">Penno, R.</span>, <span class="refAuthor">Perreault, S.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Sivakumar, S.</span>, and <span class="refAuthor">K. Naito</span>, <span class="refTitle">"Updates to Network Address Translation (NAT) Behavioral Requirements"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 7857</span>, <time datetime="2016-04" class="refDate">April 2016</time>. </div>
-<span>&lt;<a href="https://www.rfc-editor.org/info/bcp127">https://www.rfc-editor.org/info/bcp127</a>&gt;</span>
+          <span class="refAuthor">Penno, R.</span>, <span class="refAuthor">Perreault, S.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Sivakumar, S.</span>, and <span class="refAuthor">K. Naito</span>, <span class="refTitle">"Updates to Network Address Translation (NAT) Behavioral Requirements"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 7857</span>, <span class="seriesInfo">DOI 10.17487/RFC7857</span>, <time datetime="2016-04" class="refDate">April 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7857">https://www.rfc-editor.org/info/rfc7857</a>&gt;</span>. </div>
 </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-bmwg-containerized-infra">[I-D.ietf-bmwg-containerized-infra]</dt>
@@ -1648,11 +1668,15 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-comi">[I-D.ietf-core-comi]</dt>
       <dd>
-<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-16</span>, <time datetime="2023-09-04" class="refDate">4 September 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-16">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-16</a>&gt;</span>. </dd>
+<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-17</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-17">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-17</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-sid">[I-D.ietf-core-sid]</dt>
       <dd>
 <span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Petrov, I.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"YANG Schema Item iDentifier (YANG SID)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-sid-24</span>, <time datetime="2023-12-22" class="refDate">22 December 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24">https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-isis-sr-yang">[I-D.ietf-isis-sr-yang]</dt>
+      <dd>
+<span class="refAuthor">Litkowski, S.</span>, <span class="refAuthor">Qu, Y.</span>, <span class="refAuthor">Sarkar, P.</span>, <span class="refAuthor">Chen, H.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A YANG Data Model for IS-IS Segment Routing for the MPLS Data Plane"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-isis-sr-yang-21</span>, <time datetime="2024-01-22" class="refDate">22 January 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-yang-21">https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-yang-21</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-netconf-https-notif">[I-D.ietf-netconf-https-notif]</dt>
       <dd>
@@ -1798,6 +1822,10 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
       <dd>
 <span class="refAuthor">Clemm, A.</span> and <span class="refAuthor">E. Voit</span>, <span class="refTitle">"Subscription to YANG Notifications for Datastore Updates"</span>, <span class="seriesInfo">RFC 8641</span>, <span class="seriesInfo">DOI 10.17487/RFC8641</span>, <time datetime="2019-09" class="refDate">September 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8641">https://www.rfc-editor.org/rfc/rfc8641</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC8667">[RFC8667]</dt>
+      <dd>
+<span class="refAuthor">Previdi, S., Ed.</span>, <span class="refAuthor">Ginsberg, L., Ed.</span>, <span class="refAuthor">Filsfils, C.</span>, <span class="refAuthor">Bashandy, A.</span>, <span class="refAuthor">Gredler, H.</span>, and <span class="refAuthor">B. Decraene</span>, <span class="refTitle">"IS-IS Extensions for Segment Routing"</span>, <span class="seriesInfo">RFC 8667</span>, <span class="seriesInfo">DOI 10.17487/RFC8667</span>, <time datetime="2019-12" class="refDate">December 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8667">https://www.rfc-editor.org/rfc/rfc8667</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8791">[RFC8791]</dt>
       <dd>
 <span class="refAuthor">Bierman, A.</span>, <span class="refAuthor">Björklund, M.</span>, and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"YANG Data Structure Extensions"</span>, <span class="seriesInfo">RFC 8791</span>, <span class="seriesInfo">DOI 10.17487/RFC8791</span>, <time datetime="2020-06" class="refDate">June 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8791">https://www.rfc-editor.org/rfc/rfc8791</a>&gt;</span>. </dd>
@@ -1872,6 +1900,14 @@ versions.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:thomas.graf@swisscom.com" class="email">thomas.graf@swisscom.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Reshad Rahman</span></div>
+<div dir="auto" class="left"><span class="org">Equinix</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:rrahman@equinix.com" class="email">rrahman@equinix.com</a>
 </div>
 </address>
 </section>
