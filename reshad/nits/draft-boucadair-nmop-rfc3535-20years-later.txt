@@ -470,8 +470,9 @@ Table of Contents
 4.11.  Too Much Time Between Publication of New Networking Functionality
        and the Associated YANG
 
-   RFC8667 (IS-IS extensions for SR) was published in December 2019.  I-
-   D.ietf-isis-sr-yang will be published ~5 years after.
+   For example, [RFC8667] (IS-IS extensions for SR) was published in
+   December 2019, while [I-D.ietf-isis-sr-yang] will be published ~5
+   years after.
 
    Consider having YANG as part of the protocol specification/change
    where possible, or have the YANG document progress in parallel.  That
@@ -544,6 +545,14 @@ Table of Contents
               in Progress, Internet-Draft, draft-ietf-core-sid-24, 22
               December 2023, <https://datatracker.ietf.org/doc/html/
               draft-ietf-core-sid-24>.
+
+   [I-D.ietf-isis-sr-yang]
+              Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
+              Tantsura, "A YANG Data Model for IS-IS Segment Routing for
+              the MPLS Data Plane", Work in Progress, Internet-Draft,
+              draft-ietf-isis-sr-yang-21, 22 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
+              yang-21>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -730,6 +739,12 @@ Table of Contents
    [RFC8641]  Clemm, A. and E. Voit, "Subscription to YANG Notifications
               for Datastore Updates", RFC 8641, DOI 10.17487/RFC8641,
               September 2019, <https://www.rfc-editor.org/rfc/rfc8641>.
+
+   [RFC8667]  Previdi, S., Ed., Ginsberg, L., Ed., Filsfils, C.,
+              Bashandy, A., Gredler, H., and B. Decraene, "IS-IS
+              Extensions for Segment Routing", RFC 8667,
+              DOI 10.17487/RFC8667, December 2019,
+              <https://www.rfc-editor.org/rfc/rfc8667>.
 
    [RFC8791]  Bierman, A., Björklund, M., and K. Watsen, "YANG Data
               Structure Extensions", RFC 8791, DOI 10.17487/RFC8791,
