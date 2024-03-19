@@ -90,7 +90,7 @@ Table of Contents
      4.10. Implications of External Dependency
      4.11. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
-     4.12. Open-source tools
+     4.12. Open-source Tools
      4.13. Another Item
    5.  Perspectives & Recommendations
    6.  Security Considerations
@@ -476,9 +476,9 @@ Table of Contents
 
    Consider having YANG as part of the protocol specification/change
    where possible, or have the YANG document progress in parallel.  That
-   may slow down the protocol specification though.
+   may slow down the protocol specification, though.
 
-4.12.  Open-source tools
+4.12.  Open-source Tools
 
    While there are open-source implementations for NETCONF (e.g.
    NETOPEER), the gRPC/gNMI suite seems to have more support for tools
