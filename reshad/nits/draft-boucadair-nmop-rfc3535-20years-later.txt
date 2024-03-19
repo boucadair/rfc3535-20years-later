@@ -480,7 +480,7 @@ Table of Contents
 
 4.12.  Open-source Tools
 
-   While there are open-source implementations for NETCONF (e.g.
+   While there are open-source implementations for NETCONF (e.g.,
    NETOPEER), the gRPC/gNMI suite seems to have more support for tools
    on the client side.  For example, ygot generates structures from YANG
    models and these can easily be used by a client to configure a device
