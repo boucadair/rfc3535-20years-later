@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 19 September 2024                                 O. G. D. Dios
+Expires: 20 September 2024                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           18 March 2024
+                                                           19 March 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 September 2024.
+   This Internet-Draft will expire on 20 September 2024.
 
 Copyright Notice
 
@@ -88,8 +88,8 @@ Table of Contents
      4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
      4.9.  Distinct Networks, Distinct Management Requirements
      4.10. Implications of External Dependency
-     4.11. Too much time between publication of new networking
-            functionality and the associated YANG
+     4.11. Too Much Time Between Publication of New Networking
+            Functionality and the Associated YANG
      4.12. Open-source tools
      4.13. Another Item
    5.  Perspectives & Recommendations
@@ -467,8 +467,8 @@ Table of Contents
    conventional networks.  Also, it highlights the need to easily map
    the data models that are used to manage each specific segment.
 
-4.11.  Too much time between publication of new networking functionality
-       and the associated YANG
+4.11.  Too Much Time Between Publication of New Networking Functionality
+       and the Associated YANG
 
    RFC8667 (IS-IS extensions for SR) was published in December 2019.  I-
    D.ietf-isis-sr-yang will be published ~5 years after.
