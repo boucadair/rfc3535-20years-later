@@ -5,11 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 30 August 2024                                    O. G. D. Dios
+Expires: 20 September 2024                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
-                                                        27 February 2024
+                                                               R. Rahman
+                                                                 Equinix
+                                                           19 March 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -52,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 August 2024.
+   This Internet-Draft will expire on 20 September 2024.
 
 Copyright Notice
 
@@ -71,7 +73,7 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Summary of Technology Advences Since RFC 3535
+   2.  Summary of Technology Advances Since RFC 3535
    3.  Assessment of RFC 3535 Recommendations
    4.  Some Observations
      4.1.  Fragmented Ecosystem
@@ -86,8 +88,10 @@ Table of Contents
      4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
      4.9.  Distinct Networks, Distinct Management Requirements
      4.10. Implications of External Dependency
-     4.11. Another Item
-     4.12. Another Item
+     4.11. Too Much Time Between Publication of New Networking
+            Functionality and the Associated YANG
+     4.12. Open-source Tools
+     4.13. Another Item
    5.  Perspectives & Recommendations
    6.  Security Considerations
    7.  IANA Considerations
@@ -116,7 +120,7 @@ Table of Contents
    listed in Section 4 are provided to exemplify candidate items to
    discuss in that section.
 
-2.  Summary of Technology Advences Since RFC 3535
+2.  Summary of Technology Advances Since RFC 3535
 
    To be further elaborated:
 
@@ -274,15 +278,15 @@ Table of Contents
 
 4.2.  Lack of Profiling
 
-   Many NETCONF-related tools are (being) specified by the IETF, but
-   these tools are not widely supported (e.g., Push).  Editing a profile
-   document with a set of recommendations about core/key features with
-   the appropriate justification will help the emergence of more
-   implementations that meet the operators’ needs.
+   Many NETCONF-related features are (being) specified by the IETF, but
+   these features are not widely supported (e.g., Push).  Editing a
+   profile document with a set of recommendations about core/key
+   features with the appropriate justification will help the emergence
+   of more implementations that meet the operators’ needs.
 
       Examples of such profile documents are the various RFCs that were
       published by the behave WG [BCP127].  Another approach is to
-      consider an appraoch similar to the "Roadmap for Transmission
+      consider an approach similar to the "Roadmap for Transmission
       Control Protocol (TCP) Specification Documents" [RFC7414].  Such a
       document would serve as a guide and reference for implementers and
       any other parties who desire information contained in the
@@ -293,12 +297,13 @@ Table of Contents
 
 4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
 
-   RFCs might not be suited for documenting YANG modules.  In the
-   meantime, there is a need for "reference models" and "sufficiently
-   stable models".  An hybrid approach might be investigated for
-   documenting IETF- endorsed YANG modules, such as considering an RFC
-   to describe the initial module sketch and objectives and an official
-   IETF repository for maintaining intermediate YANG versions.
+   RFCs might not be suited for documenting YANG modules (it takes much
+   too long, especiallly for updates).  In the meantime, there is a need
+   for "reference models" and "sufficiently stable models".  An hybrid
+   approach might be investigated for documenting IETF- endorsed YANG
+   modules, such as considering an RFC to describe the initial module
+   sketch and objectives and an official IETF repository for maintaining
+   intermediate YANG versions.
 
 4.4.  Integration Complexity
 
@@ -462,11 +467,27 @@ Table of Contents
    conventional networks.  Also, it highlights the need to easily map
    the data models that are used to manage each specific segment.
 
-4.11.  Another Item
+4.11.  Too Much Time Between Publication of New Networking Functionality
+       and the Associated YANG
 
-   TBC.
+   For example, [RFC8667] (IS-IS extensions for SR) was published in
+   December 2019, while [I-D.ietf-isis-sr-yang] will be published ~5
+   years after.
 
-4.12.  Another Item
+   Consider having YANG as part of the protocol specification/change
+   where possible, or have the YANG document progress in parallel.  That
+   may slow down the protocol specification, though.
+
+4.12.  Open-source Tools
+
+   While there are open-source implementations for NETCONF (e.g.,
+   NETOPEER), the gRPC/gNMI suite seems to have more support for tools
+   on the client side.  For example, "ygot" generates structures from
+   YANG models and these can easily be used by a client to configure a
+   device with gNMI.  NETCONF is not supported though (we need the XML
+   tags).
+
+4.13.  Another Item
 
    TBC.
 
@@ -484,20 +505,25 @@ Table of Contents
 
 8.  Informative References
 
-   [BCP127]   Audet, F., Ed. and C. Jennings, "Network Address
+   [BCP127]   Best Current Practice 127,
+              <https://www.rfc-editor.org/info/bcp127>.
+              At the time of writing, this BCP comprises the following:
+
+              Audet, F., Ed. and C. Jennings, "Network Address
               Translation (NAT) Behavioral Requirements for Unicast
-              UDP", BCP 127, RFC 4787, January 2007.
+              UDP", BCP 127, RFC 4787, DOI 10.17487/RFC4787, January
+              2007, <https://www.rfc-editor.org/info/rfc4787>.
 
               Perreault, S., Ed., Yamagata, I., Miyakawa, S., Nakagawa,
               A., and H. Ashida, "Common Requirements for Carrier-Grade
-              NATs (CGNs)", BCP 127, RFC 6888, April 2013.
+              NATs (CGNs)", BCP 127, RFC 6888, DOI 10.17487/RFC6888,
+              April 2013, <https://www.rfc-editor.org/info/rfc6888>.
 
               Penno, R., Perreault, S., Boucadair, M., Ed., Sivakumar,
               S., and K. Naito, "Updates to Network Address Translation
-              (NAT) Behavioral Requirements", BCP 127, RFC 7857, April
-              2016.
-
-              <https://www.rfc-editor.org/info/bcp127>
+              (NAT) Behavioral Requirements", BCP 127, RFC 7857,
+              DOI 10.17487/RFC7857, April 2016,
+              <https://www.rfc-editor.org/info/rfc7857>.
 
    [I-D.ietf-bmwg-containerized-infra]
               Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
@@ -510,9 +536,9 @@ Table of Contents
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
               and C. Bormann, "CoAP Management Interface (CORECONF)",
-              Work in Progress, Internet-Draft, draft-ietf-core-comi-16,
-              4 September 2023, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-core-comi-16>.
+              Work in Progress, Internet-Draft, draft-ietf-core-comi-17,
+              4 March 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-core-comi-17>.
 
    [I-D.ietf-core-sid]
               Veillette, M., Pelov, A., Petrov, I., Bormann, C., and M.
@@ -520,6 +546,14 @@ Table of Contents
               in Progress, Internet-Draft, draft-ietf-core-sid-24, 22
               December 2023, <https://datatracker.ietf.org/doc/html/
               draft-ietf-core-sid-24>.
+
+   [I-D.ietf-isis-sr-yang]
+              Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
+              Tantsura, "A YANG Data Model for IS-IS Segment Routing for
+              the MPLS Data Plane", Work in Progress, Internet-Draft,
+              draft-ietf-isis-sr-yang-21, 22 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
+              yang-21>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -707,6 +741,12 @@ Table of Contents
               for Datastore Updates", RFC 8641, DOI 10.17487/RFC8641,
               September 2019, <https://www.rfc-editor.org/rfc/rfc8641>.
 
+   [RFC8667]  Previdi, S., Ed., Ginsberg, L., Ed., Filsfils, C.,
+              Bashandy, A., Gredler, H., and B. Decraene, "IS-IS
+              Extensions for Segment Routing", RFC 8667,
+              DOI 10.17487/RFC8667, December 2019,
+              <https://www.rfc-editor.org/rfc/rfc8667>.
+
    [RFC8791]  Bierman, A., Björklund, M., and K. Watsen, "YANG Data
               Structure Extensions", RFC 8791, DOI 10.17487/RFC8791,
               June 2020, <https://www.rfc-editor.org/rfc/rfc8791>.
@@ -766,3 +806,8 @@ Authors' Addresses
    Thomas Graf
    Swisscom
    Email: thomas.graf@swisscom.com
+
+
+   Reshad Rahman
+   Equinix
+   Email: rrahman@equinix.com
