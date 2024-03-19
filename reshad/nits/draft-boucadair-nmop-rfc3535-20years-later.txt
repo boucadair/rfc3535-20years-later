@@ -482,9 +482,10 @@ Table of Contents
 
    While there are open-source implementations for NETCONF (e.g.,
    NETOPEER), the gRPC/gNMI suite seems to have more support for tools
-   on the client side.  For example, ygot generates structures from YANG
-   models and these can easily be used by a client to configure a device
-   with gNMI.  NETCONF is not supported though (we need the XML tags).
+   on the client side.  For example, "ygot" generates structures from
+   YANG models and these can easily be used by a client to configure a
+   device with gNMI.  NETCONF is not supported though (we need the XML
+   tags).
 
 4.13.  Another Item
 
