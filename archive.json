@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-19T01:02:40.595301+00:00",
+  "timestamp": "2024-03-21T01:03:51.779212+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -95,6 +95,22 @@
       "body": "https://opentelemetry.io/",
       "createdAt": "2024-03-12T09:20:05Z",
       "updatedAt": "2024-03-12T09:20:05Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOKqz7zs6C-dMQ",
+      "title": "Candidate venue to socialize the work: autocon (Amsterdam)",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/issues/10",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://networkautomation.forum/autocon1",
+      "createdAt": "2024-03-20T12:27:00Z",
+      "updatedAt": "2024-03-20T12:27:00Z",
       "closedAt": null,
       "comments": []
     }
@@ -323,7 +339,7 @@
       "id": "PR_kwDOKqz7zs5qAPnf",
       "title": "Added some initial thoughts",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/9",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "Reshad-Rahman",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -332,19 +348,85 @@
       "labels": [],
       "body": "And fixed couple of nits",
       "createdAt": "2024-03-18T21:29:48Z",
-      "updatedAt": "2024-03-18T21:29:48Z",
+      "updatedAt": "2024-03-19T21:57:38Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "28eb08c2cc14f43226f0af543c55d79c9d994d2f",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "reshad/nits",
-      "headRefOid": "19edcb0bb1cdadfd3c2b51f55feac09ba75d656b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "9b476210ae16c88e1cafb284a58fe9832dd4afdc",
+      "closedAt": "2024-03-19T21:57:38Z",
+      "mergedAt": "2024-03-19T21:57:38Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "7d3982585df528094cb13a2c5e65d4020533c6bc"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs5z69K_",
+          "commit": {
+            "abbreviatedOid": "19edcb0"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks Reshad",
+          "createdAt": "2024-03-19T01:36:23Z",
+          "updatedAt": "2024-03-19T01:39:12Z",
+          "comments": [
+            {
+              "originalPosition": 52,
+              "body": "```suggestion\r\n## Too Much Time Between Publication of New Networking Functionality and the Associated YANG\r\n```",
+              "createdAt": "2024-03-19T01:36:23Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            },
+            {
+              "originalPosition": 55,
+              "body": "```suggestion\r\nFor example, {{?RFC8667}} (IS-IS extensions for SR) was published in December 2019, while {{?I-D.ietf-isis-sr-yang}} will be published ~5 years after.\r\n```",
+              "createdAt": "2024-03-19T01:37:25Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            },
+            {
+              "originalPosition": 58,
+              "body": "```suggestion\r\nThat may slow down the protocol specification, though.\r\n```",
+              "createdAt": "2024-03-19T01:37:49Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            },
+            {
+              "originalPosition": 60,
+              "body": "```suggestion\r\n## Open-source Tools\r\n```",
+              "createdAt": "2024-03-19T01:38:03Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "```suggestion\r\nWhile there are open-source implementations for NETCONF (e.g., NETOPEER), the gRPC/gNMI suite seems to have more support for tools on the client side.\r\n```",
+              "createdAt": "2024-03-19T01:38:22Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            },
+            {
+              "originalPosition": 63,
+              "body": "```suggestion\r\nFor example, \"ygot\" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).\r\n```",
+              "createdAt": "2024-03-19T01:38:52Z",
+              "updatedAt": "2024-03-19T01:39:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs50FBFm",
+          "commit": {
+            "abbreviatedOid": "9b47621"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-03-19T21:57:30Z",
+          "updatedAt": "2024-03-19T21:57:30Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
