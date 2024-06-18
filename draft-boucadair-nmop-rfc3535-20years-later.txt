@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 20 September 2024                                 O. G. D. Dios
+Expires: 20 December 2024                                  O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           19 March 2024
+                                                            18 June 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 September 2024.
+   This Internet-Draft will expire on 20 December 2024.
 
 Copyright Notice
 
@@ -74,28 +74,33 @@ Table of Contents
 
    1.  Introduction
    2.  Summary of Technology Advances Since RFC 3535
-   3.  Assessment of RFC 3535 Recommendations
-   4.  Some Observations
-     4.1.  Fragmented Ecosystem
-     4.2.  Lack of Profiling
-     4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
-     4.4.  Integration Complexity
-     4.5.  YANG-formatted Data Manipulation
-     4.6.  Translation and Mapping Between Service/Network and Device
+   3.  Assessment of RFC 3535 Operator Requirements
+   4.  Assessment of RFC 3535 Recommendations
+   5.  Some Observations
+     5.1.  Fragmented Ecosystem
+     5.2.  Lack of Profiling
+     5.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
+     5.4.  Integration Complexity
+     5.5.  YANG-formatted Data Manipulation
+     5.6.  Translation and Mapping Between Service/Network and Device
             Models
-     4.7.  (In)Consistent Data Structures in Network Protocols for
+     5.7.  (In)Consistent Data Structures in Network Protocols for
             Data Export
-     4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
-     4.9.  Distinct Networks, Distinct Management Requirements
-     4.10. Implications of External Dependency
-     4.11. Too Much Time Between Publication of New Networking
+     5.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
+     5.9.  Distinct Networks, Distinct Management Requirements
+     5.10. Implications of External Dependency
+     5.11. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
-     4.12. Open-source Tools
-     4.13. Another Item
-   5.  Perspectives & Recommendations
-   6.  Security Considerations
-   7.  IANA Considerations
-   8.  Informative References
+     5.12. Open-source Tools
+     5.13. Another Item
+   6.  Some Individual Assessments
+     6.1.  What Went Well
+     6.2.  What Went Wrong
+     6.3.  Where Can Be Improved
+   7.  Perspectives & Recommendations
+   8.  Security Considerations
+   9.  IANA Considerations
+   10. Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -117,7 +122,7 @@ Table of Contents
 
    Early version of the document includes *many placeholders on purpose*
    as the intent is to collect inputs from interested parties.  Items
-   listed in Section 4 are provided to exemplify candidate items to
+   listed in Section 5 are provided to exemplify candidate items to
    discuss in that section.
 
 2.  Summary of Technology Advances Since RFC 3535
@@ -155,7 +160,13 @@ Table of Contents
    See also "An Overview of the IETF Network Management Standards"
    [RFC6632].
 
-3.  Assessment of RFC 3535 Recommendations
+3.  Assessment of RFC 3535 Operator Requirements
+
+   Section 3 of [RFC3535] includes the following recommendations:
+
+   *  TBC
+
+4.  Assessment of RFC 3535 Recommendations
 
    Section 6 of [RFC3535] includes the following recommendations:
 
@@ -265,9 +276,9 @@ Table of Contents
           Information Bases ([RFC3317], [RFC3318], and [RFC3571]) to
           Historic status.
 
-4.  Some Observations
+5.  Some Observations
 
-4.1.  Fragmented Ecosystem
+5.1.  Fragmented Ecosystem
 
    The current YANG device models ecosystem is *fragmented*: some
    standards models are defined in the IETF while similar ones are
@@ -276,7 +287,7 @@ Table of Contents
    implemented.  There is a need to rationalize this space and avoid
    redundant efforts.
 
-4.2.  Lack of Profiling
+5.2.  Lack of Profiling
 
    Many NETCONF-related features are (being) specified by the IETF, but
    these features are not widely supported (e.g., Push).  Editing a
@@ -295,7 +306,7 @@ Table of Contents
    Likewise, reassess the value of some IETF proposals vs. competing/
    emerging solutions would be useful (e.g., gRPC vs. YANG-Push).
 
-4.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
+5.3.  Lack of Agile Process for (The Maintenance of) YANG Modules
 
    RFCs might not be suited for documenting YANG modules (it takes much
    too long, especiallly for updates).  In the meantime, there is a need
@@ -305,7 +316,7 @@ Table of Contents
    sketch and objectives and an official IETF repository for maintaining
    intermediate YANG versions.
 
-4.4.  Integration Complexity
+5.4.  Integration Complexity
 
    Section 3 of [RFC3535] describes a set of network operator
    requirements.  One of the requirements is the ease of use which,
@@ -345,17 +356,17 @@ Table of Contents
    [RFC8641] or proposing a new YANG module being used at the YANG-Push
    receiver.
 
-4.5.  YANG-formatted Data Manipulation
+5.5.  YANG-formatted Data Manipulation
 
    The use of a flat tree hierarchy in YANG models may induce some
    performance issues compared to other graph models.  See, for example,
    [ODL].
 
-4.6.  Translation and Mapping Between Service/Network and Device Models
+5.6.  Translation and Mapping Between Service/Network and Device Models
 
    TBC.
 
-4.7.  (In)Consistent Data Structures in Network Protocols for Data
+5.7.  (In)Consistent Data Structures in Network Protocols for Data
       Export
 
    Network Telemetry, as described in [RFC9232], involve a set of
@@ -399,7 +410,7 @@ Table of Contents
    addresses real-time streaming needs, this is often not accurate
    enough for data correlation.
 
-4.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
+5.8.  Proprietary YANG Modules, CLI, and Limited Abstraction
 
    Pluggins/Proxy YANG/CLI is still the rule in many operations.
 
@@ -411,7 +422,7 @@ Table of Contents
 
    TBC.
 
-4.9.  Distinct Networks, Distinct Management Requirements
+5.9.  Distinct Networks, Distinct Management Requirements
 
    From the time RFC 3535 was released up to now, new kind of services
    and applications have been developed and deployed over the time, with
@@ -439,7 +450,7 @@ Table of Contents
    compactness.  An example of such networks is Delay-Tolerant
    Networking (DTN) [RFC838].
 
-4.10.  Implications of External Dependency
+5.10.  Implications of External Dependency
 
    Networks are being updated to abandon the silo approach from the past
    towards an increasing convergence.  Specifically, there are trends
@@ -467,7 +478,7 @@ Table of Contents
    conventional networks.  Also, it highlights the need to easily map
    the data models that are used to manage each specific segment.
 
-4.11.  Too Much Time Between Publication of New Networking Functionality
+5.11.  Too Much Time Between Publication of New Networking Functionality
        and the Associated YANG
 
    For example, [RFC8667] (IS-IS extensions for SR) was published in
@@ -478,7 +489,7 @@ Table of Contents
    where possible, or have the YANG document progress in parallel.  That
    may slow down the protocol specification, though.
 
-4.12.  Open-source Tools
+5.12.  Open-source Tools
 
    While there are open-source implementations for NETCONF (e.g.,
    NETOPEER), the gRPC/gNMI suite seems to have more support for tools
@@ -487,23 +498,80 @@ Table of Contents
    device with gNMI.  NETCONF is not supported though (we need the XML
    tags).
 
-4.13.  Another Item
+5.13.  Another Item
 
    TBC.
 
-5.  Perspectives & Recommendations
+6.  Some Individual Assessments
+
+   This section captures some early assessments.  The goal is first to
+   capture received feedback, challenge it, and then structure it.
+
+6.1.  What Went Well
+
+   *  An overview of current and next possible technologies were given
+
+   *  Some rather technical, technology focused input from operators
+      were collected
+
+   *  Some protocols were early on de-scoped and described why
+
+6.2.  What Went Wrong
+
+   *  Not enough implementers (software developers implementing the
+      standards) and users (network operators using the network
+      management software developed based on standards) were present and
+      were well organized.  That lead to standards which are technical
+      not implementable and implementation that are not applicable or
+      bringing not enough added value.
+
+   *  IETF is not the expert community in data engineering.  The experts
+      are in the data industry.  Without them, integration in data
+      processing chains like Data Mesh is going to be a challenge.
+
+   *  Closed Loop Operation and Intend Based Networking were not
+      considered as a use case or overall non-technology related use
+      cases were not considered.
+
+   *  Most drawn conclusions were not explained why the IETF community
+      came to such conclusions.
+
+   *  We were looking at the past and present and not into the distant
+      future.  What do we need in 5-10 years?
+
+6.3.  Where Can Be Improved
+
+   *  Focus on use cases.  What goal do we need to fulfill and who can
+      describe best: Network Operators
+
+   *  Focus on how those use cases could be implemented best and what
+      standards would help: Software and Data Engineers
+
+   *  Look at current standards and see wherever those standards
+      contribute to those implementations: IETF community
+
+   *  List what is missing and analyze why it is missing: IETF community
+
+   *  Create an eco-systems of software developer and network operators
+      which share their open source tools: IETF community
+
+   *  Mandate that no network management standard is being defined
+      without having at least two reference implementations and help the
+      IETF community to achieve that: IESG
+
+7.  Perspectives & Recommendations
 
    TBC
 
-6.  Security Considerations
+8.  Security Considerations
 
    TBC.
 
-7.  IANA Considerations
+9.  IANA Considerations
 
    This document has no IANA actions.
 
-8.  Informative References
+10.  Informative References
 
    [BCP127]   Best Current Practice 127,
               <https://www.rfc-editor.org/info/bcp127>.
@@ -529,9 +597,9 @@ Table of Contents
               Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
               for Benchmarking Network Performance in Containerized
               Infrastructures", Work in Progress, Internet-Draft, draft-
-              ietf-bmwg-containerized-infra-00, 19 February 2024,
+              ietf-bmwg-containerized-infra-01, 17 June 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-00>.
+              containerized-infra-01>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
