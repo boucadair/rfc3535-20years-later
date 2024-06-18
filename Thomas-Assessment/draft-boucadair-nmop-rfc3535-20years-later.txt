@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 6 December 2024                                   O. G. D. Dios
+Expires: 20 December 2024                                  O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                             4 June 2024
+                                                            18 June 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 December 2024.
+   This Internet-Draft will expire on 20 December 2024.
 
 Copyright Notice
 
@@ -504,8 +504,8 @@ Table of Contents
 
 6.  Some Individual Assessments
 
-   This section captures some early assessment.  The goal is first to
-   capture received feedback, challenge it, and the structure it.
+   This section captures some early assessments.  The goal is first to
+   capture received feedback, challenge it, and then structure it.
 
 6.1.  What Went Well
 
@@ -597,9 +597,9 @@ Table of Contents
               Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
               for Benchmarking Network Performance in Containerized
               Infrastructures", Work in Progress, Internet-Draft, draft-
-              ietf-bmwg-containerized-infra-00, 19 February 2024,
+              ietf-bmwg-containerized-infra-01, 17 June 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-00>.
+              containerized-infra-01>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
@@ -696,7 +696,10 @@ Table of Contents
               DOI 10.17487/RFC5476, March 2009,
               <https://www.rfc-editor.org/rfc/rfc5476>.
 
-   [RFC5477]  "*** BROKEN REFERENCE ***".
+   [RFC5477]  Dietz, T., Claise, B., Aitken, P., Dressler, F., and G.
+              Carle, "Information Model for Packet Sampling Exports",
+              RFC 5477, DOI 10.17487/RFC5477, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5477>.
 
    [RFC5706]  Harrington, D., "Guidelines for Considering Operations and
               Management of New Protocols and Protocol Extensions",
