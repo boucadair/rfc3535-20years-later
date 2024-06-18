@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling</title>
+<meta content="Mohamed Boucadair" name="author">
+<meta content="Luis Miguel Contreras Murillo" name="author">
+<meta content="Oscar Gonzalez de Dios" name="author">
+<meta content="Thomas Graf" name="author">
+<meta content="Reshad Rahman" name="author">
+<meta content='
+       The IAB has organized an important workshop
+to establish a dialog between network operators and
+protocol developers, and to guide the IETF focus on work
+regarding network management.  The outcome of that workshop
+was documented in the "IAB Network Management Workshop" (RFC 3535)
+which was instrumental for developing NETCONF and YANG, in particular. 
+       20 years later, it is time to evaluate what has been achieved since then and
+identify the operational barriers for making these
+technologies widely implemented. Also, this document intends to capture new
+requirements for network management operations. 
+    ' name="description">
+<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="network management" name="keyword">
+<meta content="future networks" name="keyword">
+<meta content="draft-boucadair-nmop-rfc3535-20years-later-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.21.0
+    Python 3.12.3
+    ConfigArgParse 1.7
+    google-i18n-address 3.1.0
+    intervaltree 3.1.0
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.2.2
+    pycountry 22.3.5
+    PyYAML 6.0.1
+    requests 2.31.0
+    setuptools 69.5.1
+    six 1.16.0
+    wcwidth 0.2.13
+-->
+<link href="draft-boucadair-nmop-rfc3535-20years-later.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Lora SemiBold'), local('Lora-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  --font-mono: 'Oxygen Mono', monospace;
+  scrollbar-color: #bbb #eee;
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cabin Condensed", sans-serif;
+  font-weight: 600;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+h1#title {
+  font-size: 32px;
+  line-height: 40px;
+  clear: both;
+}
+h1#title, h1#rfcnum {
+  margin: 1.5em 0 0.2em;
+}
+h1#rfcnum + h1#title {
+  margin: 0.2em 0;
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+}
+#abstract+p {
+  font-size: 18px;
+  line-height: 24px;
+}
+#abstract+p code, #abstract+p samp, #abstract+p tt {
+  font-size: 16px;
+  line-height: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignRight.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignRight {
+  margin: 1em 0;
+}
+.alignRight > *:first-child {
+  border: none;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+.alignRight > *:nth-child(2) {
+  clear: both;
+  display: block;
+  border: none;
+}
+svg {
+  display: block;
+}
+/* font-family isn't space-separated, but =~ will have to do */
+svg[font-family~="monospace" i], svg [font-family~="monospace" i] {
+  font-family: var(--font-mono);
+}
+.alignCenter.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignCenter.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignCenter {
+  margin: 1em 0;
+}
+.alignCenter > *:first-child {
+  border: none;
+  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+     support flexbox yet.
+  */
+  display: table;
+  margin: 0 auto;
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+}
+:is(ol, ul) :is(ol, ul) {
+  margin-left: 1em;
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+.ulCompact li {
+  margin: 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+}
+ul.empty li, .ulEmpty li {
+  margin-top: 0.5em;
+}
+:is(ul, ol).compact, .ulCompact, .olCompact {
+  line-height: 1;
+  margin: 0 0 0 2em;
+}
+
+/* definition lists */
+dl {
+  clear: left;
+  --indent: 3ch;
+  /* --indent: attr(indent ch); not supported in any browser, but we can dream */
+}
+dl.olPercent {
+  --indent: 5ch;
+}
+dl > dt {
+  float: left;
+  margin-right: 2ch;
+  min-width: 8ch;
+}
+dl.dlNewline > dt {
+  float: none;
+}
+dl > dd {
+  margin-bottom: .8em;
+  margin-left: var(--indent) !important; /* stupid element overrides */
+  min-height: 2ex;
+}
+dl.olPercent > dt {
+  min-width: calc(var(--indent) - 2ch);
+}
+:is(dl.compact, .dlCompact) > dd {
+  margin-bottom: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:first-child, .break:first-child + *) {
+  margin-top: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:last-child) {
+  margin-bottom: 0;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+:is(dd, span).break {
+  display: none;
+}
+
+/* links */
+a, a[href].selfRef:hover {
+  text-decoration: none;
+}
+a[href] {
+  color: var(--link-color);
+}
+a[href].selfRef, .iref + a[href].internal {
+  color: var(--text-color);
+}
+a[href]:hover {
+  text-decoration: underline;
+}
+a[href].selfRef:hover {
+  background-color: var(--highlight-color);
+}
+a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px var(--font-mono);
+}
+tt, code {
+  /* changing the font for inline elements leads to different ascender
+     and descender heights; as we want to retain baseline alignment,
+     remove leading to avoid altering the final height of lines
+     note: this fails if these blocks take an entire line,
+     a different solution would be great */
+  line-height: 0;
+}
+:is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
+  font-size: 84%;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+}
+figure blockquote {
+  margin: 0.8em 0.4em 0.4em;
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+}
+@media screen {
+  /* Auto-collapse boilerplate. */
+  :is(#status-of-memo, #copyright) p {
+    margin: -2px 0;
+    max-height: 0;
+    transition: max-height 2s ease, margin 0.5s ease 0.5s;
+    overflow: hidden;
+  }
+  :is(#status-of-memo, #copyright):hover p,
+  :is(#status-of-memo, #copyright) h2:target ~ p {
+    margin: 0.5em 0;
+    max-height: 500px;
+    overflow: auto;
+  }
+  pre, svg {
+    display: inline-block;
+    overflow-x: auto;
+  }
+  pre {
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  svg {
+    max-width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  :is(pre, svg) + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  margin: 1em 0;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+table.right {
+  margin-left: auto;
+}
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.left {
+  margin-right: auto;
+}
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+:is(tr:nth-child(2n), thead+tbody > tr:nth-child(2n+1)) > td {
+  background-color: var(--background-color);
+}
+:is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
+  background-color: var(--highlight-color);
+}
+table caption {
+  margin: 0;
+  padding: 3px 0 3px 1em;
+}
+table p {
+  margin: 0;
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+}
+a.pilcrow[href] { color: var(--pilcrow-weak); }
+a.pilcrow[href]:hover { text-decoration: none; }
+@media not print {
+  :hover > a.pilcrow {
+    opacity: 1;
+  }
+  a.pilcrow[href]:hover {
+    color: var(--pilcrow-strong);
+    background-color: transparent;
+  }
+}
+@media print {
+  a.pilcrow {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: var(--small-font-size);
+}
+.role {
+  font-variant: all-small-caps;
+}
+sub, sup {
+  line-height: 1;
+  font-size: 80%;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 15ch;
+}
+#identifiers dt {
+  width: var(--identifier-width);
+  min-width: var(--identifier-width);
+  clear: left;
+  float: left;
+  text-align: right;
+  margin-right: 1ch;
+}
+#identifiers dd {
+  margin: 0;
+  margin-left: calc(1em + var(--identifier-width)) !important;
+  min-width: 5em;
+}
+#identifiers .authors .author {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+#identifiers .authors .org {
+  font-style: italic;
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+}
+.docInfo .prepared {
+  float: left;
+}
+.docInfo .prepared {
+  float: right;
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+}
+#toc nav ul {
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  list-style: none;
+}
+#toc nav li {
+  line-height: 1.3em;
+  margin: 2px 0;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+#toc a.xref {
+  white-space: normal;
+}
+/* references */
+.references dt {
+  text-align: right;
+  font-weight: bold;
+  min-width: 10ch;
+  margin-right: 1.5ch;
+}
+.references dt:target::before {
+  content: "⇒";
+  width: 15px;
+  margin: 0 10px 0 -25px;
+}
+.references dd {
+  margin-left: 12ch !important;
+  overflow: auto;
+}
+
+.refInstance {
+  margin-bottom: 1.25em;
+}
+
+.references .ascii {
+  margin-bottom: 0.25em;
+}
+
+/* index */
+#rfc\.index\.index + ul {
+  margin-left: 0;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  margin: 1em 0;
+}
+address.vcard .nameRole {
+  font-weight: 700;
+  margin-left: 0;
+}
+address.vcard .label {
+  margin: 0.5em 0;
+}
+address.vcard .type {
+  display: none;
+}
+.alternative-contact {
+  margin: 1.5em 0 1em;
+}
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses > section {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  #authors-addresses > section > h2 {
+    column-span: all;
+  }
+  /* hack for break-inside: avoid-column */
+  #authors-addresses address {
+    display: inline-block;
+    break-inside: avoid-column;
+  }
+}
+
+.rfcEditorRemove p:first-of-type {
+  font-style: italic;
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+/* alternative layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 1px 0 0 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+  }
+  #toc.active {
+      opacity: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 2px 0 2px 6px;
+    padding-right: 1em;
+    font-size: 18px;
+    line-height: 24px;
+    min-width: 190px;
+    text-align: right;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+  }
+  #toc h2::before { /* css hamburger */
+    float: right;
+    position: relative;
+    width: 1em;
+    height: 1px;
+    left: -164px;
+    margin: 8px 0 0 0;
+    background: white none repeat scroll 0 0;
+    box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+    content: "";
+  }
+  #toc nav {
+    display: none;
+    background-color: var(--background-color);
+    padding: 0.5em 1em 1em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    height: calc(100vh - 48px);
+    border-left: 1px solid #ddd;
+  }
+  #toc.active nav {
+    display: block;
+  }
+  /* Make the collapsed ToC header render white on gray also when it's a link */
+  #toc h2 a,
+  #toc h2 a:link,
+  #toc h2 a:focus,
+  #toc h2 a:hover,
+  #toc a.toplink,
+  #toc a.toplink:hover {
+    color: white;
+    background-color: #444;
+    text-decoration: none;
+  }
+  #toc a.toplink {
+    margin-top: 2px;
+  }
+}
+
+/* alternative layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 0.25em 1em 1em 0;
+  }
+  #toc nav {
+    display: block;
+    height: calc(90vh - 84px);
+    bottom: 0;
+    padding: 0.5em 0 2em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  #toc nav > ul  {
+    margin-bottom: 2em;
+  }
+  #toc ul {
+    margin: 0 0 0 4px;
+    font-size: var(--small-font-size);
+  }
+  #toc ul :is(p, li) {
+    margin: 2px 0;
+    line-height: 22px;
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc, #n-introduction {
+    page-break-before: always;
+  }
+  #toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  figure, pre, .vcard {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  :is(h2, h3, h4, h5, h6)+*, dd {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Changes introduced to fix issues found during implementation */
+
+/* Separate body from document info even without intervening H1 */
+section {
+  clear: both;
+}
+
+/* Top align author divs, to avoid names without organization dropping level with org names */
+.author {
+  vertical-align: top;
+}
+
+/* Style section numbers with more space between number and title */
+.section-number {
+  padding-right: 0.5em;
+}
+
+/* Add styling for a link in the ToC that points to the top of the document */
+a.toplink {
+  float: right;
+  margin: 8px 0.5em 0;
+}
+
+/* Provide styling for table cell text alignment */
+table .text-left {
+  text-align: left;
+}
+table .text-center {
+  text-align: center;
+}
+table .text-right {
+  text-align: right;
+}
+
+/* Make the alternative author contact information look less like just another
+   author, and group it closer with the primary author contact information */
+.alternative-contact {
+  margin: 0.5em 0 0.25em 0;
+}
+address .non-ascii {
+  margin: 0 0 0 2em;
+}
+
+/* With it being possible to set tables with alignment
+  left, center, and right, { width: 100%; } does not make sense */
+table {
+  width: auto;
+}
+
+/* Avoid reference text that sits in a block with very wide left margin,
+   because of a long floating dt label.*/
+.references dd {
+  overflow: visible;
+}
+
+/* Control caption placement */
+caption {
+  caption-side: bottom;
+}
+
+/* Limit the width of the author address vcard, so names in right-to-left
+   script don't end up on the other side of the page. */
+
+address.vcard {
+  max-width: 20em;
+  margin-right: auto;
+}
+
+/* For address alignment dependent on LTR or RTL scripts */
+address div.left {
+  text-align: left;
+}
+address div.right {
+  text-align: right;
+}
+
+/* Dark mode. */
+@media (prefers-color-scheme: dark) {
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+
+/* SVG Trick: a prefix match works because only black and white are allowed */
+svg :is([stroke="black"], [stroke^="#000"]) {
+  stroke: var(--text-color);
+}
+svg :is([stroke="white"], [stroke^="#fff"]) {
+  stroke: var(--background-color);
+}
+svg :is([fill="black"], [fill^="#000"], :not([fill])) {
+  fill: var(--text-color);
+}
+svg :is([fill="white"], [fill^="#fff"]) {
+  fill: var(--background-color);
+}
+</style>
+
+</head>
+<body class="xml2rfc">
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">RFC 3535, 20 Years Later</td>
+<td class="right">June 2024</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Boucadair, et al.</td>
+<td class="center">Expires 20 December 2024</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">Network Working Group</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-boucadair-nmop-rfc3535-20years-later-latest</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2024-06-18" class="published">18 June 2024</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Informational</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2024-12-20">20 December 2024</time></dd>
+<dt class="label-authors">Authors:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">M. Boucadair</div>
+<div class="org">Orange</div>
+</div>
+<div class="author">
+      <div class="author-name">L. M. C. Murillo</div>
+<div class="org">Telefonica</div>
+</div>
+<div class="author">
+      <div class="author-name">O. G. D. Dios</div>
+<div class="org">Telefonica</div>
+</div>
+<div class="author">
+      <div class="author-name">T. Graf</div>
+<div class="org">Swisscom</div>
+</div>
+<div class="author">
+      <div class="author-name">R. Rahman</div>
+<div class="org">Equinix</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">The IAB has organized an important workshop
+to establish a dialog between network operators and
+protocol developers, and to guide the IETF focus on work
+regarding network management.  The outcome of that workshop
+was documented in the "IAB Network Management Workshop" (RFC 3535)
+which was instrumental for developing NETCONF and YANG, in particular.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">20 years later, it is time to evaluate what has been achieved since then and
+identify the operational barriers for making these
+technologies widely implemented. Also, this document intends to capture new
+requirements for network management operations.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-discussion-venues">
+<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">Source for this draft and an issue tracker can be found at
+    <span><a href="https://github.com/boucadair/rfc3535-20years-later">https://github.com/boucadair/rfc3535-20years-later</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 20 December 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2024 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Revised BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-summary-of-technology-advan" class="internal xref">Summary of Technology Advances Since RFC 3535</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-assessment-of-rfc-3535-oper" class="internal xref">Assessment of RFC 3535 Operator Requirements</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-assessment-of-rfc-3535-reco" class="internal xref">Assessment of RFC 3535 Recommendations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-some-observations" class="internal xref">Some Observations</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-fragmented-ecosystem" class="internal xref">Fragmented Ecosystem</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-lack-of-profiling" class="internal xref">Lack of Profiling</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-lack-of-agile-process-for-t" class="internal xref">Lack of Agile Process for (The Maintenance of) YANG Modules</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
+                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-integration-complexity" class="internal xref">Integration Complexity</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5">
+                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-yang-formatted-data-manipul" class="internal xref">YANG-formatted Data Manipulation</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.6">
+                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-translation-and-mapping-bet" class="internal xref">Translation and Mapping Between Service/Network and Device Models</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.7">
+                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-inconsistent-data-structure" class="internal xref">(In)Consistent Data Structures in Network Protocols for Data Export</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.8">
+                <p id="section-toc.1-1.5.2.8.1"><a href="#section-5.8" class="auto internal xref">5.8</a>.  <a href="#name-proprietary-yang-modules-cl" class="internal xref">Proprietary YANG Modules, CLI, and Limited Abstraction</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.9">
+                <p id="section-toc.1-1.5.2.9.1"><a href="#section-5.9" class="auto internal xref">5.9</a>.  <a href="#name-distinct-networks-distinct-" class="internal xref">Distinct Networks, Distinct Management Requirements</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.10">
+                <p id="section-toc.1-1.5.2.10.1"><a href="#section-5.10" class="auto internal xref">5.10</a>. <a href="#name-implications-of-external-de" class="internal xref">Implications of External Dependency</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.11">
+                <p id="section-toc.1-1.5.2.11.1"><a href="#section-5.11" class="auto internal xref">5.11</a>. <a href="#name-too-much-time-between-publi" class="internal xref">Too Much Time Between Publication of New Networking Functionality and the Associated YANG</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.12">
+                <p id="section-toc.1-1.5.2.12.1"><a href="#section-5.12" class="auto internal xref">5.12</a>. <a href="#name-open-source-tools" class="internal xref">Open-source Tools</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.13">
+                <p id="section-toc.1-1.5.2.13.1"><a href="#section-5.13" class="auto internal xref">5.13</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-some-individual-assessments" class="internal xref">Some Individual Assessments</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
+                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-what-went-well" class="internal xref">What Went Well</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
+                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-what-went-wrong" class="internal xref">What Went Wrong</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3">
+                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="auto internal xref">6.3</a>.  <a href="#name-where-can-be-improved" class="internal xref">Where Can Be Improved</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-perspectives-recommendation" class="internal xref">Perspectives &amp; Recommendations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="introduction">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">The IAB has organized a workshop (June 4-June 6, 2002)
+to establish a dialog between network operators and
+protocol developers, and to guide the IETF focus on work
+regarding network management.  The outcome of that workshop
+was documented in the "IAB Network Management Workshop" <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>
+which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>, YANG <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]</span><span>[<a href="#RFC7950" class="cite xref">RFC7950</a>]</span>, and RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">20 years later, new requirements on network management operations are emerging from the operators. This document intends to capture these requirements that reflect the progress in this area. The document also provide an assessment of the RFC3535 recommendations and to what extend that roadmap was driving network management efforts within the IETF.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Early version of the document includes <strong>many placeholders on purpose</strong> as the intent is to collect inputs from interested parties. Items listed in <a href="#sec-obs" class="auto internal xref">Section 5</a> are provided to exemplify candidate items to discuss in that section.<a href="#section-1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="summary-of-technology-advances-since-rfc-3535">
+<section id="section-2">
+      <h2 id="name-summary-of-technology-advan">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-summary-of-technology-advan" class="section-name selfRef">Summary of Technology Advances Since RFC 3535</a>
+      </h2>
+<p id="section-2-1">To be further elaborated:<a href="#section-2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2-2.1">
+          <p id="section-2-2.1.1">NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span><a href="#section-2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.2">
+          <p id="section-2-2.2.1">YANG <span>[<a href="#RFC7950" class="cite xref">RFC7950</a>]</span><a href="#section-2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.3">
+          <p id="section-2-2.3.1">RESTCONF  <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span><a href="#section-2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.4">
+          <p id="section-2-2.4.1">SDN &amp; Programmable Networks <span>[<a href="#RFC7149" class="cite xref">RFC7149</a>]</span><span>[<a href="#RFC7426" class="cite xref">RFC7426</a>]</span><a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.5">
+          <p id="section-2-2.5.1">Automation <span>[<a href="#RFC8969" class="cite xref">RFC8969</a>]</span><a href="#section-2-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.6">
+          <p id="section-2-2.6.1">Virtualization <span>[<a href="#RFC8568" class="cite xref">RFC8568</a>]</span><a href="#section-2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.7">
+          <p id="section-2-2.7.1">Containerization <span>[<a href="#I-D.ietf-bmwg-containerized-infra" class="cite xref">I-D.ietf-bmwg-containerized-infra</a>]</span><a href="#section-2-2.7.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.8">
+          <p id="section-2-2.8.1">Intent-based <span>[<a href="#RFC9315" class="cite xref">RFC9315</a>]</span><a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.9">
+          <p id="section-2-2.9.1">Network APIs<a href="#section-2-2.9.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.10">
+          <p id="section-2-2.10.1">Telemetry <span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span><a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.11">
+          <p id="section-2-2.11.1">JSON Encoding of Data Modeled with YANG <span>[<a href="#RFC7951" class="cite xref">RFC7951</a>]</span><a href="#section-2-2.11.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.12">
+          <p id="section-2-2.12.1">CoAP Management Interface (CORECONF) <span>[<a href="#I-D.ietf-core-comi" class="cite xref">I-D.ietf-core-comi</a>]</span><a href="#section-2-2.12.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.13">
+          <p id="section-2-2.13.1">YANG to CBOR mapping <span>[<a href="#RFC9254" class="cite xref">RFC9254</a>]</span><a href="#section-2-2.13.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-2.14">
+          <p id="section-2-2.14.1">YANG Schema Item iDentifier (YANG SID) <span>[<a href="#I-D.ietf-core-sid" class="cite xref">I-D.ietf-core-sid</a>]</span><a href="#section-2-2.14.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="section-2-3">See also "An Overview of the IETF Network Management Standards" <span>[<a href="#RFC6632" class="cite xref">RFC6632</a>]</span>.<a href="#section-2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="assessment-of-rfc-3535-operator-requirements">
+<section id="section-3">
+      <h2 id="name-assessment-of-rfc-3535-oper">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-assessment-of-rfc-3535-oper" class="section-name selfRef">Assessment of RFC 3535 Operator Requirements</a>
+      </h2>
+<p id="section-3-1"><span><a href="https://rfc-editor.org/rfc/rfc3535#section-3" class="relref">Section 3</a> of [<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> includes the following recommendations:<a href="#section-3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3-2.1">
+          <p id="section-3-2.1.1">TBC<a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+</section>
+</div>
+<div id="assessment-of-rfc-3535-recommendations">
+<section id="section-4">
+      <h2 id="name-assessment-of-rfc-3535-reco">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-assessment-of-rfc-3535-reco" class="section-name selfRef">Assessment of RFC 3535 Recommendations</a>
+      </h2>
+<p id="section-4-1"><span><a href="https://rfc-editor.org/rfc/rfc3535#section-6" class="relref">Section 6</a> of [<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> includes the following recommendations:<a href="#section-4-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4-2">
+<li id="section-4-2.1">
+          <p id="section-4-2.1.1">The workshop recommends that the IETF stop forcing working groups
+to provide writable MIB modules.  It should be the decision of
+the working group whether they want to provide writable objects
+or not.<a href="#section-4-2.1.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.1.2">
+            <dt id="section-4-2.1.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.1.2.2">
+              <p id="section-4-2.1.2.2.1">In 2014, the IESG published a statement Writable MIB Module, which states that:<a href="#section-4-2.1.2.2.1" class="pilcrow">¶</a></p>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-4-2.1.2.2.2.1">
+                  <p id="section-4-2.1.2.2.2.1.1">SNMP MIB modules creating and modifying configuration state should only be produced by working groups in cases of clear utility and consensus to use SNMP
+ write operations for configuration, and in consultation with the OPS ADs/MIB doctors.<a href="#section-4-2.1.2.2.2.1.1" class="pilcrow">¶</a></p>
+</li>
+              </ul>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-2.2">
+          <p id="section-4-2.2.1">The workshop recommends that a group be formed to investigate why
+current MIB modules do not contain all the objects needed by
+operators to monitor their networks.<a href="#section-4-2.2.1" class="pilcrow">¶</a></p>
+<p id="section-4-2.2.2"><strong>Status Update</strong>: xxx<a href="#section-4-2.2.2" class="pilcrow">¶</a></p>
+</li>
+        <li id="section-4-2.3">
+          <p id="section-4-2.3.1">The workshop recommends that a group be formed to investigate why
+the current SNMP protocol does not satisfy all the monitoring
+requirements of operators.<a href="#section-4-2.3.1" class="pilcrow">¶</a></p>
+<p id="section-4-2.3.2"><strong>Status Update</strong>: xxx<a href="#section-4-2.3.2" class="pilcrow">¶</a></p>
+</li>
+        <li id="section-4-2.4">
+          <p id="section-4-2.4.1">The workshop recommends, with strong consensus from both protocol
+developers and operators, that the IETF focus resources on the
+standardization of configuration management mechanisms.<a href="#section-4-2.4.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.4.2">
+            <dt id="section-4-2.4.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.4.2.2">
+              <p id="section-4-2.4.2.2.1">NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>, RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>, CORECONF <span>[<a href="#I-D.ietf-core-comi" class="cite xref">I-D.ietf-core-comi</a>]</span>, YANG.<a href="#section-4-2.4.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+            <dd class="break"></dd>
+<dt id="section-4-2.4.2.3"></dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.4.2.4">
+              <p id="section-4-2.4.2.4.1">YANG is a transport-independent data modeling language. It can be used independently of NETCONF/RESTCONF. For example, YANG can be used to define abstract data structures <span>[<a href="#RFC8791" class="cite xref">RFC8791</a>]</span> that can be manipulated by other protocols (e.g., <span>[<a href="#RFC9132" class="cite xref">RFC9132</a>]</span>).<a href="#section-4-2.4.2.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-2.5">
+          <p id="section-4-2.5.1">The workshop recommends, with strong consensus from the operators
+and rough consensus from the protocol developers, that the
+IETF/IRTF should spend resources on the development and
+standardization of XML-based device configuration and management
+technologies (such as common XML configuration schemas, exchange
+protocols and so on).<a href="#section-4-2.5.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.5.2">
+            <dt id="section-4-2.5.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.5.2.2">
+              <p id="section-4-2.5.2.2.1">OK. This recommendation was also mirrored in other documents such as <span>[<a href="#RFC5706" class="cite xref">RFC5706</a>]</span>.<a href="#section-4-2.5.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-2.6">
+          <p id="section-4-2.6.1">The workshop recommends, with strong consensus from the operators
+and rough consensus from the protocol developers, that the
+IETF/IRTF should not spend resources on developing HTML-based or
+HTTP-based methods for configuration management.<a href="#section-4-2.6.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.6.2">
+            <dt id="section-4-2.6.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.6.2.2">
+              <p id="section-4-2.6.2.2.1">The IETF deviated from this recommendation, e.g., RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span> or CoAP Management Interface (CORECONF) <span>[<a href="#I-D.ietf-core-comi" class="cite xref">I-D.ietf-core-comi</a>]</span>.<a href="#section-4-2.6.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-2.7">
+          <p id="section-4-2.7.1">The workshop recommends, with rough consensus from the operators
+       and strong consensus from the protocol developers, that the IETF
+       should continue to spend resources on the evolution of the
+       SMI/SPPI data definition languages as being done in the SMIng
+       working group.<a href="#section-4-2.7.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.7.2">
+            <dt id="section-4-2.7.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.7.2.2">
+              <p id="section-4-2.7.2.2.1">SMIng WG was concluded in 2003-04-04.<a href="#section-4-2.7.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-2.8">
+          <p id="section-4-2.8.1">The workshop recommends, with split consensus from the operators
+       and rough consensus from the protocol developers, that the IETF
+       should spend resources on fixing the MIB development and
+       standardization processs.<a href="#section-4-2.8.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-2.8.2">
+            <dt id="section-4-2.8.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-2.8.2.2">
+              <p id="section-4-2.8.2.2.1">The IETF dedicated some resources to fix some SNMP shortcomings with a focus on security (e.g., Transport Layer Security (TLS) Transport Model for the SNMP <span>[<a href="#RFC6353" class="cite xref">RFC6353</a>]</span> or <span>[<a href="#RFC9456" class="cite xref">RFC9456</a>]</span>, HMAC-SHA-2 Authentication Protocols in User-Based Security Model (USM) for SNMPv3 <span>[<a href="#RFC7860" class="cite xref">RFC7860</a>]</span>).<a href="#section-4-2.8.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+      </ol>
+<p id="section-4-3"><span><a href="https://rfc-editor.org/rfc/rfc3535#section-6" class="relref">Section 6</a> of [<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> also includes the following but without tagging them as recommendations:<a href="#section-4-3" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4-4">
+<li id="section-4-4.1">
+          <p id="section-4-4.1.1">The workshop had split consensus from the operators and rough
+consensus from the protocol developers, that the IETF should not
+focus resources on CIM extensions.<a href="#section-4-4.1.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-4.1.2">
+            <dt id="section-4-4.1.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-4.1.2.2">
+              <p id="section-4-4.1.2.2.1">The IETF didn't dedicate any resources on CIM extensions.<a href="#section-4-4.1.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-4.2">
+          <p id="section-4-4.2.1">The workshop had rough consensus from the protocol developers
+that the IETF should not spend resources on COPS-PR development.
+So far, the operators have only very limited experience with
+COPS-PR.  In general, however, they felt that further development
+of COPS-PR might be a waste of resources as they assume that
+COPS-PR does not really address their requirements.<a href="#section-4-4.2.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-4.2.2">
+            <dt id="section-4-4.2.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-4.2.2.2">
+              <p id="section-4-4.2.2.2.1">The IETF has reclassified COPS Usage for Policy Provisioning <span>[<a href="#RFC3084" class="cite xref">RFC3084</a>]</span>
+to Historic status.<a href="#section-4-4.2.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+        <li id="section-4-4.3">
+          <p id="section-4-4.3.1">The workshop had rough consensus from the protocol developers
+that the IETF should not spend resources on SPPI PIB definitions.
+The operators had rough consensus that they do not care about
+SPPI PIBs.<a href="#section-4-4.3.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-4-4.3.2">
+            <dt id="section-4-4.3.2.1">
+<strong>Status Update</strong>:</dt>
+            <dd style="margin-left: 1.5em" id="section-4-4.3.2.2">
+              <p id="section-4-4.3.2.2.1">The IETF has reclassified Structure of Policy Provisioning Information <span>[<a href="#RFC3159" class="cite xref">RFC3159</a>]</span>, as well as
+three Policy Information Bases (<span>[<a href="#RFC3317" class="cite xref">RFC3317</a>]</span>, <span>[<a href="#RFC3318" class="cite xref">RFC3318</a>]</span>, and <span>[<a href="#RFC3571" class="cite xref">RFC3571</a>]</span>) to
+Historic status.<a href="#section-4-4.3.2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+</dl>
+</li>
+      </ol>
+</section>
+</div>
+<div id="sec-obs">
+<section id="section-5">
+      <h2 id="name-some-observations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-some-observations" class="section-name selfRef">Some Observations</a>
+      </h2>
+<div id="fragmented-ecosystem">
+<section id="section-5.1">
+        <h3 id="name-fragmented-ecosystem">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-fragmented-ecosystem" class="section-name selfRef">Fragmented Ecosystem</a>
+        </h3>
+<p id="section-5.1-1">The current YANG device models ecosystem is <strong>fragmented</strong>: some
+standards models are defined in the IETF while similar ones are
+defined in other fora such as Openconfig or ONF. Unlike service and
+network models, IETF-defined device models are not widely
+implemented. There is a need to rationalize this space and
+avoid redundant efforts.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="lack-of-profiling">
+<section id="section-5.2">
+        <h3 id="name-lack-of-profiling">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-lack-of-profiling" class="section-name selfRef">Lack of Profiling</a>
+        </h3>
+<p id="section-5.2-1">Many NETCONF-related features are (being) specified by the IETF,
+but these features are not widely supported (e.g., Push). Editing a
+profile document with a set of recommendations about core/key
+features with the appropriate justification will help the
+emergence of more implementations that meet the operators’
+needs.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-5.2-2.1">
+            <p id="section-5.2-2.1.1">Examples of such profile documents are the various RFCs that were published by the behave WG <span>[<a href="#BCP127" class="cite xref">BCP127</a>]</span>.
+Another approach is to consider an approach similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" <span>[<a href="#RFC7414" class="cite xref">RFC7414</a>]</span>. Such a document
+would serve as a guide and reference for implementers and any other parties who desire information contained in the 'NETCONF/RESTCONF/YANG'-related RFCs.<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-5.2-3">Likewise, reassess the value of some IETF proposals vs. competing/emerging solutions would be useful (e.g., gRPC vs. YANG-Push).<a href="#section-5.2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="lack-of-agile-process-for-the-maintenance-of-yang-modules">
+<section id="section-5.3">
+        <h3 id="name-lack-of-agile-process-for-t">
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-lack-of-agile-process-for-t" class="section-name selfRef">Lack of Agile Process for (The Maintenance of) YANG Modules</a>
+        </h3>
+<p id="section-5.3-1">RFCs might not be suited for documenting YANG modules (it takes much too long, especiallly for updates). In the meantime, there is a need for
+"reference models" and "sufficiently stable models". An
+hybrid approach might be investigated for documenting IETF-
+endorsed YANG modules, such as considering an RFC to
+describe the initial module sketch and objectives and an
+official IETF repository for maintaining intermediate YANG
+versions.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="integration-complexity">
+<section id="section-5.4">
+        <h3 id="name-integration-complexity">
+<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-integration-complexity" class="section-name selfRef">Integration Complexity</a>
+        </h3>
+<p id="section-5.4-1"><span><a href="https://rfc-editor.org/rfc/rfc3535#section-3" class="relref">Section 3</a> of [<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> describes a set of network operator requirements. One of the requirements is the ease of use which, according to <span><a href="https://rfc-editor.org/rfc/rfc6244#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC6244" class="cite xref">RFC6244</a>]</span>, is addressed by NETCONF and YANG. For configuration this holds true, for network observability it is unfortunately not yet. This has been confirmed with a set of network operators asking how long it takes from subscribing YANG data to make it accessible to the operator. Minutes, Hours, Days, or Weeks. None of them answered Minutes or Hours. All of them responded Days or Weeks. Hinting manual post processing of YANG data.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+<p id="section-5.4-2">Collecting YANG metrics from networks is already a struggle due to late arrival of <span>[<a href="#RFC8639" class="cite xref">RFC8639</a>]</span>, <span>[<a href="#RFC8640" class="cite xref">RFC8640</a>]</span>, <span>[<a href="#RFC8641" class="cite xref">RFC8641</a>]</span>, <span>[<a href="#I-D.ietf-netconf-https-notif" class="cite xref">I-D.ietf-netconf-https-notif</a>]</span>, and <span>[<a href="#I-D.ietf-netconf-udp-notif" class="cite xref">I-D.ietf-netconf-udp-notif</a>]</span> for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in <span>[<a href="#I-D.openconfig-rtgwg-gnmi-spec" class="cite xref">I-D.openconfig-rtgwg-gnmi-spec</a>]</span> to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems due to the lack of standardization, specifically for the metadata which would ensure machine readability.<a href="#section-5.4-2" class="pilcrow">¶</a></p>
+<p id="section-5.4-3">When a set of network operators where asked to where operational YANG data needs to be integrated to, the answer homogeneously was Apache Kafka Message Broker and Time Series Databases. There is a need to specify how YANG-Push can be integrated into Apache Kafka and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantic validate able to ensure a consistent data processing.<a href="#section-5.4-3" class="pilcrow">¶</a></p>
+<p id="section-5.4-4">Another challenge is that the subscribed YANG data referenced with datastore-subtree-filter or datastore-xpath-filter breaks semantic integrity which needs to be addressed by either updating <span><a href="https://rfc-editor.org/rfc/rfc8641#section-4" class="relref">Section 4</a> of [<a href="#RFC8641" class="cite xref">RFC8641</a>]</span> or proposing a new YANG module being used at the YANG-Push receiver.<a href="#section-5.4-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="yang-formatted-data-manipulation">
+<section id="section-5.5">
+        <h3 id="name-yang-formatted-data-manipul">
+<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-yang-formatted-data-manipul" class="section-name selfRef">YANG-formatted Data Manipulation</a>
+        </h3>
+<p id="section-5.5-1">The use of a flat tree hierarchy in YANG models may induce some performance issues compared to other graph models. See, for example, <span>[<a href="#ODL" class="cite xref">ODL</a>]</span>.<a href="#section-5.5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="translation-and-mapping-between-servicenetwork-and-device-models">
+<section id="section-5.6">
+        <h3 id="name-translation-and-mapping-bet">
+<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-translation-and-mapping-bet" class="section-name selfRef">Translation and Mapping Between Service/Network and Device Models</a>
+        </h3>
+<p id="section-5.6-1">TBC.<a href="#section-5.6-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="inconsistent-data-structures-in-network-protocols-for-data-export">
+<section id="section-5.7">
+        <h3 id="name-inconsistent-data-structure">
+<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-inconsistent-data-structure" class="section-name selfRef">(In)Consistent Data Structures in Network Protocols for Data Export</a>
+        </h3>
+<p id="section-5.7-1">Network Telemetry, as described in <span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span>, involve a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) <span>[<a href="#RFC7854" class="cite xref">RFC7854</a>]</span> adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX <span>[<a href="#RFC7011" class="cite xref">RFC7011</a>]</span><span>[<a href="#RFC7012" class="cite xref">RFC7012</a>]</span> can be applied according to <span>[<a href="#RFC5472" class="cite xref">RFC5472</a>]</span> to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in <span>[<a href="#RFC5476" class="cite xref">RFC5476</a>]</span> and applied to IPFIX in <span>[<a href="#RFC5477" class="cite xref">RFC5477</a>]</span> and aggregation as defined in <span>[<a href="#RFC7015" class="cite xref">RFC7015</a>]</span> for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.<a href="#section-5.7-1" class="pilcrow">¶</a></p>
+<p id="section-5.7-2"><span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span> is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly good aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In <span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span> timestamps are optional and sysName <span>[<a href="#RFC1213" class="cite xref">RFC1213</a>]</span> is only carried in the BMP initiation message (<span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span>), while the message header of IPFIX defined in <span><a href="https://rfc-editor.org/rfc/rfc7011#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7011" class="cite xref">RFC7011</a>]</span> lacks the sysName definition.<a href="#section-5.7-2" class="pilcrow">¶</a></p>
+<p id="section-5.7-3">The lack of information from where the data is being pushed from is only known to the Network Telemetry data collection due to the transport session being established from the network node exporting the information. When Network Telemetry messages are being transformed and forwarded, this information is being lost. Therefore, it is common among network operators to augment sysName and other metadata at the data collection.<a href="#section-5.7-3" class="pilcrow">¶</a></p>
+<p id="section-5.7-4">The same common principle applies to when observation timestamping is missing in the Network Telemetry message. Since the data collection is the closest element to the network, a time stamp is added to give the network operator at least the information when the Network Telemetry message was collected. However, since Network Telemetry addresses real-time streaming needs, this is often not accurate enough for data correlation.<a href="#section-5.7-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="proprietary-yang-modules-cli-and-limited-abstraction">
+<section id="section-5.8">
+        <h3 id="name-proprietary-yang-modules-cl">
+<a href="#section-5.8" class="section-number selfRef">5.8. </a><a href="#name-proprietary-yang-modules-cl" class="section-name selfRef">Proprietary YANG Modules, CLI, and Limited Abstraction</a>
+        </h3>
+<p id="section-5.8-1">Pluggins/Proxy YANG/CLI is still the rule in many operations.<a href="#section-5.8-1" class="pilcrow">¶</a></p>
+<p id="section-5.8-2">Complexity in dev the pluggins (as you need to cover many OS/vendors).<a href="#section-5.8-2" class="pilcrow">¶</a></p>
+<p id="section-5.8-3">Network models for the realization provides some "level" of abstraction and then automations.<a href="#section-5.8-3" class="pilcrow">¶</a></p>
+<p id="section-5.8-4">TBC.<a href="#section-5.8-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="distinct-networks-distinct-management-requirements">
+<section id="section-5.9">
+        <h3 id="name-distinct-networks-distinct-">
+<a href="#section-5.9" class="section-number selfRef">5.9. </a><a href="#name-distinct-networks-distinct-" class="section-name selfRef">Distinct Networks, Distinct Management Requirements</a>
+        </h3>
+<p id="section-5.9-1">From the time RFC 3535 was released up to now, new kind of services and applications have been developed and deployed over the time, with very diverse, and some times contradicting, requirements. Those services have been engineered on top of multi-service networks for the sake of efficiency and simplicity, accommodating such a variety of needs. As a result, services requiring mobility, data replication, large capacity, adaptability, multi-path support, determinism, etc., coexist on the same shared network, needing from it mechanisms for graceful operation.<a href="#section-5.9-1" class="pilcrow">¶</a></p>
+<p id="section-5.9-2">Likewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.<a href="#section-5.9-2" class="pilcrow">¶</a></p>
+<p id="section-5.9-3">This reality is different from the one existing at the time of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services.<a href="#section-5.9-3" class="pilcrow">¶</a></p>
+<p id="section-5.9-4">Also, some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) <span>[<a href="#RFC838" class="cite xref">RFC838</a>]</span>.<a href="#section-5.9-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="implications-of-external-dependency">
+<section id="section-5.10">
+        <h3 id="name-implications-of-external-de">
+<a href="#section-5.10" class="section-number selfRef">5.10. </a><a href="#name-implications-of-external-de" class="section-name selfRef">Implications of External Dependency</a>
+        </h3>
+<p id="section-5.10-1">Networks are being updated to abandon the silo approach from the past towards an increasing convergence. Specifically, there are trends towards a tighter interaction and integration of different technologies previously considered as totally separated from an operational perspective. Examples of that trends are the IP and Optical integration (e.g., the introduction of colored interfaces on routers), or the extension of deterministic-behavior features to Layer 3 networks. This kind of convergence in most cases creates dependencies on the conventional network management features, which require to incorporate or integrate functionality from other technological domains.<a href="#section-5.10-1" class="pilcrow">¶</a></p>
+<p id="section-5.10-2">Furthermore, such convergence is also reflected on the need of interacting and interworking with distinct network parts participating in the end-to-end service delivery. Mobile access, fixed access, data center, enterprise, radio functional split (i.e., fronthaul and midhaul), neutral exchanges, intensive data networks (e.g., scientific academic networks), content distribution, etc., represent network parts constituent of end-to-end services that can impose dependencies of the management of an intermediate network.<a href="#section-5.10-2" class="pilcrow">¶</a></p>
+<p id="section-5.10-3">That convergence shown the last years also implies the need of an up-to-date refresh of management capabilities and tooling of the conventional networks. Also, it highlights the need to easily map the data models that are used to manage each specific segment.<a href="#section-5.10-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="too-much-time-between-publication-of-new-networking-functionality-and-the-associated-yang">
+<section id="section-5.11">
+        <h3 id="name-too-much-time-between-publi">
+<a href="#section-5.11" class="section-number selfRef">5.11. </a><a href="#name-too-much-time-between-publi" class="section-name selfRef">Too Much Time Between Publication of New Networking Functionality and the Associated YANG</a>
+        </h3>
+<p id="section-5.11-1">For example, <span>[<a href="#RFC8667" class="cite xref">RFC8667</a>]</span> (IS-IS extensions for SR) was published in December 2019, while <span>[<a href="#I-D.ietf-isis-sr-yang" class="cite xref">I-D.ietf-isis-sr-yang</a>]</span> will be published ~5 years after.<a href="#section-5.11-1" class="pilcrow">¶</a></p>
+<p id="section-5.11-2">Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
+That may slow down the protocol specification, though.<a href="#section-5.11-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="open-source-tools">
+<section id="section-5.12">
+        <h3 id="name-open-source-tools">
+<a href="#section-5.12" class="section-number selfRef">5.12. </a><a href="#name-open-source-tools" class="section-name selfRef">Open-source Tools</a>
+        </h3>
+<p id="section-5.12-1">While there are open-source implementations for NETCONF (e.g., NETOPEER), the gRPC/gNMI suite seems to have more support for tools on the client side.
+For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).<a href="#section-5.12-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="another-item">
+<section id="section-5.13">
+        <h3 id="name-another-item">
+<a href="#section-5.13" class="section-number selfRef">5.13. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
+        </h3>
+<p id="section-5.13-1">TBC.<a href="#section-5.13-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="some-individual-assessments">
+<section id="section-6">
+      <h2 id="name-some-individual-assessments">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-some-individual-assessments" class="section-name selfRef">Some Individual Assessments</a>
+      </h2>
+<p id="section-6-1">This section captures some early assessments. The goal is first to capture received feedback, challenge it, and then structure it.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<div id="what-went-well">
+<section id="section-6.1">
+        <h3 id="name-what-went-well">
+<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-what-went-well" class="section-name selfRef">What Went Well</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-6.1-1.1">
+            <p id="section-6.1-1.1.1">An overview of current and next possible technologies were given<a href="#section-6.1-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.1-1.2">
+            <p id="section-6.1-1.2.1">Some rather technical, technology focused input from operators were collected<a href="#section-6.1-1.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.1-1.3">
+            <p id="section-6.1-1.3.1">Some protocols were early on de-scoped and described why<a href="#section-6.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="what-went-wrong">
+<section id="section-6.2">
+        <h3 id="name-what-went-wrong">
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-what-went-wrong" class="section-name selfRef">What Went Wrong</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-6.2-1.1">
+            <p id="section-6.2-1.1.1">Not enough implementers (software developers implementing the standards) and users (network operators using the network management software developed based on standards) were present and were well organized. That lead to standards which are technical not implementable and implementation that are not applicable or bringing not enough added value.<a href="#section-6.2-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.2">
+            <p id="section-6.2-1.2.1">IETF is not the expert community in data engineering. The experts are in the data industry. Without them, integration in data processing chains like Data Mesh is going to be a challenge.<a href="#section-6.2-1.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.3">
+            <p id="section-6.2-1.3.1">Closed Loop Operation and Intend Based Networking were not considered as a use case or overall non-technology related use cases were not considered.<a href="#section-6.2-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.4">
+            <p id="section-6.2-1.4.1">Most drawn conclusions were not explained why the IETF community came to such conclusions.<a href="#section-6.2-1.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.2-1.5">
+            <p id="section-6.2-1.5.1">We were looking at the past and present and not into the distant future. What do we need in 5-10 years?<a href="#section-6.2-1.5.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="where-can-be-improved">
+<section id="section-6.3">
+        <h3 id="name-where-can-be-improved">
+<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-where-can-be-improved" class="section-name selfRef">Where Can Be Improved</a>
+        </h3>
+<ul class="normal">
+<li class="normal" id="section-6.3-1.1">
+            <p id="section-6.3-1.1.1">Focus on use cases. What goal do we need to fulfill and who can describe best: Network Operators<a href="#section-6.3-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.3-1.2">
+            <p id="section-6.3-1.2.1">Focus on how those use cases could be implemented best and what standards would help: Software and Data Engineers<a href="#section-6.3-1.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.3-1.3">
+            <p id="section-6.3-1.3.1">Look at current standards and see wherever those standards contribute to those implementations: IETF community<a href="#section-6.3-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.3-1.4">
+            <p id="section-6.3-1.4.1">List what is missing and analyze why it is missing: IETF community<a href="#section-6.3-1.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.3-1.5">
+            <p id="section-6.3-1.5.1">Create an eco-systems of software developer and network operators which share their open source tools: IETF community<a href="#section-6.3-1.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-6.3-1.6">
+            <p id="section-6.3-1.6.1">Mandate that no network management standard is being defined without having at least two reference implementations and help the IETF community to achieve that: IESG<a href="#section-6.3-1.6.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+</section>
+</div>
+<div id="perspectives-recommendations">
+<section id="section-7">
+      <h2 id="name-perspectives-recommendation">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-perspectives-recommendation" class="section-name selfRef">Perspectives &amp; Recommendations</a>
+      </h2>
+<p id="section-7-1">TBC<a href="#section-7-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-8">
+      <h2 id="name-security-considerations">
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-8-1">TBC.<a href="#section-8-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="iana-considerations">
+<section id="section-9">
+      <h2 id="name-iana-considerations">
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-9-1">This document has no IANA actions.<a href="#section-9-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-10">
+      <h2 id="name-informative-references">
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+      </h2>
+<dl class="references">
+<dt id="BCP127">[BCP127]</dt>
+      <dd>
+<div class="refInstance">Best Current Practice 127, <span>&lt;<a href="https://www.rfc-editor.org/info/bcp127">https://www.rfc-editor.org/info/bcp127</a>&gt;</span>.<br><span>At the time of writing, this BCP comprises the following:</span>
+</div>
+<div class="refInstance" id="RFC4787">
+          <span class="refAuthor">Audet, F., Ed.</span> and <span class="refAuthor">C. Jennings</span>, <span class="refTitle">"Network Address Translation (NAT) Behavioral Requirements for Unicast UDP"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 4787</span>, <span class="seriesInfo">DOI 10.17487/RFC4787</span>, <time datetime="2007-01" class="refDate">January 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4787">https://www.rfc-editor.org/info/rfc4787</a>&gt;</span>. </div>
+<div class="refInstance" id="RFC6888">
+          <span class="refAuthor">Perreault, S., Ed.</span>, <span class="refAuthor">Yamagata, I.</span>, <span class="refAuthor">Miyakawa, S.</span>, <span class="refAuthor">Nakagawa, A.</span>, and <span class="refAuthor">H. Ashida</span>, <span class="refTitle">"Common Requirements for Carrier-Grade NATs (CGNs)"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 6888</span>, <span class="seriesInfo">DOI 10.17487/RFC6888</span>, <time datetime="2013-04" class="refDate">April 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6888">https://www.rfc-editor.org/info/rfc6888</a>&gt;</span>. </div>
+<div class="refInstance" id="RFC7857">
+          <span class="refAuthor">Penno, R.</span>, <span class="refAuthor">Perreault, S.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Sivakumar, S.</span>, and <span class="refAuthor">K. Naito</span>, <span class="refTitle">"Updates to Network Address Translation (NAT) Behavioral Requirements"</span>, <span class="seriesInfo">BCP 127</span>, <span class="seriesInfo">RFC 7857</span>, <span class="seriesInfo">DOI 10.17487/RFC7857</span>, <time datetime="2016-04" class="refDate">April 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7857">https://www.rfc-editor.org/info/rfc7857</a>&gt;</span>. </div>
+</dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-bmwg-containerized-infra">[I-D.ietf-bmwg-containerized-infra]</dt>
+      <dd>
+<span class="refAuthor">Ngọc, T. M.</span>, <span class="refAuthor">Rao, S.</span>, <span class="refAuthor">Lee, J.</span>, and <span class="refAuthor">Y. Kim</span>, <span class="refTitle">"Considerations for Benchmarking Network Performance in Containerized Infrastructures"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-bmwg-containerized-infra-01</span>, <time datetime="2024-06-17" class="refDate">17 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-01">https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-01</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-core-comi">[I-D.ietf-core-comi]</dt>
+      <dd>
+<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-17</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-17">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-17</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-core-sid">[I-D.ietf-core-sid]</dt>
+      <dd>
+<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Petrov, I.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"YANG Schema Item iDentifier (YANG SID)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-sid-24</span>, <time datetime="2023-12-22" class="refDate">22 December 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24">https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-isis-sr-yang">[I-D.ietf-isis-sr-yang]</dt>
+      <dd>
+<span class="refAuthor">Litkowski, S.</span>, <span class="refAuthor">Qu, Y.</span>, <span class="refAuthor">Sarkar, P.</span>, <span class="refAuthor">Chen, H.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A YANG Data Model for IS-IS Segment Routing for the MPLS Data Plane"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-isis-sr-yang-21</span>, <time datetime="2024-01-22" class="refDate">22 January 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-yang-21">https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-yang-21</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-netconf-https-notif">[I-D.ietf-netconf-https-notif]</dt>
+      <dd>
+<span class="refAuthor">Jethanandani, M.</span> and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"An HTTPS-based Transport for YANG Notifications"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-https-notif-15</span>, <time datetime="2024-02-01" class="refDate">1 February 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-https-notif-15">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-https-notif-15</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-netconf-udp-notif">[I-D.ietf-netconf-udp-notif]</dt>
+      <dd>
+<span class="refAuthor">Zheng, G.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Graf, T.</span>, <span class="refAuthor">Francois, P.</span>, <span class="refAuthor">Feng, A. H.</span>, and <span class="refAuthor">P. Lucente</span>, <span class="refTitle">"UDP-based Transport for Configured Subscriptions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-udp-notif-12</span>, <time datetime="2024-01-21" class="refDate">21 January 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-12">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-12</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.openconfig-rtgwg-gnmi-spec">[I-D.openconfig-rtgwg-gnmi-spec]</dt>
+      <dd>
+<span class="refAuthor">Shakir, R.</span>, <span class="refAuthor">Shaikh, A.</span>, <span class="refAuthor">Borman, P.</span>, <span class="refAuthor">Hines, M.</span>, <span class="refAuthor">Lebsack, C.</span>, and <span class="refAuthor">C. Morrow</span>, <span class="refTitle">"gRPC Network Management Interface (gNMI)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-openconfig-rtgwg-gnmi-spec-01</span>, <time datetime="2018-03-05" class="refDate">5 March 2018</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01">https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ODL">[ODL]</dt>
+      <dd>
+<span class="refTitle">"Graph Model Overview"</span>, <time datetime="2023" class="refDate">2023</time>, <span>&lt;<a href="https://docs.opendaylight.org/projects/bgpcep/en/latest/graph/graph-user-guide-graph-model.html#">https://docs.opendaylight.org/projects/bgpcep/en/latest/graph/graph-user-guide-graph-model.html#</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC1213">[RFC1213]</dt>
+      <dd>
+<span class="refAuthor">McCloghrie, K.</span> and <span class="refAuthor">M. Rose</span>, <span class="refTitle">"Management Information Base for Network Management of TCP/IP-based internets: MIB-II"</span>, <span class="seriesInfo">STD 17</span>, <span class="seriesInfo">RFC 1213</span>, <span class="seriesInfo">DOI 10.17487/RFC1213</span>, <time datetime="1991-03" class="refDate">March 1991</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1213">https://www.rfc-editor.org/rfc/rfc1213</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3084">[RFC3084]</dt>
+      <dd>
+<span class="refAuthor">Chan, K.</span>, <span class="refAuthor">Seligson, J.</span>, <span class="refAuthor">Durham, D.</span>, <span class="refAuthor">Gai, S.</span>, <span class="refAuthor">McCloghrie, K.</span>, <span class="refAuthor">Herzog, S.</span>, <span class="refAuthor">Reichmeyer, F.</span>, <span class="refAuthor">Yavatkar, R.</span>, and <span class="refAuthor">A. Smith</span>, <span class="refTitle">"COPS Usage for Policy Provisioning (COPS-PR)"</span>, <span class="seriesInfo">RFC 3084</span>, <span class="seriesInfo">DOI 10.17487/RFC3084</span>, <time datetime="2001-03" class="refDate">March 2001</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3084">https://www.rfc-editor.org/rfc/rfc3084</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3159">[RFC3159]</dt>
+      <dd>
+<span class="refAuthor">McCloghrie, K.</span>, <span class="refAuthor">Fine, M.</span>, <span class="refAuthor">Seligson, J.</span>, <span class="refAuthor">Chan, K.</span>, <span class="refAuthor">Hahn, S.</span>, <span class="refAuthor">Sahita, R.</span>, <span class="refAuthor">Smith, A.</span>, and <span class="refAuthor">F. Reichmeyer</span>, <span class="refTitle">"Structure of Policy Provisioning Information (SPPI)"</span>, <span class="seriesInfo">RFC 3159</span>, <span class="seriesInfo">DOI 10.17487/RFC3159</span>, <time datetime="2001-08" class="refDate">August 2001</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3159">https://www.rfc-editor.org/rfc/rfc3159</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3317">[RFC3317]</dt>
+      <dd>
+<span class="refAuthor">Chan, K.</span>, <span class="refAuthor">Sahita, R.</span>, <span class="refAuthor">Hahn, S.</span>, and <span class="refAuthor">K. McCloghrie</span>, <span class="refTitle">"Differentiated Services Quality of Service Policy Information Base"</span>, <span class="seriesInfo">RFC 3317</span>, <span class="seriesInfo">DOI 10.17487/RFC3317</span>, <time datetime="2003-03" class="refDate">March 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3317">https://www.rfc-editor.org/rfc/rfc3317</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3318">[RFC3318]</dt>
+      <dd>
+<span class="refAuthor">Sahita, R., Ed.</span>, <span class="refAuthor">Hahn, S.</span>, <span class="refAuthor">Chan, K.</span>, and <span class="refAuthor">K. McCloghrie</span>, <span class="refTitle">"Framework Policy Information Base"</span>, <span class="seriesInfo">RFC 3318</span>, <span class="seriesInfo">DOI 10.17487/RFC3318</span>, <time datetime="2003-03" class="refDate">March 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3318">https://www.rfc-editor.org/rfc/rfc3318</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3535">[RFC3535]</dt>
+      <dd>
+<span class="refAuthor">Schoenwaelder, J.</span>, <span class="refTitle">"Overview of the 2002 IAB Network Management Workshop"</span>, <span class="seriesInfo">RFC 3535</span>, <span class="seriesInfo">DOI 10.17487/RFC3535</span>, <time datetime="2003-05" class="refDate">May 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3535">https://www.rfc-editor.org/rfc/rfc3535</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3571">[RFC3571]</dt>
+      <dd>
+<span class="refAuthor">Rawlins, D.</span>, <span class="refAuthor">Kulkarni, A.</span>, <span class="refAuthor">Ho Chan, K.</span>, <span class="refAuthor">Bokaemper, M.</span>, and <span class="refAuthor">D. Dutt</span>, <span class="refTitle">"Framework Policy Information Base for Usage Feedback"</span>, <span class="seriesInfo">RFC 3571</span>, <span class="seriesInfo">DOI 10.17487/RFC3571</span>, <time datetime="2003-08" class="refDate">August 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3571">https://www.rfc-editor.org/rfc/rfc3571</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5472">[RFC5472]</dt>
+      <dd>
+<span class="refAuthor">Zseby, T.</span>, <span class="refAuthor">Boschi, E.</span>, <span class="refAuthor">Brownlee, N.</span>, and <span class="refAuthor">B. Claise</span>, <span class="refTitle">"IP Flow Information Export (IPFIX) Applicability"</span>, <span class="seriesInfo">RFC 5472</span>, <span class="seriesInfo">DOI 10.17487/RFC5472</span>, <time datetime="2009-03" class="refDate">March 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5472">https://www.rfc-editor.org/rfc/rfc5472</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5476">[RFC5476]</dt>
+      <dd>
+<span class="refAuthor">Claise, B., Ed.</span>, <span class="refAuthor">Johnson, A.</span>, and <span class="refAuthor">J. Quittek</span>, <span class="refTitle">"Packet Sampling (PSAMP) Protocol Specifications"</span>, <span class="seriesInfo">RFC 5476</span>, <span class="seriesInfo">DOI 10.17487/RFC5476</span>, <time datetime="2009-03" class="refDate">March 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5476">https://www.rfc-editor.org/rfc/rfc5476</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5477">[RFC5477]</dt>
+      <dd>
+<span class="refAuthor">Dietz, T.</span>, <span class="refAuthor">Claise, B.</span>, <span class="refAuthor">Aitken, P.</span>, <span class="refAuthor">Dressler, F.</span>, and <span class="refAuthor">G. Carle</span>, <span class="refTitle">"Information Model for Packet Sampling Exports"</span>, <span class="seriesInfo">RFC 5477</span>, <span class="seriesInfo">DOI 10.17487/RFC5477</span>, <time datetime="2009-03" class="refDate">March 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5477">https://www.rfc-editor.org/rfc/rfc5477</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5706">[RFC5706]</dt>
+      <dd>
+<span class="refAuthor">Harrington, D.</span>, <span class="refTitle">"Guidelines for Considering Operations and Management of New Protocols and Protocol Extensions"</span>, <span class="seriesInfo">RFC 5706</span>, <span class="seriesInfo">DOI 10.17487/RFC5706</span>, <time datetime="2009-11" class="refDate">November 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5706">https://www.rfc-editor.org/rfc/rfc5706</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6020">[RFC6020]</dt>
+      <dd>
+<span class="refAuthor">Bjorklund, M., Ed.</span>, <span class="refTitle">"YANG - A Data Modeling Language for the Network Configuration Protocol (NETCONF)"</span>, <span class="seriesInfo">RFC 6020</span>, <span class="seriesInfo">DOI 10.17487/RFC6020</span>, <time datetime="2010-10" class="refDate">October 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6020">https://www.rfc-editor.org/rfc/rfc6020</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6241">[RFC6241]</dt>
+      <dd>
+<span class="refAuthor">Enns, R., Ed.</span>, <span class="refAuthor">Bjorklund, M., Ed.</span>, <span class="refAuthor">Schoenwaelder, J., Ed.</span>, and <span class="refAuthor">A. Bierman, Ed.</span>, <span class="refTitle">"Network Configuration Protocol (NETCONF)"</span>, <span class="seriesInfo">RFC 6241</span>, <span class="seriesInfo">DOI 10.17487/RFC6241</span>, <time datetime="2011-06" class="refDate">June 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6241">https://www.rfc-editor.org/rfc/rfc6241</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6244">[RFC6244]</dt>
+      <dd>
+<span class="refAuthor">Shafer, P.</span>, <span class="refTitle">"An Architecture for Network Management Using NETCONF and YANG"</span>, <span class="seriesInfo">RFC 6244</span>, <span class="seriesInfo">DOI 10.17487/RFC6244</span>, <time datetime="2011-06" class="refDate">June 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6244">https://www.rfc-editor.org/rfc/rfc6244</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6353">[RFC6353]</dt>
+      <dd>
+<span class="refAuthor">Hardaker, W.</span>, <span class="refTitle">"Transport Layer Security (TLS) Transport Model for the Simple Network Management Protocol (SNMP)"</span>, <span class="seriesInfo">STD 78</span>, <span class="seriesInfo">RFC 6353</span>, <span class="seriesInfo">DOI 10.17487/RFC6353</span>, <time datetime="2011-07" class="refDate">July 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6353">https://www.rfc-editor.org/rfc/rfc6353</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6632">[RFC6632]</dt>
+      <dd>
+<span class="refAuthor">Ersue, M., Ed.</span> and <span class="refAuthor">B. Claise</span>, <span class="refTitle">"An Overview of the IETF Network Management Standards"</span>, <span class="seriesInfo">RFC 6632</span>, <span class="seriesInfo">DOI 10.17487/RFC6632</span>, <time datetime="2012-06" class="refDate">June 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6632">https://www.rfc-editor.org/rfc/rfc6632</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7011">[RFC7011]</dt>
+      <dd>
+<span class="refAuthor">Claise, B., Ed.</span>, <span class="refAuthor">Trammell, B., Ed.</span>, and <span class="refAuthor">P. Aitken</span>, <span class="refTitle">"Specification of the IP Flow Information Export (IPFIX) Protocol for the Exchange of Flow Information"</span>, <span class="seriesInfo">STD 77</span>, <span class="seriesInfo">RFC 7011</span>, <span class="seriesInfo">DOI 10.17487/RFC7011</span>, <time datetime="2013-09" class="refDate">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7011">https://www.rfc-editor.org/rfc/rfc7011</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7012">[RFC7012]</dt>
+      <dd>
+<span class="refAuthor">Claise, B., Ed.</span> and <span class="refAuthor">B. Trammell, Ed.</span>, <span class="refTitle">"Information Model for IP Flow Information Export (IPFIX)"</span>, <span class="seriesInfo">RFC 7012</span>, <span class="seriesInfo">DOI 10.17487/RFC7012</span>, <time datetime="2013-09" class="refDate">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7012">https://www.rfc-editor.org/rfc/rfc7012</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7015">[RFC7015]</dt>
+      <dd>
+<span class="refAuthor">Trammell, B.</span>, <span class="refAuthor">Wagner, A.</span>, and <span class="refAuthor">B. Claise</span>, <span class="refTitle">"Flow Aggregation for the IP Flow Information Export (IPFIX) Protocol"</span>, <span class="seriesInfo">RFC 7015</span>, <span class="seriesInfo">DOI 10.17487/RFC7015</span>, <time datetime="2013-09" class="refDate">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7015">https://www.rfc-editor.org/rfc/rfc7015</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7149">[RFC7149]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M.</span> and <span class="refAuthor">C. Jacquenet</span>, <span class="refTitle">"Software-Defined Networking: A Perspective from within a Service Provider Environment"</span>, <span class="seriesInfo">RFC 7149</span>, <span class="seriesInfo">DOI 10.17487/RFC7149</span>, <time datetime="2014-03" class="refDate">March 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7149">https://www.rfc-editor.org/rfc/rfc7149</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7414">[RFC7414]</dt>
+      <dd>
+<span class="refAuthor">Duke, M.</span>, <span class="refAuthor">Braden, R.</span>, <span class="refAuthor">Eddy, W.</span>, <span class="refAuthor">Blanton, E.</span>, and <span class="refAuthor">A. Zimmermann</span>, <span class="refTitle">"A Roadmap for Transmission Control Protocol (TCP) Specification Documents"</span>, <span class="seriesInfo">RFC 7414</span>, <span class="seriesInfo">DOI 10.17487/RFC7414</span>, <time datetime="2015-02" class="refDate">February 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7414">https://www.rfc-editor.org/rfc/rfc7414</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7426">[RFC7426]</dt>
+      <dd>
+<span class="refAuthor">Haleplidis, E., Ed.</span>, <span class="refAuthor">Pentikousis, K., Ed.</span>, <span class="refAuthor">Denazis, S.</span>, <span class="refAuthor">Hadi Salim, J.</span>, <span class="refAuthor">Meyer, D.</span>, and <span class="refAuthor">O. Koufopavlou</span>, <span class="refTitle">"Software-Defined Networking (SDN): Layers and Architecture Terminology"</span>, <span class="seriesInfo">RFC 7426</span>, <span class="seriesInfo">DOI 10.17487/RFC7426</span>, <time datetime="2015-01" class="refDate">January 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7426">https://www.rfc-editor.org/rfc/rfc7426</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7854">[RFC7854]</dt>
+      <dd>
+<span class="refAuthor">Scudder, J., Ed.</span>, <span class="refAuthor">Fernando, R.</span>, and <span class="refAuthor">S. Stuart</span>, <span class="refTitle">"BGP Monitoring Protocol (BMP)"</span>, <span class="seriesInfo">RFC 7854</span>, <span class="seriesInfo">DOI 10.17487/RFC7854</span>, <time datetime="2016-06" class="refDate">June 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7854">https://www.rfc-editor.org/rfc/rfc7854</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7860">[RFC7860]</dt>
+      <dd>
+<span class="refAuthor">Merkle, J., Ed.</span> and <span class="refAuthor">M. Lochter</span>, <span class="refTitle">"HMAC-SHA-2 Authentication Protocols in User-Based Security Model (USM) for SNMPv3"</span>, <span class="seriesInfo">RFC 7860</span>, <span class="seriesInfo">DOI 10.17487/RFC7860</span>, <time datetime="2016-04" class="refDate">April 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7860">https://www.rfc-editor.org/rfc/rfc7860</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7950">[RFC7950]</dt>
+      <dd>
+<span class="refAuthor">Bjorklund, M., Ed.</span>, <span class="refTitle">"The YANG 1.1 Data Modeling Language"</span>, <span class="seriesInfo">RFC 7950</span>, <span class="seriesInfo">DOI 10.17487/RFC7950</span>, <time datetime="2016-08" class="refDate">August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7950">https://www.rfc-editor.org/rfc/rfc7950</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7951">[RFC7951]</dt>
+      <dd>
+<span class="refAuthor">Lhotka, L.</span>, <span class="refTitle">"JSON Encoding of Data Modeled with YANG"</span>, <span class="seriesInfo">RFC 7951</span>, <span class="seriesInfo">DOI 10.17487/RFC7951</span>, <time datetime="2016-08" class="refDate">August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7951">https://www.rfc-editor.org/rfc/rfc7951</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8040">[RFC8040]</dt>
+      <dd>
+<span class="refAuthor">Bierman, A.</span>, <span class="refAuthor">Bjorklund, M.</span>, and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"RESTCONF Protocol"</span>, <span class="seriesInfo">RFC 8040</span>, <span class="seriesInfo">DOI 10.17487/RFC8040</span>, <time datetime="2017-01" class="refDate">January 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8040">https://www.rfc-editor.org/rfc/rfc8040</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC838">[RFC838]</dt>
+      <dd>
+<span class="refAuthor">Smallberg, D.</span>, <span class="refTitle">"Who talks TCP?"</span>, <span class="seriesInfo">RFC 838</span>, <span class="seriesInfo">DOI 10.17487/RFC0838</span>, <time datetime="1983-01" class="refDate">January 1983</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc838">https://www.rfc-editor.org/rfc/rfc838</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8568">[RFC8568]</dt>
+      <dd>
+<span class="refAuthor">Bernardos, CJ.</span>, <span class="refAuthor">Rahman, A.</span>, <span class="refAuthor">Zuniga, JC.</span>, <span class="refAuthor">Contreras, LM.</span>, <span class="refAuthor">Aranda, P.</span>, and <span class="refAuthor">P. Lynch</span>, <span class="refTitle">"Network Virtualization Research Challenges"</span>, <span class="seriesInfo">RFC 8568</span>, <span class="seriesInfo">DOI 10.17487/RFC8568</span>, <time datetime="2019-04" class="refDate">April 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8568">https://www.rfc-editor.org/rfc/rfc8568</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8639">[RFC8639]</dt>
+      <dd>
+<span class="refAuthor">Voit, E.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Gonzalez Prieto, A.</span>, <span class="refAuthor">Nilsen-Nygaard, E.</span>, and <span class="refAuthor">A. Tripathy</span>, <span class="refTitle">"Subscription to YANG Notifications"</span>, <span class="seriesInfo">RFC 8639</span>, <span class="seriesInfo">DOI 10.17487/RFC8639</span>, <time datetime="2019-09" class="refDate">September 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8639">https://www.rfc-editor.org/rfc/rfc8639</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8640">[RFC8640]</dt>
+      <dd>
+<span class="refAuthor">Voit, E.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Gonzalez Prieto, A.</span>, <span class="refAuthor">Nilsen-Nygaard, E.</span>, and <span class="refAuthor">A. Tripathy</span>, <span class="refTitle">"Dynamic Subscription to YANG Events and Datastores over NETCONF"</span>, <span class="seriesInfo">RFC 8640</span>, <span class="seriesInfo">DOI 10.17487/RFC8640</span>, <time datetime="2019-09" class="refDate">September 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8640">https://www.rfc-editor.org/rfc/rfc8640</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8641">[RFC8641]</dt>
+      <dd>
+<span class="refAuthor">Clemm, A.</span> and <span class="refAuthor">E. Voit</span>, <span class="refTitle">"Subscription to YANG Notifications for Datastore Updates"</span>, <span class="seriesInfo">RFC 8641</span>, <span class="seriesInfo">DOI 10.17487/RFC8641</span>, <time datetime="2019-09" class="refDate">September 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8641">https://www.rfc-editor.org/rfc/rfc8641</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8667">[RFC8667]</dt>
+      <dd>
+<span class="refAuthor">Previdi, S., Ed.</span>, <span class="refAuthor">Ginsberg, L., Ed.</span>, <span class="refAuthor">Filsfils, C.</span>, <span class="refAuthor">Bashandy, A.</span>, <span class="refAuthor">Gredler, H.</span>, and <span class="refAuthor">B. Decraene</span>, <span class="refTitle">"IS-IS Extensions for Segment Routing"</span>, <span class="seriesInfo">RFC 8667</span>, <span class="seriesInfo">DOI 10.17487/RFC8667</span>, <time datetime="2019-12" class="refDate">December 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8667">https://www.rfc-editor.org/rfc/rfc8667</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8791">[RFC8791]</dt>
+      <dd>
+<span class="refAuthor">Bierman, A.</span>, <span class="refAuthor">Björklund, M.</span>, and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"YANG Data Structure Extensions"</span>, <span class="seriesInfo">RFC 8791</span>, <span class="seriesInfo">DOI 10.17487/RFC8791</span>, <time datetime="2020-06" class="refDate">June 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8791">https://www.rfc-editor.org/rfc/rfc8791</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8969">[RFC8969]</dt>
+      <dd>
+<span class="refAuthor">Wu, Q., Ed.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Lopez, D.</span>, <span class="refAuthor">Xie, C.</span>, and <span class="refAuthor">L. Geng</span>, <span class="refTitle">"A Framework for Automating Service and Network Management with YANG"</span>, <span class="seriesInfo">RFC 8969</span>, <span class="seriesInfo">DOI 10.17487/RFC8969</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8969">https://www.rfc-editor.org/rfc/rfc8969</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9132">[RFC9132]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Shallow, J.</span>, and <span class="refAuthor">T. Reddy.K</span>, <span class="refTitle">"Distributed Denial-of-Service Open Threat Signaling (DOTS) Signal Channel Specification"</span>, <span class="seriesInfo">RFC 9132</span>, <span class="seriesInfo">DOI 10.17487/RFC9132</span>, <time datetime="2021-09" class="refDate">September 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9132">https://www.rfc-editor.org/rfc/rfc9132</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9232">[RFC9232]</dt>
+      <dd>
+<span class="refAuthor">Song, H.</span>, <span class="refAuthor">Qin, F.</span>, <span class="refAuthor">Martinez-Julia, P.</span>, <span class="refAuthor">Ciavaglia, L.</span>, and <span class="refAuthor">A. Wang</span>, <span class="refTitle">"Network Telemetry Framework"</span>, <span class="seriesInfo">RFC 9232</span>, <span class="seriesInfo">DOI 10.17487/RFC9232</span>, <time datetime="2022-05" class="refDate">May 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9232">https://www.rfc-editor.org/rfc/rfc9232</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9254">[RFC9254]</dt>
+      <dd>
+<span class="refAuthor">Veillette, M., Ed.</span>, <span class="refAuthor">Petrov, I., Ed.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"Encoding of Data Modeled with YANG in the Concise Binary Object Representation (CBOR)"</span>, <span class="seriesInfo">RFC 9254</span>, <span class="seriesInfo">DOI 10.17487/RFC9254</span>, <time datetime="2022-07" class="refDate">July 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9254">https://www.rfc-editor.org/rfc/rfc9254</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9315">[RFC9315]</dt>
+      <dd>
+<span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Ciavaglia, L.</span>, <span class="refAuthor">Granville, L. Z.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"Intent-Based Networking - Concepts and Definitions"</span>, <span class="seriesInfo">RFC 9315</span>, <span class="seriesInfo">DOI 10.17487/RFC9315</span>, <time datetime="2022-10" class="refDate">October 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9315">https://www.rfc-editor.org/rfc/rfc9315</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9456">[RFC9456]</dt>
+    <dd>
+<span class="refAuthor">Vaughn, K., Ed.</span>, <span class="refTitle">"Updates to the TLS Transport Model for SNMP"</span>, <span class="seriesInfo">RFC 9456</span>, <span class="seriesInfo">DOI 10.17487/RFC9456</span>, <time datetime="2023-11" class="refDate">November 2023</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9456">https://www.rfc-editor.org/rfc/rfc9456</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="acknowledgments">
+<section id="appendix-A">
+      <h2 id="name-acknowledgments">
+<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-B">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Mohamed Boucadair</span></div>
+<div dir="auto" class="left"><span class="org">Orange</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:mohamed.boucadair@orange.com" class="email">mohamed.boucadair@orange.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Luis Miguel Contreras Murillo</span></div>
+<div dir="auto" class="left"><span class="org">Telefonica</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:luismiguel.contrerasmurillo@telefonica.com" class="email">luismiguel.contrerasmurillo@telefonica.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Oscar Gonzalez de Dios</span></div>
+<div dir="auto" class="left"><span class="org">Telefonica</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:oscar.gonzalezdedios@telefonica.co" class="email">oscar.gonzalezdedios@telefonica.co</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Thomas Graf</span></div>
+<div dir="auto" class="left"><span class="org">Swisscom</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:thomas.graf@swisscom.com" class="email">thomas.graf@swisscom.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Reshad Rahman</span></div>
+<div dir="auto" class="left"><span class="org">Equinix</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:rrahman@equinix.com" class="email">rrahman@equinix.com</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
