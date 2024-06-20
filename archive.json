@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-18T01:10:50.177694+00:00",
+  "timestamp": "2024-06-20T01:08:58.825277+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -433,24 +433,26 @@
       "id": "PR_kwDOKqz7zs5xZc-A",
       "title": "individual assessment",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/11",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-06-04T09:03:14Z",
-      "updatedAt": "2024-06-04T09:03:14Z",
+      "updatedAt": "2024-06-18T13:19:47Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "7d3982585df528094cb13a2c5e65d4020533c6bc",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "Thomas-Assessment",
-      "headRefOid": "74d42e127bd19b6b34c4debc5e2171af9d9522db",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "58d2ad3d7e32454ed59cc5a57e6880472dff075a",
+      "closedAt": "2024-06-18T13:19:47Z",
+      "mergedAt": "2024-06-18T13:19:47Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "79848eea613a73bedb4001091636e7297425a6c4"
+      },
       "comments": [],
       "reviews": []
     }
