@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-30T01:16:24.057230+00:00",
+  "timestamp": "2024-07-02T01:11:16.556600+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -453,6 +453,58 @@
       "mergeCommit": {
         "oid": "79848eea613a73bedb4001091636e7297425a6c4"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOKqz7zs50HMNt",
+      "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/12",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated statements of the original workshop, writting them in past tense. Furthermore, two new observations added. One for commenting on the new paradigm of service provision, becoming cloud based (this comes from some discussion with Wim and Dean); another one related to the trend of exposing capabilities.",
+      "createdAt": "2024-07-01T19:52:47Z",
+      "updatedAt": "2024-07-01T19:52:47Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "79848eea613a73bedb4001091636e7297425a6c4",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "luismcontreras-patch-3",
+      "headRefOid": "dfd87c6f35d2b5968f344a168d0042d52512198a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOKqz7zs50HPa3",
+      "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/13",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added as new observation the network APIfication (e.g., peering API).",
+      "createdAt": "2024-07-01T20:02:09Z",
+      "updatedAt": "2024-07-01T20:02:09Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "79848eea613a73bedb4001091636e7297425a6c4",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "luismcontreras-patch-4",
+      "headRefOid": "d96826b053f8e472631e22f1a8b58dd0f5d4afb2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
