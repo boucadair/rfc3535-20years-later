@@ -521,8 +521,8 @@ Table of Contents
 5.14.  The Network Becomes Consumable
 
    Network connectivity can support tailored services in terms of SLOs,
-   for instance, by means of network slice services [RFC9543].  This
-   possibility of consuming the network flexibly and dynamically is made
+   for instance, by means of Network Slice Services [RFC9543].  This
+   approach of "consuming" the network flexibly and dynamically is made
    possible by enabling means of exposing network capabilities to either
    internal or external applications.  Then, network management is no
    longer limited to collect network status information, but it should
@@ -881,6 +881,12 @@ Table of Contents
    [RFC9456]  Vaughn, K., Ed., "Updates to the TLS Transport Model for
               SNMP", RFC 9456, DOI 10.17487/RFC9456, November 2023,
               <https://www.rfc-editor.org/rfc/rfc9456>.
+
+   [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
+              Makhijani, K., Contreras, L., and J. Tantsura, "A
+              Framework for Network Slices in Networks Built from IETF
+              Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
+              <https://www.rfc-editor.org/rfc/rfc9543>.
 
 Acknowledgments
 
