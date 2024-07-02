@@ -504,12 +504,18 @@ Table of Contents
 5.13.  Network APIfication
 
    APIs are getting momentum as means of interworking between parties,
-   also at the time of providing network services.  An example of that
-   is [I-D.ramseyer-grow-peering-api] for the purpose of dynamically
+   also at the time of providing network services.  As an example,
+   [I-D.ramseyer-grow-peering-api] defines an API for dynamically
    establishing BGP peering sessions between Autonomous Systems of
-   different administrative domains.  Thus, the definition of APIs,
-   independent of the realization of the supportive model, could be
-   generalize for fast development, prototyping, and validation.
+   different administrative domains.  That same objective is also
+   covered by the YANG data model defined in
+   [I-D.ietf-opsawg-teas-attachment-circuit] as exemplified in
+   Appendix A.10.  Tools such as YANG/OpenAPI transforms are key to
+   leverage existing data models and allow for better integration and
+   mapping to actual realization models.
+
+   Readily available API specifications could be generalized for fast
+   development, prototyping, and validation.
 
 5.14.  New Service Approaches
 
@@ -680,6 +686,14 @@ Table of Contents
               ietf-netconf-udp-notif-13, 27 June 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
               udp-notif-13>.
+
+   [I-D.ietf-opsawg-teas-attachment-circuit]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "YANG Data Models for Bearers and 'Attachment
+              Circuits'-as-a-Service (ACaaS)", Work in Progress,
+              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
+              13, 29 May 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-opsawg-teas-attachment-circuit-13>.
 
    [I-D.openconfig-rtgwg-gnmi-spec]
               Shakir, R., Shaikh, A., Borman, P., Hines, M., Lebsack,
