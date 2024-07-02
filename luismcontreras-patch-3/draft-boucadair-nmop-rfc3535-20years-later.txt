@@ -92,7 +92,7 @@ Table of Contents
      5.11. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
      5.12. Open-source Tools
-     5.13. New Service Paradigms
+     5.13. New Service Approaches
      5.14. The Network Becomes Consumable
      5.15. Another Item
    6.  Some Individual Assessments
@@ -500,7 +500,7 @@ Table of Contents
    device with gNMI.  NETCONF is not supported though (we need the XML
    tags).
 
-5.13.  New Service Paradigms
+5.13.  New Service Approaches
 
    The virtualization trend hava made posible to dynamically instantiate
    Service Functions (SFs) in distributed compute facilities in the form
