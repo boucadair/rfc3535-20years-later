@@ -1209,13 +1209,16 @@ requirements for network management operations.<a href="#section-abstract-2" cla
                 <p id="section-toc.1-1.5.2.12.1"><a href="#section-5.12" class="auto internal xref">5.12</a>. <a href="#name-open-source-tools" class="internal xref">Open-source Tools</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.13">
-                <p id="section-toc.1-1.5.2.13.1"><a href="#section-5.13" class="auto internal xref">5.13</a>. <a href="#name-new-service-approaches" class="internal xref">New Service Approaches</a></p>
+                <p id="section-toc.1-1.5.2.13.1"><a href="#section-5.13" class="auto internal xref">5.13</a>. <a href="#name-network-apification" class="internal xref">Network APIfication</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.14">
-                <p id="section-toc.1-1.5.2.14.1"><a href="#section-5.14" class="auto internal xref">5.14</a>. <a href="#name-the-network-becomes-consuma" class="internal xref">The Network Becomes Consumable</a></p>
+                <p id="section-toc.1-1.5.2.14.1"><a href="#section-5.14" class="auto internal xref">5.14</a>. <a href="#name-new-service-approaches" class="internal xref">New Service Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.15">
-                <p id="section-toc.1-1.5.2.15.1"><a href="#section-5.15" class="auto internal xref">5.15</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
+                <p id="section-toc.1-1.5.2.15.1"><a href="#section-5.15" class="auto internal xref">5.15</a>. <a href="#name-the-network-becomes-consuma" class="internal xref">The Network Becomes Consumable</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.16">
+                <p id="section-toc.1-1.5.2.16.1"><a href="#section-5.16" class="auto internal xref">5.16</a>. <a href="#name-another-item" class="internal xref">Another Item</a></p>
 </li>
             </ul>
 </li>
@@ -1646,29 +1649,38 @@ That may slow down the protocol specification, though.<a href="#section-5.11-2" 
 For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).<a href="#section-5.12-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="new-service-approaches">
+<div id="network-apification">
 <section id="section-5.13">
-        <h3 id="name-new-service-approaches">
-<a href="#section-5.13" class="section-number selfRef">5.13. </a><a href="#name-new-service-approaches" class="section-name selfRef">New Service Approaches</a>
+        <h3 id="name-network-apification">
+<a href="#section-5.13" class="section-number selfRef">5.13. </a><a href="#name-network-apification" class="section-name selfRef">Network APIfication</a>
         </h3>
-<p id="section-5.13-1">The virtualization trend hava made posible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this appraoch seems to be insuficient for future services demanding stringent requirements in terms of Service Level Objectives (SLOs).<a href="#section-5.13-1" class="pilcrow">¶</a></p>
-<p id="section-5.13-2">The distinct approaches followed in both the compute and the network environments makes necessary to define suitable mechanism for enabling an efficient interplay, while highly automating the overall service delivery procedure.<a href="#section-5.13-2" class="pilcrow">¶</a></p>
+<p id="section-5.13-1">APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, <span>[<a href="#I-D.ramseyer-grow-peering-api" class="cite xref">I-D.ramseyer-grow-peering-api</a>]</span> defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in <span>[<a href="#I-D.ietf-opsawg-teas-attachment-circuit" class="cite xref">I-D.ietf-opsawg-teas-attachment-circuit</a>]</span> as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.<a href="#section-5.13-1" class="pilcrow">¶</a></p>
+<p id="section-5.13-2">Readily available API specifications could be generalized for fast development, prototyping, and validation.<a href="#section-5.13-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="new-service-approaches">
+<section id="section-5.14">
+        <h3 id="name-new-service-approaches">
+<a href="#section-5.14" class="section-number selfRef">5.14. </a><a href="#name-new-service-approaches" class="section-name selfRef">New Service Approaches</a>
+        </h3>
+<p id="section-5.14-1">The virtualization trend hava made posible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this appraoch seems to be insuficient for future services demanding stringent requirements in terms of Service Level Objectives (SLOs).<a href="#section-5.14-1" class="pilcrow">¶</a></p>
+<p id="section-5.14-2">The distinct approaches followed in both the compute and the network environments makes necessary to define suitable mechanism for enabling an efficient interplay, while highly automating the overall service delivery procedure.<a href="#section-5.14-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="the-network-becomes-consumable">
-<section id="section-5.14">
+<section id="section-5.15">
         <h3 id="name-the-network-becomes-consuma">
-<a href="#section-5.14" class="section-number selfRef">5.14. </a><a href="#name-the-network-becomes-consuma" class="section-name selfRef">The Network Becomes Consumable</a>
+<a href="#section-5.15" class="section-number selfRef">5.15. </a><a href="#name-the-network-becomes-consuma" class="section-name selfRef">The Network Becomes Consumable</a>
         </h3>
-<p id="section-5.14-1">Network connectivity can support tailored services in terms of SLOs, for instance, by means of Network Slice Services <span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span>. This approach of "consuming" the network flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be now extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory based data).<a href="#section-5.14-1" class="pilcrow">¶</a></p>
+<p id="section-5.15-1">Network connectivity can support tailored services in terms of SLOs, for instance, by means of Network Slice Services <span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span>. This approach of "consuming" the network flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be now extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory based data).<a href="#section-5.15-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="another-item">
-<section id="section-5.15">
+<section id="section-5.16">
         <h3 id="name-another-item">
-<a href="#section-5.15" class="section-number selfRef">5.15. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
+<a href="#section-5.16" class="section-number selfRef">5.16. </a><a href="#name-another-item" class="section-name selfRef">Another Item</a>
         </h3>
-<p id="section-5.15-1">TBC.<a href="#section-5.15-1" class="pilcrow">¶</a></p>
+<p id="section-5.16-1">TBC.<a href="#section-5.16-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1816,9 +1828,17 @@ For example, "ygot" generates structures from YANG models and these can easily b
       <dd>
 <span class="refAuthor">Zheng, G.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Graf, T.</span>, <span class="refAuthor">Francois, P.</span>, <span class="refAuthor">Feng, A. H.</span>, and <span class="refAuthor">P. Lucente</span>, <span class="refTitle">"UDP-based Transport for Configured Subscriptions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-udp-notif-13</span>, <time datetime="2024-06-27" class="refDate">27 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-13">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-13</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="I-D.ietf-opsawg-teas-attachment-circuit">[I-D.ietf-opsawg-teas-attachment-circuit]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M.</span>, <span class="refAuthor">Roberts, R.</span>, <span class="refAuthor">de Dios, O. G.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"YANG Data Models for Bearers and 'Attachment Circuits'-as-a-Service (ACaaS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-13</span>, <time datetime="2024-05-29" class="refDate">29 May 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-teas-attachment-circuit-13">https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-teas-attachment-circuit-13</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="I-D.openconfig-rtgwg-gnmi-spec">[I-D.openconfig-rtgwg-gnmi-spec]</dt>
       <dd>
 <span class="refAuthor">Shakir, R.</span>, <span class="refAuthor">Shaikh, A.</span>, <span class="refAuthor">Borman, P.</span>, <span class="refAuthor">Hines, M.</span>, <span class="refAuthor">Lebsack, C.</span>, and <span class="refAuthor">C. Morrow</span>, <span class="refTitle">"gRPC Network Management Interface (gNMI)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-openconfig-rtgwg-gnmi-spec-01</span>, <time datetime="2018-03-05" class="refDate">5 March 2018</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01">https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ramseyer-grow-peering-api">[I-D.ramseyer-grow-peering-api]</dt>
+      <dd>
+<span class="refAuthor">Aguado, C.</span>, <span class="refAuthor">Griswold, M.</span>, <span class="refAuthor">Ramseyer, J.</span>, <span class="refAuthor">Servin, A. L.</span>, and <span class="refAuthor">T. Strickx</span>, <span class="refTitle">"Peering API"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ramseyer-grow-peering-api-05</span>, <time datetime="2024-05-30" class="refDate">30 May 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ramseyer-grow-peering-api-05">https://datatracker.ietf.org/doc/html/draft-ramseyer-grow-peering-api-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="ODL">[ODL]</dt>
       <dd>

@@ -92,9 +92,10 @@ Table of Contents
      5.11. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
      5.12. Open-source Tools
-     5.13. New Service Approaches
-     5.14. The Network Becomes Consumable
-     5.15. Another Item
+     5.13. Network APIfication
+     5.14. New Service Approaches
+     5.15. The Network Becomes Consumable
+     5.16. Another Item
    6.  Some Individual Assessments
      6.1.  What Went Well
      6.2.  What Went Wrong
@@ -500,7 +501,23 @@ Table of Contents
    device with gNMI.  NETCONF is not supported though (we need the XML
    tags).
 
-5.13.  New Service Approaches
+5.13.  Network APIfication
+
+   APIs are getting momentum as means of interworking between parties,
+   also at the time of providing network services.  As an example,
+   [I-D.ramseyer-grow-peering-api] defines an API for dynamically
+   establishing BGP peering sessions between Autonomous Systems of
+   different administrative domains.  That same objective is also
+   covered by the YANG data model defined in
+   [I-D.ietf-opsawg-teas-attachment-circuit] as exemplified in
+   Appendix A.10.  Tools such as YANG/OpenAPI transforms are key to
+   leverage existing data models and allow for better integration and
+   mapping to actual realization models.
+
+   Readily available API specifications could be generalized for fast
+   development, prototyping, and validation.
+
+5.14.  New Service Approaches
 
    The virtualization trend hava made posible to dynamically instantiate
    Service Functions (SFs) in distributed compute facilities in the form
@@ -518,7 +535,7 @@ Table of Contents
    enabling an efficient interplay, while highly automating the overall
    service delivery procedure.
 
-5.14.  The Network Becomes Consumable
+5.15.  The Network Becomes Consumable
 
    Network connectivity can support tailored services in terms of SLOs,
    for instance, by means of Network Slice Services [RFC9543].  This
@@ -530,7 +547,7 @@ Table of Contents
    functionality, and associated information (e.g., inventory based
    data).
 
-5.15.  Another Item
+5.16.  Another Item
 
    TBC.
 
@@ -670,6 +687,14 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
               udp-notif-13>.
 
+   [I-D.ietf-opsawg-teas-attachment-circuit]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "YANG Data Models for Bearers and 'Attachment
+              Circuits'-as-a-Service (ACaaS)", Work in Progress,
+              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
+              13, 29 May 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-opsawg-teas-attachment-circuit-13>.
+
    [I-D.openconfig-rtgwg-gnmi-spec]
               Shakir, R., Shaikh, A., Borman, P., Hines, M., Lebsack,
               C., and C. Morrow, "gRPC Network Management Interface
@@ -677,6 +702,13 @@ Table of Contents
               openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
               <https://datatracker.ietf.org/doc/html/draft-openconfig-
               rtgwg-gnmi-spec-01>.
+
+   [I-D.ramseyer-grow-peering-api]
+              Aguado, C., Griswold, M., Ramseyer, J., Servin, A. L., and
+              T. Strickx, "Peering API", Work in Progress, Internet-
+              Draft, draft-ramseyer-grow-peering-api-05, 30 May 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ramseyer-
+              grow-peering-api-05>.
 
    [ODL]      "Graph Model Overview", 2023,
               <https://docs.opendaylight.org/projects/bgpcep/en/latest/
