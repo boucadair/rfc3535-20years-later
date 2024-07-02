@@ -515,7 +515,8 @@ Table of Contents
 
    The distinct approaches followed in both the compute and the network
    environments makes necessary to define suitable mechanism for
-   enabling an efficient interplay.
+   enabling an efficient interplay, while highly automating the overall
+   service delivery procedure.
 
 5.14.  The Network Becomes Consumable
 
