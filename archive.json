@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-02T01:11:16.556600+00:00",
+  "timestamp": "2024-07-04T01:11:11.964159+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -461,52 +461,210 @@
       "id": "PR_kwDOKqz7zs50HMNt",
       "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/12",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "luismcontreras",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Updated statements of the original workshop, writting them in past tense. Furthermore, two new observations added. One for commenting on the new paradigm of service provision, becoming cloud based (this comes from some discussion with Wim and Dean); another one related to the trend of exposing capabilities.",
       "createdAt": "2024-07-01T19:52:47Z",
-      "updatedAt": "2024-07-01T19:52:47Z",
+      "updatedAt": "2024-07-02T06:30:32Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "79848eea613a73bedb4001091636e7297425a6c4",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "luismcontreras-patch-3",
-      "headRefOid": "dfd87c6f35d2b5968f344a168d0042d52512198a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "76295a27ce3d498f85a0c45e91d6919d5ce78164",
+      "closedAt": "2024-07-02T06:30:32Z",
+      "mergedAt": "2024-07-02T06:30:32Z",
+      "mergedBy": "luismcontreras",
+      "mergeCommit": {
+        "oid": "9e78ddf30810e762d17ca6e9c5e2230ce244547c"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs6AT6Af",
+          "commit": {
+            "abbreviatedOid": "dfd87c6"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-07-02T05:08:01Z",
+          "updatedAt": "2024-07-02T05:12:49Z",
+          "comments": [
+            {
+              "originalPosition": 72,
+              "body": "```suggestion\r\n## New Service Approaches\r\n```",
+              "createdAt": "2024-07-02T05:08:01Z",
+              "updatedAt": "2024-07-02T05:12:49Z"
+            },
+            {
+              "originalPosition": 76,
+              "body": "```suggestion\r\nThe distinct approaches followed in both the compute and the network environments makes necessary to define suitable mechanism for enabling an efficient interplay, while highly automating the overall service delivery procedure.\r\n```",
+              "createdAt": "2024-07-02T05:10:48Z",
+              "updatedAt": "2024-07-02T05:12:49Z"
+            },
+            {
+              "originalPosition": 81,
+              "body": "```suggestion\r\nNetwork connectivity can support tailored services in terms of SLOs, for instance, by means of Network Slice Services {{?RFC9543}}. This approach of \"consuming\" the network flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be now extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory based data).\r\n```",
+              "createdAt": "2024-07-02T05:12:36Z",
+              "updatedAt": "2024-07-02T05:12:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs6AUUG2",
+          "commit": {
+            "abbreviatedOid": "dfd87c6"
+          },
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-02T06:28:33Z",
+          "updatedAt": "2024-07-02T06:28:33Z",
+          "comments": [
+            {
+              "originalPosition": 72,
+              "body": "Ok!",
+              "createdAt": "2024-07-02T06:28:33Z",
+              "updatedAt": "2024-07-02T06:28:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs6AUUUb",
+          "commit": {
+            "abbreviatedOid": "dfd87c6"
+          },
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-02T06:29:06Z",
+          "updatedAt": "2024-07-02T06:29:06Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "ok!",
+              "createdAt": "2024-07-02T06:29:06Z",
+              "updatedAt": "2024-07-02T06:29:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs6AUUet",
+          "commit": {
+            "abbreviatedOid": "dfd87c6"
+          },
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-02T06:29:33Z",
+          "updatedAt": "2024-07-02T06:29:33Z",
+          "comments": [
+            {
+              "originalPosition": 81,
+              "body": "ok!",
+              "createdAt": "2024-07-02T06:29:33Z",
+              "updatedAt": "2024-07-02T06:29:33Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 13,
       "id": "PR_kwDOKqz7zs50HPa3",
       "title": "Update draft-boucadair-nmop-rfc3535-20years-later.md",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/13",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "luismcontreras",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Added as new observation the network APIfication (e.g., peering API).",
       "createdAt": "2024-07-01T20:02:09Z",
-      "updatedAt": "2024-07-01T20:02:09Z",
+      "updatedAt": "2024-07-02T06:53:24Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
-      "baseRefOid": "79848eea613a73bedb4001091636e7297425a6c4",
+      "baseRefOid": "9e78ddf30810e762d17ca6e9c5e2230ce244547c",
       "headRepository": "boucadair/rfc3535-20years-later",
       "headRefName": "luismcontreras-patch-4",
-      "headRefOid": "d96826b053f8e472631e22f1a8b58dd0f5d4afb2",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "28146c4982a24a4436872a56fcf2255c33ab3702",
+      "closedAt": "2024-07-02T06:53:24Z",
+      "mergedAt": "2024-07-02T06:53:24Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "22db90a789395a2f412494df33320302eb747d54"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs6AT_yI",
+          "commit": {
+            "abbreviatedOid": "d96826b"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks. \r\n\r\nBuilding on a data model is more future proof than using APIs verbs, etc and independent of how the request will be handled internally. We need tools to such as https://github.com/corenova/yang-swagger ",
+          "createdAt": "2024-07-02T05:28:32Z",
+          "updatedAt": "2024-07-02T05:31:05Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\nAPIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, {{?I-D.ramseyer-grow-peering-api}} defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in {{?I-D.ietf-opsawg-teas-attachment-circuit}} as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.\r\n\r\nReadily available API specifications could be generalized for fast development, prototyping, and validation. \r\n```",
+              "createdAt": "2024-07-02T05:28:32Z",
+              "updatedAt": "2024-07-02T05:31:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs6AUVUM",
+          "commit": {
+            "abbreviatedOid": "d96826b"
+          },
+          "author": "luismcontreras",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-02T06:31:26Z",
+          "updatedAt": "2024-07-02T06:31:26Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Ok!",
+              "createdAt": "2024-07-02T06:31:26Z",
+              "updatedAt": "2024-07-02T06:31:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKqz7zs6AUeAu",
+          "commit": {
+            "abbreviatedOid": "79d8c02"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-02T06:52:31Z",
+          "updatedAt": "2024-07-02T06:52:31Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\nAPIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, {{?I-D.ramseyer-grow-peering-api}} defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in {{?I-D.ietf-opsawg-teas-attachment-circuit}} as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.\r\n\r\nReadily available API specifications could be generalized for fast development, prototyping, and validation.\r\n```",
+              "createdAt": "2024-07-02T06:52:31Z",
+              "updatedAt": "2024-07-02T06:52:31Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
