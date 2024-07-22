@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                          L. M. C. Murillo
-Expires: 20 December 2024                                  O. G. D. Dios
+Expires: 23 January 2025                                   O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                            18 June 2024
+                                                            22 July 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 December 2024.
+   This Internet-Draft will expire on 23 January 2025.
 
 Copyright Notice
 
@@ -92,7 +92,10 @@ Table of Contents
      5.11. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
      5.12. Open-source Tools
-     5.13. Another Item
+     5.13. Network APIfication
+     5.14. New Service Approaches
+     5.15. The Network Becomes Consumable
+     5.16. Another Item
    6.  Some Individual Assessments
      6.1.  What Went Well
      6.2.  What Went Wrong
@@ -170,10 +173,10 @@ Table of Contents
 
    Section 6 of [RFC3535] includes the following recommendations:
 
-   1.  The workshop recommends that the IETF stop forcing working groups
-       to provide writable MIB modules.  It should be the decision of
-       the working group whether they want to provide writable objects
-       or not.
+   1.  The workshop recommended that the IETF stop forcing working
+       groups to provide writable MIB modules.  It should be the
+       decision of the working group whether they want to provide
+       writable objects or not.
 
        *Status Update*:  In 2014, the IESG published a statement
           Writable MIB Module, which states that:
@@ -184,21 +187,21 @@ Table of Contents
              configuration, and in consultation with the OPS ADs/MIB
              doctors.
 
-   2.  The workshop recommends that a group be formed to investigate why
-       current MIB modules do not contain all the objects needed by
+   2.  The workshop recommended that a group be formed to investigate
+       why current MIB modules do not contain all the objects needed by
        operators to monitor their networks.
 
        *Status Update*: xxx
 
-   3.  The workshop recommends that a group be formed to investigate why
-       the current SNMP protocol does not satisfy all the monitoring
+   3.  The workshop recommended that a group be formed to investigate
+       why the current SNMP protocol does not satisfy all the monitoring
        requirements of operators.
 
        *Status Update*: xxx
 
-   4.  The workshop recommends, with strong consensus from both protocol
-       developers and operators, that the IETF focus resources on the
-       standardization of configuration management mechanisms.
+   4.  The workshop recommended, with strong consensus from both
+       protocol developers and operators, that the IETF focus resources
+       on the standardization of configuration management mechanisms.
 
        *Status Update*:  NETCONF [RFC6241], RESTCONF [RFC8040], CORECONF
           [I-D.ietf-core-comi], YANG.
@@ -208,9 +211,9 @@ Table of Contents
           YANG can be used to define abstract data structures [RFC8791]
           that can be manipulated by other protocols (e.g., [RFC9132]).
 
-   5.  The workshop recommends, with strong consensus from the operators
-       and rough consensus from the protocol developers, that the IETF/
-       IRTF should spend resources on the development and
+   5.  The workshop recommended, with strong consensus from the
+       operators and rough consensus from the protocol developers, that
+       the IETF/IRTF should spend resources on the development and
        standardization of XML-based device configuration and management
        technologies (such as common XML configuration schemas, exchange
        protocols and so on).
@@ -218,16 +221,16 @@ Table of Contents
        *Status Update*:  OK.  This recommendation was also mirrored in
           other documents such as [RFC5706].
 
-   6.  The workshop recommends, with strong consensus from the operators
-       and rough consensus from the protocol developers, that the IETF/
-       IRTF should not spend resources on developing HTML-based or HTTP-
-       based methods for configuration management.
+   6.  The workshop recommended, with strong consensus from the
+       operators and rough consensus from the protocol developers, that
+       the IETF/IRTF should not spend resources on developing HTML-based
+       or HTTP-based methods for configuration management.
 
        *Status Update*:  The IETF deviated from this recommendation,
           e.g., RESTCONF [RFC8040] or CoAP Management Interface
           (CORECONF) [I-D.ietf-core-comi].
 
-   7.  The workshop recommends, with rough consensus from the operators
+   7.  The workshop recommended, with rough consensus from the operators
        and strong consensus from the protocol developers, that the IETF
        should continue to spend resources on the evolution of the SMI/
        SPPI data definition languages as being done in the SMIng working
@@ -235,7 +238,7 @@ Table of Contents
 
        *Status Update*:  SMIng WG was concluded in 2003-04-04.
 
-   8.  The workshop recommends, with split consensus from the operators
+   8.  The workshop recommended, with split consensus from the operators
        and rough consensus from the protocol developers, that the IETF
        should spend resources on fixing the MIB development and
        standardization processs.
@@ -498,7 +501,53 @@ Table of Contents
    device with gNMI.  NETCONF is not supported though (we need the XML
    tags).
 
-5.13.  Another Item
+5.13.  Network APIfication
+
+   APIs are getting momentum as means of interworking between parties,
+   also at the time of providing network services.  As an example,
+   [I-D.ramseyer-grow-peering-api] defines an API for dynamically
+   establishing BGP peering sessions between Autonomous Systems of
+   different administrative domains.  That same objective is also
+   covered by the YANG data model defined in
+   [I-D.ietf-opsawg-teas-attachment-circuit] as exemplified in
+   Appendix A.10.  Tools such as YANG/OpenAPI transforms are key to
+   leverage existing data models and allow for better integration and
+   mapping to actual realization models.
+
+   Readily available API specifications could be generalized for fast
+   development, prototyping, and validation.
+
+5.14.  New Service Approaches
+
+   The virtualization trend hava made posible to dynamically instantiate
+   Service Functions (SFs) in distributed compute facilities in the form
+   of virtual machines or containers, as micro-services.  The
+   instantiation of the SFs is governed by cloud management systems, as
+   it is the connectivity among the different instances or micro-
+   services.  That connectivity is typically realized by using overlay
+   mechanisms, without any further interaction with the network.
+   However, this appraoch seems to be insuficient for future services
+   demanding stringent requirements in terms of Service Level Objectives
+   (SLOs).
+
+   The distinct approaches followed in both the compute and the network
+   environments makes necessary to define suitable mechanism for
+   enabling an efficient interplay, while highly automating the overall
+   service delivery procedure.
+
+5.15.  The Network Becomes Consumable
+
+   Network connectivity can support tailored services in terms of SLOs,
+   for instance, by means of Network Slice Services [RFC9543].  This
+   approach of "consuming" the network flexibly and dynamically is made
+   possible by enabling means of exposing network capabilities to either
+   internal or external applications.  Then, network management is no
+   longer limited to collect network status information, but it should
+   be now extended to permit the exposure of resources, capabilities,
+   functionality, and associated information (e.g., inventory based
+   data).
+
+5.16.  Another Item
 
    TBC.
 
@@ -619,9 +668,9 @@ Table of Contents
               Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
               Tantsura, "A YANG Data Model for IS-IS Segment Routing for
               the MPLS Data Plane", Work in Progress, Internet-Draft,
-              draft-ietf-isis-sr-yang-21, 22 January 2024,
+              draft-ietf-isis-sr-yang-22, 1 July 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
-              yang-21>.
+              yang-22>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -634,9 +683,17 @@ Table of Contents
               Zheng, G., Zhou, T., Graf, T., Francois, P., Feng, A. H.,
               and P. Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-12, 21 January 2024,
+              ietf-netconf-udp-notif-14, 4 July 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-12>.
+              udp-notif-14>.
+
+   [I-D.ietf-opsawg-teas-attachment-circuit]
+              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
+              and B. Wu, "YANG Data Models for Bearers and 'Attachment
+              Circuits'-as-a-Service (ACaaS)", Work in Progress,
+              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
+              13, 29 May 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-opsawg-teas-attachment-circuit-13>.
 
    [I-D.openconfig-rtgwg-gnmi-spec]
               Shakir, R., Shaikh, A., Borman, P., Hines, M., Lebsack,
@@ -645,6 +702,13 @@ Table of Contents
               openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
               <https://datatracker.ietf.org/doc/html/draft-openconfig-
               rtgwg-gnmi-spec-01>.
+
+   [I-D.ramseyer-grow-peering-api]
+              Aguado, C., Griswold, M., Ramseyer, J., Servin, A. L., and
+              T. Strickx, "Peering API", Work in Progress, Internet-
+              Draft, draft-ramseyer-grow-peering-api-05, 30 May 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ramseyer-
+              grow-peering-api-05>.
 
    [ODL]      "Graph Model Overview", 2023,
               <https://docs.opendaylight.org/projects/bgpcep/en/latest/
@@ -849,6 +913,12 @@ Table of Contents
    [RFC9456]  Vaughn, K., Ed., "Updates to the TLS Transport Model for
               SNMP", RFC 9456, DOI 10.17487/RFC9456, November 2023,
               <https://www.rfc-editor.org/rfc/rfc9456>.
+
+   [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
+              Makhijani, K., Contreras, L., and J. Tantsura, "A
+              Framework for Network Slices in Networks Built from IETF
+              Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
+              <https://www.rfc-editor.org/rfc/rfc9543>.
 
 Acknowledgments
 
