@@ -86,20 +86,45 @@
    + (**NEW-OPS-REQ-INTEGRATION**) "The IETF could do more to help bridge the gap by providing standardized operational monitoring models to match the configuration models; at both the device level and the network/service level"
    + (**NEW-OPS-REQ-IT-INTEGRATION**) "The combination of the relevant TMF specifications and IETF YANG service models would offer service providers a comprehensive and powerful solution"
 4. [RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling](https://www.ietf.org/slides/slides-nemopsws-paper-rfc3535-years-later-an-update-of-operators-requirements-on-network-management-protocols-and-modelling-00.pdf)
-5. [Rethinking Standardisation of Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-rethinking-standardisation-of-network-management-00.pdf)
+
+   + NEW-OPS-REQ-STRENGTHEN-DM:  Section 5.1
+   + NEW -OPS-REQ-DM-RATIONALIZE:  Section 5.2
+   + NEW -OPS-REQ-EASE-EXPOSURE:  Section 5.3
+   + NEW -OPS-REQ-NW-API-DISCOVERY :  Section 5.3
+   + NEW-OPS-REQ-DM-API: Section 5.4
+   + NEW-OPS-REQ-PROFILING: Section 5.5
+   + NEW-OPS-REQ-REASSESS: Section 5.5
+   + NEW-OPS-REQ-AGILE: Section 5.6
+   + NEW-OPS-REQ-INTEGRATION: Section 5.7
+   + NEW-OPS-REQ-Y2KG: Section 5.8
+   + NEW-OPS-REQ-SCALE: Section 5.8
+   + NEW-OPS-REQ-LOSSLES: Section 5.9
+   + NEW-OPS-REQ-REUSABILITY: Section 5.10
+   + NEW-OPS-REQ-NEW-NEED:  Section 5.12
+   + NEW-OPS-REQ-UNSILO:  Section 5.13
+   + NEW-OPS-REQ-TIMELY-DM:  Section 5.14
+   + NEW-OPS-REQ-READILTY-IMPLEM: Section 5.15
+   + NEW-OPS-REQ-IT-INTEGRATION: Section 5.16.1
+   + NEW-OPS-REQ-IETF-TOOLS: Section 5.16.2
+   + NEW-OPS-REQ-CLIENT-TOOLS: Section 5.16.3
+   + NEW-OPS-REQ-BRIDGE: Section 5.16.4
+   + NEW-OPS-REQ-GLUE:  Section 5.17
+   + NEW-OPS-REQ-GUIDANCE:  Section 5.18
+   
+6. [Rethinking Standardisation of Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-rethinking-standardisation-of-network-management-00.pdf)
    + (**NEW-OPS-REQ-QUICK-BUT-WELL**) "need for iteration"
    + (**NEW-OPS-REQ-ITER**) "To keep operators engaged, the IETF needs a velocity and approach to standardisation that allows for business goals to be incrementally realised."
    + (**NEW-OPS-REQ-CLIENT-TOOLS**) "The need for open source"
    + (**NEW-OPS-REQ-GUIDANCE**) "There is little or no publications or standards consideration for how different IETF technologies might fit together. This places constraints on the relevance of the technologies that are developed in the IETF"
    + (**NEW-OPS-REQ-REUSABILITY**) "The need for reuse"
    + **NEW-OPS-REQ-ARCH** Added as a new req
-6. [Agile Incremental Driven Development for Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-agile-incremental-driven-development-for-network-management-00.pdf)
+7. [Agile Incremental Driven Development for Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-agile-incremental-driven-development-for-network-management-00.pdf)
    + (**NEW-OPS-REQ-ITER**) "Enable agile incremental driven development"
-7. [Evolving Challenges and Solutions in Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-evolving-challenges-and-solutions-in-network-management-00.pdf)
+8. [Evolving Challenges and Solutions in Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-evolving-challenges-and-solutions-in-network-management-00.pdf)
    + (**EW-OPS-REQ-SCALE**) "YANG Scalability"
    + "data sources should implement active streaming of data to post-processing systems immediately upon production, this will also ensure that closed-loop automation systems have access to data in near real-time."
    + (**NEW-OPS-REQ-REUSABILITY**) "There is potential for retrofitting Internet of Things (IoT) oriented protocols on telemetry or management-type signaling within the network management domain"
-8. [IAB NEMOPS Position Paper - Telefonica](https://www.ietf.org/slides/slides-nemopsws-paper-iab-nemops-position-paper-telefonica-00.pdf)
+9. [IAB NEMOPS Position Paper - Telefonica](https://www.ietf.org/slides/slides-nemopsws-paper-iab-nemops-position-paper-telefonica-00.pdf)
    + (**NEW-OPS-REQ-Y2KG**) "the YANG language should evolve towards a grounding on formal knowledge representation to achieve the semantic  interoperability level. Standards like Resource Definition Framework (RDF) and Web
 Ontology Language (OWL) from the Semantic Web may serve as reference in this area."
    + (**NEW-OPS-REQ-UNSILO**) "Fixed hierarchical structure limits the modeling of complex scenarios where relationships within the data are important...graph structures provide a
