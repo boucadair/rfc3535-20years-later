@@ -146,17 +146,17 @@ more flexible structure that can accommodate any kind of data"
 10. [Device Network Management - Current Status, and Future Direction](https://www.ietf.org/slides/slides-nemopsws-paper-device-network-management-current-status-and-future-direction-00.txt)
     
    + NETCONF-next:
-      * Be optimized to specify the minimum functionality required to manage network devices using YANG.
-      * Make all extra functionality optional, perhaps moving them to a separate document (e.g., XPath filtering)
-      * Consider if there is any legacy features that are no longer useful and could be removed altogether (e.g., shared candidate)
+      * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Be optimized to specify the minimum functionality required to manage network devices using YANG.
+      * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Make all extra functionality optional, perhaps moving them to a separate document (e.g., XPath filtering)
+      * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Consider if there is any legacy features that are no longer useful and could be removed altogether (e.g., shared candidate)
       * Model all NETCONF RPC operations in YANG data models.
       * (**NEW-OPS-REQ-NEW-NEED**) Support for JSON encoding of YANG data by default, but also allowing support for CBOR and XML.
    + YANG-next:
-      * Merging in the core versioning changes.
-      * Any small changes to the language that significantly improve modelling of difficult cases.
+      * (Protocol maintenance; not specific to the WS) Merging in the core versioning changes.
+      * (Protocol maintenance; not specific to the WS) Any small changes to the language that significantly improve modelling of difficult cases.
       * (**NEW-OPS-REQ-REUSABILITY**) Any small generalizations to the language that make it more widely usable (e.g., add a base float type).
       * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Deprecation of functionality that adds unnecessary complexity, to be removed in future version (e.g., sub-modules).
-      * Any bug fixes or omissions from the existing specification.
+      * (Protocol maintenance; not specific to the WS) Any bug fixes or omissions from the existing specification.
    + (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Develop a mechanism to define sets of IETF and other SDO YANG models that are known to work well together.
    + (**NEW-OPS-REQ-QUICK-BUT-WELL**) Define a more efficient mechanism for evolving YANG data models. Rather than having all of the YANG modules residing in RFCs, that
      are slow and expensive to update, it would be better to have a working copy of the IETF YANG models with fixes and enhancements applied, stored in github 
@@ -170,7 +170,7 @@ more flexible structure that can accommodate any kind of data"
 
 11. [Composable, Declarative, Reproducible, Verifiable Network and Service Configurations](https://www.ietf.org/slides/slides-nemopsws-paper-composable-declarative-reproducible-verifiable-network-and-service-configurations-00.pdf)
     
-   + (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Improve the YANG language and fix known limitations as well as add a package mechanism to YANG
+   + (Protocol maintenance; not specific to the WS) Improve the YANG language and fix known limitations as well as add a package mechanism to YANG
    + (**NEW-OPS-REQ-EASE-EXPOSURE**) Shift the focus from device configuration to network and service configuration:
       - (**NEW-OPS-REQ-REUSABILITY**) enable to define composable and reusable configuration components for specific services that do compose well into a larger network and service configurations.
       - (**NEW-OPS-REQ-LOSSLESS**) tackle declarative network and service configuration and allows the expression of specific deployment constraints which may translate to constraints that must be met by device configuration
