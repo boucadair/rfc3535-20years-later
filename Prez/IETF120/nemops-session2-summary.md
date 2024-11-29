@@ -68,6 +68,35 @@
 |NEW-OPS-REQ-NEW-NEED        |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |     TBC        |
 |NEW-OPS-REQ-GLUE            |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |     TBC        |
 
+# Categorization 
+
+|NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
+|----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
+|NEW-OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
+|NEW-OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
+|NEW-OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
+|NEW-OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
+|NEW-OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
+|NEW-OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
+|NEW-OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
+|NEW-OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
+|NEW-OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-CLIENT-TOOLS    |			 |              |      X		   |      X         |           |            	               |        X       |
+|NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
+|NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
+
 
 # Papers with Requirements
 
