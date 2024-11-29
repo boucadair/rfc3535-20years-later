@@ -14,7 +14,7 @@
 |NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts. Unlike service and network models, IETF-defined device models are not widely implemented|#3, #4|
 |NEW-OPS-REQ-QUICK-BUT-WELL|Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules|#4, #5, #8|
 |NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs) |#4|
-|NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#5|
+|NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#3, #5|
 |NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4|
 |NEW-OPS-REQ-TIMELY-DM|Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel|#4|
 |NEW-OPS-REQ-READILTY-IMPLEM|The availablability of implementation is concerning|#4|
@@ -78,13 +78,15 @@
 2. [Towards a Unified Compute and Communication Infrastructure for Application and Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-towards-a-unified-compute-and-communication-infrastructure-for-application-and-network-management-00.pdf)
    + (**NEW-OPS-REQ-GLUE**) "Providing standardized models of unified compute and communication infrastructure, along with mechanisms to expose their properties"
 3. [RFC3535, 20 Years Later from an Operator's Perspective (Deutsche Telekom)](https://www.ietf.org/slides/slides-nemopsws-paper-rfc3535-years-later-from-an-operators-perspective-deutsche-telekom-00.pdf)
-   + (**NEW-OPS-REQ-DM-RATIONALIZE**) "The stability of the IETF models and the conformance to proper IETF YANG make them superior to OpenConfigg whose models suffer from inconsistencies across
-     versions, this in turn leads to operational and interoperability issues"
-   + (**NEW-OPS-REQ-DM-RATIONALIZE**) "We don't want to go down the path of scope and feature creep with an ever larger surface area of the language"
-   + (**NEW-OPS-REQ-CLIENT-TOOLS**) "Collaboration on open-source software, like Orchestron (https://github.com/orchestron-orchestrator/)"
-   + (**NEW-OPS-REQ-EASE-EXPOSURE**) "the convergence of configuration management and the collection and monitoring of operational state is essential"
-   + (**NEW-OPS-REQ-INTEGRATION**) "The IETF could do more to help bridge the gap by providing standardized operational monitoring models to match the configuration models; at both the device level and the network/service level"
-   + (**NEW-OPS-REQ-IT-INTEGRATION**) "The combination of the relevant TMF specifications and IETF YANG service models would offer service providers a comprehensive and powerful solution"
+   + (**NEW-OPS-REQ-STRENGTHEN-DM**) "The stability of the IETF models and the conformance to proper IETF YANG is key for avoiding operational and interoperability issues."
+   + (**NEW-OPS-REQ-STRENGTHEN-DM**) "YANG 1.1 is now widely understood and implemented. Scope and feature creep could fracture this ecosystem. Any additions or changes need to be **very** carefully considered."
+   + (**NEW-OPS-REQ-CLIENT-TOOLS**) "The IETF should actively foster and enable collaboration on open-source software implementations of their standards and technologies, like Orchestron (https://github.com/orchestron-orchestrator/)"
+   + (**NEW-OPS-REQ-EASE-EXPOSURE**) "The IETF should develop uniform, YANG modeled device/network/service models for both configuration and operational state data so that closed-loop automation is possible."
+   + (**NEW-OPS-REQ-INTEGRATION**) "The IETF should extend service models, which currently only model configuration, to include operational state for the service."
+   + (**NEW-OPS-REQ-IT-INTEGRATION**) "The IETF should work with the TMForum to standardize how Business Support Systems implementing TMForum Service Ordering, Activation and Configuration, Service Catalog and other relevant APIs will interwork with the configuration of network domains and devices to provision and manage these services."
+   + (**NEW-OPS-REQ-QUICK-WELL**) "The IETF should adopt modern collaborative process, as used for software development."
+   + (**NEW-OPS-REQ-UNSILO**) "Now that more implementation and operational experience is available, the IETF should update RFC8309 'Service Models Explained' to better explain the overall architecture for different model types, reflecting how service, and other model types are being used in the real-world."
+   + (**NEW-OPS-REQ-UNSILO**) "The IETF should better promote the YANG management architecture so it is more widely understood across the industry, particularly emphasising how this architecture enables declarative configuration and the advantages of this approach."
 4. [RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling](https://www.ietf.org/slides/slides-nemopsws-paper-rfc3535-years-later-an-update-of-operators-requirements-on-network-management-protocols-and-modelling-00.pdf)
 
    + NEW-OPS-REQ-STRENGTHEN-DM:  Section 5.1
