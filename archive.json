@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-28T01:36:14.358624+00:00",
+  "timestamp": "2024-12-01T01:49:36.573127+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -1229,6 +1229,146 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDOKqz7zs6Ddl9Z",
+      "title": "Set NEW-OPS-REQ-UNSILO to Strong for Telefonica",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/30",
+      "state": "MERGED",
+      "author": "idomingu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-11-28T11:51:10Z",
+      "updatedAt": "2024-11-28T16:06:16Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "7e126cc5bc4e96dd6a0a3690e34622b59b77fc64",
+      "headRepository": "idomingu/rfc3535-20years-later",
+      "headRefName": "main",
+      "headRefOid": "c64989103f189f040ba49fbbec45ed57015cbdf6",
+      "closedAt": "2024-11-28T16:06:16Z",
+      "mergedAt": "2024-11-28T16:06:16Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "10dd25f6e7106c4c44b66422fdabf4d29d2ac681"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDOKqz7zs6DilhB",
+      "title": "Lower Level YANG and protocol related Requirements combining with high level service and network model requirements",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/31",
+      "state": "MERGED",
+      "author": "billwuqin",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-11-29T08:15:06Z",
+      "updatedAt": "2024-11-29T08:20:16Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "ac324a183bbc13ecaca5d28752fbd7b48280b4d0",
+      "headRepository": "billwuqin/rfc3535-20years-later",
+      "headRefName": "main",
+      "headRefOid": "8e5eeb66ee7c49cffc8b91dc37c858fd9bd5e684",
+      "closedAt": "2024-11-29T08:20:16Z",
+      "mergedAt": "2024-11-29T08:20:16Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "eb7a1abfa3ef8acf5c895eb9638fc47a381581ac"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs6TLwA-",
+          "commit": {
+            "abbreviatedOid": "8e5eeb6"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-29T08:19:40Z",
+          "updatedAt": "2024-11-29T08:19:40Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "id": "PR_kwDOKqz7zs6DjD3M",
+      "title": "Update nemops-session2-summary.md",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/32",
+      "state": "MERGED",
+      "author": "xiechf974",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I re-filled the form again,hope that it can succeed this time.",
+      "createdAt": "2024-11-29T09:34:29Z",
+      "updatedAt": "2024-11-29T09:47:55Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "61d982607f3284943b49088cd69d2fe2fac44b2f",
+      "headRepository": "xiechf974/rfc3535-20years-later",
+      "headRefName": "patch-2",
+      "headRefOid": "155f25ac03dbfff1bd917249277192aeceddf217",
+      "closedAt": "2024-11-29T09:47:55Z",
+      "mergedAt": "2024-11-29T09:47:54Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "078e820b34f3e5109508651c97e30ceacaa24200"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 33,
+      "id": "PR_kwDOKqz7zs6DkTUe",
+      "title": "DT Requirement Text Updates to nemops-session2-summary.md",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/33",
+      "state": "MERGED",
+      "author": "iffy50",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated DT requirement text section for clarity without the context of the position paper text. First 2 reqs reclassified. 3 new reqs added.  \r\nChanges to the Requirements to papers mapping for paper #3.",
+      "createdAt": "2024-11-29T12:50:23Z",
+      "updatedAt": "2024-11-29T13:05:23Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "f211883575cd9875eb467dd02ed62d8fa565a2bd",
+      "headRepository": "iffy50/rfc3535-20years-later",
+      "headRefName": "iffy50-patch-1",
+      "headRefOid": "41530d3906feac1e9d676c2b8d0ac04fc6a1047f",
+      "closedAt": "2024-11-29T13:05:23Z",
+      "mergedAt": "2024-11-29T13:05:23Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "ca6a9a730dc27001d7cc27f2d64a0fcb60fc9b95"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs6TN2vU",
+          "commit": {
+            "abbreviatedOid": "41530d3"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "Thanks, IAN.\r\n\r\nI had to fix some conflicts with the main. Please check If have your edits rights.\r\n\r\nFor \"Now that more implementation and operational experience is available, the IETF should update RFC8309 'Service Models Explained' to better explain the overall architecture for different model types, reflecting how service, and other model types are being used in the real-world\",  You may check https://datatracker.ietf.org/doc/html/rfc8969 as well.",
+          "createdAt": "2024-11-29T13:05:10Z",
+          "updatedAt": "2024-11-29T13:05:10Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
