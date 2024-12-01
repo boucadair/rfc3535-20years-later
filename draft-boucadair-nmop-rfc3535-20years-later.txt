@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 2 June 2025                                       O. G. D. Dios
+Expires: 4 June 2025                                       O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,7 +13,7 @@ Expires: 2 June 2025                                       O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                        29 November 2024
+                                                         1 December 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 June 2025.
+   This Internet-Draft will expire on 4 June 2025.
 
 Copyright Notice
 
@@ -980,9 +980,9 @@ Table of Contents
               Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
               Tantsura, "A YANG Data Model for IS-IS Segment Routing for
               the MPLS Data Plane", Work in Progress, Internet-Draft,
-              draft-ietf-isis-sr-yang-22, 1 July 2024,
+              draft-ietf-isis-sr-yang-23, 30 November 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
-              yang-22>.
+              yang-23>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -995,9 +995,9 @@ Table of Contents
               Zheng, G., Zhou, T., Graf, T., Francois, P., Feng, A. H.,
               and P. Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-16, 21 October 2024,
+              ietf-netconf-udp-notif-17, 1 December 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-16>.
+              udp-notif-17>.
 
    [I-D.ietf-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
