@@ -5,23 +5,23 @@
 * This is work-in-progress
 * Paper # are listed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/IETF120/nemops-session2-summary.md#papers).
 
-# Summary
+# Summary: New Requirements and Papers/Servy Mapping
 
 
-|NEW Ops Requirement Label| Description| Papers|
-|-------------------------|:------:|:------:|
-|NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|
-|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts. Unlike service and network models, IETF-defined device models are not widely implemented|#4|
+|NEW Ops Requirement Label| Description| Papers| Survey |
+|-------------------------|:------:|:------:|:------:|
+|NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|Y|
+|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts. Unlike service and network models, IETF-defined device models are not widely implemented|#4|Y|
 |NEW-OPS-REQ-QUICK-BUT-WELL|Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules|#3, #4, #5, #8, #10|
 |NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs) |#4, #10|
 |NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#3, #5|
-|NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|
+|NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|Y|
 |NEW-OPS-REQ-TIMELY-DM|Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel|#4|
 |NEW-OPS-REQ-READILTY-IMPLEM|The availablability of implementation is concerning|#4, #10|
 |NEW-OPS-REQ-DM2API|Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation |#4|
 |NEW-OPS-REQ-NW-API-DISCOVERY|Define a reference approach/process for service exposure discovery (APIs discovery)|#3, #4|
-|NEW-OPS-REQ-REASSESS|Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gRPC/gNMI)|#4, #9|
-|NEW-OPS-REQ-BRIDGE|Create an eco-system where data and networking engineers can collaborate|#4, #10|
+|NEW-OPS-REQ-REASSESS|Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gRPC/gNMI)|#4, #9|Y|
+|NEW-OPS-REQ-BRIDGE|Create an eco-system where data and networking engineers can collaborate|#4, #10|Y|
 |NEW-OPS-REQ-INTEGRATION|Consider approaches to ease integration by-design (e.g., protocols and data models)|#4, #9|
 |NEW-OPS-REQ-LOSSLESS|Consider programmatic approaches to ensure lossless mappings between service/network/device data models|#4, #11|
 |NEW-OPS-REQ-REUSABILITY|Consider approaches to ensure reuse/consistent data structure across various NM segments|#4, #5, #7, #10, #11|
@@ -29,13 +29,13 @@
 |NEW-OPS-REQ-UNSILO|Necessity to handle the heterogeneity of data, configuration, and network management/requirements. Resolving such issue could draw on insights from parallel technical fields such as knowledge engineering practices and concepts associated with Linked Data in the Semantic Web, areas where it is common to manage problems of heterogeneity and data reconciliation across various application domains|#3, #4, #8|
 |NEW-OPS-REQ-IT-INTEGRATION|There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/")|#3, #4|
 |NEW-OPS-REQ-ITER|Need a velocity and approach to standardisation that allows for business goals to be incrementally realised|#5, #6, #10|
-|NEW-OPS-REQ-Y2KG|Need for reference specifications to translate YANG-based data into the knowledge graph|#4, #8|
-|NEW-OPS-REQ-CLIENT-TOOLS|Focus on tooling is needed, especially on the client side.|#3, #4, #5, #8, #10|
-|NEW-OPS-REQ-IETF-TOOLS|Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration|#4|
-|NEW-OPS-REQ-NEW-NEED|Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness|#4, #10|
+|NEW-OPS-REQ-Y2KG|Need for reference specifications to translate YANG-based data into the knowledge graph|#4, #8|Y|
+|NEW-OPS-REQ-CLIENT-TOOLS|Focus on tooling is needed, especially on the client side.|#3, #4, #5, #8, #10|Y|
+|NEW-OPS-REQ-IETF-TOOLS|Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration|#4|Y|
+|NEW-OPS-REQ-NEW-NEED|Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness|#4, #10|Y|
 |NEW-OPS-REQ-GLUE|Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.|#2, #4, #8|
 
-# Requirement Level
+# Requirements Level
 
 > Feel free to complete a column with your own assessment + update OP# with the operator name.
 >
