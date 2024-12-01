@@ -3,7 +3,7 @@
 * Collection of NEW requirements from operators
 * Labelling of a requirement/description can be tweaked to capture a common message
 * This is work-in-progress
-* Paper # are listed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/IETF120/nemops-session2-summary.md#papers).
+* Paper # are listed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/nemops-session2-summary.md#papers).
 
 # Summary: New Requirements and Papers/Servy Mapping
 
