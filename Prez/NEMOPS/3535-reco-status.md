@@ -92,16 +92,16 @@ For example, YANG can be used to define abstract data structures (RFC8791) that 
 : The IETF dedicated some resources to fix some SNMP shortcomings with a focus on security (e.g., Transport Layer Security
 (TLS) Transport Model for the SNMP (RFC6353) or (RFC9456), HMAC-SHA-2 Authentication Protocols in User-Based Security Model (USM) for SNMPv3 (RFC7860)).
 
-(Section 6 of RFC3535) also includes the following but without tagging them as recommendations:
+Section 6 of RFC3535 also includes the following but without tagging them as recommendations:
 
->      (3535-RECO-NO-CIM) The workshop had split consensus from the operators and rough
+>      (3535-MISC-NO-CIM) The workshop had split consensus from the operators and rough
 >      consensus from the protocol developers, that the IETF should not
 >      focus resources on CIM extensions.
 
 **Status Update**:
 : The IETF didn't dedicate any resources on CIM extensions.
 
->      (3535-RECO-ABANDON-COPS-PR) The workshop had rough consensus from the protocol developers
+>      (3535-MISC-ABANDON-COPS-PR) The workshop had rough consensus from the protocol developers
 >      that the IETF should not spend resources on COPS-PR development.
 >      So far, the operators have only very limited experience with
 >      COPS-PR.  In general, however, they felt that further development
@@ -112,7 +112,7 @@ For example, YANG can be used to define abstract data structures (RFC8791) that 
 : The IETF has reclassified COPS Usage for Policy Provisioning (RFC3084)
   to Historic status.
 
->      (3535-RECO-ABANDON-PIB) The workshop had rough consensus from the protocol developers
+>      (3535-MISC-ABANDON-PIB) The workshop had rough consensus from the protocol developers
 >      that the IETF should not spend resources on SPPI PIB definitions.
 >      The operators had rough consensus that they do not care about
 >      SPPI PIBs.
