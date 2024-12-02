@@ -38,7 +38,7 @@
 **Status Update**:
 : This requirement was taken into account when
        designing IETF solutions. Specifically, datastores are a fundamental
-       concept in NETCONF/YANG (e.g., (RFC8342).
+       concept in NETCONF/YANG (e.g., Network Management Datastore Architecture (NMDA) ([RFC8342](https://datatracker.ietf.org/doc/html/rfc8342))).
 
 >      (3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE) It is required to be able to fetch separately configuration data,
 >      operational state data, and statistics from devices, and to be
@@ -56,18 +56,18 @@
        handle transactions at the level of a network. For example, a
        controller can establish parallel sessions with a set of devices
        and make use of confirmed commit.
-: Also, (RFC8969) describes
+: Also, [RFC8969](https://datatracker.ietf.org/doc/html/rfc8969) describes
        how YANG/RESTONF/YANG can be used to manage a network and map it
        to involves underlying functions/nodes. Several service and network
        data models are required for this aim.
 : The IETF defined in the past
        models to manage few servcies such as VPN at both service and network
-       levels (e.g.,  the Layer 2 Service Model (L2SM) (RFC8466),
-       the Layer 3 Service Model (L3SM) (RFC8299), the Layer 2 Network Model (L2NM) (RFC9291),
-       the Layer 3 Network Model (L3NM) (RFC9182), and Service Attachment Points (SAPs) (RFC9408)).
+       levels (e.g.,  the Layer 2 Service Model (L2SM) ([RFC8466](https://datatracker.ietf.org/doc/html/rfc8466)),
+       the Layer 3 Service Model (L3SM) ([RFC8299](https://datatracker.ietf.org/doc/html/rfc8299)), the Layer 2 Network Model (L2NM) ([RFC9291](https://datatracker.ietf.org/doc/html/rfc9291)),
+       the Layer 3 Network Model (L3NM) ([RFC9182](https://datatracker.ietf.org/doc/html/rfc9182)), and Service Attachment Points (SAPs) ([RFC9408](https://datatracker.ietf.org/doc/html/rfc9408))).
 : A similar effort is currently
        ongoing for handling attachement circuits at both service and network layers (e.g.,
-       (I-D.ietf-opsawg-teas-attachment-circuit), (I-D.ietf-opsawg-ntw-attachment-circuit), (I-D.ietf-teas-ietf-network-slice-nbi-yang)).
+       [I-D.ietf-opsawg-teas-attachment-circuit](https://datatracker.ietf.org/doc/draft-ietf-opsawg-teas-attachment-circuit/), [I-D.ietf-opsawg-ntw-attachment-circuit](https://datatracker.ietf.org/doc/draft-ietf-opsawg-ntw-attachment-circuit/), [I-D.ietf-teas-ietf-network-slice-nbi-yang](https://datatracker.ietf.org/doc/draft-ietf-teas-ietf-network-slice-nbi-yang/)).
 : More effort is still needed in this area.
 
 >      (3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS) Support for configuration transactions across a number of devices
@@ -97,7 +97,7 @@
 >      configurations are consistent.
 
 **Status Update**:
-: A mechanism is specified in (RFC9144).
+: A mechanism is specified in [RFC9144](https://datatracker.ietf.org/doc/html/rfc9144).
 
 >      (3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA) Network wide configurations are typically stored in central
 >      master databases and transformed into formats that can be pushed
@@ -127,7 +127,7 @@
 
 **Status Update**:
 : RBAC is supported by existing implementation. Also,
-       the IETF defined (RFC8341) for this purpose.
+       the IETF defined "Network Configuration Access Control Model" ([RFC8341](https://datatracker.ietf.org/doc/html/rfc8341)) for this purpose.
 
 >      (3535-OPS-REQ-ACCESS-CONTROL-CHECKS) It must be possible to do consistency checks of access control
 >      lists across devices.
@@ -149,4 +149,4 @@
 >      data-oriented and task-oriented access control.
 
 **Status Update**:
-: This is supported by (RFC8341).
+: This is supported in "Network Configuration Access Control Model" ([RFC8341](https://datatracker.ietf.org/doc/html/rfc8341)).
