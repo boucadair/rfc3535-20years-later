@@ -1,6 +1,8 @@
 # Notes
 
 * Collection of NEW requirements from operators
+* Status Check of RFC3535 Requirements can be found [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/3535-req-status.md).
+* Status Check of RFC3535 Recommendations is discussed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/3535-reco-status.md).
 * Labelling of a requirement/description can be tweaked to capture a common message
 * This is work-in-progress
 * Paper # are listed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/nemops-session2-summary.md#papers).
