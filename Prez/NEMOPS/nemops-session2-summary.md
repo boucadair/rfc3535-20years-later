@@ -99,6 +99,15 @@
 |NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
 |NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
 
+# Preference Order of Data Models You Are Asking Your Vendors?
+
+Example:
+
+* Standardized models from the organization that owns the managed function (IETF, IEEE, BBF, 3GPP, etc.)
+* A reference body that defines management DM for functions owned by another SDO (e.g., CCAMP for optic)
+* OpenConfig
+* Proprietary
+
 
 # Papers with Requirements
 
