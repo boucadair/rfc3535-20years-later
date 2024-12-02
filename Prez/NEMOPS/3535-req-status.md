@@ -42,10 +42,10 @@
        models to manage few servcies such as VPN at both service and network
        levels (e.g.,  the Layer 2 Service Model (L2SM) {{?RFC8466}},
        the Layer 3 Service Model (L3SM) {{?RFC8299}}, the Layer 2 Network Model (L2NM) {{?RFC9291}},
-       and the Layer 3 Network Model (L3NM) {{?RFC9182}}).
+       the Layer 3 Network Model (L3NM) {{?RFC9182}}, and Service Attachment Points (SAPs) {{?RFC9408}}).
 : A similar effort is currently
        ongoing for handling attachement circuits at both service and network layers (e.g.,
-       {{?I-D.ietf-opsawg-teas-attachment-circuit}}, {{?I-D.ietf-opsawg-ntw-attachment-circuit}}).
+       {{?I-D.ietf-opsawg-teas-attachment-circuit}}, {{?I-D.ietf-opsawg-ntw-attachment-circuit}}, {{?I-D.ietf-teas-ietf-network-slice-nbi-yang}}).
 : More effort is still needed in this area.
 
 >      Support for configuration transactions across a number of devices
