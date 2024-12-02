@@ -4,24 +4,24 @@
 
 |RFC3535 Ops Requirement Label       | Status                                    | 
 |-----------------------------------:|:------------------------------------------|
-| 3535-EASE-USE                      | Still Applicable                          |
-| 3535-CONFIG-OPS-SEPARATE           | OK                                        |
-| 3535-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
-| 3535-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
-| 3535-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
-| 3535-CONFIG-DIFF                   | OK                                        |
-| 3535-CONFIG-DUMP-RESTORE           | OK                                        |
-| 3535-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
-| 3535-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
-| 3535-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
-| 3535-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
-| 3535-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
-| 3535-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
-| 3535-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
+| 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
+| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
+| 3535-OPS-REQ-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
+| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
+| 3535-OPS-REQ-CONFIG-DIFF                   | OK                                        |
+| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
+| 3535-OPS-REQ-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
+| 3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
+| 3535-OPS-REQ-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
+| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
 
 ## Detailed Analysis
 
->      (3535-EASE-USE) Ease of use is a key requirement for any network management
+>      (3535-OPS-REQ-EASE-USE) Ease of use is a key requirement for any network management
 >      technology from the operators point of view.
 
 **Status Update**:
@@ -29,7 +29,7 @@
        even exacerbated with the amount of techniques and extensions
        that were specified since then.
 
->      (3535-CONFIG-OPS-SEPARATE) It is necessary to make a clear distinction between configuration
+>      (3535-OPS-REQ-CONFIG-OPS-SEPARATE) It is necessary to make a clear distinction between configuration
 >      data, data that describes operational state and statistics.  Some
 >      devices make it very hard to determine which parameters were
 >      administratively configured and which were obtained via other
@@ -40,14 +40,14 @@
        designing IETF solutions. Specifically, datastores are a fundamental
        concept in NETCONF/YANG (e.g., (RFC8342).
 
->      (3535-CONFIG-OPS-FETCH-SEPARATE) It is required to be able to fetch separately configuration data,
+>      (3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE) It is required to be able to fetch separately configuration data,
 >      operational state data, and statistics from devices, and to be
 >      able to compare these between devices.
 
 **Status Update**:
 : This is supported by NETCONF and RESTCONF.
 
->      (3535-NETWORK-NOT-DEVICE) It is necessary to enable operators to concentrate on the
+>      (3535-OPS-REQ-NETWORK-NOT-DEVICE) It is necessary to enable operators to concentrate on the
 >      configuration of the network as a whole rather than individual
 >      devices.
 
@@ -70,13 +70,13 @@
        (I-D.ietf-opsawg-teas-attachment-circuit), (I-D.ietf-opsawg-ntw-attachment-circuit), (I-D.ietf-teas-ietf-network-slice-nbi-yang)).
 : More effort is still needed in this area.
 
->      (3535-NETWORK-WIDE-TRANSACTIONS) Support for configuration transactions across a number of devices
+>      (3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS) Support for configuration transactions across a number of devices
 >      would significantly simplify network configuration management.
 
 **Status Update**:
 : This feature is supported by NETCONF.
 
->      (3535-CONFIG-DIFF) Given configuration A and configuration B, it should be possible
+>      (3535-OPS-REQ-CONFIG-DIFF) Given configuration A and configuration B, it should be possible
 >      to generate the operations necessary to get from A to B with
 >      minimal state changes and effects on network and systems.  It is
 >      important to minimize the impact caused by configuration changes.
@@ -84,14 +84,14 @@
 **Status Update**:
 : This feature is supported by NETCONF.
 
->      (3535-CONFIG-DUMP-RESTORE) A mechanism to dump and restore configurations is a primitive
+>      (3535-OPS-REQ-CONFIG-DUMP-RESTORE) A mechanism to dump and restore configurations is a primitive
 >      operation needed by operators.  Standards for pulling and pushing
 >      configurations from/to devices are desirable.
 
 **Status Update**:
 : This feature is supported by NETCONF.
 
->      (3535-CONFIG-CONSISTENCY-CHECK) It must be easy to do consistency checks of configurations over
+>      (3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK) It must be easy to do consistency checks of configurations over
 >      time and between the ends of a link in order to determine the
 >      changes between two configurations and whether those
 >      configurations are consistent.
@@ -99,7 +99,7 @@
 **Status Update**:
 : A mechanism is specified in (RFC9144).
 
->      (3535-CONFIG-NETWORK-WIDE-SCHEMA) Network wide configurations are typically stored in central
+>      (3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA) Network wide configurations are typically stored in central
 >      master databases and transformed into formats that can be pushed
 >      to devices, either by generating sequences of CLI commands or
 >      complete configuration files that are pushed to devices.  There
@@ -111,7 +111,7 @@
 **Status Update**:
 : Covered by current implementations.
 
->      (3535-TXT-PROCESSING-TOOLS) It is highly desirable that text processing tools such as diff,
+>      (3535-OPS-REQ-TXT-PROCESSING-TOOLS) It is highly desirable that text processing tools such as diff,
 >      and version management tools such as RCS or CVS, can be used to
 >      process configurations, which implies that devices should not
 >      arbitrarily reorder data such as access control lists.
@@ -119,7 +119,7 @@
 **Status Update**:
 : This is deployment-specific.
 
->      (3535-ACCESS-CONTROL-OPS-CENTRIC) The granularity of access control needed on management interfaces
+>      (3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC) The granularity of access control needed on management interfaces
 >      needs to match operational needs.  Typical requirements are a
 >      role-based access control model and the principle of least
 >      privilege, where a user can be given only the minimum access
@@ -129,20 +129,20 @@
 : RBAC is supported by existing implementation. Also,
        the IETF defined (RFC8341) for this purpose.
 
->      (3535-ACCESS-CONTROL-CHECKS) It must be possible to do consistency checks of access control
+>      (3535-OPS-REQ-ACCESS-CONTROL-CHECKS) It must be possible to do consistency checks of access control
 >      lists across devices.
 
 **Status Update**:
 : This is implementation-specific.
 
->      (3535-CONFIG-SEPARATE-DISTRIB-ACTIV) It is important to distinguish between the distribution of
+>      (3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV) It is important to distinguish between the distribution of
 >      configurations and the activation of a certain configuration.
 >      Devices should be able to hold multiple configurations.
 
 **Status Update**:
 : This is supported by existing NETCONF methods.
 
->      (3535-ACCESS-CONTROL-BOTH-DATA-TASK) SNMP access control is data-oriented, while CLI access control is
+>      (3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK) SNMP access control is data-oriented, while CLI access control is
 >      usually command (task) oriented.  Depending on the management
 >      function, sometimes data-oriented or task-oriented access control
 >      makes more sense.  As such, it is a requirement to support both
