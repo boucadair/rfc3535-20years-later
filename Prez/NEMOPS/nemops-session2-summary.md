@@ -170,7 +170,7 @@ more flexible structure that can accommodate any kind of data"
 9. [Four Thoughts for How to Improve Network Management for Operators](https://www.ietf.org/slides/slides-nemopsws-paper-nemops-position-paper-kent-watsen-00.pdf)
     
    + (**NEW-OPS-REQ-REASSESS**) Promote RESTCONF with JSON encoding, obsolete NETCONF and RESTCONF's XML
-   + NMDA should be mandatory to implement in the next version of NETCONF and RESTCONF protocols
+   + (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) NMDA should be mandatory to implement in the next version of NETCONF and RESTCONF protocols
    + (**NEW-OPS-REQ-INTEGRATION**) There should be a "library" of adaptors to transform standards-based data models to the native data model supported by devices
    + (**NEW-OPS-REQ-INTEGRATION**) Device-adapters to send the device-specific data to the device (which only supports CLI or SNMP) via its CLI
 
@@ -180,7 +180,7 @@ more flexible structure that can accommodate any kind of data"
       * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Be optimized to specify the minimum functionality required to manage network devices using YANG.
       * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Make all extra functionality optional, perhaps moving them to a separate document (e.g., XPath filtering)
       * (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) Consider if there is any legacy features that are no longer useful and could be removed altogether (e.g., shared candidate)
-      * Model all NETCONF RPC operations in YANG data models.
+      * (Protocol maintenance; not specific to the WS) Model all NETCONF RPC operations in YANG data models.
       * (**NEW-OPS-REQ-NEW-NEED**) Support for JSON encoding of YANG data by default, but also allowing support for CBOR and XML.
    + YANG-next:
       * (Protocol maintenance; not specific to the WS) Merging in the core versioning changes.
