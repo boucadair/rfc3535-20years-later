@@ -10,32 +10,32 @@
 # Summary: New Requirements and Papers/Servy Mapping
 
 
-|NEW Ops Requirement Label| Description| Papers| Survey |
-|-------------------------|:------:|:------:|:------:|
-|NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|Y|
-|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, IETF-defined device models are not widely implemented|#4|Y|
+|NEW Ops Requirement Label| Description| Papers| Survey | Outreach |
+|-------------------------|:----------:|:-----:|:------:|:--------:|
+|NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|Y|Y|
+|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, IETF-defined device models are not widely implemented|#4|Y|Y|
 |NEW-OPS-REQ-QUICK-BUT-WELL|Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules|#3, #4, #5, #8, #10|
-|NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management |#4, #8 #10|
+|NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management |#4, #8 #10||Y|
 |NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#3, #5|
-|NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|Y|
+|NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|Y|Y|
 |NEW-OPS-REQ-TIMELY-DM|Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel|#4|
 |NEW-OPS-REQ-READILTY-IMPLEM|The availablability of implementation is concerning|#4, #10|
 |NEW-OPS-REQ-DM2API|Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation |#4|
 |NEW-OPS-REQ-NW-API-DISCOVERY|Define a reference approach/process for service exposure discovery (APIs discovery)|#3, #4|
 |NEW-OPS-REQ-REASSESS|Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gRPC/gNMI)|#4, #9|Y|
-|NEW-OPS-REQ-BRIDGE|Create an eco-system where data and networking engineers can collaborate|#4, #10|Y|
-|NEW-OPS-REQ-INTEGRATION|Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve. |#4, #8, #9|
-|NEW-OPS-REQ-LOSSLESS|Consider programmatic approaches to ensure lossless mappings between service/network/device data models|#4, #11|
+|NEW-OPS-REQ-BRIDGE|Create an eco-system where data and networking engineers can collaborate|#4, #10|Y|Y|
+|NEW-OPS-REQ-INTEGRATION|Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve. |#4, #8, #9||Y|
+|NEW-OPS-REQ-LOSSLESS|Consider programmatic approaches to ensure lossless mappings between service/network/device data models|#4, #11||Y|
 |NEW-OPS-REQ-REUSABILITY|Consider approaches to ensure reuse/consistent data structure across various NM segments|#4, #5, #7, #10, #11|
 |NEW-OPS-REQ-SCALE|Consider approaches for YANG models to scale + protocol considerartions (transactions, touches, etc.)|#4, #7|
 |NEW-OPS-REQ-UNSILO|Necessity to handle the heterogeneity of data, configuration, and network management/requirements. Resolving such issue could draw on insights from parallel technical fields such as knowledge engineering practices and concepts associated with Linked Data in the Semantic Web, areas where it is common to manage problems of heterogeneity and data reconciliation across various application domains|#3, #4, #8|
 |NEW-OPS-REQ-IT-INTEGRATION|There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/"). Also, the IETF should work with the TMForum to standardize how Business Support Systems implementing TMForum Service Ordering, Activation and Configuration, Service Catalog and other relevant APIs will interwork with the configuration of network domains and devices to provision and manage these services|#3, #4|
 |NEW-OPS-REQ-ITER|Need a velocity and approach to standardisation that allows for business goals to be incrementally realised|#5, #6, #10|
 |NEW-OPS-REQ-Y2KG|Need for reference specifications to translate YANG-based data into the knowledge graph|#4, #8|Y|
-|NEW-OPS-REQ-CLIENT-TOOLS|Focus on tooling is needed, especially on the client side.|#3, #4, #5, #8, #10|Y|
+|NEW-OPS-REQ-TOOLS|Focus on tooling is needed, especially on the client side. There is a need for tools that are easy to use. Likewise, there is need for support for multiple friendly, stable and feature rich libraries for programming languages.|#3, #4, #5, #8, #10|Y|Y|
 |NEW-OPS-REQ-IETF-TOOLS|Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration|#4|Y|
 |NEW-OPS-REQ-NEW-NEED|Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness|#4, #10|Y|
-|NEW-OPS-REQ-GLUE|Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.|#2, #4, #8|
+|NEW-OPS-REQ-GLUE|Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.|#2, #4, #8||Y|
 
 # Requirements Level
 
@@ -221,3 +221,17 @@ more flexible structure that can accommodate any kind of data"
       - (**NEW-OPS-REQ-LOSSLESS**) tackle declarative network and service configuration and allows the expression of specific deployment constraints which may translate to constraints that must be met by device configuration
       - (**3535**) support a smooth transition between network configurations, e.g., bring all systems back to network configuration X
       - (**3535**) support network-wide configurations that are verifiable configuration and resilient against certain types of failures or robustness against certain attacks.
+
+# Outrach Key Points
+
+* (**NEW-OPS-REQ-TOOLS**) In network deployments, operations are typically at the bottom of the ladder. It's the most squeezed for time and resources. Network engineers are not typically seasoned developers. Development of needed in-house tools often takes years to develop. There is a need for tools that are easy to use and just work. 
+* There is debate fatigue. The protocol/model debate is a recurring conversation. The problem isn’t going away. 
+* (**NEW-OPS-REQ-BRIDGE** and **NEW-OPS-REQ-GLUE**) It was suggested that other domains (e.g., K8N/automation) are years ahead of the current network engineering stack.
+* (**NEW-OPS-REQ-TOOLS**)  Support for multiple friendly, stable and feature rich libraries for programming languages is needed. Many DevOp routines use shell scripts, others use a high-level programming language. In any case, on the client-side, multiple programming languages are used. 
+* Screen scraping is both necessary and evil. This most often occurs when interacting with a device having only a CLI.
+* (**NEW-OPS-REQ-INTEGRATION** and **NEW-OPS-REQ-LOSSLESS**)In some network deployments, the focus is solely on service-level models, such that device-level protocols and device-level models are unimportant. This assumes the existence of a device adaptation layer to transcode service-level models to device-level models and conform to the device-specific protocol.
+* (**NEW-OPS-REQ-STRENGTHEN-DM**) There is a need for solutions to not hide vendor-specific knobs. Currently vendors compete by differentiating their offerings in unique ways. The reason why an Operator may choose a particular vendor is because of its differentiating features. Whilst standard models enable conformance, they must not hide the vendor-specific knobs. YANG deviations are a partial solution to not hiding vendor knobs.
+* (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) It was emphasized that streaming telemetry requires picking a model, and sticking with it. It is quite a commitment and the current environment makes the decision harder.
+* (**NEW-OPS-REQ-EASE-EXPOSURE**) It was noted that IETF focus should be on defining abstract/service-level data models, since it is the only thing the community may ever agree on.
+* (**NEW-OPS-REQ-GUIDE-AND-PROFILE**) There was a point about navigating non device-specific models being difficult. If understood correctly, the Network Engineer knows the CLI command, but has trouble grepping for it in YANG modules defined by SDOs.
+* (**NEW-OPS-REQ-DM-RATIONALIZE**) There was a wish that IETF and OpenConfig models would merge.
