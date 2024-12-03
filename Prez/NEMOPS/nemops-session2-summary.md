@@ -7,7 +7,7 @@
 * This is work-in-progress
 * Paper # are listed [here](https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/nemops-session2-summary.md#papers).
 
-# Summary: New Requirements and Papers/Servy Mapping
+# Summary: New Requirements and Papers/Servey/Outreach Mapping
 
 
 |NEW Ops Requirement Label| Description| Papers| Survey | Outreach |
@@ -222,7 +222,7 @@ more flexible structure that can accommodate any kind of data"
       - (**3535**) support a smooth transition between network configurations, e.g., bring all systems back to network configuration X
       - (**3535**) support network-wide configurations that are verifiable configuration and resilient against certain types of failures or robustness against certain attacks.
 
-# Outrach Key Points
+# Outreach Key Points
 
 * (**NEW-OPS-REQ-TOOLS**) In network deployments, operations are typically at the bottom of the ladder. It's the most squeezed for time and resources. Network engineers are not typically seasoned developers. Development of needed in-house tools often takes years to develop. There is a need for tools that are easy to use and just work. 
 * There is debate fatigue. The protocol/model debate is a recurring conversation. The problem isn’t going away. 
