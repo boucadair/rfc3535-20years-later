@@ -65,7 +65,7 @@
 |NEW-OPS-REQ-IT-INTEGRATION  |Strong        |   Nice to have |   Nice to have | Nice to have   |  Nice to have  |   Nice to have |    Strong      |  Nice to have  | 
 |NEW-OPS-REQ-ITER            |Strong        |     Strong     |     Strong     | Nice to have   |      Strong    |     Strong     |    Strong      |    Strong      |
 |NEW-OPS-REQ-Y2KG            |Nice to have  | Nice to have   |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |    Strong      |  Nice to have  | 
-|NEW-OPS-REQ-CLIENT-TOOLS    |Strong        |     Strong     |  Nice to have  | Strong         |  Nice to have  |   Nice to have |    Strong      |    Strong      |
+|NEW-OPS-REQ-TOOLS    |Strong        |     Strong     |  Nice to have  | Strong         |  Nice to have  |   Nice to have |    Strong      |    Strong      |
 |NEW-OPS-REQ-IETF-TOOLS      |Nice to have  |  Nice to have  |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  |  Nice to have  | 
 |NEW-OPS-REQ-NEW-NEED        |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  |  Nice to have  | 
 |NEW-OPS-REQ-GLUE            |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  |  Nice to have  | 
@@ -94,7 +94,7 @@
 |NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
 |NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
 |NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
-|NEW-OPS-REQ-CLIENT-TOOLS    |			 |              |      X		   |      X         |           |            	               |        X       |
+|NEW-OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
 |NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
 |NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
 |NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
@@ -120,7 +120,7 @@ Example:
 3. [RFC3535, 20 Years Later from an Operator's Perspective (Deutsche Telekom)](https://www.ietf.org/slides/slides-nemopsws-paper-rfc3535-years-later-from-an-operators-perspective-deutsche-telekom-00.pdf)
    + (**NEW-OPS-REQ-STRENGTHEN-DM**) "The stability of the IETF models and the conformance to proper IETF YANG is key for avoiding operational and interoperability issues."
    + (**NEW-OPS-REQ-STRENGTHEN-DM**) "YANG 1.1 is now widely understood and implemented. Scope and feature creep could fracture this ecosystem. Any additions or changes need to be **very** carefully considered."
-   + (**NEW-OPS-REQ-CLIENT-TOOLS**) "The IETF should actively foster and enable collaboration on open-source software implementations of their standards and technologies, like Orchestron (https://github.com/orchestron-orchestrator/)"
+   + (**NEW-OPS-REQ-TOOLS**) "The IETF should actively foster and enable collaboration on open-source software implementations of their standards and technologies, like Orchestron (https://github.com/orchestron-orchestrator/)"
    + (**NEW-OPS-REQ-EASE-EXPOSURE**) "The IETF should develop uniform, YANG modeled device/network/service models for both configuration and operational state data so that closed-loop automation is possible."
    + (**NEW-OPS-REQ-INTEGRATION**) "The IETF should extend service models, which currently only model configuration, to include operational state for the service."
    + (**NEW-OPS-REQ-IT-INTEGRATION**) "The IETF should work with the TMForum to standardize how Business Support Systems implementing TMForum Service Ordering, Activation and Configuration, Service Catalog and other relevant APIs will interwork with the configuration of network domains and devices to provision and manage these services."
@@ -148,7 +148,7 @@ Example:
    + NEW-OPS-REQ-READILTY-IMPLEM: Section 5.15
    + NEW-OPS-REQ-IT-INTEGRATION: Section 5.16.1
    + NEW-OPS-REQ-IETF-TOOLS: Section 5.16.2
-   + NEW-OPS-REQ-CLIENT-TOOLS: Section 5.16.3
+   + NEW-OPS-REQ-TOOLS: Section 5.16.3
    + NEW-OPS-REQ-BRIDGE: Section 5.16.4
    + NEW-OPS-REQ-GLUE:  Section 5.17
    + NEW-OPS-REQ-GUIDANCE:  Section 5.18
@@ -156,7 +156,7 @@ Example:
 6. [Rethinking Standardisation of Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-rethinking-standardisation-of-network-management-00.pdf)
    + (**NEW-OPS-REQ-QUICK-BUT-WELL**) "need for iteration"
    + (**NEW-OPS-REQ-ITER**) "To keep operators engaged, the IETF needs a velocity and approach to standardisation that allows for business goals to be incrementally realised."
-   + (**NEW-OPS-REQ-CLIENT-TOOLS**) "The need for open source"
+   + (**NEW-OPS-REQ-TOOLS**) "The need for open source"
    + (**NEW-OPS-REQ-GUIDANCE**) "There is little or no publications or standards consideration for how different IETF technologies might fit together. This places constraints on the relevance of the technologies that are developed in the IETF"
    + (**NEW-OPS-REQ-REUSABILITY**) "The need for reuse"
    + **NEW-OPS-REQ-ARCH** Added as a new req
@@ -174,7 +174,7 @@ Example:
 Ontology Language (OWL) from the Semantic Web may serve as reference in this area."
    + (**NEW-OPS-REQ-UNSILO**) "Fixed hierarchical structure limits the modeling of complex scenarios where relationships within the data are important...graph structures provide a
 more flexible structure that can accommodate any kind of data"
-   + (**NEW-OPS-REQ-CLIENT-TOOLS**) "Lack of mature YANG libraries, with several efforts in different programming languages that have been abandoned or that do not keep the pace of the standards"
+   + (**NEW-OPS-REQ-TOOLS**) "Lack of mature YANG libraries, with several efforts in different programming languages that have been abandoned or that do not keep the pace of the standards"
    + (**NEW-OPS-REQ-QUICK-BUT-WELL**) "maintenance and up-to-date documentation of the YANG models is a not agile process"
    + (**NEW-OPS-REQ-GLUE**) "Integrating additional relevant information that could be required for those applications for taking decisions on the network"
 
@@ -211,7 +211,7 @@ more flexible structure that can accommodate any kind of data"
    + The IETF should check whether the YANG data models are complete to solve particular standard deployments and configuration.
    + (**NEW-OPS-REQ-BRIDGE**) Collaboration between operators, vendors, and universities.
    + (**NEW-OPS-REQ-ITER**) The IETF should focus on staged "minimum-viable-product" deliverables, and take smaller steps to achieve the minimum agreed functionality
-   + (**NEW-OPS-REQ-READILTY-IMPLEM** and **NEW-OPS-REQ-CLIENT-TOOLS**) IETF should focus more on the the availability of open source solutions
+   + (**NEW-OPS-REQ-READILTY-IMPLEM** and **NEW-OPS-REQ-TOOLS**) IETF should focus more on the the availability of open source solutions
 
 11. [Composable, Declarative, Reproducible, Verifiable Network and Service Configurations](https://www.ietf.org/slides/slides-nemopsws-paper-composable-declarative-reproducible-verifiable-network-and-service-configurations-00.pdf)
     
