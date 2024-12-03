@@ -43,32 +43,32 @@
 >
 
 
-|NEW Ops Requirement Label   | Orange       | Telefonica     | Swisscom       | Equinix        |Deutsche Telekom| China Telecom  | OP Anonymous   |
-|----------------------------|:------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
-|NEW-OPS-REQ-STRENGTHEN-DM   |Strong        |     Strong     |  Nice to have  |     Strong     |      Strong    |  Nice to have  |Medium - Across SDO Strong - within IETF|
-|NEW-OPS-REQ-DM-RATIONALIZE  |Strong        |     Strong     |     Strong     |     Strong     |      Strong    |    Strong      |    Strong      |     
-|NEW-OPS-REQ-QUICK-BUT-WELL  |Strong        |     Strong     |     Strong     |     Strong     |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-GUIDE-AND-PROFILE|Nice to have | Nice to have   |     Strong     | Nice to have   |      Strong    |  Nice to have  |  Nice to have  | 
-|NEW-OPS-REQ-ARCH            |Nice to have  | Nice to have   |     Strong     | Nice to have   |      Strong    |    Strong      |  Nice to have  | 
-|NEW-OPS-REQ-EASE-EXPOSURE   |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-TIMELY-DM       |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-READILTY-IMPLEM |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-DM2API          |Strong        |  Nice to have  |     Strong     | Nice to have   |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-NW-API-DISCOVERY|Nice to have  |     Strong     |  Nice to have  | Nice to have   |  Nice to have  |    Strong      |  Nice to have  | 
-|NEW-OPS-REQ-REASSESS        |Strong        |     Strong     |     Strong     | Strong         |      Strong    |   Nice to have |    Strong      |
-|NEW-OPS-REQ-BRIDGE          |Nice to have  |     Strong     |     Strong     |  Nice to have  |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-INTEGRATION     |Strong        |     Strong     |     Strong     |Strong          |    Strong      |    Strong      |    Strong      |
-|NEW-OPS-REQ-LOSSLESS        |Nice to have  |     Strong     |   Nive to have | Nice to have   |      Strong    |   Nice to have |  Nice to have  | 
-|NEW-OPS-REQ-REUSABILITY     |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |
-|NEW-OPS-REQ-SCALE           |Strong        |     Strong     |     Strong     |Strong          |      Strong    |   Nice to have |    Strong      |
-|NEW-OPS-REQ-UNSILO          |Strog         |     Strong     |     Strong     | Nice to have   |      Strong    |   Nice to have |    Strong      |
-|NEW-OPS-REQ-IT-INTEGRATION  |Strong        |   Nice to have |   Nice to have | Nice to have   |  Nice to have  |   Nice to have |    Strong      | 
-|NEW-OPS-REQ-ITER            |Strong        |     Strong     |     Strong     | Nice to have   |      Strong    |     Strong     |    Strong      |
-|NEW-OPS-REQ-Y2KG            |Nice to have  | Nice to have   |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |    Strong      | 
-|NEW-OPS-REQ-CLIENT-TOOLS    |Strong        |     Strong     |  Nice to have  | Strong         |  Nice to have  |   Nice to have |    Strong      |
-|NEW-OPS-REQ-IETF-TOOLS      |Nice to have  |  Nice to have  |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  | 
-|NEW-OPS-REQ-NEW-NEED        |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  | 
-|NEW-OPS-REQ-GLUE            |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  | 
+|NEW Ops Requirement Label   | Orange       | Telefonica     | Swisscom       | Equinix        |Deutsche Telekom| China Telecom  | OP Anonymous   | Overall   |
+|----------------------------|:------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
+|NEW-OPS-REQ-STRENGTHEN-DM   |Strong        |     Strong     |  Nice to have  |     Strong     |      Strong    |  Nice to have  |Medium - Across SDO Strong - within IETF|    Strong      |
+|NEW-OPS-REQ-DM-RATIONALIZE  |Strong        |     Strong     |     Strong     |     Strong     |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-QUICK-BUT-WELL  |Strong        |     Strong     |     Strong     |     Strong     |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-GUIDE-AND-PROFILE|Nice to have | Nice to have   |     Strong     | Nice to have   |      Strong    |  Nice to have  |  Nice to have  |  Nice to have  | 
+|NEW-OPS-REQ-ARCH            |Nice to have  | Nice to have   |     Strong     | Nice to have   |      Strong    |    Strong      |  Nice to have  |    Strong      | 
+|NEW-OPS-REQ-EASE-EXPOSURE   |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-TIMELY-DM       |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-READILTY-IMPLEM |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-DM2API          |Strong        |  Nice to have  |     Strong     | Nice to have   |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-NW-API-DISCOVERY|Nice to have  |     Strong     |  Nice to have  | Nice to have   |  Nice to have  |    Strong      |  Nice to have  |  Nice to have  | 
+|NEW-OPS-REQ-REASSESS        |Strong        |     Strong     |     Strong     | Strong         |      Strong    |   Nice to have |    Strong      |    Strong      |
+|NEW-OPS-REQ-BRIDGE          |Nice to have  |     Strong     |     Strong     |  Nice to have  |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-INTEGRATION     |Strong        |     Strong     |     Strong     |Strong          |    Strong      |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-LOSSLESS        |Nice to have  |     Strong     |   Nive to have | Nice to have   |      Strong    |   Nice to have |  Nice to have  |  Nice to have  |
+|NEW-OPS-REQ-REUSABILITY     |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |    Strong      |
+|NEW-OPS-REQ-SCALE           |Strong        |     Strong     |     Strong     |Strong          |      Strong    |   Nice to have |    Strong      |    Strong      |
+|NEW-OPS-REQ-UNSILO          |Strog         |     Strong     |     Strong     | Nice to have   |      Strong    |   Nice to have |    Strong      |    Strong      |
+|NEW-OPS-REQ-IT-INTEGRATION  |Strong        |   Nice to have |   Nice to have | Nice to have   |  Nice to have  |   Nice to have |    Strong      |  Nice to have  | 
+|NEW-OPS-REQ-ITER            |Strong        |     Strong     |     Strong     | Nice to have   |      Strong    |     Strong     |    Strong      |    Strong      |
+|NEW-OPS-REQ-Y2KG            |Nice to have  | Nice to have   |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |    Strong      |  Nice to have  | 
+|NEW-OPS-REQ-CLIENT-TOOLS    |Strong        |     Strong     |  Nice to have  | Strong         |  Nice to have  |   Nice to have |    Strong      |    Strong      |
+|NEW-OPS-REQ-IETF-TOOLS      |Nice to have  |  Nice to have  |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  |  Nice to have  | 
+|NEW-OPS-REQ-NEW-NEED        |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  |  Nice to have  | 
+|NEW-OPS-REQ-GLUE            |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  |  Nice to have  | 
 
 # Categorization 
 
