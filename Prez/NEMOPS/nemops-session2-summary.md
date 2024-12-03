@@ -62,9 +62,9 @@
 |NEW-OPS-REQ-REUSABILITY     |Strong        |     Strong     |     Strong     | Strong         |      Strong    |    Strong      |    Strong      |
 |NEW-OPS-REQ-SCALE           |Strong        |     Strong     |     Strong     |Strong          |      Strong    |   Nice to have |    Strong      |
 |NEW-OPS-REQ-UNSILO          |Strog         |     Strong     |     Strong     | Nice to have   |      Strong    |   Nice to have |    Strong      |
-|NEW-OPS-REQ-IT-INTEGRATION  |Strong        |   Nice to have |   Nice to have | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  | 
+|NEW-OPS-REQ-IT-INTEGRATION  |Strong        |   Nice to have |   Nice to have | Nice to have   |  Nice to have  |   Nice to have |    Strong      | 
 |NEW-OPS-REQ-ITER            |Strong        |     Strong     |     Strong     | Nice to have   |      Strong    |     Strong     |    Strong      |
-|NEW-OPS-REQ-Y2KG            |Nice to have  | Nice to have   |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  | 
+|NEW-OPS-REQ-Y2KG            |Nice to have  | Nice to have   |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |    Strong      | 
 |NEW-OPS-REQ-CLIENT-TOOLS    |Strong        |     Strong     |  Nice to have  | Strong         |  Nice to have  |   Nice to have |    Strong      |
 |NEW-OPS-REQ-IETF-TOOLS      |Nice to have  |  Nice to have  |  Nice to have  | Nice to have   |  Nice to have  |   Nice to have |  Nice to have  | 
 |NEW-OPS-REQ-NEW-NEED        |Nice to have  |     Strong     |  Nice to have  |Nice to have    |  Nice to have  |     Strong     |  Nice to have  | 
