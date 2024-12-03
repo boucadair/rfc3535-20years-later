@@ -15,7 +15,7 @@
 |NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|Y|
 |NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, IETF-defined device models are not widely implemented|#4|Y|
 |NEW-OPS-REQ-QUICK-BUT-WELL|Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules|#3, #4, #5, #8, #10|
-|NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs) |#4, #10|
+|NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management |#4, #8 #10|
 |NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#3, #5|
 |NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|Y|
 |NEW-OPS-REQ-TIMELY-DM|Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel|#4|
@@ -24,7 +24,7 @@
 |NEW-OPS-REQ-NW-API-DISCOVERY|Define a reference approach/process for service exposure discovery (APIs discovery)|#3, #4|
 |NEW-OPS-REQ-REASSESS|Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gRPC/gNMI)|#4, #9|Y|
 |NEW-OPS-REQ-BRIDGE|Create an eco-system where data and networking engineers can collaborate|#4, #10|Y|
-|NEW-OPS-REQ-INTEGRATION|Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve. |#4, #9|
+|NEW-OPS-REQ-INTEGRATION|Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve. |#4, #8, #9|
 |NEW-OPS-REQ-LOSSLESS|Consider programmatic approaches to ensure lossless mappings between service/network/device data models|#4, #11|
 |NEW-OPS-REQ-REUSABILITY|Consider approaches to ensure reuse/consistent data structure across various NM segments|#4, #5, #7, #10, #11|
 |NEW-OPS-REQ-SCALE|Consider approaches for YANG models to scale + protocol considerartions (transactions, touches, etc.)|#4, #7|
@@ -163,9 +163,12 @@ Example:
 7. [Agile Incremental Driven Development for Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-agile-incremental-driven-development-for-network-management-00.pdf)
    + (**NEW-OPS-REQ-ITER**) "Enable agile incremental driven development"
 8. [Evolving Challenges and Solutions in Network Management](https://www.ietf.org/slides/slides-nemopsws-paper-evolving-challenges-and-solutions-in-network-management-00.pdf)
-   + (**EW-OPS-REQ-SCALE**) "YANG Scalability"
+   + (**NEW-OPS-REQ-SCALE**) "YANG Scalability"
    + "data sources should implement active streaming of data to post-processing systems immediately upon production, this will also ensure that closed-loop automation systems have access to data in near real-time."
    + (**NEW-OPS-REQ-REUSABILITY**) "There is potential for retrofitting Internet of Things (IoT) oriented protocols on telemetry or management-type signaling within the network management domain"
+   + (**NEW-OPS-REQ-INTEGRATION**) "On the SBI it communicates with the managed nodes and it also is capable of translating between specific device information models and the harmonized, standards-based information model used in a network database. Intelligence layer builds on top of this harmonized model, implementing the analytics, automation and SDN control application supported in the system."
+   + (**NEW-OPS-REQ-GUIDE-PROFILE**): "Data Schemas/Information Models definition in standardization groups for cohesive solution"
+
 9. [IAB NEMOPS Position Paper - Telefonica](https://www.ietf.org/slides/slides-nemopsws-paper-iab-nemops-position-paper-telefonica-00.pdf)
    + (**NEW-OPS-REQ-Y2KG**) "the YANG language should evolve towards a grounding on formal knowledge representation to achieve the semantic  interoperability level. Standards like Resource Definition Framework (RDF) and Web
 Ontology Language (OWL) from the Semantic Web may serve as reference in this area."
