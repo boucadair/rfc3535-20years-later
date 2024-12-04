@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 6 June 2025                                       O. G. D. Dios
+Expires: 7 June 2025                                       O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,7 +13,7 @@ Expires: 6 June 2025                                       O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                         3 December 2024
+                                                         4 December 2024
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 June 2025.
+   This Internet-Draft will expire on 7 June 2025.
 
 Copyright Notice
 
