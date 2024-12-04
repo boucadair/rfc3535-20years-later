@@ -13,13 +13,13 @@
 |NEW Ops Requirement Label| Description| Papers| Survey | Outreach |
 |-------------------------|:----------:|:-----:|:------:|:--------:|
 |NEW-OPS-REQ-STRENGTHEN-DM |Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code|#1, #3, #4|Y|Y|
-|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, IETF-defined device models are not widely implemented|#4|Y|Y|
+|NEW-OPS-REQ-DM-RATIONALIZE|Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, standard-based device models are not widely implemented|#4|Y|Y|
 |NEW-OPS-REQ-QUICK-BUT-WELL|Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules|#3, #4, #5, #8, #10|
 |NEW-OPS-REQ-GUIDE-AND-PROFILE|The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management |#4, #8 #10||Y|
 |NEW-OPS-REQ-ARCH|Need to promote more arch and framework documents to exemplify the intended use|#3, #5|
 |NEW-OPS-REQ-EASE-EXPOSURE|Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations |#1, #3, #4, #11|Y|Y|
 |NEW-OPS-REQ-TIMELY-DM|Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel|#4|
-|NEW-OPS-REQ-READILTY-IMPLEM|The availablability of implementation is concerning|#4, #10|
+|NEW-OPS-REQ-READILTY-IMPLEM|The availablability of implementation is concerning. Consider catalyst approaches to have more (open) implementations, especially during the development of protocols/extensions |#4, #10|
 |NEW-OPS-REQ-DM2API|Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation |#4|
 |NEW-OPS-REQ-NW-API-DISCOVERY|Define a reference approach/process for service exposure discovery (APIs discovery)|#3, #4|
 |NEW-OPS-REQ-REASSESS|Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gRPC/gNMI)|#4, #9|Y|
