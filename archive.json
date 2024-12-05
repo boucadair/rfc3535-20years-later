@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-03T01:37:58.385915+00:00",
+  "timestamp": "2024-12-05T01:38:21.131149+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -1369,6 +1369,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 34,
+      "id": "PR_kwDOKqz7zs6D2Qs2",
+      "title": "Update nemops-session2-summary.md by Op Anonymous",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/34",
+      "state": "MERGED",
+      "author": "bradspau",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Internal review and submission",
+      "createdAt": "2024-12-03T07:09:07Z",
+      "updatedAt": "2024-12-03T08:52:10Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "e35cd13df7028f8ab81c127252a9dc74b112701a",
+      "headRepository": "bradspau/rfc3535-20years-later",
+      "headRefName": "patch-1",
+      "headRefOid": "f04539b8c321f53b49cc5f448002ab16e1a9f90c",
+      "closedAt": "2024-12-03T08:52:10Z",
+      "mergedAt": "2024-12-03T08:52:10Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "14db8707b83467d6147b4190a4c702c3ae19d297"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
