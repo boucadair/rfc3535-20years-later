@@ -43,7 +43,7 @@
 >
 
 
-|NEW Ops Requirement Label   | Orange       | Telefonica     | Swisscom       | Equinix        |Deutsche Telekom| China Telecom  | OP Anonymous   | Overall   |
+|NEW Ops Requirement Label   | Orange       | Telefonica     | Swisscom       | Equinix        |Deutsche Telekom| China Telecom  |     nbnco      |    Overall     |
 |----------------------------|:------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
 |NEW-OPS-REQ-STRENGTHEN-DM   |Strong        |     Strong     |  Nice to have  |     Strong     |      Strong    |  Nice to have  |Medium - Across SDO Strong - within IETF|    Strong      |
 |NEW-OPS-REQ-DM-RATIONALIZE  |Strong        |     Strong     |     Strong     |     Strong     |      Strong    |    Strong      |    Strong      |    Strong      |
