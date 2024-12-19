@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-17T01:37:36.783016+00:00",
+  "timestamp": "2024-12-19T01:27:17.636355+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -1395,6 +1395,32 @@
       "mergeCommit": {
         "oid": "14db8707b83467d6147b4190a4c702c3ae19d297"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 35,
+      "id": "PR_kwDOKqz7zs6FtEUm",
+      "title": "Update nemops-session2-summary.md",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/35",
+      "state": "OPEN",
+      "author": "bradspau",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "updating nbnco submission",
+      "createdAt": "2024-12-18T22:08:49Z",
+      "updatedAt": "2024-12-18T22:08:49Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "0694b72ac495de6e48fc4eccdbdc05008bd7b202",
+      "headRepository": "bradspau/rfc3535-20years-later",
+      "headRefName": "patch-2",
+      "headRefOid": "5a4e210a7039ae6ba0cba3fe7eaab6760109facf",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
