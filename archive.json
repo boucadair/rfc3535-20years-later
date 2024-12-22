@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-19T01:27:17.636355+00:00",
+  "timestamp": "2024-12-22T01:35:50.547808+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -1403,26 +1403,50 @@
       "id": "PR_kwDOKqz7zs6FtEUm",
       "title": "Update nemops-session2-summary.md",
       "url": "https://github.com/boucadair/rfc3535-20years-later/pull/35",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bradspau",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "updating nbnco submission",
       "createdAt": "2024-12-18T22:08:49Z",
-      "updatedAt": "2024-12-18T22:08:49Z",
+      "updatedAt": "2024-12-19T08:33:55Z",
       "baseRepository": "boucadair/rfc3535-20years-later",
       "baseRefName": "main",
       "baseRefOid": "0694b72ac495de6e48fc4eccdbdc05008bd7b202",
       "headRepository": "bradspau/rfc3535-20years-later",
       "headRefName": "patch-2",
       "headRefOid": "5a4e210a7039ae6ba0cba3fe7eaab6760109facf",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "closedAt": "2024-12-19T08:33:54Z",
+      "mergedAt": "2024-12-19T08:33:54Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "da6fd62216cf2d33b2ebb07607d0d4ec92496b1d"
+      },
+      "comments": [
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "Thanks Brad",
+          "createdAt": "2024-12-19T08:33:49Z",
+          "updatedAt": "2024-12-19T08:33:49Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKqz7zs6V08NZ",
+          "commit": {
+            "abbreviatedOid": "5a4e210"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-19T08:33:34Z",
+          "updatedAt": "2024-12-19T08:33:34Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
