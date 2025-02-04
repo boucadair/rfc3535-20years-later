@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 22 June 2025                                      O. G. D. Dios
+Expires: 8 August 2025                                     O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,7 +13,7 @@ Expires: 22 June 2025                                      O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                        19 December 2024
+                                                         4 February 2025
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 June 2025.
+   This Internet-Draft will expire on 8 August 2025.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -958,9 +958,9 @@ Table of Contents
               Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
               for Benchmarking Network Performance in Containerized
               Infrastructures", Work in Progress, Internet-Draft, draft-
-              ietf-bmwg-containerized-infra-03, 4 November 2024,
+              ietf-bmwg-containerized-infra-04, 9 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-03>.
+              containerized-infra-04>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
@@ -980,9 +980,9 @@ Table of Contents
               Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
               Tantsura, "A YANG Data Model for IS-IS Segment Routing for
               the MPLS Data Plane", Work in Progress, Internet-Draft,
-              draft-ietf-isis-sr-yang-23, 30 November 2024,
+              draft-ietf-isis-sr-yang-24, 29 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
-              yang-23>.
+              yang-24>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -995,26 +995,26 @@ Table of Contents
               Zheng, G., Zhou, T., Graf, T., Francois, P., Feng, A. H.,
               and P. Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-17, 1 December 2024,
+              ietf-netconf-udp-notif-18, 13 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-17>.
+              udp-notif-18>.
 
    [I-D.ietf-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
               and B. Wu, "A Network YANG Data Model for Attachment
               Circuits", Work in Progress, Internet-Draft, draft-ietf-
-              opsawg-ntw-attachment-circuit-14, 7 November 2024,
+              opsawg-ntw-attachment-circuit-16, 23 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              ntw-attachment-circuit-14>.
+              ntw-attachment-circuit-16>.
 
    [I-D.ietf-opsawg-teas-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
               and B. Wu, "YANG Data Models for Bearers and 'Attachment
               Circuits'-as-a-Service (ACaaS)", Work in Progress,
               Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
-              18, 7 November 2024,
+              20, 23 January 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              teas-attachment-circuit-18>.
+              teas-attachment-circuit-20>.
 
    [I-D.marcas-nmop-knowledge-graph-yang]
               Martinez-Casanueva, I. D., Rodríguez, L. C., and P.
