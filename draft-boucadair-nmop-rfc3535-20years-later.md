@@ -90,6 +90,26 @@ regarding network management.  The outcome of that workshop
 was documented in the "IAB Network Management Workshop" {{?RFC3535}}
 which was instrumental for developing NETCONF {{?RFC6241}} and YANG {{?RFC6020}}{{?RFC7950}}.
 
+Since the publication of {{?RFC3535}} major advances were achieved in the Network Managment area, such as (but not limited to):
+
+* NETCONF {{?RFC6241}}
+* YANG {{?RFC7950}}
+* RESTCONF  {{?RFC8040}}
+* SDN & Programmable Networks {{?RFC7149}}{{?RFC7426}}
+* Automation {{?RFC8969}}
+* Virtualization {{?RFC8568}}
+* Containerization {{?I-D.ietf-bmwg-containerized-infra}}
+* Intent-based {{?RFC9315}}
+* Network APIs
+* Models for management of services, networks, and devices {{?RFC8199}}{{?RFC8309}}
+* Telemetry {{?RFC9232}}
+* JSON Encoding of Data Modeled with YANG {{?RFC7951}}
+* CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}
+* YANG to CBOR mapping {{?RFC9254}}
+* YANG Schema Item iDentifier (YANG SID) {{?I-D.ietf-core-sid}}
+
+See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
+
 More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. The following table lists the new ops requirements; more details are provided in {{sec-obs}}.
 
 |NEW Ops Requirement Label| Section|
@@ -118,36 +138,37 @@ More than 20 years later, new requirements on network management operations are 
 |NEW-OPS-REQ-GLUE|{{sec-new}}|
 |NEW-OPS-REQ-GUIDANCE|{{sec-guid}}|
 
+> Editor note: update the table.
+
 The document also provide an assessment of the RFC3535 recommendations ({{sec-assessment}}) and to what extend that roadmap was driving network management efforts within the IETF ({{sec-reca}}).
 
-# Technology Advances Since RFC 3535
-
-Since the publication of {{?RFC3535}} major advances were achieved in the Network Managment area, such as (but not limited to):
-
-* NETCONF {{?RFC6241}}
-* YANG {{?RFC7950}}
-* RESTCONF  {{?RFC8040}}
-* SDN & Programmable Networks {{?RFC7149}}{{?RFC7426}}
-* Automation {{?RFC8969}}
-* Virtualization {{?RFC8568}}
-* Containerization {{?I-D.ietf-bmwg-containerized-infra}}
-* Intent-based {{?RFC9315}}
-* Network APIs
-* Models for management of services, networks, and devices {{?RFC8199}}{{?RFC8309}}
-* Telemetry {{?RFC9232}}
-* JSON Encoding of Data Modeled with YANG {{?RFC7951}}
-* CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}
-* YANG to CBOR mapping {{?RFC9254}}
-* YANG Schema Item iDentifier (YANG SID) {{?I-D.ietf-core-sid}}
-
-See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
-
 # Assessment of RFC 3535 Operator Requirements {#sec-assessment}
+
+## Summary
+
+|RFC3535 Ops Requirement Label       | Status                                    | 
+|-----------------------------------:|:------------------------------------------|
+| 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
+| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
+| 3535-OPS-REQ-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
+| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
+| 3535-OPS-REQ-CONFIG-DIFF                   | OK                                        |
+| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
+| 3535-OPS-REQ-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
+| 3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
+| 3535-OPS-REQ-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
+| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
+
+## Detailed Analysis
 
 {{Section 3 of ?RFC3535}} includes the following recommendations:
 
 {:quote}
->      Ease of use is a key requirement for any network management
+>      (3535-OPS-REQ-EASE-USE) Ease of use is a key requirement for any network management
        technology from the operators point of view.
 
 **Status Update**:
@@ -156,7 +177,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
        that were specified since then.
 
 {:quote}
->      It is necessary to make a clear distinction between configuration
+>      (3535-OPS-REQ-CONFIG-OPS-SEPARATE) It is necessary to make a clear distinction between configuration
        data, data that describes operational state and statistics.  Some
        devices make it very hard to determine which parameters were
        administratively configured and which were obtained via other
@@ -168,7 +189,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
        concept in NETCONF/YANG (e.g., {{?RFC8342}}.
 
 {:quote}
->      It is required to be able to fetch separately configuration data,
+>      (3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE) It is required to be able to fetch separately configuration data,
        operational state data, and statistics from devices, and to be
        able to compare these between devices.
 
@@ -176,7 +197,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This is supported by NETCONF and RESTCONF.
 
 {:quote}
->      It is necessary to enable operators to concentrate on the
+>      (3535-OPS-REQ-NETWORK-NOT-DEVICE) It is necessary to enable operators to concentrate on the
        configuration of the network as a whole rather than individual
        devices.
 
@@ -200,14 +221,14 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : More effort is still needed in this area.
 
 {:quote}
->      Support for configuration transactions across a number of devices
+>      (3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS) Support for configuration transactions across a number of devices
        would significantly simplify network configuration management.
 
 **Status Update**:
 : This feature is supported by NETCONF.
 
 {:quote}
->      Given configuration A and configuration B, it should be possible
+>      (3535-OPS-REQ-CONFIG-DIFF) Given configuration A and configuration B, it should be possible
        to generate the operations necessary to get from A to B with
        minimal state changes and effects on network and systems.  It is
        important to minimize the impact caused by configuration changes.
@@ -216,7 +237,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This feature is supported by NETCONF.
 
 {:quote}
->      A mechanism to dump and restore configurations is a primitive
+>      (3535-OPS-REQ-CONFIG-DUMP-RESTORE) A mechanism to dump and restore configurations is a primitive
        operation needed by operators.  Standards for pulling and pushing
        configurations from/to devices are desirable.
 
@@ -224,7 +245,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This feature is supported by NETCONF.
 
 {:quote}
->      It must be easy to do consistency checks of configurations over
+>      (3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK) It must be easy to do consistency checks of configurations over
        time and between the ends of a link in order to determine the
        changes between two configurations and whether those
        configurations are consistent.
@@ -233,7 +254,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : A mechanism is specified in {{?RFC9144}}.
 
 {:quote}
->      Network wide configurations are typically stored in central
+>      (3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA) Network wide configurations are typically stored in central
        master databases and transformed into formats that can be pushed
        to devices, either by generating sequences of CLI commands or
        complete configuration files that are pushed to devices.  There
@@ -246,7 +267,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : Covered by current implementations.
 
 {:quote}
->      It is highly desirable that text processing tools such as diff,
+>      (3535-OPS-REQ-TXT-PROCESSING-TOOLS) It is highly desirable that text processing tools such as diff,
        and version management tools such as RCS or CVS, can be used to
        process configurations, which implies that devices should not
        arbitrarily reorder data such as access control lists.
@@ -255,7 +276,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This is deployment-specific.
 
 {:quote}
->      The granularity of access control needed on management interfaces
+>      (3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC) The granularity of access control needed on management interfaces
        needs to match operational needs.  Typical requirements are a
        role-based access control model and the principle of least
        privilege, where a user can be given only the minimum access
@@ -266,14 +287,14 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
        the IETF defined {{?RFC8341}} for this purpose.
 
 {:quote}
->      It must be possible to do consistency checks of access control
+>      (3535-OPS-REQ-ACCESS-CONTROL-CHECKS) It must be possible to do consistency checks of access control
        lists across devices.
 
 **Status Update**:
 : This is implementation-specific.
 
 {:quote}
->      It is important to distinguish between the distribution of
+>      (3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV) It is important to distinguish between the distribution of
        configurations and the activation of a certain configuration.
        Devices should be able to hold multiple configurations.
 
@@ -281,7 +302,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This is supported by existing NETCONF methods.
 
 {:quote}
->      SNMP access control is data-oriented, while CLI access control is
+>      (3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK) SNMP access control is data-oriented, while CLI access control is
        usually command (task) oriented.  Depending on the management
        function, sometimes data-oriented or task-oriented access control
        makes more sense.  As such, it is a requirement to support both
@@ -292,10 +313,12 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
 # Assessment of RFC 3535 Recommendations {#sec-reca}
 
+## Detailed Analysis
+
 {{Section 6 of ?RFC3535}} includes the following recommendations:
 
 {:quote}
->      The workshop recommended that the IETF stop forcing working groups
+>      (3535-RECO-STOP-MANDATE-MIB) The workshop recommended that the IETF stop forcing working groups
        to provide writable MIB modules.  It should be the decision of
        the working group whether they want to provide writable objects
        or not.
@@ -307,7 +330,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
  write operations for configuration, and in consultation with the OPS ADs/MIB doctors.
 
 {:quote}
->      The workshop recommended that a group be formed to investigate why
+>      (3535-RECO-MIB-INVESTIGATE) The workshop recommended that a group be formed to investigate why
        current MIB modules do not contain all the objects needed by
        operators to monitor their networks.
 
@@ -315,7 +338,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : No such group was formed to our knowledge.
 
 {:quote}
->      The workshop recommended that a group be formed to investigate why
+>      (3535-RECO-SNMP-WG4MONITORING) The workshop recommended that a group be formed to investigate why
        the current SNMP protocol does not satisfy all the monitoring
        requirements of operators.
 
@@ -324,7 +347,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : This SNMP shortcoming was also reiterated in {{Section 3.5.2 of ?RFC5345}}.
 
 {:quote}
->      The workshop recommended, with strong consensus from both protocol
+>      (3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS) The workshop recommended, with strong consensus from both protocol
        developers and operators, that the IETF focus resources on the
        standardization of configuration management mechanisms.
 
@@ -333,7 +356,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : YANG is a transport-independent data modeling language. It can be used independently of NETCONF/RESTCONF. For example, YANG can be used to define abstract data structures {{?RFC8791}} that can be manipulated by other protocols (e.g., {{?RFC9132}}).
 
 {:quote}
->      The workshop recommended, with strong consensus from the operators
+>      (3535-RECO-FOCUS-XML) The workshop recommended, with strong consensus from the operators
        and rough consensus from the protocol developers, that the
        IETF/IRTF should spend resources on the development and
        standardization of XML-based device configuration and management
@@ -344,7 +367,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : OK. This recommendation was also mirrored in other documents such as {{?RFC5706}}.
 
 {:quote}
->      The workshop recommended, with strong consensus from the operators
+>      (3535-RECO-NO-HTTP) The workshop recommended, with strong consensus from the operators
        and rough consensus from the protocol developers, that the
        IETF/IRTF should not spend resources on developing HTML-based or
        HTTP-based methods for configuration management.
@@ -353,7 +376,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
  : The IETF deviated from this recommendation, e.g., RESTCONF {{?RFC8040}} or CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}.
 
  {:quote}
->      The workshop recommended, with rough consensus from the operators
+>      (3535-RECO-MAINTAIN-SMI-SPPI) The workshop recommended, with rough consensus from the operators
        and strong consensus from the protocol developers, that the IETF
        should continue to spend resources on the evolution of the
        SMI/SPPI data definition languages as being done in the SMIng
@@ -363,7 +386,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : SMIng WG was concluded in 2003-04-04.
 
 {:quote}
->      The workshop recommended, with split consensus from the operators
+>      (3535-RECO-IETF2FIX-MIB) The workshop recommended, with split consensus from the operators
        and rough consensus from the protocol developers, that the IETF
        should spend resources on fixing the MIB development and
        standardization processs.
@@ -374,7 +397,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 {{Section 6 of ?RFC3535}} also includes the following but without tagging them as recommendations:
 
 {:quote}
->      The workshop had split consensus from the operators and rough
+>      (3535-MISC-NO-CIM) The workshop had split consensus from the operators and rough
        consensus from the protocol developers, that the IETF should not
        focus resources on CIM extensions.
 
@@ -382,7 +405,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : The IETF didn't dedicate any resources on CIM extensions.
 
 {:quote}
->      The workshop had rough consensus from the protocol developers
+>      (3535-MISC-ABANDON-PIB) The workshop had rough consensus from the protocol developers
        that the IETF should not spend resources on COPS-PR development.
        So far, the operators have only very limited experience with
        COPS-PR.  In general, however, they felt that further development
@@ -394,7 +417,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
   to Historic status.
 
 {:quote}
->      The workshop had rough consensus from the protocol developers
+>      (3535-MISC-ABANDON-COPS-PR) The workshop had rough consensus from the protocol developers
        that the IETF should not spend resources on SPPI PIB definitions.
        The operators had rough consensus that they do not care about
        SPPI PIBs.
@@ -403,6 +426,23 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 : The IETF has reclassified Structure of Policy Provisioning Information {{?RFC3159}}, as well as
   three Policy Information Bases ({{?RFC3317}}, {{?RFC3318}}, and {{?RFC3571}}) to
   Historic status.
+
+## Summary
+
+| RFC3535 Recommendation Label           | Status                                                                                                 | 
+|---------------------------------------:|:-------------------------------------------------------------------------------------------------------|
+| 3535-RECO-STOP-MANDATE-MIB             | Done, IESG Statement on Writable MIB Module (2014)                                                     |
+| 3535-RECO-MIB-INVESTIGATE              | No such group was formed                                                                               |
+| 3535-RECO-SNMP-WG4MONITORING           | No such group was formed                                                                               |
+| 3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS | NETCONF/RESTCONF/CORECONF/YANG/COMI/etc.                                                               |
+| 3535-RECO-FOCUS-XML                    | OK                                                                                                     |
+| 3535-RECO-NO-HTTP                      | The IETF deviated from this recommendation, e.g., RESTCONF or CoAP Management Interface (CORECONF)     |
+| 3535-RECO-MAINTAIN-SMI-SPPI            | SMIng WG was concluded in 2003-04-04                                                                   |
+| 3535-RECO-IETF2FIX-MIB                 | The IETF dedicated resources to fix some SNMP shortcomings with a focus on security                    |
+| 3535-MISC-NO-CIM                       | The IETF didn't dedicate any resources on CIM extensions                                               |
+| 3535-MISC-ABANDON-COPS-PR              | OK. The IETF has reclassified COPS-PR to Historic status                                               |
+| 3535-MISC-ABANDON-PIB                  | OK. The IETF has reclassified SPPI, as well as three PIBs to Historic status                           |
+
 
 # Observations and New Requirements {#sec-obs}
 
@@ -628,6 +668,139 @@ There are several solutions that were standardized for network management purpos
 
 NEW-OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
+
+# New Requirements Summary
+
+NEW-OPS-REQ-STRENGTHEN-DM:
+: Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source 
+projects that facilitate access to code.
+
+NEW-OPS-REQ-DM-RATIONALIZE:
+: Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, Standard-based device models are not widely implemented.
+
+NEW-OPS-REQ-QUICK-BUT-WELL:
+: Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
+
+NEW-OPS-REQ-GUIDE-AND-PROFILE:
+: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
+
+NEW-OPS-REQ-ARCH:
+: Need to promote more arch and framework documents to exemplify the intended use.
+
+NEW-OPS-REQ-EASE-EXPOSURE:
+: Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations.
+
+NEW-OPS-REQ-TIMELY-DM:
+: Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
+
+NEW-OPS-REQ-READILY-IMPLEM:
+: The availablability of implementation is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.
+
+NEW-OPS-REQ-DM2API:
+: Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation.
+
+NEW-OPS-REQ-NW-API-DISCOVERY:
+: Define a reference approach/process for service exposure discovery (APIs discovery).
+
+NEW-OPS-REQ-REASSESS:
+: Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gNMI).
+
+NEW-OPS-REQ-BRIDGE:
+: Create an eco-system where data and networking engineers can collaborate.
+
+NEW-OPS-REQ-INTEGRATION:
+: Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve.
+
+NEW-OPS-REQ-LOSSLESS:
+: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is a enabler for support of deterministic verification, auditing, and tracing back along layers/models.
+
+NEW-OPS-REQ-REUSABILITY:
+: Consider approaches to ensure reuse/consistent data structure across various NM segments. This will ease correlating data learned from different means (IPFIX, BMP, SYSLOG, etc.).
+
+NEW-OPS-REQ-SCALE:
+: Consider approaches for YANG models to scale + protocol considerartions (transactions, touches, etc.). Specifically, address Telemetry scalability enhancements.
+
+NEW-OPS-REQ-UNSILO:
+: Necessity to handle the heterogeneity of data, configuration, and network management/requirements. Resolving such issue could draw on insights from parallel technical fields such as knowledge engineering practices and concepts associated with Linked Data in the Semantic Web, areas where it is common to manage problems of heterogeneity and data reconciliation across various application domains.
+
+NEW-OPS-REQ-IT-INTEGRATION:
+: There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").
+
+NEW-OPS-REQ-ITER:
+: Need a velocity and approach to standardisation that allows for business goals to be incrementally realised.
+
+NEW-OPS-REQ-Y2KG:
+: Need for reference specifications to translate YANG-based data into the knowledge graph. Sample use cases to illustrate the intended use should be considered as well.
+
+NEW-OPS-REQ-TOOLS:
+: Focus on tooling is needed, especially on the client side. There is a need for tools that are easy to use. Likewise, there is need for support for multiple friendly, stable, and feature-rich libraries for programming languages.
+
+NEW-OPS-REQ-IETF-TOOLS:
+: Ease exposure of libraries and host tools (e.g., yangkit) to ease integration.
+
+NEW-OPS-REQ-NEW-NEED:
+: Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness.
+
+NEW-OPS-REQ-GLUE:
+: Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
+
+# Overall New Requirements Levels (Operators)
+
+|NEW Ops Requirement Label    | Overall Level  |
+|----------------------------:|:--------------:|
+|NEW-OPS-REQ-STRENGTHEN-DM    |    Strong      |
+|NEW-OPS-REQ-DM-RATIONALIZE   |    Strong      |
+|NEW-OPS-REQ-QUICK-BUT-WELL   |    Strong      |
+|NEW-OPS-REQ-GUIDE-AND-PROFILE|  Nice to have  | 
+|NEW-OPS-REQ-ARCH             |    Strong      | 
+|NEW-OPS-REQ-EASE-EXPOSURE    |    Strong      |
+|NEW-OPS-REQ-TIMELY-DM        |    Strong      |
+|NEW-OPS-REQ-READILY-IMPLEM   |    Strong      |
+|NEW-OPS-REQ-DM2API           |    Strong      |
+|NEW-OPS-REQ-NW-API-DISCOVERY |  Nice to have  | 
+|NEW-OPS-REQ-REASSESS         |    Strong      |
+|NEW-OPS-REQ-BRIDGE           |    Strong      |
+|NEW-OPS-REQ-INTEGRATION      |    Strong      |
+|NEW-OPS-REQ-LOSSLESS         |  Nice to have  |
+|NEW-OPS-REQ-REUSABILITY      |    Strong      |
+|NEW-OPS-REQ-SCALE            |    Strong      |
+|NEW-OPS-REQ-UNSILO           |    Strong      |
+|NEW-OPS-REQ-IT-INTEGRATION   |  Nice to have  | 
+|NEW-OPS-REQ-ITER             |    Strong      |
+|NEW-OPS-REQ-Y2KG             |  Nice to have  | 
+|NEW-OPS-REQ-TOOLS            |    Strong      |
+|NEW-OPS-REQ-IETF-TOOLS       |  Nice to have  | 
+|NEW-OPS-REQ-NEW-NEED         |  Nice to have  | 
+|NEW-OPS-REQ-GLUE             |  Nice to have  |
+
+# Categorization
+
+|NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
+|----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
+|NEW-OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
+|NEW-OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
+|NEW-OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
+|NEW-OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
+|NEW-OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
+|NEW-OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
+|NEW-OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
+|NEW-OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
+|NEW-OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
+|NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
+|NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
 
 # Security Considerations
 
