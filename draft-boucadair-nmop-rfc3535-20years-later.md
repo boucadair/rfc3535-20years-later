@@ -669,10 +669,12 @@ There are several solutions that were standardized for network management purpos
 NEW-OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
 
-# New Requirements Summary
+# New Requirements
+
+## Summary
 
 NEW-OPS-REQ-STRENGTHEN-DM:
-: Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source 
+: Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source
 projects that facilitate access to code.
 
 NEW-OPS-REQ-DM-RATIONALIZE:
@@ -744,7 +746,36 @@ NEW-OPS-REQ-NEW-NEED:
 NEW-OPS-REQ-GLUE:
 : Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
 
-# Overall New Requirements Levels (Operators)
+## Categorization
+
+|NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
+|----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
+|NEW-OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
+|NEW-OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
+|NEW-OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
+|NEW-OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
+|NEW-OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
+|NEW-OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
+|NEW-OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
+|NEW-OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
+|NEW-OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
+|NEW-OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
+|NEW-OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
+|NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
+|NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
+|NEW-OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
+|NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
+|NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
+|NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
+
+## Overall New Requirements Levels (Operators)
 
 |NEW Ops Requirement Label    | Overall Level  |
 |----------------------------:|:--------------:|
@@ -773,34 +804,17 @@ NEW-OPS-REQ-GLUE:
 |NEW-OPS-REQ-NEW-NEED         |  Nice to have  |
 |NEW-OPS-REQ-GLUE             |  Nice to have  |
 
-# Categorization
+## Collaborative Prioritization
 
-|NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
-|----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
-|NEW-OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
-|NEW-OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
-|NEW-OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
-|NEW-OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
-|NEW-OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
-|NEW-OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
-|NEW-OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
-|NEW-OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
-|NEW-OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
-|NEW-OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
-|NEW-OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
-|NEW-OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
-|NEW-OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
-|NEW-OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
-|NEW-OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
-|NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
-|NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
-|NEW-OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
-|NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
-|NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
-|NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
+> TBC to reflect the priorities set by the WG.
+
+> ((Including Rob's Inputs))
+
+	* Move much faster (NEW-OPS-REQ-QUICK-BUT-WELL, NEW-OPS-REQ-TIMELY-DM)
+	*	Implement minimal functionality, not bells and whistles (NEW-OPS-REQ-GUIDE-AND-PROFILE, NEW-OPS-REQ-ITER)
+	* Have running code (NEW-OPS-REQ-READILY-IMPLEM, NEW-OPS-REQ-TOOLS)
+	* Have vendors and operators on board at the time of developing the solution independent compliance suite to validate things.
+ * Need to coorelating data learned from different means (IPFIX, BMP, Models)
 
 # Security Considerations
 
