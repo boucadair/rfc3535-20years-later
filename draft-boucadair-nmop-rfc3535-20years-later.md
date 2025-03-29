@@ -146,7 +146,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 
 ## Summary
 
-|RFC3535 Ops Requirement Label       | Status                                    | 
+|RFC3535 Ops Requirement Label       | Status                                    |
 |-----------------------------------:|:------------------------------------------|
 | 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
 | 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
@@ -429,7 +429,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 
 ## Summary
 
-| RFC3535 Recommendation Label           | Status                                                                                                 | 
+| RFC3535 Recommendation Label           | Status                                                                                                 |
 |---------------------------------------:|:-------------------------------------------------------------------------------------------------------|
 | 3535-RECO-STOP-MANDATE-MIB             | Done, IESG Statement on Writable MIB Module (2014)                                                     |
 | 3535-RECO-MIB-INVESTIGATE              | No such group was formed                                                                               |
@@ -751,13 +751,13 @@ NEW-OPS-REQ-GLUE:
 |NEW-OPS-REQ-STRENGTHEN-DM    |    Strong      |
 |NEW-OPS-REQ-DM-RATIONALIZE   |    Strong      |
 |NEW-OPS-REQ-QUICK-BUT-WELL   |    Strong      |
-|NEW-OPS-REQ-GUIDE-AND-PROFILE|  Nice to have  | 
-|NEW-OPS-REQ-ARCH             |    Strong      | 
+|NEW-OPS-REQ-GUIDE-AND-PROFILE|  Nice to have  |
+|NEW-OPS-REQ-ARCH             |    Strong      |
 |NEW-OPS-REQ-EASE-EXPOSURE    |    Strong      |
 |NEW-OPS-REQ-TIMELY-DM        |    Strong      |
 |NEW-OPS-REQ-READILY-IMPLEM   |    Strong      |
 |NEW-OPS-REQ-DM2API           |    Strong      |
-|NEW-OPS-REQ-NW-API-DISCOVERY |  Nice to have  | 
+|NEW-OPS-REQ-NW-API-DISCOVERY |  Nice to have  |
 |NEW-OPS-REQ-REASSESS         |    Strong      |
 |NEW-OPS-REQ-BRIDGE           |    Strong      |
 |NEW-OPS-REQ-INTEGRATION      |    Strong      |
@@ -765,12 +765,12 @@ NEW-OPS-REQ-GLUE:
 |NEW-OPS-REQ-REUSABILITY      |    Strong      |
 |NEW-OPS-REQ-SCALE            |    Strong      |
 |NEW-OPS-REQ-UNSILO           |    Strong      |
-|NEW-OPS-REQ-IT-INTEGRATION   |  Nice to have  | 
+|NEW-OPS-REQ-IT-INTEGRATION   |  Nice to have  |
 |NEW-OPS-REQ-ITER             |    Strong      |
-|NEW-OPS-REQ-Y2KG             |  Nice to have  | 
+|NEW-OPS-REQ-Y2KG             |  Nice to have  |
 |NEW-OPS-REQ-TOOLS            |    Strong      |
-|NEW-OPS-REQ-IETF-TOOLS       |  Nice to have  | 
-|NEW-OPS-REQ-NEW-NEED         |  Nice to have  | 
+|NEW-OPS-REQ-IETF-TOOLS       |  Nice to have  |
+|NEW-OPS-REQ-NEW-NEED         |  Nice to have  |
 |NEW-OPS-REQ-GLUE             |  Nice to have  |
 
 # Categorization
