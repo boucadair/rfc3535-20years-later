@@ -144,31 +144,14 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 
 # Assessment of RFC 3535 Operator Requirements {#sec-assessment}
 
-## Summary
-
-|RFC3535 Ops Requirement Label       | Status                                    |
-|-----------------------------------:|:------------------------------------------|
-| 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
-| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
-| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
-| 3535-OPS-REQ-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
-| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
-| 3535-OPS-REQ-CONFIG-DIFF                   | OK                                        |
-| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | OK                                        |
-| 3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
-| 3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
-| 3535-OPS-REQ-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
-| 3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
-| 3535-OPS-REQ-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
-| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
-| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
-
 ## Detailed Analysis
 
 {{Section 3 of ?RFC3535}} includes the following recommendations:
 
+3535-OPS-REQ-EASE-USE:
+
 {:quote}
->      (3535-OPS-REQ-EASE-USE) Ease of use is a key requirement for any network management
+>      Ease of use is a key requirement for any network management
        technology from the operators point of view.
 
 **Status Update**:
@@ -176,8 +159,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        even exacerbated with the amount of techniques and extensions
        that were specified since then.
 
+3535-OPS-REQ-CONFIG-OPS-SEPARATE:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-OPS-SEPARATE) It is necessary to make a clear distinction between configuration
+>      It is necessary to make a clear distinction between configuration
        data, data that describes operational state and statistics.  Some
        devices make it very hard to determine which parameters were
        administratively configured and which were obtained via other
@@ -188,16 +173,20 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        designing IETF solutions. Specifically, datastores are a fundamental
        concept in NETCONF/YANG (e.g., {{?RFC8342}}.
 
+3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE) It is required to be able to fetch separately configuration data,
+>      It is required to be able to fetch separately configuration data,
        operational state data, and statistics from devices, and to be
        able to compare these between devices.
 
 **Status Update**:
 : This is supported by NETCONF and RESTCONF.
 
+3535-OPS-REQ-NETWORK-NOT-DEVICE:
+
 {:quote}
->      (3535-OPS-REQ-NETWORK-NOT-DEVICE) It is necessary to enable operators to concentrate on the
+>      It is necessary to enable operators to concentrate on the
        configuration of the network as a whole rather than individual
        devices.
 
@@ -220,15 +209,19 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        {{?I-D.ietf-opsawg-teas-attachment-circuit}}, {{?I-D.ietf-opsawg-ntw-attachment-circuit}}).
 : More effort is still needed in this area.
 
+3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS:
+
 {:quote}
->      (3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS) Support for configuration transactions across a number of devices
+>      Support for configuration transactions across a number of devices
        would significantly simplify network configuration management.
 
 **Status Update**:
 : This feature is supported by NETCONF.
 
+3535-OPS-REQ-CONFIG-DIFF:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-DIFF) Given configuration A and configuration B, it should be possible
+>      Given configuration A and configuration B, it should be possible
        to generate the operations necessary to get from A to B with
        minimal state changes and effects on network and systems.  It is
        important to minimize the impact caused by configuration changes.
@@ -236,16 +229,20 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : This feature is supported by NETCONF.
 
+3535-OPS-REQ-CONFIG-DUMP-RESTORE:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-DUMP-RESTORE) A mechanism to dump and restore configurations is a primitive
+>      A mechanism to dump and restore configurations is a primitive
        operation needed by operators.  Standards for pulling and pushing
        configurations from/to devices are desirable.
 
 **Status Update**:
 : This feature is supported by NETCONF.
 
+3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK) It must be easy to do consistency checks of configurations over
+>      It must be easy to do consistency checks of configurations over
        time and between the ends of a link in order to determine the
        changes between two configurations and whether those
        configurations are consistent.
@@ -253,8 +250,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : A mechanism is specified in {{?RFC9144}}.
 
+3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA) Network wide configurations are typically stored in central
+>      Network wide configurations are typically stored in central
        master databases and transformed into formats that can be pushed
        to devices, either by generating sequences of CLI commands or
        complete configuration files that are pushed to devices.  There
@@ -266,8 +265,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : Covered by current implementations.
 
+3535-OPS-REQ-TXT-PROCESSING-TOOLS:
+
 {:quote}
->      (3535-OPS-REQ-TXT-PROCESSING-TOOLS) It is highly desirable that text processing tools such as diff,
+>      It is highly desirable that text processing tools such as diff,
        and version management tools such as RCS or CVS, can be used to
        process configurations, which implies that devices should not
        arbitrarily reorder data such as access control lists.
@@ -275,8 +276,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : This is deployment-specific.
 
+3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC:
+
 {:quote}
->      (3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC) The granularity of access control needed on management interfaces
+>      The granularity of access control needed on management interfaces
        needs to match operational needs.  Typical requirements are a
        role-based access control model and the principle of least
        privilege, where a user can be given only the minimum access
@@ -286,23 +289,29 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 : RBAC is supported by existing implementation. Also,
        the IETF defined {{?RFC8341}} for this purpose.
 
+3535-OPS-REQ-ACCESS-CONTROL-CHECKS:
+
 {:quote}
->      (3535-OPS-REQ-ACCESS-CONTROL-CHECKS) It must be possible to do consistency checks of access control
+>      It must be possible to do consistency checks of access control
        lists across devices.
 
 **Status Update**:
 : This is implementation-specific.
 
+3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV:
+
 {:quote}
->      (3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV) It is important to distinguish between the distribution of
+>      It is important to distinguish between the distribution of
        configurations and the activation of a certain configuration.
        Devices should be able to hold multiple configurations.
 
 **Status Update**:
 : This is supported by existing NETCONF methods.
 
+3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK:
+
 {:quote}
->      (3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK) SNMP access control is data-oriented, while CLI access control is
+>      SNMP access control is data-oriented, while CLI access control is
        usually command (task) oriented.  Depending on the management
        function, sometimes data-oriented or task-oriented access control
        makes more sense.  As such, it is a requirement to support both
@@ -311,14 +320,35 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : This is supported by {{?RFC8341}}.
 
+## Summary
+
+|RFC3535 Ops Requirement Label       | Status                                    |
+|-----------------------------------:|:------------------------------------------|
+| 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
+| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
+| 3535-OPS-REQ-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
+| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
+| 3535-OPS-REQ-CONFIG-DIFF                   | OK                                        |
+| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | OK                                        |
+| 3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
+| 3535-OPS-REQ-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
+| 3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
+| 3535-OPS-REQ-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
+| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
+| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
+
 # Assessment of RFC 3535 Recommendations {#sec-reca}
 
 ## Detailed Analysis
 
 {{Section 6 of ?RFC3535}} includes the following recommendations:
 
+3535-RECO-STOP-MANDATE-MIB:
+
 {:quote}
->      (3535-RECO-STOP-MANDATE-MIB) The workshop recommended that the IETF stop forcing working groups
+>      The workshop recommended that the IETF stop forcing working groups
        to provide writable MIB modules.  It should be the decision of
        the working group whether they want to provide writable objects
        or not.
@@ -329,16 +359,20 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
    > SNMP MIB modules creating and modifying configuration state should only be produced by working groups in cases of clear utility and consensus to use SNMP
  write operations for configuration, and in consultation with the OPS ADs/MIB doctors.
 
+3535-RECO-MIB-INVESTIGATE:
+
 {:quote}
->      (3535-RECO-MIB-INVESTIGATE) The workshop recommended that a group be formed to investigate why
+>      The workshop recommended that a group be formed to investigate why
        current MIB modules do not contain all the objects needed by
        operators to monitor their networks.
 
 **Status Update**:
 : No such group was formed to our knowledge.
 
+3535-RECO-SNMP-WG4MONITORING:
+
 {:quote}
->      (3535-RECO-SNMP-WG4MONITORING) The workshop recommended that a group be formed to investigate why
+>      The workshop recommended that a group be formed to investigate why
        the current SNMP protocol does not satisfy all the monitoring
        requirements of operators.
 
@@ -346,8 +380,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 : No such group was formed to our knowledge.
 : This SNMP shortcoming was also reiterated in {{Section 3.5.2 of ?RFC5345}}.
 
+3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
+
 {:quote}
->      (3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS) The workshop recommended, with strong consensus from both protocol
+>      The workshop recommended, with strong consensus from both protocol
        developers and operators, that the IETF focus resources on the
        standardization of configuration management mechanisms.
 
@@ -355,8 +391,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 : NETCONF {{?RFC6241}}, RESTCONF {{?RFC8040}}, CORECONF {{I-D.ietf-core-comi}}, YANG.
 : YANG is a transport-independent data modeling language. It can be used independently of NETCONF/RESTCONF. For example, YANG can be used to define abstract data structures {{?RFC8791}} that can be manipulated by other protocols (e.g., {{?RFC9132}}).
 
+3535-RECO-FOCUS-XML:
+
 {:quote}
->      (3535-RECO-FOCUS-XML) The workshop recommended, with strong consensus from the operators
+>      The workshop recommended, with strong consensus from the operators
        and rough consensus from the protocol developers, that the
        IETF/IRTF should spend resources on the development and
        standardization of XML-based device configuration and management
@@ -366,8 +404,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : OK. This recommendation was also mirrored in other documents such as {{?RFC5706}}.
 
+3535-RECO-NO-HTTP:
+
 {:quote}
->      (3535-RECO-NO-HTTP) The workshop recommended, with strong consensus from the operators
+>      The workshop recommended, with strong consensus from the operators
        and rough consensus from the protocol developers, that the
        IETF/IRTF should not spend resources on developing HTML-based or
        HTTP-based methods for configuration management.
@@ -375,8 +415,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
  **Status Update**:
  : The IETF deviated from this recommendation, e.g., RESTCONF {{?RFC8040}} or CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}.
 
+3535-RECO-MAINTAIN-SMI-SPPI:
+
  {:quote}
->      (3535-RECO-MAINTAIN-SMI-SPPI) The workshop recommended, with rough consensus from the operators
+>      The workshop recommended, with rough consensus from the operators
        and strong consensus from the protocol developers, that the IETF
        should continue to spend resources on the evolution of the
        SMI/SPPI data definition languages as being done in the SMIng
@@ -385,8 +427,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : SMIng WG was concluded in 2003-04-04.
 
+3535-RECO-IETF2FIX-MIB:
+
 {:quote}
->      (3535-RECO-IETF2FIX-MIB) The workshop recommended, with split consensus from the operators
+>      The workshop recommended, with split consensus from the operators
        and rough consensus from the protocol developers, that the IETF
        should spend resources on fixing the MIB development and
        standardization processs.
@@ -396,16 +440,20 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 
 {{Section 6 of ?RFC3535}} also includes the following but without tagging them as recommendations:
 
+3535-MISC-NO-CIM:
+
 {:quote}
->      (3535-MISC-NO-CIM) The workshop had split consensus from the operators and rough
+>      The workshop had split consensus from the operators and rough
        consensus from the protocol developers, that the IETF should not
        focus resources on CIM extensions.
 
 **Status Update**:
 : The IETF didn't dedicate any resources on CIM extensions.
 
+3535-MISC-ABANDON-PIB:
+
 {:quote}
->      (3535-MISC-ABANDON-PIB) The workshop had rough consensus from the protocol developers
+>      The workshop had rough consensus from the protocol developers
        that the IETF should not spend resources on COPS-PR development.
        So far, the operators have only very limited experience with
        COPS-PR.  In general, however, they felt that further development
@@ -416,8 +464,10 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 : The IETF has reclassified COPS Usage for Policy Provisioning {{?RFC3084}}
   to Historic status.
 
+3535-MISC-ABANDON-COPS-PR:
+
 {:quote}
->      (3535-MISC-ABANDON-COPS-PR) The workshop had rough consensus from the protocol developers
+>      The workshop had rough consensus from the protocol developers
        that the IETF should not spend resources on SPPI PIB definitions.
        The operators had rough consensus that they do not care about
        SPPI PIBs.
@@ -810,11 +860,11 @@ NEW-OPS-REQ-GLUE:
 
 > ((Including Rob's Inputs))
 
-	* Move much faster (NEW-OPS-REQ-QUICK-BUT-WELL, NEW-OPS-REQ-TIMELY-DM)
-	*	Implement minimal functionality, not bells and whistles (NEW-OPS-REQ-GUIDE-AND-PROFILE, NEW-OPS-REQ-ITER)
-	* Have running code (NEW-OPS-REQ-READILY-IMPLEM, NEW-OPS-REQ-TOOLS)
-	* Have vendors and operators on board at the time of developing the solution independent compliance suite to validate things.
- * Need to coorelating data learned from different means (IPFIX, BMP, Models)
+* Move much faster (NEW-OPS-REQ-QUICK-BUT-WELL, NEW-OPS-REQ-TIMELY-DM)
+* Implement minimal functionality, not bells and whistles (NEW-OPS-REQ-GUIDE-AND-PROFILE, NEW-OPS-REQ-ITER)
+* Have running code (NEW-OPS-REQ-READILY-IMPLEM, NEW-OPS-REQ-TOOLS)
+* Have vendors and operators on board at the time of developing the solution independent compliance suite to validate things.
+* Need to coorelating data learned from different means (IPFIX, BMP, Models)
 
 # Security Considerations
 
