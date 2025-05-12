@@ -167,63 +167,7 @@ Table of Contents
 
    More than 20 years later, new requirements on network management
    operations are emerging from the operators.  This document captures
-   these requirements that reflect the progress in this area.  The
-   following table lists the new ops requirements; more details are
-   provided in Section 4.
-
-            +===============================+================+
-            | NEW Ops Requirement Label     |    Section     |
-            +===============================+================+
-            | NEW-OPS-REQ-STRENGTHEN-DM     |  Section 4.1   |
-            +-------------------------------+----------------+
-            | NEW -OPS-REQ-DM-RATIONALIZE   |  Section 4.2   |
-            +-------------------------------+----------------+
-            | NEW -OPS-REQ-EASE-EXPOSURE    |  Section 4.3   |
-            +-------------------------------+----------------+
-            | NEW -OPS-REQ-NW-API-DISCOVERY |  Section 4.3   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-DM-API            |  Section 4.4   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-PROFILING         |  Section 4.5   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-REASSESS          |  Section 4.5   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-AGILE             |  Section 4.6   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-INTEGRATION       |  Section 4.7   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-Y2KG              |  Section 4.8   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-SCALE             |  Section 4.8   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-LOSSLESS          |  Section 4.9   |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-REUSABILITY       |  Section 4.10  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-NEW-NEED          |  Section 4.12  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-UNSILO            |  Section 4.13  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-TIMELY-DM         |  Section 4.14  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-READILTY-IMPLEM   |  Section 4.15  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-IT-INTEGRATION    | Section 4.16.1 |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-IETF-TOOLS        | Section 4.16.2 |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-CLIENT-TOOLS      | Section 4.16.3 |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-BRIDGE            | Section 4.16.4 |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-GLUE              |  Section 4.17  |
-            +-------------------------------+----------------+
-            | NEW-OPS-REQ-GUIDANCE          |  Section 4.18  |
-            +-------------------------------+----------------+
-
-                                 Table 1
-
-      Editor note: update the table.
+   these requirements that reflect the progress in this area.
 
    The document also provide an assessment of the RFC3535
    recommendations (Section 2) and to what extend that roadmap was
@@ -356,8 +300,9 @@ Table of Contents
    |     privilege, where a user can be given only the minimum access
    |     necessary to perform a required task.
 
-   *Status Update*:  RBAC is supported by existing implementation.
-      Also, the IETF defined [RFC8341] for this purpose.
+   *Status Update*:  Role-based Access Control (RBAC) is supported by
+      existing implementation.  Also, the IETF defined [RFC8341] for
+      this purpose.
 
    3535-OPS-REQ-ACCESS-CONTROL-CHECKS:
 
@@ -391,18 +336,23 @@ Table of Contents
    +==========================================+=======================+
    |                     3535-OPS-REQ-EASE-USE|Still Applicable       |
    +------------------------------------------+-----------------------+
-   |          3535-OPS-REQ-CONFIG-OPS-SEPARATE|OK                     |
+   |          3535-OPS-REQ-CONFIG-OPS-SEPARATE|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
-   |    3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE|OK                     |
+   |    3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
    |           3535-OPS-REQ-NETWORK-NOT-DEVICE|Protocol (OK), DM      |
    |                                          |(Still Applicable)     |
    +------------------------------------------+-----------------------+
-   |    3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS|OK                     |
+   |    3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
-   |                  3535-OPS-REQ-CONFIG-DIFF|OK                     |
+   |                  3535-OPS-REQ-CONFIG-DIFF|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
-   |          3535-OPS-REQ-CONFIG-DUMP-RESTORE|OK                     |
+   |          3535-OPS-REQ-CONFIG-DUMP-RESTORE|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
    |     3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK|Implementation-specific|
    +------------------------------------------+-----------------------+
@@ -414,12 +364,14 @@ Table of Contents
    +------------------------------------------+-----------------------+
    |        3535-OPS-REQ-ACCESS-CONTROL-CHECKS|Implementation-specific|
    +------------------------------------------+-----------------------+
-   |3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV|OK                     |
+   |3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
-   |3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK|OK                     |
+   |3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK|A solution was         |
+   |                                          |standarized            |
    +------------------------------------------+-----------------------+
 
-                                 Table 2
+                                 Table 1
 
 3.  Assessment of RFC 3535 Recommendations
 
@@ -459,9 +411,6 @@ Table of Contents
 
    *Status Update*:  No such group was formed to our knowledge.
 
-      This SNMP shortcoming was also reiterated in Section 3.5.2 of
-      [RFC5345].
-
    3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
 
   |   The workshop recommended, with strong consensus from both protocol
@@ -485,8 +434,12 @@ Table of Contents
   |     technologies (such as common XML configuration schemas, exchange
   |     protocols and so on).
 
-   *Status Update*:  OK.  This recommendation was also mirrored in other
+   *Status Update*:  This recommendation was followed in base
+      specifications.  This recommendation was also mirrored in other
       documents such as [RFC5706].
+
+      However, the IETF integrated support for other encoding such as
+      JSON.
 
    3535-RECO-NO-HTTP:
 
@@ -576,7 +529,7 @@ Table of Contents
      | 3535-RECO-FOCUS-IETF- | NETCONF/RESTCONF/CORECONF/YANG/COMI/ |
      |     CONFIG-MECHANISMS | etc.                                 |
      +-----------------------+--------------------------------------+
-     |   3535-RECO-FOCUS-XML | OK                                   |
+     |   3535-RECO-FOCUS-XML | The recommendation was followed      |
      +-----------------------+--------------------------------------+
      |     3535-RECO-NO-HTTP | The IETF deviated from this          |
      |                       | recommendation, e.g., RESTCONF or    |
@@ -600,7 +553,7 @@ Table of Contents
      |                       | status                               |
      +-----------------------+--------------------------------------+
 
-                                 Table 3
+                                 Table 2
 
 4.  Observations and New Requirements
 
@@ -723,10 +676,17 @@ Table of Contents
    Many NETCONF-related features are (being) specified by the IETF, but
    these features are not widely supported (e.g., YANG-Push [RFC8639]).
 
-   NEW-OPS-REQ-PROFILING:  Editing a profile document that outlines a
-      set of recommendations for core/key features, along with
-      appropriate justifications, will help foster more implementations
-      that meet operators’ needs.
+   NEW-OPS-REQ-GUIDE-AND-PROFILE:  The target application/applicability
+      of a network management approach should be documented (e.g., edit
+      profile documents that outline a set of recommendations for core/
+      key features, along with appropriate justifications, will help
+      foster more implementations that meet operators’ needs).  This
+      also covers security management aspects of network management.
+      Additionaly, consider independent compliance suites to validate
+      functions/features/etc.
+
+   NEW-OPS-REQ-ARCH:  Need to promote more arch and framework documents
+      to exemplify the intended use.
 
       Examples of such profile documents are the various RFCs that were
       published by the Behavior Engineering for Hindrance Avoidance
@@ -757,8 +717,9 @@ Table of Contents
    knowledge engineering such as [LOT2019] and automatic documentation
    tools like [Widoco2017].
 
-   NEW-OPS-REQ-AGILE:  Develop a more agile process for the development
-      and maintenance of YANG modules in the IETF.
+   NEW-OPS-REQ-QUICK-BUT-WELL:  Develop a more agile process for the
+      development and maintenance of YANG modules in the IETF.  RFCs
+      might not be suited for documenting YANG modules.
 
 4.7.  Integration Complexity
 
@@ -833,6 +794,10 @@ Table of Contents
 
    NEW-OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
       lossless mappings between service/network/device data models.
+      Means to detect, characterize, and expose loss may be considered.
+      Note that lossless mapping is a enabler for support of
+      deterministic verification, auditing, and tracing back along
+      layers/models.
 
 4.10.  (In)Consistent Data Structures in Network Protocols for Data
        Export
@@ -1063,6 +1028,8 @@ Table of Contents
    There is no cross referencing between the two standards or delimits
    its applicability scope vs the other approach.
 
+   Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
+
    NEW-OPS-REQ-GUIDANCE:  The target application/applicability of a
       network management approach should be integrated in the
       specification itself.
@@ -1279,7 +1246,7 @@ Table of Contents
    |REQ-GLUE   |  |        |             |           |       |             |      |
    +-----------+--+--------+-------------+-----------+-------+-------------+------+
 
-                                  Table 4
+                                  Table 3
 
 5.3.  Overall New Requirements Levels (Operators)
 
@@ -1335,7 +1302,7 @@ Table of Contents
              |              NEW-OPS-REQ-GLUE |  Nice to have |
              +-------------------------------+---------------+
 
-                                  Table 5
+                                  Table 4
 
 5.4.  Collaborative Prioritization
 
@@ -1533,11 +1500,6 @@ Table of Contents
    [RFC4794]  Fenner, B., "RFC 1264 Is Obsolete", RFC 4794,
               DOI 10.17487/RFC4794, December 2006,
               <https://www.rfc-editor.org/rfc/rfc4794>.
-
-   [RFC5345]  Schoenwaelder, J., "Simple Network Management Protocol
-              (SNMP) Traffic Measurements and Trace Exchange Formats",
-              RFC 5345, DOI 10.17487/RFC5345, October 2008,
-              <https://www.rfc-editor.org/rfc/rfc5345>.
 
    [RFC5472]  Zseby, T., Boschi, E., Brownlee, N., and B. Claise, "IP
               Flow Information Export (IPFIX) Applicability", RFC 5472,
