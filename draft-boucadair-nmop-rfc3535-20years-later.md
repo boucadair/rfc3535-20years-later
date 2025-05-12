@@ -567,7 +567,7 @@ NEW-OPS-REQ-INTEGRATION:
 The use of a flat tree hierarchy in YANG models may induce some performance issues compared to other graph models.
 This can be the case, for example, during a path calculation on a network topology.
 Different approaches using graph theory and compatible with YANG are currently available, but require further experimentation to generalize their adoption.
-For instance, {{ODL}} implements an in-memory connected graph version of YANG-based data to enable fast breadth-first search (BFS).
+For instance, OpenDaylight {{ODL}} implements an in-memory connected graph version of YANG-based data to enable fast breadth-first search (BFS).
 
 NEW-OPS-REQ-Y2KG:
 : Need for a reference specification to translate YANG-based data into the knowledge graph (KG).
