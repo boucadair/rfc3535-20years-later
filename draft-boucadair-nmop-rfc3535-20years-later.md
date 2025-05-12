@@ -110,35 +110,7 @@ Since the publication of {{?RFC3535}} major advances were achieved in the Networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. The following table lists the new ops requirements; more details are provided in {{sec-obs}}.
-
-|NEW Ops Requirement Label| Section|
-|-------------------------|:------:|
-|NEW-OPS-REQ-STRENGTHEN-DM |{{sec-dm}}|
-|NEW -OPS-REQ-DM-RATIONALIZE|{{sec-frag}}|
-|NEW -OPS-REQ-EASE-EXPOSURE|{{sec-cons}}|
-|NEW -OPS-REQ-NW-API-DISCOVERY|{{sec-cons}}|
-|NEW-OPS-REQ-DM-API|{{sec-api}}|
-|NEW-OPS-REQ-PROFILING|{{sec-pro}}|
-|NEW-OPS-REQ-REASSESS|{{sec-pro}}|
-|NEW-OPS-REQ-AGILE|{{sec-agile}}|
-|NEW-OPS-REQ-INTEGRATION|{{sec-int}}|
-|NEW-OPS-REQ-Y2KG|{{sec-dama}}|
-|NEW-OPS-REQ-SCALE|{{sec-dama}}|
-|NEW-OPS-REQ-LOSSLESS|{{sec-map}}|
-|NEW-OPS-REQ-REUSABILITY|{{sec-con}}|
-|NEW-OPS-REQ-NEW-NEED|{{sec-distinct}}|
-|NEW-OPS-REQ-UNSILO|{{sec-dep}}|
-|NEW-OPS-REQ-TIMELY-DM|{{sec-pub}}|
-|NEW-OPS-REQ-READILTY-IMPLEM|{{sec-impl}|
-|NEW-OPS-REQ-IT-INTEGRATION|{{sec-it}}|
-|NEW-OPS-REQ-IETF-TOOLS|{{sec-ietf-in}}|
-|NEW-OPS-REQ-CLIENT-TOOLS|{{sec-client}}|
-|NEW-OPS-REQ-BRIDGE|{{sec-skills}}|
-|NEW-OPS-REQ-GLUE|{{sec-new}}|
-|NEW-OPS-REQ-GUIDANCE|{{sec-guid}}|
-
-> Editor note: update the table.
+More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.
 
 The document also provide an assessment of the RFC3535 recommendations ({{sec-assessment}}) and to what extend that roadmap was driving network management efforts within the IETF ({{sec-reca}}).
 
@@ -286,7 +258,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        necessary to perform a required task.
 
 **Status Update**:
-: RBAC is supported by existing implementation. Also,
+: Role-based Access Control (RBAC) is supported by existing implementation. Also,
        the IETF defined {{?RFC8341}} for this purpose.
 
 3535-OPS-REQ-ACCESS-CONTROL-CHECKS:
@@ -325,19 +297,19 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 |RFC3535 Ops Requirement Label       | Status                                    |
 |-----------------------------------:|:------------------------------------------|
 | 3535-OPS-REQ-EASE-USE                      | Still Applicable                          |
-| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | OK                                        |
-| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | OK                                        |
+| 3535-OPS-REQ-CONFIG-OPS-SEPARATE           | A solution was standarized                |
+| 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE     | A solution was standarized                |
 | 3535-OPS-REQ-NETWORK-NOT-DEVICE            | Protocol (OK), DM (Still Applicable)      |
-| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | OK                                        |
-| 3535-OPS-REQ-CONFIG-DIFF                   | OK                                        |
-| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | OK                                        |
+| 3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS     | A solution was standarized                |
+| 3535-OPS-REQ-CONFIG-DIFF                   | A solution was standarized                |
+| 3535-OPS-REQ-CONFIG-DUMP-RESTORE           | A solution was standarized                |
 | 3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK      | Implementation-specific                   |
 | 3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA    | Still Applicable                          |
 | 3535-OPS-REQ-TXT-PROCESSING-TOOLS          | Deployment-specific                       |
 | 3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC    | Implementation-specific                   |
 | 3535-OPS-REQ-ACCESS-CONTROL-CHECKS         | Implementation-specific                   |
-| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | OK                                        |
-| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | OK                                        |
+| 3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV | A solution was standarized                |
+| 3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK | A solution was standarized                |
 
 # Assessment of RFC 3535 Recommendations {#sec-reca}
 
@@ -378,7 +350,6 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 
 **Status Update**:
 : No such group was formed to our knowledge.
-: This SNMP shortcoming was also reiterated in {{Section 3.5.2 of ?RFC5345}}.
 
 3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
 
@@ -402,7 +373,8 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        protocols and so on).
 
 **Status Update**:
-: OK. This recommendation was also mirrored in other documents such as {{?RFC5706}}.
+: This recommendation was followed in base specifications. This recommendation was also mirrored in other documents such as {{?RFC5706}}.
+: However, the IETF integrated support for other encoding such as JSON.
 
 3535-RECO-NO-HTTP:
 
@@ -485,7 +457,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 | 3535-RECO-MIB-INVESTIGATE              | No such group was formed                                                                               |
 | 3535-RECO-SNMP-WG4MONITORING           | No such group was formed                                                                               |
 | 3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS | NETCONF/RESTCONF/CORECONF/YANG/COMI/etc.                                                               |
-| 3535-RECO-FOCUS-XML                    | OK                                                                                                     |
+| 3535-RECO-FOCUS-XML                    | The recommendation was followed                                                                        |
 | 3535-RECO-NO-HTTP                      | The IETF deviated from this recommendation, e.g., RESTCONF or CoAP Management Interface (CORECONF)     |
 | 3535-RECO-MAINTAIN-SMI-SPPI            | SMIng WG was concluded in 2003-04-04                                                                   |
 | 3535-RECO-IETF2FIX-MIB                 | The IETF dedicated resources to fix some SNMP shortcomings with a focus on security                    |
@@ -553,8 +525,11 @@ NEW-OPS-REQ-DM-API:
 
 Many NETCONF-related features are (being) specified by the IETF, but these features are not widely supported (e.g., YANG-Push {{?RFC8639}}).
 
-NEW-OPS-REQ-PROFILING:
-: Editing a profile document that outlines a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs.
+NEW-OPS-REQ-GUIDE-AND-PROFILE:
+: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
+
+NEW-OPS-REQ-ARCH:
+: Need to promote more arch and framework documents to exemplify the intended use.
 
 > Examples of such profile documents are the various RFCs that were published by the Behavior Engineering for Hindrance Avoidance (behave) WG {{?BCP127}}.
 > Another approach could be to consider a model similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" {{?RFC7414}}.
@@ -571,8 +546,8 @@ An hybrid approach might be investigated for documenting IETF-endorsed YANG modu
 
 By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2019}} and automatic documentation tools like {{Widoco2017}}.
 
-NEW-OPS-REQ-AGILE:
-: Develop a more agile process for the development and maintenance of YANG modules in the IETF.
+NEW-OPS-REQ-QUICK-BUT-WELL:
+: Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
 
 ## Integration Complexity {#sec-int}
 
@@ -609,7 +584,7 @@ currently on proprietary solutions to graft and translate between two layers. Th
 is no programmatic approach to ensure lossless mappings.
 
 NEW-OPS-REQ-LOSSLESS:
-: Consider programmatic approaches to ensure lossless mappings between service/network/device data models.
+: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is a enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 ## (In)Consistent Data Structures in Network Protocols for Data Export {#sec-con}
 
@@ -715,6 +690,8 @@ NEW-OPS-REQ-GLUE:
 ## Many Solutions for the Same Problem, but Lack of Clear Applicably Guidance {#sec-guid}
 
 There are several solutions that were standardized for network management purposes. For example, management of ACLs by means to BGP FlowSpec {{?RFC8955}}{{?RFC8956}} or  by means of NETCONF/YANG {{?RFC8519}}. There is no cross referencing between the two standards or delimits its applicability scope vs the other approach.
+
+Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
 
 NEW-OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
