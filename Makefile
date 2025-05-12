@@ -1,5 +1,6 @@
 LIBDIR := lib
 include $(LIBDIR)/main.mk
+export UPLOAD_EMAIL ?= mohamed.boucadair@orange.com
 
 $(LIBDIR)/main.mk:
 ifneq (,$(shell grep "path *= *$(LIBDIR)" .gitmodules 2>/dev/null))
