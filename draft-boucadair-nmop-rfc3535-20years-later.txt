@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 1 October 2025                                    O. G. D. Dios
+Expires: 13 November 2025                                  O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,7 +13,7 @@ Expires: 1 October 2025                                    O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                           30 March 2025
+                                                             12 May 2025
 
 
 RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 October 2025.
+   This Internet-Draft will expire on 13 November 2025.
 
 Copyright Notice
 
@@ -1398,9 +1398,9 @@ Table of Contents
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
               and C. Bormann, "CoAP Management Interface (CORECONF)",
-              Work in Progress, Internet-Draft, draft-ietf-core-comi-19,
-              3 November 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-core-comi-19>.
+              Work in Progress, Internet-Draft, draft-ietf-core-comi-20,
+              6 May 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-core-comi-20>.
 
    [I-D.ietf-core-sid]
               Veillette, M., Pelov, A., Petrov, I., Bormann, C., and M.
@@ -1410,12 +1410,12 @@ Table of Contents
               draft-ietf-core-sid-24>.
 
    [I-D.ietf-isis-sr-yang]
-              Litkowski, S., Qu, Y., Sarkar, P., Chen, H., and J.
-              Tantsura, "A YANG Data Model for IS-IS Segment Routing for
-              the MPLS Data Plane", Work in Progress, Internet-Draft,
-              draft-ietf-isis-sr-yang-25, 27 February 2025,
+              Litkowski, S., Qu, Y., Lindem, A., Chen, H., and J.
+              Tantsura, "A YANG Data Model for IS-IS Segment Routing
+              over the MPLS Data Plane", Work in Progress, Internet-
+              Draft, draft-ietf-isis-sr-yang-31, 6 May 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
-              yang-25>.
+              yang-31>.
 
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
