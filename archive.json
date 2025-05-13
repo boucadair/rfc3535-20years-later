@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-01T01:47:25.543166+00:00",
+  "timestamp": "2025-05-13T01:44:02.804656+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -1472,6 +1472,34 @@
       "mergedBy": "boucadair",
       "mergeCommit": {
         "oid": "cee6237219f570e00e0b5222a1b10e301be14287"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 37,
+      "id": "PR_kwDOKqz7zs6V0z6C",
+      "title": "Update Makefile",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/pull/37",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-12T12:01:33Z",
+      "updatedAt": "2025-05-12T12:01:40Z",
+      "baseRepository": "boucadair/rfc3535-20years-later",
+      "baseRefName": "main",
+      "baseRefOid": "da651028c858dd3f8c65b9852b935bbe3783086d",
+      "headRepository": "boucadair/rfc3535-20years-later",
+      "headRefName": "boucadair-patch-3",
+      "headRefOid": "33d013e40c6402c4ba50ea36a804284d18021268",
+      "closedAt": "2025-05-12T12:01:40Z",
+      "mergedAt": "2025-05-12T12:01:40Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "e38c273515f556fa7ce513b568f651a6f5f53167"
       },
       "comments": [],
       "reviews": []
