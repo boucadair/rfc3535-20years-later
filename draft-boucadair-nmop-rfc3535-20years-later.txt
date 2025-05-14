@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 13 November 2025                                  O. G. D. Dios
+Expires: 15 November 2025                                  O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,11 +13,11 @@ Expires: 13 November 2025                                  O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                             12 May 2025
+                                                             14 May 2025
 
 
-RFC 3535, 20 Years Later: An Update of Operators Requirements on Network
-                   Management Protocols and Modelling
+An Update of Operators Requirements on Network Management Protocols and
+                               Modelling
            draft-boucadair-nmop-rfc3535-20years-later-latest
 
 Abstract
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 November 2025.
+   This Internet-Draft will expire on 15 November 2025.
 
 Copyright Notice
 
