@@ -1,5 +1,5 @@
 ---
-title: "RFC 3535,  20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling"
+title: "An Update of Operators Requirements on Network Management Protocols and Modelling"
 abbrev: "RFC 3535, 20 Years Later"
 category: info
 
