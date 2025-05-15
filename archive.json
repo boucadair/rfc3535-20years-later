@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-13T01:44:02.804656+00:00",
+  "timestamp": "2025-05-15T01:41:07.132485+00:00",
   "repo": "boucadair/rfc3535-20years-later",
   "labels": [
     {
@@ -200,6 +200,22 @@
           "updatedAt": "2024-10-17T05:10:05Z"
         }
       ]
+    },
+    {
+      "number": 38,
+      "id": "I_kwDOKqz7zs62joT1",
+      "title": "NEW-OPS-REQ-NEW-NEED: generic requirement",
+      "url": "https://github.com/boucadair/rfc3535-20years-later/issues/38",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Comment from Beno\u00eet:\n\n \n- I don't understand what this IETF could do with this generic requirement?\n   NEW-OPS-REQ-NEW-NEED:  Some networks have specific network management\n      requirements such as the need for asynchronous operations or\n      constraints on data compactness.  An example of such networks is\n      Delay-Tolerant Networking (DTN) [RFC838] or DetNet [RFC8557].\n[Med] See the discussion around rfc9675, for example.\nI meant: isn't it an obvious requirement that solutions must take into account their specific requirements?\n",
+      "createdAt": "2025-05-14T11:30:37Z",
+      "updatedAt": "2025-05-14T11:30:37Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
