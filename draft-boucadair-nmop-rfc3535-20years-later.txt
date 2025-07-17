@@ -5,7 +5,7 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 15 November 2025                                  O. G. D. Dios
+Expires: 18 January 2026                                   O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
@@ -13,7 +13,7 @@ Expires: 15 November 2025                                  O. G. D. Dios
                                                                  Equinix
                                                            L. Tailhardat
                                                                   Orange
-                                                             14 May 2025
+                                                            17 July 2025
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 November 2025.
+   This Internet-Draft will expire on 18 January 2026.
 
 Copyright Notice
 
@@ -1358,9 +1358,9 @@ Table of Contents
               Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
               for Benchmarking Network Performance in Containerized
               Infrastructures", Work in Progress, Internet-Draft, draft-
-              ietf-bmwg-containerized-infra-06, 16 March 2025,
+              ietf-bmwg-containerized-infra-07, 1 July 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-06>.
+              containerized-infra-07>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
@@ -1392,12 +1392,12 @@ Table of Contents
               https-notif-15>.
 
    [I-D.ietf-netconf-udp-notif]
-              Zheng, G., Zhou, T., Graf, T., Francois, P., Feng, A. H.,
-              and P. Lucente, "UDP-based Transport for Configured
+              Feng, A. H., Francois, P., Zhou, T., Graf, T., and P.
+              Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-20, 3 March 2025,
+              ietf-netconf-udp-notif-22, 3 July 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-20>.
+              udp-notif-22>.
 
    [I-D.ietf-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
@@ -1440,12 +1440,13 @@ Table of Contents
               grow-peering-api-06>.
 
    [I-D.tailhardat-nmop-incident-management-noria]
-              Tailhardat, L., Troncy, R., and Y. Chabot, "Knowledge
-              Graphs for Enhanced Cross-Operator Incident Management and
-              Network Design", Work in Progress, Internet-Draft, draft-
-              tailhardat-nmop-incident-management-noria-01, 29 August
-              2024, <https://datatracker.ietf.org/doc/html/draft-
-              tailhardat-nmop-incident-management-noria-01>.
+              Tailhardat, L., Troncy, R., Chabot, Y., Ramparany, F., and
+              P. Folz, "Knowledge Graphs for Enhanced Cross-Operator
+              Incident Management and Network Design", Work in Progress,
+              Internet-Draft, draft-tailhardat-nmop-incident-management-
+              noria-02, 15 May 2025,
+              <https://datatracker.ietf.org/doc/html/draft-tailhardat-
+              nmop-incident-management-noria-02>.
 
    [LOT2019]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
               Lopez, M., and R. Garcia-Castro, "LOT: An industrial
