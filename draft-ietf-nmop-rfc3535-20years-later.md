@@ -3,7 +3,7 @@ title: "An Update of Operators Requirements on Network Management Protocols and 
 abbrev: "RFC 3535, 20 Years Later"
 category: info
 
-docname: draft-boucadair-nmop-rfc3535-20years-later-latest
+docname: draft-ietf-nmop-rfc3535-20years-later-latest
 submissiontype: IETF
 number:
 date:
