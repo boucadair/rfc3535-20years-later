@@ -1,11 +1,11 @@
 # RFC 3535, 20 Years Later: An Update of Operators Requirements on Network Management Protocols and Modelling
 
-This is the working area for the individual Internet-Draft, "RFC 3535: 20 Years Later".
+This is the working area for the NMOP Internet-Draft, "RFC 3535: 20 Years Later".
 
-* [Editor's Copy](https://boucadair.github.io/rfc3535-20years-later/#go.draft-boucadair-nmop-rfc3535-20years-later.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-boucadair-nmop-rfc3535-20years-later)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-boucadair-nmop-rfc3535-20years-later)
-* [Compare Editor's Copy to Individual Draft](https://boucadair.github.io/rfc3535-20years-later/#go.draft-boucadair-nmop-rfc3535-20years-later.diff)
+* [Editor's Copy](https://boucadair.github.io/rfc3535-20years-later/#go.draft-ietf-nmop-rfc3535-20years-later.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-nmop-rfc3535-20years-later)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-nmop-rfc3535-20years-later)
+* [Compare Editor's Copy to Individual Draft](https://boucadair.github.io/rfc3535-20years-later/#go.draft-ietf-nmop-rfc3535-20years-later.diff)
 
 
 ## Contributing
