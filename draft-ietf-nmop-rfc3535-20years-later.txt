@@ -5,15 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 8 February 2026                                   O. G. D. Dios
+Expires: 24 March 2026                                     O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           L. Tailhardat
-                                                                  Orange
-                                                           7 August 2025
+                                                       20 September 2025
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -56,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 February 2026.
+   This Internet-Draft will expire on 24 March 2026.
 
 Copyright Notice
 
@@ -117,6 +115,7 @@ Table of Contents
    7.  IANA Considerations
    8.  Informative References
    Acknowledgments
+   Contributors
    Authors' Addresses
 
 1.  Introduction
@@ -1747,6 +1746,13 @@ Acknowledgments
    Thanks to Christian Jacquenet and Jean-Michel Combes for their
    inputs.
 
+Contributors
+
+   Lionel Tailhardat
+   Orange
+   Email: lionel.tailhardat@orange.com
+
+
 Authors' Addresses
 
    Mohamed Boucadair
@@ -1772,8 +1778,3 @@ Authors' Addresses
    Reshad Rahman
    Equinix
    Email: rrahman@equinix.com
-
-
-   Lionel Tailhardat
-   Orange
-   Email: lionel.tailhardat@orange.com
