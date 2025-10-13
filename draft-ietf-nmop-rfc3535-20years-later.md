@@ -494,7 +494,7 @@ XaaS designs assume the availability of data models that are dynamically instant
   - Accurate control loops for adaptive and deterministic service creation, delivery, and maintenance.
   - Feed an intelligence that will drive appropriate actions to adjust the current status to align with the intended status.
 
-NEW-OPS-REQ-STRENGTHEN-DM:
+OPS-REQ-STRENGTHEN-DM:
 : Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code.
 : Particularly, **without data models, a Network API is essentially useless** (see also {{sec-api}}).
 
@@ -503,41 +503,41 @@ NEW-OPS-REQ-STRENGTHEN-DM:
 The current YANG device models ecosystem is **fragmented**: some standards models are defined through the IETF, while similar ones are defined in other forums such as Openconfig or ONF.
 Unlike service and network models, IETF-defined device models are not widely implemented.
 
-NEW-OPS-REQ-DM-RATIONALIZE:
+OPS-REQ-DM-RATIONALIZE:
 : There is a need to rationalize this space and avoid redundant efforts.
 
 ## The Network Becomes Consumable {#sec-cons}
 
 Network connectivity can support tailored services in terms of Service Level Obejctives (SLOs), for instance, by means of Network Slice Services {{?RFC9543}}. This approach of "consuming" the network flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be now extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory based data).
 
-NEW-OPS-REQ-EASE-EXPOSURE:
+OPS-REQ-EASE-EXPOSURE:
 : Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations.
 
-NEW-OPS-REQ-NW-API-DISCOVERY:
+OPS-REQ-NW-API-DISCOVERY:
 : Define a reference approach/process for service exposure discovery (APIs discovery).
 
 ## Network APIfication {#sec-api}
 
 APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, {{?I-D.ramseyer-grow-peering-api}} defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in {{?I-D.ietf-opsawg-teas-attachment-circuit}} as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.
 
-NEW-OPS-REQ-DM-API:
+OPS-REQ-DM-API:
 : Readily available API specifications could be generalized from YANG modules for fast development, prototyping, and validation.
 
 ## Lack of Profiling {#sec-pro}
 
 Many NETCONF-related features are (being) specified by the IETF, but these features are not widely supported (e.g., YANG-Push {{?RFC8639}}).
 
-NEW-OPS-REQ-GUIDE-AND-PROFILE:
+OPS-REQ-GUIDE-AND-PROFILE:
 : The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
 
-NEW-OPS-REQ-ARCH:
+OPS-REQ-ARCH:
 : Need to promote more arch and framework documents to exemplify the intended use.
 
 > Examples of such profile documents are the various RFCs that were published by the Behavior Engineering for Hindrance Avoidance (behave) WG {{?BCP127}}.
 > Another approach could be to consider a model similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" {{?RFC7414}}.
 > Such a document would serve as a guide and reference for implementers and others seeking information on 'NETCONF/RESTCONF/YANG'-related RFCs.
 
-NEW-OPS-REQ-REASSESS:
+OPS-REQ-REASSESS:
 : Additionally, reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
 
 ## Lack of Agile Process for (The Maintenance of) YANG Modules {#sec-agile}
@@ -548,7 +548,7 @@ An hybrid approach might be investigated for documenting IETF-endorsed YANG modu
 
 By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2019}} and automatic documentation tools like {{Widoco2017}}.
 
-NEW-OPS-REQ-QUICK-BUT-WELL:
+OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
 
 ## Integration Complexity {#sec-int}
@@ -561,7 +561,7 @@ When a set of network operators where asked to where operational YANG data needs
 
 Another challenge is that the subscribed YANG data referenced with datastore-subtree-filter or datastore-xpath-filter breaks semantic integrity which needs to be addressed by either updating {{Section 4 of ?RFC8641}} or proposing a new YANG module being used at the YANG-Push receiver.
 
-NEW-OPS-REQ-INTEGRATION:
+OPS-REQ-INTEGRATION:
 : Consider approaches to ease integration by-design (e.g., protocols and data models).
 
 ## YANG-formatted Data Manipulation {#sec-dama}
@@ -571,12 +571,12 @@ This can be the case, for example, during a path calculation on a network topolo
 Different approaches using graph theory and compatible with YANG are currently available, but require further experimentation to generalize their adoption.
 For instance, OpenDaylight {{ODL}} implements an in-memory connected graph version of YANG-based data to enable fast breadth-first search (BFS).
 
-NEW-OPS-REQ-Y2KG:
+OPS-REQ-Y2KG:
 : Need for a reference specification to translate YANG-based data into the knowledge graph (KG).
 
 For example, {{?I-D.marcas-nmop-knowledge-graph-yang}} and {{?I-D.tailhardat-nmop-incident-management-noria}} discuss YANG-2-KG proposals to leverage automated reasoning and graph traversal techniques.
 
-NEW-OPS-REQ-SCALE:
+OPS-REQ-SCALE:
 : Consider approaches for YANG models to scale.
 
 ## Translation and Mapping Between Service/Network and Device Models {#sec-map}
@@ -585,7 +585,7 @@ Navigating among multiple levels of the hierarchy (service, network, device) rel
 currently on proprietary solutions to graft and translate between two layers. There
 is no programmatic approach to ensure lossless mappings.
 
-NEW-OPS-REQ-LOSSLESS:
+OPS-REQ-LOSSLESS:
 : Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is a enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 ## (In)Consistent Data Structures in Network Protocols for Data Export {#sec-con}
@@ -598,7 +598,7 @@ The lack of information from where the data is being pushed from is only known t
 
 The same common principle applies to when observation timestamping is missing in the Network Telemetry message. Since the data collection is the closest element to the network, a time stamp is added to give the network operator at least the information when the Network Telemetry message was collected. However, since Network Telemetry addresses real-time streaming needs, this is often not accurate enough for data correlation.
 
-NEW-OPS-REQ-REUSABILITY:
+OPS-REQ-REUSABILITY:
 : Consider approach to ensure reuse/consistent data structure.
 
 ## Proprietary YANG Modules, CLI, and Limited Abstraction {#sec-limit}
@@ -617,7 +617,7 @@ Likewise, such diversity of services also require different management capabilit
 
 This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services.
 
-NEW-OPS-REQ-NEW-NEED:
+OPS-REQ-NEW-NEED:
 : Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC838}} or DetNet {{?RFC8557}}.
 
 ## Implications of External Dependency {#sec-dep}
@@ -626,7 +626,7 @@ Networks are being updated to abandon the silo approach from the past towards an
 
 Such convergence is also reflected on the need of interacting and interworking with distinct network parts participating in the end-to-end service delivery. Mobile access, fixed access, data center, enterprise, radio functional split (i.e., fronthaul and midhaul), neutral exchanges, intensive data networks (e.g., scientific academic networks), content distribution, etc., represent network parts constituent of end-to-end services that can impose dependencies of the management of an intermediate network.
 
-NEW-OPS-REQ-UNSILO:
+OPS-REQ-UNSILO:
 : The convergence observed in recent years also implies the need for an up-to-date refresh of management capabilities and tools for conventional networks.
 : It highlights the necessity to handle the heterogeneity of data, configuration, and network management/requirements.
 : From a YANG perspective, this involves easily mapping and relating the data models used to manage each specific segment.
@@ -636,7 +636,7 @@ NEW-OPS-REQ-UNSILO:
 
 For example, {{?RFC8667}} (IS-IS extensions for SR) was published in December 2019, while {{?I-D.ietf-isis-sr-yang}} will be published ~5 years after.
 
-NEW-OPS-REQ-TIMELY-DM:
+OPS-REQ-TIMELY-DM:
 : Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
 That may slow down the protocol specification, though.
 
@@ -652,19 +652,19 @@ Schema-mount allegedly has only one known implementation because of the complexi
 
 While hackathons have improved the situation, the availablability of implementation is concerning. For open-source, 'sysrepo'/'libyang' are decent choices.
 
-NEW-OPS-REQ-READILTY-IMPLEM:
+OPS-REQ-READILTY-IMPLEM:
 : It is tempting to consider mandating at least one implementation. However, there were areas which imposed in the past rules for implementations for I-Ds to be published as PS (e.g., {{?RFC1264}}), but these rules were relaxed for reasons described, e.g., {{?RFC4794}} and left it to the WGs to decide about the actual measures to put in place. To date, only IDR WG has clear guidance on two implementations.
 
 ## Tooling & Skills
 
 ### Integration with "native" IT Tooling {#sec-it}
 
-NEW-OPS-REQ-IT-INTEGRATION:
+OPS-REQ-IT-INTEGRATION:
 : There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").
 
 ### IETF Support for Better YANG Integration {#sec-ietf-in}
 
-NEW-OPS-REQ-IETF-TOOLS
+OPS-REQ-IETF-TOOLS
 : Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration.
 
 ### Open-source Tools {#sec-client}
@@ -672,21 +672,21 @@ NEW-OPS-REQ-IETF-TOOLS
 While there are open-source implementations for NETCONF (e.g., NETOPEER), the gRPC/gNMI suite seems to have more support for tools on the client side.
 For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).
 
-NEW-OPS-REQ-CLIENT-TOOLS:
+OPS-REQ-CLIENT-TOOLS:
 : Focus on tooling is needed, especially on the client side.
 
 ### Skills {#sec-skills}
 
 The IETF is not the expert community in data engineering. The experts are in the data industry. Without them, integration in data processing chains like Data Mesh is going to be a challenge.
 
-NEW-OPS-REQ-BRIDGE:
+OPS-REQ-BRIDGE:
 : Create an eco-system where data and networking engineers can collaborate.
 
 ## New Service Approaches {#sec-new}
 
 The virtualization trend have made posible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this appraoch seems to be insuficient for future services demanding stringent requirements in terms of SLOs.
 
-NEW-OPS-REQ-GLUE:
+OPS-REQ-GLUE:
 : The distinct approaches followed in both the compute and the network environments makes necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
 
 ## Many Solutions for the Same Problem, but Lack of Clear Applicably Guidance {#sec-guid}
@@ -695,143 +695,143 @@ There are several solutions that were standardized for network management purpos
 
 Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
 
-NEW-OPS-REQ-GUIDANCE:
+OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
 
 # New Requirements
 
 ## Summary
 
-NEW-OPS-REQ-STRENGTHEN-DM:
+OPS-REQ-STRENGTHEN-DM:
 : Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source
 projects that facilitate access to code.
 
-NEW-OPS-REQ-DM-RATIONALIZE:
+OPS-REQ-DM-RATIONALIZE:
 : Rationalize this space and avoid redundant efforts (in almost all layers (IP, optic, etc.)). Unlike service and network models, Standard-based device models are not widely implemented.
 
-NEW-OPS-REQ-QUICK-BUT-WELL:
+OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
 
-NEW-OPS-REQ-GUIDE-AND-PROFILE:
+OPS-REQ-GUIDE-AND-PROFILE:
 : The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
 
-NEW-OPS-REQ-ARCH:
+OPS-REQ-ARCH:
 : Need to promote more arch and framework documents to exemplify the intended use.
 
-NEW-OPS-REQ-EASE-EXPOSURE:
+OPS-REQ-EASE-EXPOSURE:
 : Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations.
 
-NEW-OPS-REQ-TIMELY-DM:
+OPS-REQ-TIMELY-DM:
 : Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
 
-NEW-OPS-REQ-READILY-IMPLEM:
+OPS-REQ-READILY-IMPLEM:
 : The availablability of implementation is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.
 
-NEW-OPS-REQ-DM2API:
+OPS-REQ-DM2API:
 : Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation.
 
-NEW-OPS-REQ-NW-API-DISCOVERY:
+OPS-REQ-NW-API-DISCOVERY:
 : Define a reference approach/process for service exposure discovery (APIs discovery).
 
-NEW-OPS-REQ-REASSESS:
+OPS-REQ-REASSESS:
 : Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gNMI).
 
-NEW-OPS-REQ-BRIDGE:
+OPS-REQ-BRIDGE:
 : Create an eco-system where data and networking engineers can collaborate.
 
-NEW-OPS-REQ-INTEGRATION:
+OPS-REQ-INTEGRATION:
 : Consider approaches to ease integration by-design (e.g., protocols and data models). The integration covers both horizontal and vertical realms. For example, there is a lack of enablement of this integration across standard bodies that operators are left to solve.
 
-NEW-OPS-REQ-LOSSLESS:
+OPS-REQ-LOSSLESS:
 : Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is a enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
-NEW-OPS-REQ-REUSABILITY:
+OPS-REQ-REUSABILITY:
 : Consider approaches to ensure reuse/consistent data structure across various NM segments. This will ease correlating data learned from different means (IPFIX, BMP, SYSLOG, etc.).
 
-NEW-OPS-REQ-SCALE:
+OPS-REQ-SCALE:
 : Consider approaches for YANG models to scale + protocol considerartions (transactions, touches, etc.). Specifically, address Telemetry scalability enhancements.
 
-NEW-OPS-REQ-UNSILO:
+OPS-REQ-UNSILO:
 : Necessity to handle the heterogeneity of data, configuration, and network management/requirements. Resolving such issue could draw on insights from parallel technical fields such as knowledge engineering practices and concepts associated with Linked Data in the Semantic Web, areas where it is common to manage problems of heterogeneity and data reconciliation across various application domains.
 
-NEW-OPS-REQ-IT-INTEGRATION:
+OPS-REQ-IT-INTEGRATION:
 : There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").
 
-NEW-OPS-REQ-ITER:
+OPS-REQ-ITER:
 : Need a velocity and approach to standardisation that allows for business goals to be incrementally realised.
 
-NEW-OPS-REQ-Y2KG:
+OPS-REQ-Y2KG:
 : Need for reference specifications to translate YANG-based data into the knowledge graph. Sample use cases to illustrate the intended use should be considered as well.
 
-NEW-OPS-REQ-TOOLS:
+OPS-REQ-TOOLS:
 : Focus on tooling is needed, especially on the client side. There is a need for tools that are easy to use. Likewise, there is need for support for multiple friendly, stable, and feature-rich libraries for programming languages.
 
-NEW-OPS-REQ-IETF-TOOLS:
+OPS-REQ-IETF-TOOLS:
 : Ease exposure of libraries and host tools (e.g., yangkit) to ease integration.
 
-NEW-OPS-REQ-NEW-NEED:
+OPS-REQ-NEW-NEED:
 : Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness.
 
-NEW-OPS-REQ-GLUE:
+OPS-REQ-GLUE:
 : Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
 
 ## Categorization
 
 |NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
 |----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
-|NEW-OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
-|NEW-OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
-|NEW-OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
-|NEW-OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
-|NEW-OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
-|NEW-OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
-|NEW-OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
-|NEW-OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
-|NEW-OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
-|NEW-OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
-|NEW-OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
-|NEW-OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
-|NEW-OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
-|NEW-OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
-|NEW-OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
-|NEW-OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
-|NEW-OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
-|NEW-OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
-|NEW-OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
-|NEW-OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
-|NEW-OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
-|NEW-OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
+|OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
+|OPS-REQ-DM-RATIONALIZE  |	X		 |              |      X 		   |                |    X      |            X                 |                |
+|OPS-REQ-QUICK-BUT-WELL  |	X   	 |     X        |      X		   |                |           |            	               |                |	
+|OPS-REQ-GUIDE-PROFILE   |	X  	 |     X        |      X		   |                |           |            	               |                |			
+|OPS-REQ-ARCH            |			 |     X        |      X		   |                |           |            	               |                |		
+|OPS-REQ-EASE-EXPOSURE   |	X   	 |     X        |      X		   |      X         |           |            	               |                |	
+|OPS-REQ-TIMELY-DM       |	X		 |              |      X		   |                |           |            	               |                |		
+|OPS-REQ-READILY-IMPLEM  |	X		 |     X        |      X		   |                |    X      |            	               |                |	
+|OPS-REQ-DM-API          |			 |              |      X		   |                |           |            	               |                |
+|OPS-REQ-NW-API-DISCOVERY|			 |              |      X		   |      X         |           |            	               |                |	
+|OPS-REQ-REASSESS        |			 |     X        |       		   |                |           |            	               |                |	
+|OPS-REQ-BRIDGE          |			 |              |       		   |                |           |            X                 |      X         |
+|OPS-REQ-INTEGRATION     |			 |              |      X		   |      X         |    X      |            	               |                |
+|OPS-REQ-LOSSLESS        |			 |              |      X		   |      X         |    X      |            	               |                |	
+|OPS-REQ-REUSABILITY     |			 |      X       |       		   |      X         |    X      |            	               |                |
+|OPS-REQ-SCALE           |	X   	 |      X       |       		   |                |           |            	               |                |
+|OPS-REQ-UNSILO          |			 |              |      X		   |      X         |           |            	               |                |	
+|OPS-REQ-IT-INTEGRATION  |			 |              |      X		   |      X         |           |            	               |                |
+|OPS-REQ-ITER            |			 |              |       		   |                |    X      |            X                 |                |
+|OPS-REQ-Y2KG            |			 |              |      X		   |      X         |           |            	               |                |
+|OPS-REQ-TOOLS           |			 |              |      X		   |      X         |           |            	               |        X       |
+|OPS-REQ-IETF-TOOLS      |			 |              |       		   |                |    X      |            	               |        X       |
+|OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
+|OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
 
 ## Overall New Requirements Levels (Operators)
 
 |NEW Ops Requirement Label    | Overall Level  |
 |----------------------------:|:--------------:|
-|NEW-OPS-REQ-STRENGTHEN-DM    |    Strong      |
-|NEW-OPS-REQ-DM-RATIONALIZE   |    Strong      |
-|NEW-OPS-REQ-QUICK-BUT-WELL   |    Strong      |
-|NEW-OPS-REQ-GUIDE-AND-PROFILE|  Nice to have  |
-|NEW-OPS-REQ-ARCH             |    Strong      |
-|NEW-OPS-REQ-EASE-EXPOSURE    |    Strong      |
-|NEW-OPS-REQ-TIMELY-DM        |    Strong      |
-|NEW-OPS-REQ-READILY-IMPLEM   |    Strong      |
-|NEW-OPS-REQ-DM2API           |    Strong      |
-|NEW-OPS-REQ-NW-API-DISCOVERY |  Nice to have  |
-|NEW-OPS-REQ-REASSESS         |    Strong      |
-|NEW-OPS-REQ-BRIDGE           |    Strong      |
-|NEW-OPS-REQ-INTEGRATION      |    Strong      |
-|NEW-OPS-REQ-LOSSLESS         |  Nice to have  |
-|NEW-OPS-REQ-REUSABILITY      |    Strong      |
-|NEW-OPS-REQ-SCALE            |    Strong      |
-|NEW-OPS-REQ-UNSILO           |    Strong      |
-|NEW-OPS-REQ-IT-INTEGRATION   |  Nice to have  |
-|NEW-OPS-REQ-ITER             |    Strong      |
-|NEW-OPS-REQ-Y2KG             |  Nice to have  |
-|NEW-OPS-REQ-TOOLS            |    Strong      |
-|NEW-OPS-REQ-IETF-TOOLS       |  Nice to have  |
-|NEW-OPS-REQ-NEW-NEED         |  Nice to have  |
-|NEW-OPS-REQ-GLUE             |  Nice to have  |
+|OPS-REQ-STRENGTHEN-DM    |    Strong      |
+|OPS-REQ-DM-RATIONALIZE   |    Strong      |
+|OPS-REQ-QUICK-BUT-WELL   |    Strong      |
+|OPS-REQ-GUIDE-AND-PROFILE|  Nice to have  |
+|OPS-REQ-ARCH             |    Strong      |
+|OPS-REQ-EASE-EXPOSURE    |    Strong      |
+|OPS-REQ-TIMELY-DM        |    Strong      |
+|OPS-REQ-READILY-IMPLEM   |    Strong      |
+|OPS-REQ-DM2API           |    Strong      |
+|OPS-REQ-NW-API-DISCOVERY |  Nice to have  |
+|OPS-REQ-REASSESS         |    Strong      |
+|OPS-REQ-BRIDGE           |    Strong      |
+|OPS-REQ-INTEGRATION      |    Strong      |
+|OPS-REQ-LOSSLESS         |  Nice to have  |
+|OPS-REQ-REUSABILITY      |    Strong      |
+|OPS-REQ-SCALE            |    Strong      |
+|OPS-REQ-UNSILO           |    Strong      |
+|OPS-REQ-IT-INTEGRATION   |  Nice to have  |
+|OPS-REQ-ITER             |    Strong      |
+|OPS-REQ-Y2KG             |  Nice to have  |
+|OPS-REQ-TOOLS            |    Strong      |
+|OPS-REQ-IETF-TOOLS       |  Nice to have  |
+|OPS-REQ-NEW-NEED         |  Nice to have  |
+|OPS-REQ-GLUE             |  Nice to have  |
 
 ## Collaborative Prioritization
 
@@ -839,9 +839,9 @@ NEW-OPS-REQ-GLUE:
 
 > ((Including Rob's Inputs))
 
-* Move much faster (NEW-OPS-REQ-QUICK-BUT-WELL, NEW-OPS-REQ-TIMELY-DM)
-* Implement minimal functionality, not bells and whistles (NEW-OPS-REQ-GUIDE-AND-PROFILE, NEW-OPS-REQ-ITER)
-* Have running code (NEW-OPS-REQ-READILY-IMPLEM, NEW-OPS-REQ-TOOLS)
+* Move much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
+* Implement minimal functionality, not bells and whistles (OPS-REQ-GUIDE-AND-PROFILE, OPS-REQ-ITER)
+* Have running code (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
 * Have vendors and operators on board at the time of developing the solution independent compliance suite to validate things.
 * Need to coorelating data learned from different means (IPFIX, BMP, Models)
 
@@ -860,3 +860,9 @@ This document has no IANA actions.
 {:numbered="false"}
 
 Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.
+
+Thanks to Benoît Claise and Alex Clemm for the comments.
+
+Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?I-D.iab-nemops-workshop-report}}.
+
+Thanks to Ian Farrer, Brad Peters, Chongfeng Xie, and Qin Wu for their contribution to consolidate the requirements.
