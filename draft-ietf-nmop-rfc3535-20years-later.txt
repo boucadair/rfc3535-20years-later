@@ -106,7 +106,7 @@ Table of Contents
      4.17. New Service Approaches
      4.18. Many Solutions for the Same Problem, but Lack of Clear
             Applicably Guidance
-   5.  New Requirements
+   5.  Updated Operators' Requirements
      5.1.  Summary
      5.2.  Categorization
      5.3.  Overall New Requirements Levels (Operators)
@@ -170,7 +170,8 @@ Table of Contents
 
    The document also provide an assessment of the RFC3535
    recommendations (Section 2) and to what extend that roadmap was
-   driving network management efforts within the IETF (Section 3).
+   driving network management efforts within the IETF, in particular
+   (Section 3).
 
 2.  Assessment of RFC 3535 Operator Requirements
 
@@ -197,7 +198,7 @@ Table of Contents
 
    *Status Update*:  This requirement was taken into account when
       designing IETF solutions.  Specifically, datastores are a
-      fundamental concept in NETCONF/YANG (e.g., [RFC8342].
+      fundamental concept in NETCONF/YANG (e.g., [RFC8342]).
 
    3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE:
 
@@ -400,7 +401,7 @@ Table of Contents
   |     current MIB modules do not contain all the objects needed by
   |     operators to monitor their networks.
 
-   *Status Update*:  No such group was formed to our knowledge.
+   *Status Update*:  No such a group was formed in the IETF.
 
    3535-RECO-SNMP-WG4MONITORING:
 
@@ -408,7 +409,7 @@ Table of Contents
   |     the current SNMP protocol does not satisfy all the monitoring
   |     requirements of operators.
 
-   *Status Update*:  No such group was formed to our knowledge.
+   *Status Update*:  No such a group was formed in the IETF.
 
    3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
 
@@ -416,8 +417,8 @@ Table of Contents
   |     developers and operators, that the IETF focus resources on the
   |     standardization of configuration management mechanisms.
 
-   *Status Update*:  NETCONF [RFC6241], RESTCONF [RFC8040], CORECONF
-      [I-D.ietf-core-comi], YANG.
+   *Status Update*:  The IETF specified NETCONF [RFC6241], RESTCONF
+      [RFC8040], CORECONF [I-D.ietf-core-comi], and YANG.
 
       YANG is a transport-independent data modeling language.  It can be
       used independently of NETCONF/RESTCONF.  For example, YANG can be
@@ -519,10 +520,10 @@ Table of Contents
      |       3535-RECO-STOP- | Done, IESG Statement on Writable MIB |
      |           MANDATE-MIB | Module (2014)                        |
      +-----------------------+--------------------------------------+
-     |        3535-RECO-MIB- | No such group was formed             |
+     |        3535-RECO-MIB- | No such a group was formed           |
      |           INVESTIGATE |                                      |
      +-----------------------+--------------------------------------+
-     |       3535-RECO-SNMP- | No such group was formed             |
+     |       3535-RECO-SNMP- | No such a group was formed           |
      |         WG4MONITORING |                                      |
      +-----------------------+--------------------------------------+
      | 3535-RECO-FOCUS-IETF- | NETCONF/RESTCONF/CORECONF/YANG/COMI/ |
@@ -544,11 +545,11 @@ Table of Contents
      |      3535-MISC-NO-CIM | The IETF didn't dedicate any         |
      |                       | resources on CIM extensions          |
      +-----------------------+--------------------------------------+
-     |    3535-MISC-ABANDON- | OK.  The IETF has reclassified COPS- |
-     |               COPS-PR | PR to Historic status                |
+     |    3535-MISC-ABANDON- | The IETF has reclassified COPS-PR to |
+     |               COPS-PR | Historic status                      |
      +-----------------------+--------------------------------------+
-     | 3535-MISC-ABANDON-PIB | OK.  The IETF has reclassified SPPI, |
-     |                       | as well as three PIBs to Historic    |
+     | 3535-MISC-ABANDON-PIB | The IETF has reclassified SPPI, as   |
+     |                       | well as three PIBs to Historic       |
      |                       | status                               |
      +-----------------------+--------------------------------------+
 
@@ -1033,7 +1034,7 @@ Table of Contents
       management approach should be integrated in the specification
       itself.
 
-5.  New Requirements
+5.  Updated Operators' Requirements
 
 5.1.  Summary
 
@@ -1150,6 +1151,23 @@ Table of Contents
 
 5.2.  Categorization
 
+   The following table provides a classification of the requirements
+   listed in Section 5.1.It specifically tag whether a requirement:
+
+   *  Belongs to Data modeling (DM)
+
+   *  Requires protocol work (Protocol)
+
+   *  Impacts deployability of standardized approaches (Deployability)
+
+   *  Has implications on integration effort by operators (Integration)
+
+   *  Requires some adaptation to an SDO process (SDO Process)
+
+   *  Allows better coordination (Collaboration & Cooperation)
+
+   *  Is relevant to skills transformations (Skills)
+
    +===========+==+========+=============+===========+=======+=============+======+
    |NEW Ops    |DM|Protocol|Deployability|Integration|  SDO  |Collaboration|Skills|
    |Requirement|  |        |             |           |Process|& Cooperation|      |
@@ -1237,6 +1255,9 @@ Table of Contents
                                   Table 3
 
 5.3.  Overall New Requirements Levels (Operators)
+
+   The following table provides the requirement level of Section 5.1
+   from an operator perspective.
 
                +===========================+===============+
                | NEW Ops Requirement Label | Overall Level |
