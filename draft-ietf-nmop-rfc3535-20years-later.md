@@ -114,7 +114,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
 More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.
 
-The document also provide an assessment of the RFC3535 recommendations ({{sec-assessment}}) and to what extend that roadmap was driving network management efforts within the IETF ({{sec-reca}}).
+The document also provide an assessment of the RFC3535 recommendations ({{sec-assessment}}) and to what extend that roadmap was driving network management efforts within the IETF, in particular ({{sec-reca}}).
 
 # Assessment of RFC 3535 Operator Requirements {#sec-assessment}
 
@@ -145,7 +145,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 **Status Update**:
 : This requirement was taken into account when
        designing IETF solutions. Specifically, datastores are a fundamental
-       concept in NETCONF/YANG (e.g., {{?RFC8342}}.
+       concept in NETCONF/YANG (e.g., {{?RFC8342}}).
 
 3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE:
 
@@ -341,7 +341,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        operators to monitor their networks.
 
 **Status Update**:
-: No such group was formed to our knowledge.
+: No such a group was formed in the IETF.
 
 3535-RECO-SNMP-WG4MONITORING:
 
@@ -351,7 +351,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        requirements of operators.
 
 **Status Update**:
-: No such group was formed to our knowledge.
+: No such a group was formed in the IETF.
 
 3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
 
@@ -361,7 +361,7 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
        standardization of configuration management mechanisms.
 
 **Status Update**:
-: NETCONF {{?RFC6241}}, RESTCONF {{?RFC8040}}, CORECONF {{I-D.ietf-core-comi}}, YANG.
+: The IETF specified NETCONF {{?RFC6241}}, RESTCONF {{?RFC8040}}, CORECONF {{I-D.ietf-core-comi}}, and YANG.
 : YANG is a transport-independent data modeling language. It can be used independently of NETCONF/RESTCONF. For example, YANG can be used to define abstract data structures {{?RFC8791}} that can be manipulated by other protocols (e.g., {{?RFC9132}}).
 
 3535-RECO-FOCUS-XML:
@@ -456,16 +456,16 @@ The document also provide an assessment of the RFC3535 recommendations ({{sec-as
 | RFC3535 Recommendation Label           | Status                                                                                                 |
 |---------------------------------------:|:-------------------------------------------------------------------------------------------------------|
 | 3535-RECO-STOP-MANDATE-MIB             | Done, IESG Statement on Writable MIB Module (2014)                                                     |
-| 3535-RECO-MIB-INVESTIGATE              | No such group was formed                                                                               |
-| 3535-RECO-SNMP-WG4MONITORING           | No such group was formed                                                                               |
+| 3535-RECO-MIB-INVESTIGATE              | No such a group was formed                                                                               |
+| 3535-RECO-SNMP-WG4MONITORING           | No such a group was formed                                                                               |
 | 3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS | NETCONF/RESTCONF/CORECONF/YANG/COMI/etc.                                                               |
 | 3535-RECO-FOCUS-XML                    | The recommendation was followed                                                                        |
 | 3535-RECO-NO-HTTP                      | The IETF deviated from this recommendation, e.g., RESTCONF or CoAP Management Interface (CORECONF)     |
 | 3535-RECO-MAINTAIN-SMI-SPPI            | SMIng WG was concluded in 2003-04-04                                                                   |
 | 3535-RECO-IETF2FIX-MIB                 | The IETF dedicated resources to fix some SNMP shortcomings with a focus on security                    |
 | 3535-MISC-NO-CIM                       | The IETF didn't dedicate any resources on CIM extensions                                               |
-| 3535-MISC-ABANDON-COPS-PR              | OK. The IETF has reclassified COPS-PR to Historic status                                               |
-| 3535-MISC-ABANDON-PIB                  | OK. The IETF has reclassified SPPI, as well as three PIBs to Historic status                           |
+| 3535-MISC-ABANDON-COPS-PR              | The IETF has reclassified COPS-PR to Historic status                                               |
+| 3535-MISC-ABANDON-PIB                  | The IETF has reclassified SPPI, as well as three PIBs to Historic status                           |
 
 
 # Observations and New Requirements {#sec-obs}
@@ -698,9 +698,9 @@ Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
 OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
 
-# New Requirements
+# Updated Operators' Requirements
 
-## Summary
+## Summary {#sec-reqs}
 
 OPS-REQ-STRENGTHEN-DM:
 : Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source
@@ -777,6 +777,16 @@ OPS-REQ-GLUE:
 
 ## Categorization
 
+The following table provides a classification of the requirements listed in {{sec-reqs}}.It specifically tag whether a requirement:
+
+* Belongs to Data modeling (DM)
+* Requires protocol work (Protocol)
+* Impacts deployability of standardized approaches (Deployability)
+* Has implications on integration effort by operators (Integration)
+* Requires some adaptation to an SDO process (SDO Process)
+* Allows better coordination (Collaboration & Cooperation)
+* Is relevant to skills transformations (Skills)
+
 |NEW Ops Requirement Label   | DM       | Protocol     | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
 |----------------------------|:--------:|:------------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
 |OPS-REQ-STRENGTHEN-DM   |	X	    |	             |      X		   |	              |           |	                           |                |
@@ -805,6 +815,8 @@ OPS-REQ-GLUE:
 |OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
 
 ## Overall New Requirements Levels (Operators)
+
+The following table provides the requirement level of {{sec-reqs}} from an operator perspective.
 
 |NEW Ops Requirement Label    | Overall Level  |
 |----------------------------:|:--------------:|
