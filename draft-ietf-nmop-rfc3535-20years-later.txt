@@ -103,7 +103,7 @@ Table of Contents
    3.  Updated Operators' Requirements
      3.1.  Summary
      3.2.  Categorization
-     3.3.  Overall New Requirements Levels (Operators)
+     3.3.  Overall New Requirements Levels: Operators View
      3.4.  Collaborative Prioritization
    4.  Security Considerations
    5.  IANA Considerations
@@ -872,7 +872,7 @@ Table of Contents
 
                                   Table 1
 
-3.3.  Overall New Requirements Levels (Operators)
+3.3.  Overall New Requirements Levels: Operators View
 
    The following table provides the requirement level of Section 3.1
    from an operator perspective.
