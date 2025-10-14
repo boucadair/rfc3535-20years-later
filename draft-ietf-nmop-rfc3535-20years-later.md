@@ -462,7 +462,7 @@ The following table provides a classification of the requirements listed in {{se
 |OPS-REQ-NEW-NEED        |			 |      X       |       		   |                |           |            	               |                |
 |OPS-REQ-GLUE            |			 |              |       		   |      X         |           |            	               |        X       |
 
-## Overall New Requirements Levels (Operators)
+## Overall New Requirements Levels: Operators View
 
 The following table provides the requirement level of {{sec-reqs}} from an operator perspective.
 
