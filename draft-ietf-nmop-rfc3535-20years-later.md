@@ -166,7 +166,7 @@ OPS-REQ-NW-API-DISCOVERY:
 
 ## Network APIfication {#sec-api}
 
-APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, {{?I-D.ramseyer-grow-peering-api}} defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in {{?I-D.ietf-opsawg-teas-attachment-circuit}} as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.
+APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, {{?I-D.ietf-grow-peering-api}} defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in {{?RFC9834}} as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.
 
 OPS-REQ-DM-API:
 : Readily available API specifications could be generalized from YANG modules for fast development, prototyping, and validation.
@@ -179,7 +179,7 @@ OPS-REQ-GUIDE-AND-PROFILE:
 : The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
 
 OPS-REQ-ARCH:
-: Need to promote more arch and framework documents to exemplify the intended use.
+: Need to promote more architecture and framework documents to exemplify the intended use.
 
 > Examples of such profile documents are the various RFCs that were published by the Behavior Engineering for Hindrance Avoidance (behave) WG {{?BCP127}}.
 > Another approach could be to consider a model similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" {{?RFC7414}}.
