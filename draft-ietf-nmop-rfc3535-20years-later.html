@@ -22,23 +22,22 @@ identify the operational barriers for making these
 technologies widely implemented. Also, this document captures new
 requirements for network management operations. 
     ' name="description">
-<meta content="xml2rfc 3.30.2" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="network management" name="keyword">
 <meta content="future networks" name="keyword">
 <meta content="draft-ietf-nmop-rfc3535-20years-later-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.2
-    Python 3.12.11
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.4.0
+    platformdirs 4.5.0
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.5
-    setuptools 80.9.0
     wcwidth 0.2.14
 -->
 <link href="draft-ietf-nmop-rfc3535-20years-later.xml" rel="alternate" type="application/rfc+xml">
@@ -1062,7 +1061,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair, et al.</td>
-<td class="center">Expires 17 April 2026</td>
+<td class="center">Expires 3 May 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1075,12 +1074,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-nmop-rfc3535-20years-later-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-14" class="published">14 October 2025</time>
+<time datetime="2025-10-30" class="published">30 October 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-04-17">17 April 2026</time></dd>
+<dd class="expires"><time datetime="2026-05-03">3 May 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1147,7 +1146,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 17 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1475,7 +1474,7 @@ Unlike service and network models, IETF-defined device models are not widely imp
         <h3 id="name-network-apification">
 <a href="#section-2.4" class="section-number selfRef">2.4. </a><a href="#name-network-apification" class="section-name selfRef">Network APIfication</a>
         </h3>
-<p id="section-2.4-1">APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, <span>[<a href="#I-D.ramseyer-grow-peering-api" class="cite xref">I-D.ramseyer-grow-peering-api</a>]</span> defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in <span>[<a href="#I-D.ietf-opsawg-teas-attachment-circuit" class="cite xref">I-D.ietf-opsawg-teas-attachment-circuit</a>]</span> as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.<a href="#section-2.4-1" class="pilcrow">¶</a></p>
+<p id="section-2.4-1">APIs are getting momentum as means of interworking between parties, also at the time of providing network services. As an example, <span>[<a href="#I-D.ietf-grow-peering-api" class="cite xref">I-D.ietf-grow-peering-api</a>]</span> defines an API for dynamically establishing BGP peering sessions between Autonomous Systems of different administrative domains. That same objective is also covered by the YANG data model defined in <span>[<a href="#RFC9834" class="cite xref">RFC9834</a>]</span> as exemplified in Appendix A.10. Tools such as YANG/OpenAPI transforms are key to leverage existing data models and allow for better integration and mapping to actual realization models.<a href="#section-2.4-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.4-2">
           <dt id="section-2.4-2.1">OPS-REQ-DM-API:</dt>
           <dd style="margin-left: 1.5em" id="section-2.4-2.2">
@@ -1499,7 +1498,7 @@ Unlike service and network models, IETF-defined device models are not widely imp
           <dd class="break"></dd>
 <dt id="section-2.5-2.3">OPS-REQ-ARCH:</dt>
           <dd style="margin-left: 1.5em" id="section-2.5-2.4">
-            <p id="section-2.5-2.4.1">Need to promote more arch and framework documents to exemplify the intended use.<a href="#section-2.5-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-2.5-2.4.1">Need to promote more architecture and framework documents to exemplify the intended use.<a href="#section-2.5-2.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -2430,7 +2429,7 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dd class="break"></dd>
 <dt id="I-D.ietf-bmwg-containerized-infra">[I-D.ietf-bmwg-containerized-infra]</dt>
       <dd>
-<span class="refAuthor">Ngọc, T. M.</span>, <span class="refAuthor">Rao, S.</span>, <span class="refAuthor">Lee, J.</span>, and <span class="refAuthor">Y. Kim</span>, <span class="refTitle">"Considerations for Benchmarking Network Performance in Containerized Infrastructures"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-bmwg-containerized-infra-07</span>, <time datetime="2025-07-01" class="refDate">1 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-07">https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Ngọc, T. M.</span>, <span class="refAuthor">Ko, 7. 9. 1. 1. 1. 1. 1. 3. 7.</span>, <span class="refAuthor">Rao, S.</span>, <span class="refAuthor">Lee, J.</span>, and <span class="refAuthor">Y. Kim</span>, <span class="refTitle">"Considerations for Benchmarking Network Performance in Containerized Infrastructures"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-bmwg-containerized-infra-08</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-08">https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-containerized-infra-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-comi">[I-D.ietf-core-comi]</dt>
       <dd>
@@ -2439,6 +2438,10 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dt id="I-D.ietf-core-sid">[I-D.ietf-core-sid]</dt>
       <dd>
 <span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Petrov, I.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"YANG Schema Item iDentifier (YANG SID)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-sid-24</span>, <time datetime="2023-12-22" class="refDate">22 December 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24">https://datatracker.ietf.org/doc/html/draft-ietf-core-sid-24</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-grow-peering-api">[I-D.ietf-grow-peering-api]</dt>
+      <dd>
+<span class="refAuthor">Aguado, C.</span>, <span class="refAuthor">Griswold, M.</span>, <span class="refAuthor">Ramseyer, J.</span>, <span class="refAuthor">Servin, A.</span>, <span class="refAuthor">Strickx, T.</span>, and <span class="refAuthor">Q. Misell</span>, <span class="refTitle">"Peering API"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-grow-peering-api-01</span>, <time datetime="2025-07-04" class="refDate">4 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-grow-peering-api-01">https://datatracker.ietf.org/doc/html/draft-ietf-grow-peering-api-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-isis-sr-yang">[I-D.ietf-isis-sr-yang]</dt>
       <dd>
@@ -2467,10 +2470,6 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dt id="I-D.openconfig-rtgwg-gnmi-spec">[I-D.openconfig-rtgwg-gnmi-spec]</dt>
       <dd>
 <span class="refAuthor">Shakir, R.</span>, <span class="refAuthor">Shaikh, A.</span>, <span class="refAuthor">Borman, P.</span>, <span class="refAuthor">Hines, M.</span>, <span class="refAuthor">Lebsack, C.</span>, and <span class="refAuthor">C. Morrow</span>, <span class="refTitle">"gRPC Network Management Interface (gNMI)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-openconfig-rtgwg-gnmi-spec-01</span>, <time datetime="2018-03-05" class="refDate">5 March 2018</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01">https://datatracker.ietf.org/doc/html/draft-openconfig-rtgwg-gnmi-spec-01</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ramseyer-grow-peering-api">[I-D.ramseyer-grow-peering-api]</dt>
-      <dd>
-<span class="refAuthor">Aguado, C.</span>, <span class="refAuthor">Griswold, M.</span>, <span class="refAuthor">Ramseyer, J.</span>, <span class="refAuthor">Servin, A.</span>, and <span class="refAuthor">T. Strickx</span>, <span class="refTitle">"Peering API"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ramseyer-grow-peering-api-06</span>, <time datetime="2024-11-04" class="refDate">4 November 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ramseyer-grow-peering-api-06">https://datatracker.ietf.org/doc/html/draft-ramseyer-grow-peering-api-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.tailhardat-nmop-incident-management-noria">[I-D.tailhardat-nmop-incident-management-noria]</dt>
       <dd>
@@ -2711,6 +2710,10 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dt id="RFC9543">[RFC9543]</dt>
       <dd>
 <span class="refAuthor">Farrel, A., Ed.</span>, <span class="refAuthor">Drake, J., Ed.</span>, <span class="refAuthor">Rokui, R.</span>, <span class="refAuthor">Homma, S.</span>, <span class="refAuthor">Makhijani, K.</span>, <span class="refAuthor">Contreras, L.</span>, and <span class="refAuthor">J. Tantsura</span>, <span class="refTitle">"A Framework for Network Slices in Networks Built from IETF Technologies"</span>, <span class="seriesInfo">RFC 9543</span>, <span class="seriesInfo">DOI 10.17487/RFC9543</span>, <time datetime="2024-03" class="refDate">March 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9543">https://www.rfc-editor.org/rfc/rfc9543</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9834">[RFC9834]</dt>
+      <dd>
+<span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Roberts, R., Ed.</span>, <span class="refAuthor">Gonzalez de Dios, O.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">B. Wu</span>, <span class="refTitle">"YANG Data Models for Bearers and Attachment Circuits as a Service (ACaaS)"</span>, <span class="seriesInfo">RFC 9834</span>, <span class="seriesInfo">DOI 10.17487/RFC9834</span>, <time datetime="2025-09" class="refDate">September 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9834">https://www.rfc-editor.org/rfc/rfc9834</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="Widoco2017">[Widoco2017]</dt>
     <dd>

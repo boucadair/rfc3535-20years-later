@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 17 April 2026                                     O. G. D. Dios
+Expires: 3 May 2026                                        O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         14 October 2025
+                                                         30 October 2025
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 April 2026.
+   This Internet-Draft will expire on 3 May 2026.
 
 Copyright Notice
 
@@ -276,11 +276,10 @@ Table of Contents
 
    APIs are getting momentum as means of interworking between parties,
    also at the time of providing network services.  As an example,
-   [I-D.ramseyer-grow-peering-api] defines an API for dynamically
+   [I-D.ietf-grow-peering-api] defines an API for dynamically
    establishing BGP peering sessions between Autonomous Systems of
    different administrative domains.  That same objective is also
-   covered by the YANG data model defined in
-   [I-D.ietf-opsawg-teas-attachment-circuit] as exemplified in
+   covered by the YANG data model defined in [RFC9834] as exemplified in
    Appendix A.10.  Tools such as YANG/OpenAPI transforms are key to
    leverage existing data models and allow for better integration and
    mapping to actual realization models.
@@ -303,8 +302,8 @@ Table of Contents
       Additionaly, consider independent compliance suites to validate
       functions/features/etc.
 
-   OPS-REQ-ARCH:  Need to promote more arch and framework documents to
-      exemplify the intended use.
+   OPS-REQ-ARCH:  Need to promote more architecture and framework
+      documents to exemplify the intended use.
 
       Examples of such profile documents are the various RFCs that were
       published by the Behavior Engineering for Hindrance Avoidance
@@ -989,12 +988,13 @@ Table of Contents
               workshop-report-04>.
 
    [I-D.ietf-bmwg-containerized-infra]
-              Ngọc, T. M., Rao, S., Lee, J., and Y. Kim, "Considerations
-              for Benchmarking Network Performance in Containerized
-              Infrastructures", Work in Progress, Internet-Draft, draft-
-              ietf-bmwg-containerized-infra-07, 1 July 2025,
+              Ngọc, T. M., Ko, 7. 9. 1. 1. 1. 1. 1. 3. 7., Rao, S., Lee,
+              J., and Y. Kim, "Considerations for Benchmarking Network
+              Performance in Containerized Infrastructures", Work in
+              Progress, Internet-Draft, draft-ietf-bmwg-containerized-
+              infra-08, 20 October 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-07>.
+              containerized-infra-08>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
@@ -1009,6 +1009,13 @@ Table of Contents
               in Progress, Internet-Draft, draft-ietf-core-sid-24, 22
               December 2023, <https://datatracker.ietf.org/doc/html/
               draft-ietf-core-sid-24>.
+
+   [I-D.ietf-grow-peering-api]
+              Aguado, C., Griswold, M., Ramseyer, J., Servin, A.,
+              Strickx, T., and Q. Misell, "Peering API", Work in
+              Progress, Internet-Draft, draft-ietf-grow-peering-api-01,
+              4 July 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-grow-peering-api-01>.
 
    [I-D.ietf-isis-sr-yang]
               Litkowski, S., Qu, Y., Lindem, A., Chen, H., and J.
@@ -1065,13 +1072,6 @@ Table of Contents
               openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
               <https://datatracker.ietf.org/doc/html/draft-openconfig-
               rtgwg-gnmi-spec-01>.
-
-   [I-D.ramseyer-grow-peering-api]
-              Aguado, C., Griswold, M., Ramseyer, J., Servin, A., and T.
-              Strickx, "Peering API", Work in Progress, Internet-Draft,
-              draft-ramseyer-grow-peering-api-06, 4 November 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ramseyer-
-              grow-peering-api-06>.
 
    [I-D.tailhardat-nmop-incident-management-noria]
               Tailhardat, L., Troncy, R., Chabot, Y., Ramparany, F., and
@@ -1371,6 +1371,12 @@ Table of Contents
               Framework for Network Slices in Networks Built from IETF
               Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
               <https://www.rfc-editor.org/rfc/rfc9543>.
+
+   [RFC9834]  Boucadair, M., Ed., Roberts, R., Ed., Gonzalez de Dios,
+              O., Barguil, S., and B. Wu, "YANG Data Models for Bearers
+              and Attachment Circuits as a Service (ACaaS)", RFC 9834,
+              DOI 10.17487/RFC9834, September 2025,
+              <https://www.rfc-editor.org/rfc/rfc9834>.
 
    [Widoco2017]
               Garijo, D., "WIDOCO: a wizard for documenting ontologies",
