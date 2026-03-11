@@ -55,6 +55,10 @@ informative:
     title: Openconfig
     date: false
     target: https://www.openconfig.net/
+  CAMARA:
+    title: CAMARA
+    date: false
+    target: https://camaraproject.org/    
   YANGCATALOG:
     title: YANG Catalog, YANG Modules Stats
     date: 2026
@@ -90,9 +94,9 @@ to establish a dialog between network operators and
 protocol developers, and to guide the IETF to focus on work
 regarding network management.  The outcome of that workshop
 was documented in the "IAB Network Management Workshop" {{!RFC3535}}
-which was instrumental for developing NETCONF {{?RFC6241}} and YANG {{?RFC6020}}{{?RFC7950}}.
+which was instrumental for developing NETCONF {{?RFC6241}} and YANG {{?RFC6020}}{{?RFC7950}}, in particular.
 
-Since the publication of {{!RFC3535}} major advances were achieved in the Network Managment area, such as (but not limited to):
+Since the publication of {{!RFC3535}} major advances were achieved in the network managment area, such as (but not limited to):
 
 * NETCONF {{?RFC6241}}
 * YANG {{?RFC7950}}
@@ -102,7 +106,7 @@ Since the publication of {{!RFC3535}} major advances were achieved in the Networ
 * Virtualization {{?RFC8568}}
 * Containerization {{?I-D.ietf-bmwg-containerized-infra}}
 * Intent-based {{?RFC9315}}
-* Network APIs
+* Network APIs (e.g., {{CAMARA}})
 * Models for management of services, networks, and devices {{?RFC8199}}{{?RFC8309}}
 * Telemetry {{?RFC9232}}
 * JSON Encoding of Data Modeled with YANG {{?RFC7951}}
@@ -112,7 +116,7 @@ Since the publication of {{!RFC3535}} major advances were achieved in the Networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.
+More than 20 years later after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.
 
 For completness, the document also provides an assessment of the {{!RFC3535}} recommendations ({{sec-assessment}}) and to what extent that roadmap was driving network management efforts within the IETF, in particular ({{sec-reca}}). Readers may also refer to {{?I-D.iab-nemops-workshop-report}}.
 
@@ -201,7 +205,7 @@ OPS-REQ-QUICK-BUT-WELL:
 
 ## Integration Complexity {#sec-int}
 
-{{Section 3 of !RFC3535}} describes a set of network operator requirements. One of the requirements is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this holds true, for network observability it is unfortunately not yet. This has been confirmed with a set of network operators asking how long it takes from subscribing YANG data to make it accessible to the operator. Minutes, Hours, Days, or Weeks. None of them answered Minutes or Hours. All of them responded Days or Weeks. Hinting manual post processing of YANG data.
+One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this holds true, for network observability it is unfortunately not yet. This has been confirmed with a set of network operators asking how long it takes from subscribing YANG data to make it accessible to the operator. Minutes, Hours, Days, or Weeks. None of them answered Minutes or Hours. All of them responded Days or Weeks. Hinting manual post processing of YANG data.
 
 Collecting YANG metrics from networks is already a struggle due to late arrival of {{?RFC8639}}, {{?RFC8640}}, {{?RFC8641}}, {{?I-D.ietf-netconf-https-notif}}, and {{?I-D.ietf-netconf-udp-notif}} for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in {{?I-D.openconfig-rtgwg-gnmi-spec}} to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.
 
@@ -258,7 +262,7 @@ Leveraging on pluggins, propietary YANG data models or even CLI is still the rul
 
 The complexity of developing and maintaining these means of operation is huge, as it is required to to cover many OSes and vendors along the lifetime of the network device.
 
-Network models for the realization of services provide some "level" of abstraction and then automation.
+Network models for the realization of services provide some "level" of abstraction and then allows for for more automation.
 
 ## Distinct Networks, Distinct Management Requirements {#sec-distinct}
 
@@ -321,7 +325,7 @@ OPS-REQ-IETF-TOOLS
 ### Open-source Tools {#sec-client}
 
 While there are open-source implementations for NETCONF (e.g., NETOPEER), the gRPC/gNMI suite seems to have more support for tools on the client side.
-For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (we need the XML tags).
+For example, "ygot" generates structures from YANG models and these can easily be used by a client to configure a device with gNMI. NETCONF is not supported though (the XML tags are needed).
 
 OPS-REQ-CLIENT-TOOLS:
 : Focus on tooling is needed, especially on the client side.
