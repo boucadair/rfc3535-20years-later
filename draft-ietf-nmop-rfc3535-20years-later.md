@@ -58,7 +58,7 @@ informative:
   YANGCATALOG:
     title: YANG Catalog, YANG Modules Stats
     date: 2026
-    target: https://www.yangcatalog.org/private-page  
+    target: https://www.yangcatalog.org/private-page
   Widoco2017:
     title: "WIDOCO: a wizard for documenting ontologies"
     date: 2017
@@ -285,7 +285,7 @@ OPS-REQ-UNSILO:
 
 ## Too Much Time Between Publication of New Networking Functionality and the Associated YANG {#sec-pub}
 
-For example, {{?RFC8667}} (IS-IS extensions for SR) was published in December 2019, while {{?I-D.ietf-isis-sr-yang}} will be published ~5 years after. There are cases where modules are not published after more than a decade of WG adoption (e.g., {{?I-D.ietf-idr-bgp-model}}).  
+For example, {{?RFC8667}} (IS-IS extensions for SR) was published in December 2019, while {{?I-D.ietf-isis-sr-yang}} will be published ~5 years after. There are cases where modules are not published after more than a decade of WG adoption (e.g., {{?I-D.ietf-idr-bgp-model}}).
 
 OPS-REQ-TIMELY-DM:
 : Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
