@@ -69,17 +69,9 @@ informative:
 
 --- abstract
 
-The IAB organized an important workshop
-to establish a dialog between network operators and
-protocol developers, and to guide the IETF focus on work
-regarding network management.  The outcome of that workshop
-was documented in the "IAB Network Management Workshop" (RFC 3535)
-which was instrumental for developing NETCONF and YANG, in particular.
-
-20 years later, it is time to evaluate what has been achieved since then and
-identify the operational barriers for making these
-technologies widely implemented. Also, this document captures new
-requirements for network management operations.
+This document identifies a list of operators requirements for network management operations.
+These requirements reflect advances in this field since the publication of "IAB Network Management Workshop" (RFC 3535), which
+was instrumental for developing many key technologies that are widely deployed.
 
 --- middle
 
@@ -114,7 +106,7 @@ See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
 More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.
 
-The document also provide an assessment of the RFC3535 recommendations ({{sec-assessment}}) and to what extend that roadmap was driving network management efforts within the IETF, in particular ({{sec-reca}}).
+For completness, the document also provides an assessment of the {{?RFC3535}} recommendations ({{sec-assessment}}) and to what extent that roadmap was driving network management efforts within the IETF, in particular ({{sec-reca}}). Readers may also refer to {{?I-D.iab-nemops-workshop-report}}.
 
 # Observations and New Requirements {#sec-obs}
 
