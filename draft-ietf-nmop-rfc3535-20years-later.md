@@ -255,10 +255,10 @@ From the time {{?RFC3535}} was released up to now, new kind of services and appl
 
 Likewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.
 
-This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services.
+This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services. Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC838}} or DetNet {{?RFC8557}}. 
 
 OPS-REQ-NEW-NEED:
-: Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC838}} or DetNet {{?RFC8557}}.
+: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.
 
 ## Implications of External Dependency {#sec-dep}
 
@@ -410,7 +410,7 @@ OPS-REQ-IETF-TOOLS:
 : Ease exposure of libraries and host tools (e.g., yangkit) to ease integration.
 
 OPS-REQ-NEW-NEED:
-: Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness.
+: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.
 
 OPS-REQ-GLUE:
 : Distinct approaches followed in both the compute and the network environments make necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
