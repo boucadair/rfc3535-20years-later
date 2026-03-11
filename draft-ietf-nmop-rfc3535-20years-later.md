@@ -485,17 +485,19 @@ The following table provides the requirement level of {{sec-reqs}} from an opera
 |OPS-REQ-NEW-NEED         |  Nice to have  |
 |OPS-REQ-GLUE             |  Nice to have  |
 
-## Collaborative Prioritization
+## Consolidated Requirements
 
-> TBC to reflect the priorities set by the WG.
+This section provides a consolidated view of main requirements that takes into account inputs from actors beyond operators:
 
-> ((Including Rob's Inputs))
-
-* Move much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
-* Implement minimal functionality, not bells and whistles (OPS-REQ-GUIDE-AND-PROFILE, OPS-REQ-ITER)
+* Put more focus on service and network data models (OPS-REQ-STRENGTHEN-DM) while ensuring that the realization of these abstractions
+  can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION)
+* Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
+* Implement minimal functionality, not bells and whistles (OPS-REQ-ITERATE)
 * Have running code (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
-* Have vendors and operators on board at the time of developing the solution independent compliance suite to validate things.
-* Need to coorelating data learned from different means (IPFIX, BMP, Models)
+* Have vendors and operators on board at the time of developing the solution
+* Provide independent compliance suite to validate features (OPS-REQ-GUIDE-AND-PROFILE)
+* Need for means to correlate data learned from different means (OPS-REQ-REUSABILITY)
+* Investigate approaches to ease adoption and integration into an operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API, OPS-REQ-INTEGRATION)
 
 # Security Considerations
 
