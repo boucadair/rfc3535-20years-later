@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 3 May 2026                                        O. G. D. Dios
+Expires: 12 September 2026                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         30 October 2025
+                                                           11 March 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -20,17 +20,11 @@ An Update of Operators Requirements on Network Management Protocols and
 
 Abstract
 
-   The IAB organized an important workshop to establish a dialog between
-   network operators and protocol developers, and to guide the IETF
-   focus on work regarding network management.  The outcome of that
-   workshop was documented in the "IAB Network Management Workshop" (RFC
-   3535) which was instrumental for developing NETCONF and YANG, in
-   particular.
-
-   20 years later, it is time to evaluate what has been achieved since
-   then and identify the operational barriers for making these
-   technologies widely implemented.  Also, this document captures new
-   requirements for network management operations.
+   This document identifies a list of operators requirements for network
+   management operations.  These requirements reflect advances in this
+   field since the publication of "IAB Network Management Workshop" (RFC
+   3535), which was instrumental for developing many key technologies
+   that are widely deployed.
 
 Discussion Venues
 
@@ -54,11 +48,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 May 2026.
+   This Internet-Draft will expire on 12 September 2026.
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -168,10 +162,11 @@ Table of Contents
    operations are emerging from the operators.  This document captures
    these requirements that reflect the progress in this area.
 
-   The document also provide an assessment of the RFC3535
-   recommendations (Appendix A) and to what extend that roadmap was
-   driving network management efforts within the IETF, in particular
-   (Appendix B).
+   For completness, the document also provides an assessment of the
+   [RFC3535] recommendations (Appendix A) and to what extent that
+   roadmap was driving network management efforts within the IETF, in
+   particular (Appendix B).  Readers may also refer to
+   [I-D.iab-nemops-workshop-report].
 
 2.  Observations and New Requirements
 
@@ -999,9 +994,9 @@ Table of Contents
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
               and C. Bormann, "CoAP Management Interface (CORECONF)",
-              Work in Progress, Internet-Draft, draft-ietf-core-comi-20,
-              6 May 2025, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-core-comi-20>.
+              Work in Progress, Internet-Draft, draft-ietf-core-comi-21,
+              2 March 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-core-comi-21>.
 
    [I-D.ietf-core-sid]
               Veillette, M., Pelov, A., Petrov, I., Bormann, C., and M.
@@ -1036,9 +1031,9 @@ Table of Contents
               Feng, A. H., Francois, P., Zhou, T., Graf, T., and P.
               Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-23, 14 October 2025,
+              ietf-netconf-udp-notif-25, 28 January 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-23>.
+              udp-notif-25>.
 
    [I-D.ietf-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
@@ -1058,7 +1053,7 @@ Table of Contents
               teas-attachment-circuit-20>.
 
    [I-D.marcas-nmop-knowledge-graph-yang]
-              Martinez-Casanueva, I. D., Rodríguez, L. C., and P.
+              Martinez-Casanueva, I. D., Cabanillas, L., and P.
               Martinez-Julia, "Knowledge Graphs for YANG-based Network
               Management", Work in Progress, Internet-Draft, draft-
               marcas-nmop-knowledge-graph-yang-05, 21 October 2024,
@@ -1074,13 +1069,13 @@ Table of Contents
               rtgwg-gnmi-spec-01>.
 
    [I-D.tailhardat-nmop-incident-management-noria]
-              Tailhardat, L., Troncy, R., Chabot, Y., Ramparany, F., and
-              P. Folz, "Knowledge Graphs for Enhanced Cross-Operator
-              Incident Management and Network Design", Work in Progress,
-              Internet-Draft, draft-tailhardat-nmop-incident-management-
-              noria-02, 15 May 2025,
+              Tailhardat, L., Troncy, R., Chabot, Y., Ramparany, F.,
+              Folz, P., and B. Kavanagh, "Knowledge Graphs for Enhanced
+              Cross-Operator Incident Management and Network Design",
+              Work in Progress, Internet-Draft, draft-tailhardat-nmop-
+              incident-management-noria-04, 9 February 2026,
               <https://datatracker.ietf.org/doc/html/draft-tailhardat-
-              nmop-incident-management-noria-02>.
+              nmop-incident-management-noria-04>.
 
    [LOT2019]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
               Lopez, M., and R. Garcia-Castro, "LOT: An industrial

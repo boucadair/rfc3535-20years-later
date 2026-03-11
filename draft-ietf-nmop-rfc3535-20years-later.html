@@ -11,16 +11,9 @@
 <meta content="Thomas Graf" name="author">
 <meta content="Reshad Rahman" name="author">
 <meta content='
-       The IAB organized an important workshop
-to establish a dialog between network operators and
-protocol developers, and to guide the IETF focus on work
-regarding network management.  The outcome of that workshop
-was documented in the "IAB Network Management Workshop" (RFC 3535)
-which was instrumental for developing NETCONF and YANG, in particular. 
-       20 years later, it is time to evaluate what has been achieved since then and
-identify the operational barriers for making these
-technologies widely implemented. Also, this document captures new
-requirements for network management operations. 
+       This document identifies a list of operators requirements for network management operations.
+These requirements reflect advances in this field since the publication of "IAB Network Management Workshop" (RFC 3535), which
+was instrumental for developing many key technologies that are widely deployed. 
     ' name="description">
 <meta content="xml2rfc 3.31.0" name="generator">
 <meta content="network management" name="keyword">
@@ -31,14 +24,14 @@ requirements for network management operations.
     Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
-    intervaltree 3.1.0
+    intervaltree 3.2.1
     Jinja2 3.1.6
-    lxml 5.3.1
-    platformdirs 4.5.0
+    lxml 6.0.2
+    platformdirs 4.5.1
     pycountry 24.6.1
-    PyYAML 6.0.2
+    PyYAML 6.0.3
     requests 2.32.5
-    wcwidth 0.2.14
+    wcwidth 0.3.0
 -->
 <link href="draft-ietf-nmop-rfc3535-20years-later.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -179,7 +172,7 @@ requirements for network management operations.
   font-weight: 400;
   font-display: swap;
   src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
   font-family: 'Oxygen Mono';
@@ -187,7 +180,8 @@ requirements for network management operations.
   font-weight: 400;
   font-display: swap;
   src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 }
 
 @font-face {
@@ -579,6 +573,7 @@ aside, blockquote {
 }
 blockquote {
   margin: 1em 0;
+  border-left: 2px var(--pilcrow-strong) solid;
 }
 cite {
   display: block;
@@ -649,7 +644,7 @@ a.pilcrow {
   }
 }
 @media not print {
-  :hover > a.pilcrow {
+  :hover > a.pilcrow, a.pilcrow:focus {
     opacity: 1;
   }
   a.pilcrow[href]:hover {
@@ -1057,11 +1052,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">RFC 3535, 20 Years Later</td>
-<td class="right">October 2025</td>
+<td class="right">March 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair, et al.</td>
-<td class="center">Expires 3 May 2026</td>
+<td class="center">Expires 12 September 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1074,12 +1069,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-nmop-rfc3535-20years-later-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-30" class="published">30 October 2025</time>
+<time datetime="2026-03-11" class="published">11 March 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-05-03">3 May 2026</time></dd>
+<dd class="expires"><time datetime="2026-09-12">12 September 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1108,16 +1103,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">An Update of Operators Requirements on Network Management Protocols and Modelling</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The IAB organized an important workshop
-to establish a dialog between network operators and
-protocol developers, and to guide the IETF focus on work
-regarding network management.  The outcome of that workshop
-was documented in the "IAB Network Management Workshop" (RFC 3535)
-which was instrumental for developing NETCONF and YANG, in particular.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">20 years later, it is time to evaluate what has been achieved since then and
-identify the operational barriers for making these
-technologies widely implemented. Also, this document captures new
-requirements for network management operations.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document identifies a list of operators requirements for network management operations.
+These requirements reflect advances in this field since the publication of "IAB Network Management Workshop" (RFC 3535), which
+was instrumental for developing many key technologies that are widely deployed.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-discussion-venues">
@@ -1146,7 +1134,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 3 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 12 September 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1155,7 +1143,7 @@ requirements for network management operations.<a href="#section-abstract-2" cla
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2025 IETF Trust and the persons identified as the
+            Copyright (c) 2026 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1373,7 +1361,7 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
       </ul>
 <p id="section-1-4">See also "An Overview of the IETF Network Management Standards" <span>[<a href="#RFC6632" class="cite xref">RFC6632</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">More than 20 years later, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">The document also provide an assessment of the RFC3535 recommendations (<a href="#sec-assessment" class="auto internal xref">Appendix A</a>) and to what extend that roadmap was driving network management efforts within the IETF, in particular (<a href="#sec-reca" class="auto internal xref">Appendix B</a>).<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-6">For completness, the document also provides an assessment of the <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> recommendations (<a href="#sec-assessment" class="auto internal xref">Appendix A</a>) and to what extent that roadmap was driving network management efforts within the IETF, in particular (<a href="#sec-reca" class="auto internal xref">Appendix B</a>). Readers may also refer to <span>[<a href="#I-D.iab-nemops-workshop-report" class="cite xref">I-D.iab-nemops-workshop-report</a>]</span>.<a href="#section-1-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-obs">
@@ -2433,7 +2421,7 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-comi">[I-D.ietf-core-comi]</dt>
       <dd>
-<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-20</span>, <time datetime="2025-05-06" class="refDate">6 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-20">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-20</a>&gt;</span>. </dd>
+<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-21</span>, <time datetime="2026-03-02" class="refDate">2 March 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-21">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-21</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-sid">[I-D.ietf-core-sid]</dt>
       <dd>
@@ -2453,7 +2441,7 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dd class="break"></dd>
 <dt id="I-D.ietf-netconf-udp-notif">[I-D.ietf-netconf-udp-notif]</dt>
       <dd>
-<span class="refAuthor">Feng, A. H.</span>, <span class="refAuthor">Francois, P.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Graf, T.</span>, and <span class="refAuthor">P. Lucente</span>, <span class="refTitle">"UDP-based Transport for Configured Subscriptions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-udp-notif-23</span>, <time datetime="2025-10-14" class="refDate">14 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-23">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-23</a>&gt;</span>. </dd>
+<span class="refAuthor">Feng, A. H.</span>, <span class="refAuthor">Francois, P.</span>, <span class="refAuthor">Zhou, T.</span>, <span class="refAuthor">Graf, T.</span>, and <span class="refAuthor">P. Lucente</span>, <span class="refTitle">"UDP-based Transport for Configured Subscriptions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-udp-notif-25</span>, <time datetime="2026-01-28" class="refDate">28 January 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-25">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-udp-notif-25</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-opsawg-ntw-attachment-circuit">[I-D.ietf-opsawg-ntw-attachment-circuit]</dt>
       <dd>
@@ -2465,7 +2453,7 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dd class="break"></dd>
 <dt id="I-D.marcas-nmop-knowledge-graph-yang">[I-D.marcas-nmop-knowledge-graph-yang]</dt>
       <dd>
-<span class="refAuthor">Martinez-Casanueva, I. D.</span>, <span class="refAuthor">Rodríguez, L. C.</span>, and <span class="refAuthor">P. Martinez-Julia</span>, <span class="refTitle">"Knowledge Graphs for YANG-based Network Management"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-marcas-nmop-knowledge-graph-yang-05</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-marcas-nmop-knowledge-graph-yang-05">https://datatracker.ietf.org/doc/html/draft-marcas-nmop-knowledge-graph-yang-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Martinez-Casanueva, I. D.</span>, <span class="refAuthor">Cabanillas, L.</span>, and <span class="refAuthor">P. Martinez-Julia</span>, <span class="refTitle">"Knowledge Graphs for YANG-based Network Management"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-marcas-nmop-knowledge-graph-yang-05</span>, <time datetime="2024-10-21" class="refDate">21 October 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-marcas-nmop-knowledge-graph-yang-05">https://datatracker.ietf.org/doc/html/draft-marcas-nmop-knowledge-graph-yang-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.openconfig-rtgwg-gnmi-spec">[I-D.openconfig-rtgwg-gnmi-spec]</dt>
       <dd>
@@ -2473,7 +2461,7 @@ projects that facilitate access to code.<a href="#section-3.1-1.2.1" class="pilc
 <dd class="break"></dd>
 <dt id="I-D.tailhardat-nmop-incident-management-noria">[I-D.tailhardat-nmop-incident-management-noria]</dt>
       <dd>
-<span class="refAuthor">Tailhardat, L.</span>, <span class="refAuthor">Troncy, R.</span>, <span class="refAuthor">Chabot, Y.</span>, <span class="refAuthor">Ramparany, F.</span>, and <span class="refAuthor">P. Folz</span>, <span class="refTitle">"Knowledge Graphs for Enhanced Cross-Operator Incident Management and Network Design"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-tailhardat-nmop-incident-management-noria-02</span>, <time datetime="2025-05-15" class="refDate">15 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-tailhardat-nmop-incident-management-noria-02">https://datatracker.ietf.org/doc/html/draft-tailhardat-nmop-incident-management-noria-02</a>&gt;</span>. </dd>
+<span class="refAuthor">Tailhardat, L.</span>, <span class="refAuthor">Troncy, R.</span>, <span class="refAuthor">Chabot, Y.</span>, <span class="refAuthor">Ramparany, F.</span>, <span class="refAuthor">Folz, P.</span>, and <span class="refAuthor">B. Kavanagh</span>, <span class="refTitle">"Knowledge Graphs for Enhanced Cross-Operator Incident Management and Network Design"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-tailhardat-nmop-incident-management-noria-04</span>, <time datetime="2026-02-09" class="refDate">9 February 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-tailhardat-nmop-incident-management-noria-04">https://datatracker.ietf.org/doc/html/draft-tailhardat-nmop-incident-management-noria-04</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="LOT2019">[LOT2019]</dt>
       <dd>
