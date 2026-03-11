@@ -58,8 +58,8 @@ informative:
   CAMARA:
     title: CAMARA
     date: false
-    target: https://camaraproject.org/    
-  YANGCATALOG:
+    target: https://camaraproject.org/
+  YC:
     title: YANG Catalog, YANG Modules Stats
     date: 2026
     target: https://www.yangcatalog.org/private-page
@@ -130,7 +130,7 @@ Data models can be used to derive required configuration information for both ne
 
 More than three decades of "Internet standardization" have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:
 
-*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standarized ones. At the time of writing, {{YANGCATALOG}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
+*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standarized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
 
 *	Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.
 
