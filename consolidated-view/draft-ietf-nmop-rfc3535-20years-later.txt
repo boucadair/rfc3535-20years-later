@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 12 September 2026                                 O. G. D. Dios
+Expires: 13 September 2026                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           11 March 2026
+                                                           12 March 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2026.
+   This Internet-Draft will expire on 13 September 2026.
 
 Copyright Notice
 
@@ -940,12 +940,13 @@ Table of Contents
    *  Implement minimal functionality, not bells and whistles (OPS-REQ-
       ITERATE)
 
-   *  Have running code (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
+   *  Have running code while a specification is under development (OPS-
+      REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
 
    *  Have vendors and operators on board at the time of developing the
       solution
 
-   *  Provide independent compliance suite to validate features (OPS-
+   *  Provide independent compliance suites to validate features (OPS-
       REQ-GUIDE-AND-PROFILE)
 
    *  Need for means to correlate data learned from different means
@@ -954,6 +955,9 @@ Table of Contents
    *  Investigate approaches to ease adoption and integration into an
       operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API,
       OPS-REQ-INTEGRATION)
+
+   *  Network-centric approaches have limits, need to better integrate
+      and learn from techniques in other domains (OPS-REQ-BRIDGE).
 
 4.  Security Considerations
 
