@@ -493,11 +493,12 @@ This section provides a consolidated view of main requirements that takes into a
   can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION)
 * Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
 * Implement minimal functionality, not bells and whistles (OPS-REQ-ITERATE)
-* Have running code (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
+* Have running code while a specification is under development (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
 * Have vendors and operators on board at the time of developing the solution
-* Provide independent compliance suite to validate features (OPS-REQ-GUIDE-AND-PROFILE)
+* Provide independent compliance suites to validate features (OPS-REQ-GUIDE-AND-PROFILE)
 * Need for means to correlate data learned from different means (OPS-REQ-REUSABILITY)
 * Investigate approaches to ease adoption and integration into an operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API, OPS-REQ-INTEGRATION)
+* Network-centric approaches have limits, need to better integrate and learn from techniques in other domains (OPS-REQ-BRIDGE).
 
 # Security Considerations
 
