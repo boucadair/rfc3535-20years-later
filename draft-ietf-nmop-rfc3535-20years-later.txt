@@ -98,7 +98,7 @@ Table of Contents
      3.1.  Summary
      3.2.  Categorization
      3.3.  Overall New Requirements Levels: Operators View
-     3.4.  Collaborative Prioritization
+     3.4.  Consolidated Requirements
    4.  Security Considerations
    5.  IANA Considerations
    6.  References
@@ -951,24 +951,39 @@ Table of Contents
 
                    Table 2: Operators Requirements Levels
 
-3.4.  Collaborative Prioritization
+3.4.  Consolidated Requirements
 
-      TBC to reflect the priorities set by the WG.
+   This section provides a consolidated view of main requirements that
+   takes into account inputs from actors beyond operators:
 
-      ((Including Rob's Inputs))
+   *  Put more focus on service and network data models (OPS-REQ-
+      STRENGTHEN-DM) while ensuring that the realization of these
+      abstractions can be easily correlated with underlying
+      functionalities (OPS-REQ-INTEGRATION)
 
-   *  Move much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
+   *  Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
 
    *  Implement minimal functionality, not bells and whistles (OPS-REQ-
-      GUIDE-AND-PROFILE, OPS-REQ-ITERATE)
+      ITERATE)
 
-   *  Have running code (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
+   *  Have running code while a specification is under development (OPS-
+      REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
 
    *  Have vendors and operators on board at the time of developing the
-      solution independent compliance suite to validate things.
+      solution
 
-   *  Need to coorelating data learned from different means (IPFIX, BMP,
-      Models)
+   *  Provide independent compliance suites to validate features (OPS-
+      REQ-GUIDE-AND-PROFILE)
+
+   *  Need for means to correlate data learned from different means
+      (OPS-REQ-REUSABILITY)
+
+   *  Investigate approaches to ease adoption and integration into an
+      operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API,
+      OPS-REQ-INTEGRATION)
+
+   *  Network-centric approaches have limits, need to better integrate
+      and learn from techniques in other domains (OPS-REQ-BRIDGE).
 
 4.  Security Considerations
 
