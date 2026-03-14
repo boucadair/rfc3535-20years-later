@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 14 September 2026                                 O. G. D. Dios
+Expires: 15 September 2026                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           13 March 2026
+                                                           14 March 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 September 2026.
+   This Internet-Draft will expire on 15 September 2026.
 
 Copyright Notice
 
@@ -492,12 +492,16 @@ Table of Contents
    This reality is different from the one existing at the time of
    [RFC3535], and as such, the new identified needs can require from
    novel approaches to guarantee the aforementioned co-existence of
-   services.
+   services.  Some networks have specific network management
+   requirements such as the need for asynchronous operations or
+   constraints on data compactness.  An example of such networks is
+   Delay-Tolerant Networking (DTN) [RFC838] or DetNet [RFC8557].
 
-   OPS-REQ-NEW-NEED:  Some networks have specific network management
-      requirements such as the need for asynchronous operations or
-      constraints on data compactness.  An example of such networks is
-      Delay-Tolerant Networking (DTN) [RFC838] or DetNet [RFC8557].
+   OPS-REQ-NEW-NEED:  Profiling main network management technologies
+      (e.g., recommend customized transport parameters such as timeouts
+      and transport services) is recommended than defining network
+      management technologies that are applicable to a single deployment
+      context.
 
 2.13.  Implications of External Dependency
 
@@ -752,9 +756,11 @@ Table of Contents
    OPS-REQ-IETF-TOOLS:  Ease exposure of libraries and host tools (e.g.,
       yangkit) to ease integration.
 
-   OPS-REQ-NEW-NEED:  Some networks have specific network management
-      requirements such as the need for asynchronous operations or
-      constraints on data compactness.
+   OPS-REQ-NEW-NEED:  Profiling main network management technologies
+      (e.g., recommend customized transport parameters such as timeouts
+      and transport services) is recommended than defining network
+      management technologies that are applicable to a single deployment
+      context.
 
    OPS-REQ-GLUE:  Distinct approaches followed in both the compute and
       the network environments make necessary to define suitable
