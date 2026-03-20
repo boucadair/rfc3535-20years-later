@@ -268,7 +268,7 @@ From the time {{!RFC3535}} was released up to now, new kind of services and appl
 
 Likewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.
 
-This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services. Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC838}} or DetNet {{?RFC8557}}.
+This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services. Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC4838}} or DetNet {{?RFC8557}}.
 
 OPS-REQ-NEW-NEED:
 : Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.
