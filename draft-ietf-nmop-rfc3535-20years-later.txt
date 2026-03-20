@@ -496,7 +496,7 @@ Table of Contents
    services.  Some networks have specific network management
    requirements such as the need for asynchronous operations or
    constraints on data compactness.  An example of such networks is
-   Delay-Tolerant Networking (DTN) [RFC838] or DetNet [RFC8557].
+   Delay-Tolerant Networking (DTN) [RFC4838] or DetNet [RFC8557].
 
    OPS-REQ-NEW-NEED:  Profiling main network management technologies
       (e.g., recommend customized transport parameters such as timeouts
@@ -1125,6 +1125,11 @@ Table of Contents
               STD 17, RFC 1213, DOI 10.17487/RFC1213, March 1991,
               <https://www.rfc-editor.org/rfc/rfc1213>.
 
+   [RFC4838]  Cerf, V., Burleigh, S., Hooke, A., Torgerson, L., Durst,
+              R., Scott, K., Fall, K., and H. Weiss, "Delay-Tolerant
+              Networking Architecture", RFC 4838, DOI 10.17487/RFC4838,
+              April 2007, <https://www.rfc-editor.org/rfc/rfc4838>.
+
    [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
               DOI 10.17487/RFC5424, March 2009,
               <https://www.rfc-editor.org/rfc/rfc5424>.
@@ -1225,10 +1230,6 @@ Table of Contents
               and R. Wilton, "Network Management Datastore Architecture
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8342>.
-
-   [RFC838]   Smallberg, D., "Who talks TCP?", RFC 838,
-              DOI 10.17487/RFC0838, January 1983,
-              <https://www.rfc-editor.org/rfc/rfc838>.
 
    [RFC8519]  Jethanandani, M., Agarwal, S., Huang, L., and D. Blair,
               "YANG Data Model for Network Access Control Lists (ACLs)",
