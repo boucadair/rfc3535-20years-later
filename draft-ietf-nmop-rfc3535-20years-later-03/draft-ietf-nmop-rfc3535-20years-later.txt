@@ -1,0 +1,1367 @@
+
+
+
+
+Network Working Group                                       M. Boucadair
+Internet-Draft                                                    Orange
+Intended status: Informational                           L. M. Contreras
+Expires: 21 September 2026                                 O. G. D. Dios
+                                                              Telefonica
+                                                                 T. Graf
+                                                                Swisscom
+                                                               R. Rahman
+                                                                 Equinix
+                                                           20 March 2026
+
+
+An Update of Operators Requirements on Network Management Protocols and
+                               Modelling
+              draft-ietf-nmop-rfc3535-20years-later-latest
+
+Abstract
+
+   This document identifies a list of operators requirements for network
+   management operations.  These requirements reflect advances in this
+   field since the publication of "IAB Network Management Workshop" (RFC
+   3535), which was instrumental for developing many key technologies
+   that are widely deployed.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/boucadair/rfc3535-20years-later.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 21 September 2026.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Observations and Operators Requirements
+     2.1.  On the Importance of Data Models
+     2.2.  Fragmented Ecosystem
+     2.3.  The Network Becomes Consumable
+     2.4.  Network APIfication
+     2.5.  Lack of Profiling
+     2.6.  Lack of Agile Process for (The Maintenance of) YANG Modules
+     2.7.  Integration Complexity
+     2.8.  YANG-formatted Data Manipulation
+     2.9.  Translation and Mapping Between Service/Network and Device
+            Models
+     2.10. (In)Consistent Data Structures in Network Protocols for
+            Data Export
+     2.11. Proprietary YANG Modules, CLI, and Limited Abstraction
+     2.12. Distinct Networks, Distinct Management Requirements
+     2.13. Implications of External Dependency
+     2.14. Too Much Time Between Publication of New Networking
+            Functionality and the Associated YANG
+     2.15. Lack of Implementation of Proposed Solutions
+     2.16. Tooling & Skills
+       2.16.1.  Integration with "native" IT Tooling
+       2.16.2.  IETF Support for Better YANG Integration
+       2.16.3.  Open-source Tools
+       2.16.4.  Skills
+     2.17. New Service Approaches
+     2.18. Many Solutions for the Same Problem, but Lack of Clear
+            Applicably Guidance
+   3.  Updated Operators' Requirements
+     3.1.  Summary
+     3.2.  Categorization
+     3.3.  Overall New Requirements Levels: Operators View
+     3.4.  Consolidated Requirements
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Acknowledgments
+   Contributors
+   Authors' Addresses
+
+1.  Introduction
+
+   The IAB organized a workshop (June 4-June 6, 2002) to establish a
+   dialog between network operators and protocol developers, and to
+   guide the IETF to focus on work regarding network management.  The
+   outcome of that workshop was documented in the "IAB Network
+   Management Workshop" [RFC3535] which was instrumental for developing
+   NETCONF [RFC6241] and YANG [RFC6020][RFC7950], in particular.
+
+   Since the publication of [RFC3535] major advances were achieved in
+   the network managment area, such as (but not limited to):
+
+   *  NETCONF [RFC6241]
+
+   *  YANG [RFC7950]
+
+   *  RESTCONF [RFC8040]
+
+   *  SDN and Programmable Networks [RFC7149][RFC7426]
+
+   *  Automation [RFC8969]
+
+   *  Virtualization [RFC8568]
+
+   *  Containerization [I-D.ietf-bmwg-containerized-infra]
+
+   *  Intent-based [RFC9315]
+
+   *  Network APIs (e.g., [CAMARA])
+
+   *  Models for management of services, networks, and devices
+      [RFC8199][RFC8309]
+
+   *  Telemetry [RFC9232]
+
+   *  JSON Encoding of Data Modeled with YANG [RFC7951]
+
+   *  CoAP Management Interface (CORECONF) [I-D.ietf-core-comi]
+
+   *  YANG to CBOR mapping [RFC9254]
+
+   *  YANG Schema Item iDentifier (YANG SID) [I-D.ietf-core-sid]
+
+   See also "An Overview of the IETF Network Management Standards"
+   [RFC6632].
+
+   More than 20 years later after the publication of [RFC3535], new
+   requirements on network management operations are emerging from the
+   operators.  This document captures these requirements that reflect
+   the progress in this area.  Readers may also refer to
+   [I-D.iab-nemops-workshop-report].
+
+2.  Observations and Operators Requirements
+
+2.1.  On the Importance of Data Models
+
+   An appealing aspect about network automation techniques is that they
+   almost apply to any kind of network.  From that perspective, the
+   functional component of a network automation framework that probably
+   matters the most, and independent of the underlying interfaces and
+   protocols, are the data models.  Concretely, data models are
+   instrumental in the automation of networks, service delivery, and
+   infrastructures in general, especially that they can provide closed-
+   loop control for adaptive and deterministic service creation,
+   delivery, and maintenance.
+
+   Data models can be used to derive required configuration information
+   for both network and service components, and state information that
+   will be monitored and tracked.  Likewise, they can be used during the
+   service/network management life cycle (e.g., service instantiation,
+   provisioning, optimization, monitoring, diagnostic, and assurance).
+
+   More than three decades of "Internet standardization" have shown that
+   the specification of data models is not that straightforward.  This
+   is because of at least two major reasons:
+
+   *  For more than 30 years, legacy network equipment manufacturers
+      have considered their technology as a competitive advantage,
+      thereby leading to proprietary, vendor-specific, data models and
+      the burden of vendor lock-ins.  For example, there are more YANG
+      proprietary modules than standarized ones.  At the time of
+      writing, [YC] lists 13661 unique proprietary YANG modules vs. 991
+      Standards modules.
+
+   *  Over the same period, operators have also developed their savoir-
+      faire as a key competitive advantage.  Such savoir-faire had to
+      rely upon these proprietary data models (and their own ones).
+      Operators were reluctant in the past to share their design and
+      management practices.
+
+   The situation has changed since network "softwarization" strategies
+   have been disclosed by vendors and operators.  From a business
+   standpoint, network "softwarization" is seen as a major
+   transformation effort by operators, because of the flexibility and
+   the "a la carte" approach that is promoted by "X-as-a-service" (XaaS)
+   designs, "X" being network, platform, Network Slice [RFC9543], etc.
+
+   XaaS designs assume the availability of data models that are
+   dynamically instantiated (along with a set of relevant policies) as a
+   function of the "X" (and its design, for that matter). *XaaS services
+   cannot be designed, delivered, and operated without data models.*
+   Standard data models are thus key as they allow to:
+
+   *  Ease mapping among many (network/service) layers.
+
+   *  Ease data correlation from distinct sources.
+
+   *  Soften dependency on CLI specifics to vendors.
+
+   *  Support both top-down and bottom-up approaches for operating
+      services:
+
+   *  Accurate control loops for adaptive and deterministic service
+      creation, delivery, and maintenance.
+
+   *  Feed an intelligence that will drive appropriate actions to adjust
+      the current status to align with the intended status.
+
+   OPS-REQ-STRENGTHEN-DM:  Network softwarization can only happen with a
+      strong, committed standardization effort, complemented by active
+      involvement in open-source projects that facilitate access to
+      code.
+
+      Particularly, *without data models, a Network API is essentially
+      useless* (see also Section 2.4).
+
+2.2.  Fragmented Ecosystem
+
+   The current YANG device models ecosystem is *fragmented*: some
+   standards data models are defined through the IETF, while similar
+   ones are defined in other fora such as Openconfig [OC].  Unlike
+   service and network models, IETF-defined device models are not widely
+   implemented.
+
+   OPS-REQ-DM-RATIONALIZE:  There is a need to rationalize this space
+      and avoid redundant efforts.
+
+2.3.  The Network Becomes Consumable
+
+   Network connectivity can support tailored services in terms of
+   Service Level Obejctives (SLOs), for instance, by means of Network
+   Slice Services [RFC9543].  This approach of "consuming the network"
+   flexibly and dynamically is made possible by enabling means of
+   exposing network capabilities to either internal or external
+   applications.  Then, network management is no longer limited to
+   collect network status information, but it should be extended to
+   permit the exposure of resources, capabilities, functionality, and
+   associated information (e.g., inventory-based data).
+
+   OPS-REQ-EASE-EXPOSURE:  Focus on protocols and data models to expose
+      network/service capabilities, network-wide services, and related
+      operations.
+
+   OPS-REQ-NW-API-DISCOVERY:  Define a reference approach for service
+      exposure discovery (APIs discovery).
+
+2.4.  Network APIfication
+
+   APIs are getting momentum as means of interworking between parties,
+   also at the time of providing network services.  As an example,
+   [I-D.ietf-grow-peering-api] defines an API for dynamically
+   establishing BGP interconnection sessions between Autonomous Systems
+   of different administrative domains.  That same objective is also
+   covered by the YANG data model defined in [RFC9834] as exemplified in
+   its Appendix A.10.  Tools such as YANG/OpenAPI transforms are key to
+   leverage existing data models and allow for better integration and
+   mapping to actual realization models.
+
+   OPS-REQ-DM2API:  Readily available API specifications should be
+      generalized from YANG modules for fast development, prototyping,
+      and validation.
+
+2.5.  Lack of Profiling
+
+   Many NETCONF-related features are (being) specified by the IETF, but
+   these features are not widely supported (e.g., YANG-Push [RFC8639]).
+   Some of these are not implemented because of the unbalance between
+   actual operational need vs. complexity.
+
+   OPS-REQ-GUIDE-AND-PROFILE:  The target application/applicability of a
+      network management approach should be documented (e.g., edit
+      profile documents that outline a set of recommendations for core/
+      key features, along with appropriate justifications, will help
+      foster more implementations that meet operators’ needs).  This
+      also covers security management aspects of network management.
+      Additionaly, consider independent compliance suites to validate
+      functions/features/etc.
+
+   OPS-REQ-ARCH:  Need to promote more architecture and framework
+      documents to exemplify the intended use.
+
+      Examples of such profile documents are the various RFCs that were
+      published by the Behavior Engineering for Hindrance Avoidance
+      (behave) WG [BCP127].  Another approach is to consider a model
+      similar to the "Roadmap for Transmission Control Protocol (TCP)
+      Specification Documents" [RFC7414].  Such a document would serve
+      as a guide and reference for implementers and others seeking
+      information on 'NETCONF/RESTCONF/YANG'-related RFCs.
+
+   OPS-REQ-REASSESS:  Additionally, reassessing the value of some IETF
+      proposals compared to competing or emerging solutions (e.g., gRPC
+      vs. YANG-Push) would be beneficial.
+
+2.6.  Lack of Agile Process for (The Maintenance of) YANG Modules
+
+   RFCs might not be suited for documenting YANG modules (it takes much
+   too long, especiallly for updates).  In the meantime, there is a need
+   for reference data models and "sufficiently stable data models".
+
+   An hybrid approach might be investigated for documenting IETF-
+   endorsed YANG modules, such as considering an RFC to describe the
+   initial module sketch and objectives and an official IETF repository
+   for maintaining intermediate YANG versions.
+
+   By drawing a parallel between YANG data models and the concept of
+   ontology used in the field of Semantic Web, the topic of YANG module
+   maintenance could greatly benefit from proven methodologies in
+   knowledge engineering such as [LOT2019] and automatic documentation
+   tools like [Widoco2017].
+
+   OPS-REQ-QUICK-BUT-WELL:  Develop a more agile process for the
+      development and maintenance of YANG modules in the IETF.  RFCs
+      might not be suited for documenting YANG modules.
+
+2.7.  Integration Complexity
+
+   One of the requirements listed in Section 3 of [RFC3535] is the ease
+   of use which, according to Section 3.2 of [RFC6244], is claimed to be
+   addressed by NETCONF and YANG.  For configuration this holds true,
+   for network observability it is unfortunately not yet.  This has been
+   confirmed with a set of network operators asking how long it takes
+   from subscribing YANG data to make it accessible to the operator.
+   Minutes, Hours, Days, or Weeks.  None of them answered Minutes or
+   Hours.  All of them responded Days or Weeks.  Hinting manual post
+   processing of YANG data.
+
+   Collecting YANG metrics from networks is already a struggle due to
+   late arrival of [RFC8639], [RFC8640], [RFC8641],
+   [I-D.ietf-netconf-https-notif], and [I-D.ietf-netconf-udp-notif] for
+   configured subscription transport protocols which defined YANG-Push
+   in the industry.  This caused network vendors to implement
+   alternative solutions to collect real-time streaming data in the
+   meanwhile, such as gNMI which was proposed in 2018 in
+   [I-D.openconfig-rtgwg-gnmi-spec] to the IETF but not followed up on.
+   Unfortunately, these implementations differ between network Operating
+   Systems (OSes) due to the lack of standardization, specifically for
+   the metadata which would ensure machine readability.
+
+   When a set of network operators where asked to where operational YANG
+   data needs to be integrated to, the answer homogeneously was Apache
+   Kafka Message Broker and Time Series Databases.  There is a need to
+   specify how YANG-Push can be integrated into Apache Kafka and
+   references needed YANG-Push extensions and YANG schema registry
+   development.  The YANG-Push extensions addressing needs to make YANG-
+   Push messages machine readable and against semantic validate able to
+   ensure a consistent data processing.
+
+   Another challenge is that the subscribed YANG data referenced with
+   'datastore-subtree-filter' or 'datastore-xpath-filter' breaks
+   semantic integrity which needs to be addressed by either updating
+   Section 4 of [RFC8641] or proposing a new YANG module being used at
+   the YANG-Push receiver.
+
+   OPS-REQ-INTEGRATION:  Consider approaches to ease integration by-
+      design (e.g., protocols and data models).
+
+   OPS-REQ-ITERATE:  Need a velocity and approach to standardization
+      that allows for business goals to be incrementally realized.
+
+2.8.  YANG-formatted Data Manipulation
+
+   The use of a flat tree hierarchy in YANG data models may induce some
+   performance issues compared to other graph models.  This can be the
+   case, for example, during a path calculation on a network topology.
+   Different approaches using graph theory and compatible with YANG are
+   currently available, but require further experimentation to
+   generalize their adoption.  For instance, OpenDaylight [ODL]
+   implements an in-memory connected graph version of YANG-based data to
+   enable fast breadth-first search (BFS).
+
+   OPS-REQ-Y2KG:  Need for a reference specification to translate YANG-
+      based data into the knowledge graph (KG).
+
+   For example, [I-D.marcas-nmop-knowledge-graph-yang] and
+   [I-D.tailhardat-nmop-incident-management-noria] discuss YANG-2-KG
+   proposals to leverage automated reasoning and graph traversal
+   techniques.
+
+   OPS-REQ-SCALE:  Consider approaches for YANG data models to scale.
+
+2.9.  Translation and Mapping Between Service/Network and Device Models
+
+   Navigating among multiple levels of the hierarchy (service, network,
+   device) relies currently on proprietary solutions to graft and
+   translate between two layers.  There is no programmatic approach to
+   ensure lossless mappings.
+
+   OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
+      lossless mappings between service/network/device data models.
+      Means to detect, characterize, and expose loss may be considered.
+      Note that lossless mapping is an enabler for support of
+      deterministic verification, auditing, and tracing back along
+      layers/models.
+
+2.10.  (In)Consistent Data Structures in Network Protocols for Data
+       Export
+
+   Network Telemetry, as described in [RFC9232], involve a set of
+   protocols.  Due to the different requirements, one Network Telemetry
+   protocol doesn't address all needs.  This is mainly due to the nature
+   of the subscribed data.  BGP Monitoring Protocol (BMP) [RFC7854] adds
+   monitoring and tracing capabilities natively to the BGP process to
+   minimize the processing overhead.  While IPFIX [RFC7011][RFC7012] can
+   be applied according to [RFC5472] to gain visibility into the data
+   and forwarding planes, due to the amount of data, sampling as defined
+   in [RFC5476] and applied to IPFIX in [RFC5477] and aggregation as
+   defined in [RFC7015] for IPFIX is needed to reduce the amount of
+   exposed data.  While YANG-Push focuses on exposing already YANG
+   modelled data, which eases the correlation among network
+   configuration and operational data.
+
+   [RFC9232] is an informational document and does not specify what
+   these Network Telemetry protocols should have in common to ensure
+   consistent data structures for data export.  While data types are
+   fairly good aligned, a lack of metadata standardization among the
+   Network Telemetry protocols is observed.  In particular describing
+   from where the metrics has been exported from and timestamping.  In
+   Section 4.2 of [RFC7854] timestamps are optional and sysName
+   [RFC1213] is only carried in the BMP initiation message (Section 4.3
+   of [RFC7854]), while the message header of IPFIX defined in
+   Section 4.3 of [RFC7011] lacks the 'sysName' definition.
+
+   The lack of information from where the data is being pushed from is
+   only known to the Network Telemetry data collection due to the
+   transport session being established from the network node exporting
+   the information.  When Network Telemetry messages are being
+   transformed and forwarded, this information is being lost.
+   Therefore, it is common among network operators to augment 'sysName'
+   and other metadata at the data collection.
+
+   The same common principle applies to when observation timestamping is
+   missing in the Network Telemetry message.  Since the data collection
+   is the closest element to the network, a time stamp is added to give
+   the network operator at least the information when the Network
+   Telemetry message was collected.  However, since Network Telemetry
+   addresses real-time streaming needs, this is often not accurate
+   enough for data correlation.
+
+   OPS-REQ-REUSABILITY:  Consider approach to ensure reuse/consistent
+      data structure.
+
+2.11.  Proprietary YANG Modules, CLI, and Limited Abstraction
+
+   Leveraging on pluggins, propietary YANG data models or even CLI is
+   still the rule in many operations, sometimes forced by the need of
+   operating legacy infrastructures.
+
+   The complexity of developing and maintaining these means of operation
+   is huge, as it is required to to cover many OSes and vendors along
+   the lifetime of the network device.
+
+   Network models for the realization of services provide some "level"
+   of abstraction and then allows for for more automation.
+
+2.12.  Distinct Networks, Distinct Management Requirements
+
+   From the time [RFC3535] was released up to now, new kind of services
+   and applications have been developed and deployed over the time, with
+   very diverse, and some times contradicting, requirements.  Those
+   services have been engineered on top of multi-service networks for
+   the sake of efficiency and simplicity, accommodating such a variety
+   of needs.  As a result, services requiring mobility, data
+   replication, large capacity, adaptability, multi-path support,
+   determinism, etc., coexist on the same shared network, needing from
+   it mechanisms for graceful operation.
+
+   Likewise, such diversity of services also require different
+   management capabilities.  For example, session continuity,
+   distribution trees, traffic engineering, congestion status
+   notification, reordering, or on-time delivery impose very different
+   management needs to be satisfied.
+
+   This reality is different from the one existing at the time of
+   [RFC3535], and as such, the new identified needs can require from
+   novel approaches to guarantee the aforementioned co-existence of
+   services.  Some networks have specific network management
+   requirements such as the need for asynchronous operations or
+   constraints on data compactness.  An example of such networks is
+   Delay-Tolerant Networking (DTN) [RFC838] or DetNet [RFC8557].
+
+   OPS-REQ-NEW-NEED:  Profiling main network management technologies
+      (e.g., recommend customized transport parameters such as timeouts
+      and transport services) is recommended than defining network
+      management technologies that are applicable to a single deployment
+      context.
+
+2.13.  Implications of External Dependency
+
+   Networks are being updated to abandon the silo approach from the past
+   towards an increasing convergence.  Specifically, there are trends
+   towards a tighter interaction and integration of different
+   technologies previously considered as totally separated from an
+   operational perspective.  Examples of that trends are the IP and
+   Optical integration (e.g., the introduction of colored interfaces on
+   routers), or the extension of deterministic-behavior features to
+   Layer 3 networks.  This kind of convergence in most cases creates
+   dependencies on the conventional network management features, which
+   require to incorporate or integrate functionality from other
+   technological domains.
+
+   Such convergence is also reflected on the need of interacting and
+   interworking with distinct network parts participating in the end-to-
+   end service delivery.  Mobile access, fixed access, data center,
+   enterprise, radio functional split (i.e., fronthaul and midhaul),
+   neutral exchanges, intensive data networks (e.g., scientific academic
+   networks), content distribution, etc., represent network parts
+   constituent of end-to-end services that can impose dependencies of
+   the management of an intermediate network.
+
+   OPS-REQ-UNSILO:  The convergence observed in recent years also
+      implies the need for an up-to-date refresh of management
+      capabilities and tools for conventional networks.
+
+      It highlights the necessity to handle the heterogeneity of data,
+      configuration, and network management/requirements.
+
+      From a YANG perspective, this involves easily mapping and relating
+      the data models used to manage each specific segment.
+
+      Resolving such issue could draw on insights from parallel
+      technical fields such as knowledge engineering practices and
+      concepts associated with Linked Data in the Semantic Web, areas
+      where it is common to manage problems of heterogeneity and data
+      reconciliation across various application domains.
+
+2.14.  Too Much Time Between Publication of New Networking Functionality
+       and the Associated YANG
+
+   For example, [RFC8667] (IS-IS extensions for SR) was published in
+   December 2019, while [I-D.ietf-isis-sr-yang] will be published ~5
+   years after.  There are cases where modules are not published after
+   more than a decade of WG adoption (e.g., [I-D.ietf-idr-bgp-model]).
+
+   OPS-REQ-TIMELY-DM:  Consider having YANG as part of the protocol
+      specification/change where possible, or have the YANG document
+      progress in parallel.  That may slow down the protocol
+      specification, though.
+
+2.15.  Lack of Implementation of Proposed Solutions
+
+   New solutions proposed by WGs such as NETMOD and NETCONF very often
+   lack an implementation or only have a partial implementation.  The
+   situation has improved with the last hackathons (e.g., for YANG-
+   Push), but these solutions became RFCs without a known
+   implementation:
+
+   *  YANG-Push [RFC8641]
+
+   *  Schema-mount [RFC8528]
+
+   *  NMDA [RFC8342]
+
+   Schema-mount allegedly has only one known implementation because of
+   the complexity of the solution.  That means the IETF most likely
+   spent lots of cycles for something which won't be deployed ever.
+
+   While hackathons have improved the situation, the availablability of
+   implementations is concerning.  For open-source, 'sysrepo'/'libyang'
+   are decent choices.
+
+   OPS-REQ-READILY-IMPLEM:  The availablability of implementations is
+      concerning.  Consider catalyst approaches to trigger more (open)
+      implementations, especially during the development of protocols/
+      extensions.
+
+2.16.  Tooling & Skills
+
+2.16.1.  Integration with "native" IT Tooling
+
+   OPS-REQ-IT-INTEGRATION:  There is a need to ease the integration of
+      low-level/network-oriented solution with native "IT tooling"
+      (e.g., "https://opentelemetry.io/").
+
+2.16.2.  IETF Support for Better YANG Integration
+
+   OPS-REQ-IETF-TOOLS  Ease exposure of libraries and host tools (e.g.,
+      yangkit) to ease integration.
+
+2.16.3.  Open-source Tools
+
+   While there are open-source implementations for NETCONF (e.g.,
+   NETOPEER), the gRPC/gNMI suite seems to have more support for tools
+   on the client side.  For example, "ygot" generates structures from
+   YANG models and these can easily be used by a client to configure a
+   device with gNMI.  NETCONF is not supported though (the XML tags are
+   needed).
+
+   OPS-REQ-CLIENT-TOOLS:  Focus on tooling is needed, especially on the
+      client side.
+
+2.16.4.  Skills
+
+   The IETF is not the expert community in data engineering.  The
+   experts are in the data industry.  Without them, integration in data
+   processing chains like Data Mesh is going to be a challenge.
+
+   OPS-REQ-BRIDGE:  Create an eco-system where data and networking
+      engineers can collaborate.
+
+2.17.  New Service Approaches
+
+   The virtualization trend have made posible to dynamically instantiate
+   Service Functions (SFs) in distributed compute facilities in the form
+   of virtual machines or containers, as micro-services.  The
+   instantiation of the SFs is governed by cloud management systems, as
+   it is the connectivity among the different instances or micro-
+   services.  That connectivity is typically realized by using overlay
+   mechanisms, without any further interaction with the network.
+   However, this appraoch seems to be insuficient for future services
+   demanding stringent requirements in terms of SLOs.
+
+   OPS-REQ-GLUE:  The distinct approaches followed in both the compute
+      and the network environments makes necessary to define suitable
+      mechanisms for enabling an efficient interplay, while highly
+      automating the overall service delivery procedure.
+
+2.18.  Many Solutions for the Same Problem, but Lack of Clear Applicably
+       Guidance
+
+   There are several solutions that were standardized for network
+   management purposes.  For example, management of ACLs by means to BGP
+   FlowSpec [RFC8955][RFC8956] or by means of NETCONF/YANG [RFC8519].
+   There is no cross referencing between the two standards or delimits
+   its applicability scope vs the other approach.
+
+   Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
+
+   OPS-REQ-GUIDANCE:  The target application/applicability of a network
+      management approach should be integrated in the specification
+      itself.
+
+3.  Updated Operators' Requirements
+
+3.1.  Summary
+
+   OPS-REQ-STRENGTHEN-DM:  Network softwarization can only happen with a
+      strong, committed standardization effort, complemented by active
+      involvement in open-source projects that facilitate access to
+      code.
+
+   OPS-REQ-DM-RATIONALIZE:  Rationalize this space and avoid redundant
+      efforts (in almost all layers (IP, optic, etc.)).  Unlike service
+      and network models, Standard-based device models are not widely
+      implemented.
+
+   OPS-REQ-EASE-EXPOSURE:  Focus on protocols and data models to expose
+      network/service capabilities, network-wide services, and related
+      operations.
+
+   OPS-REQ-NW-API-DISCOVERY:  Define a reference approach/process for
+      service exposure discovery (APIs discovery).
+
+   OPS-REQ-DM2API:  Readily available API specifications should be
+      generalized from YANG modules for fast development, prototyping,
+      and validation.
+
+   OPS-REQ-GUIDE-AND-PROFILE:  The target application/applicability of a
+      network management approach should be documented (e.g., edit
+      profile documents that outline a set of recommendations for core/
+      key features, along with appropriate justifications, will help
+      foster more implementations that meet operators’ needs).  This
+      also covers security management aspects of network management.
+      Additionaly, consider independent compliance suites to validate
+      functions/features/etc.
+
+   OPS-REQ-ARCH:  Need to promote more architecture and framework
+      documents to exemplify the intended use.
+
+   OPS-REQ-REASSESS:  Reassess the value of some IETF proposals,
+      including compared to competing or emerging solutions (e.g.,
+      gNMI).
+
+   OPS-REQ-QUICK-BUT-WELL:  Develop a more agile process for the
+      development and maintenance of YANG modules in the IETF.  RFCs
+      might not be suited for documenting YANG modules.
+
+   OPS-REQ-INTEGRATION:  Consider approaches to ease integration by-
+      design (e.g., protocols and data models).  The integration covers
+      both horizontal and vertical realms.  For example, there is a lack
+      of enablement of this integration across standard bodies that
+      operators are left to solve.
+
+   OPS-REQ-ITERATE:  Need a velocity and approach to standardization
+      that allows for business goals to be incrementally realized.
+
+   OPS-REQ-Y2KG:  Need for reference specifications to translate YANG-
+      based data into the knowledge graph.  Sample use cases to
+      illustrate the intended use should be considered as well.
+
+   OPS-REQ-SCALE:  Consider approaches for YANG data models to scale,
+      including protocol considerations (transactions, etc.).
+      Specifically, address telemetry scalability enhancements.
+
+   OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
+      lossless mappings between service/network/device data models.
+      Means to detect, characterize, and expose loss may be considered.
+      Note that lossless mapping is an enabler for support of
+      deterministic verification, auditing, and tracing back along
+      layers/models.
+
+   OPS-REQ-REUSABILITY:  Consider approaches to ensure reuse/consistent
+      data structure across various network management segments.  This
+      will ease correlating data learned using different means (IPFIX
+      [RFC7011], BGP Monitoring Protocol (BMP) [RFC7854], SYSLOG
+      [RFC5424], etc.).
+
+   OPS-REQ-NEW-NEED:  Profiling main network management technologies
+      (e.g., recommend customized transport parameters such as timeouts
+      and transport services) is recommended than defining network
+      management technologies that are applicable to a single deployment
+      context.
+
+   OPS-REQ-UNSILO:  Necessity to handle the heterogeneity of data,
+      configuration, and network management/requirements.  Resolving
+      such issue could draw on insights from parallel technical fields
+      such as knowledge engineering practices and concepts associated
+      with Linked Data in the Semantic Web, areas where it is common to
+      manage problems of heterogeneity and data reconciliation across
+      various application domains.
+
+   OPS-REQ-TIMELY-DM:  Consider having YANG as part of the protocol
+      specification/change where possible, or have the YANG document
+      progress in parallel.
+
+   OPS-REQ-READILY-IMPLEM:  The availability of implementation is
+      concerning.  Consider catalyst approaches to trigger more (open)
+      implementations, especially during the development of protocols/
+      extensions.
+
+   OPS-REQ-IT-INTEGRATION:  There is a need to ease the integration of
+      low-level/network-oriented solution with native "IT tooling"
+      (e.g., https://opentelemetry.io/).
+
+   OPS-REQ-IETF-TOOLS:  Ease exposure of libraries and host tools (e.g.,
+      yangkit) to ease integration.
+
+   OPS-REQ-CLIENT-TOOLS:  Focus on tooling is needed, especially on the
+      client side.  There is a need for tools that are easy to use.
+      Likewise, there is need for support for multiple friendly, stable,
+      and feature-rich libraries for programming languages.
+
+   OPS-REQ-BRIDGE:  Create an eco-system where data and networking
+      engineers can collaborate.
+
+   OPS-REQ-GLUE:  Distinct approaches followed in both the compute and
+      the network environments make necessary to define suitable
+      mechanisms for enabling an efficient interplay, while highly
+      automating the overall service delivery procedure.
+
+   OPS-REQ-GUIDANCE:  The target application/applicability of a network
+      management approach should be integrated in the specification
+      itself.
+
+3.2.  Categorization
+
+   Table 1 provides a classification of the requirements listed in
+   Section 3.1.  It specifically tag whether a requirement:
+
+   *  Belongs to data modeling (DM)
+
+   *  Requires protocol work (Protocol)
+
+   *  Impacts deployability of standardized approaches (Deployability)
+
+   *  Has implications on integration effort by operators (Integration)
+
+   *  Requires some adaptations to a Standards Developing Organization
+      (SDO) process (SDO Process)
+
+   *  Allows better coordination (Collaboration & Cooperation)
+
+   *  Is relevant to skills transformations (Skills)
+
+   +===========+==+========+=============+===========+=======+=============+======+
+   |Ops        |DM|Protocol|Deployability|Integration|  SDO  |Collaboration|Skills|
+   |Requirement|  |        |             |           |Process|& Cooperation|      |
+   |Label      |  |        |             |           |       |             |      |
+   +===========+==+========+=============+===========+=======+=============+======+
+   |OPS-REQ-   |X |        |      X      |           |       |             |      |
+   |STRENGTHEN-|  |        |             |           |       |             |      |
+   |DM         |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-DM-|X |        |      X      |           |   X   |      X      |      |
+   |RATIONALIZE|  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |   X    |      X      |     X     |       |             |      |
+   |EASE-      |  |        |             |           |       |             |      |
+   |EXPOSURE   |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-NW-|  |        |      X      |     X     |       |             |      |
+   |API-       |  |        |             |           |       |             |      |
+   |DISCOVERY  |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |           |       |             |      |
+   |DM2API     |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |   X    |      X      |           |       |             |      |
+   |GUIDE-     |  |        |             |           |       |             |      |
+   |PROFILE    |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |   X    |      X      |           |       |             |      |
+   |ARCH       |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |   X    |             |           |       |             |      |
+   |REASSESS   |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |   X    |      X      |           |       |             |      |
+   |QUICK-BUT- |  |        |             |           |       |             |      |
+   |WELL       |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |     X     |   X   |             |      |
+   |INTEGRATION|  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |             |           |   X   |      X      |      |
+   |ITERATE    |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |     X     |       |             |      |
+   |Y2KG       |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |   X    |             |           |       |             |      |
+   |SCALE      |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |     X     |   X   |             |      |
+   |LOSSLESS   |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |   X    |             |     X     |   X   |             |      |
+   |REUSABILITY|  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |   X    |             |           |       |             |      |
+   |NEW-NEED   |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |     X     |       |             |      |
+   |UNSILO     |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |        |      X      |           |       |             |      |
+   |TIMELY-DM  |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |X |   X    |      X      |           |   X   |             |      |
+   |READILY-   |  |        |             |           |       |             |      |
+   |IMPLEM     |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-IT-|  |        |      X      |     X     |       |             |      |
+   |INTEGRATION|  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |             |           |   X   |             |  X   |
+   |IETF-TOOLS |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |     X     |       |             |  X   |
+   |CLIENT-    |  |        |             |           |       |             |      |
+   |TOOLS      |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |             |           |       |      X      |  X   |
+   |BRIDGE     |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |             |     X     |       |             |  X   |
+   |GLUE       |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+   |OPS-REQ-   |  |        |      X      |           |       |             |      |
+   |GUIDANCE   |  |        |             |           |       |             |      |
+   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+
+                    Table 1: Requirements Classification
+
+3.3.  Overall New Requirements Levels: Operators View
+
+   Table 2 provides the requirement level of Section 3.1 from an
+   operator perspective.
+
+               +===========================+===============+
+               |     Ops Requirement Label | Overall Level |
+               +===========================+===============+
+               |     OPS-REQ-STRENGTHEN-DM |     Strong    |
+               +---------------------------+---------------+
+               |    OPS-REQ-DM-RATIONALIZE |     Strong    |
+               +---------------------------+---------------+
+               |     OPS-REQ-EASE-EXPOSURE |     Strong    |
+               +---------------------------+---------------+
+               |  OPS-REQ-NW-API-DISCOVERY |  Nice to have |
+               +---------------------------+---------------+
+               |            OPS-REQ-DM2API |     Strong    |
+               +---------------------------+---------------+
+               | OPS-REQ-GUIDE-AND-PROFILE |  Nice to have |
+               +---------------------------+---------------+
+               |              OPS-REQ-ARCH |     Strong    |
+               +---------------------------+---------------+
+               |          OPS-REQ-REASSESS |     Strong    |
+               +---------------------------+---------------+
+               |    OPS-REQ-QUICK-BUT-WELL |     Strong    |
+               +---------------------------+---------------+
+               |       OPS-REQ-INTEGRATION |     Strong    |
+               +---------------------------+---------------+
+               |           OPS-REQ-ITERATE |     Strong    |
+               +---------------------------+---------------+
+               |              OPS-REQ-Y2KG |  Nice to have |
+               +---------------------------+---------------+
+               |             OPS-REQ-SCALE |     Strong    |
+               +---------------------------+---------------+
+               |          OPS-REQ-LOSSLESS |  Nice to have |
+               +---------------------------+---------------+
+               |       OPS-REQ-REUSABILITY |     Strong    |
+               +---------------------------+---------------+
+               |          OPS-REQ-NEW-NEED |  Nice to have |
+               +---------------------------+---------------+
+               |            OPS-REQ-UNSILO |     Strong    |
+               +---------------------------+---------------+
+               |         OPS-REQ-TIMELY-DM |     Strong    |
+               +---------------------------+---------------+
+               |    OPS-REQ-READILY-IMPLEM |     Strong    |
+               +---------------------------+---------------+
+               |    OPS-REQ-IT-INTEGRATION |  Nice to have |
+               +---------------------------+---------------+
+               |        OPS-REQ-IETF-TOOLS |  Nice to have |
+               +---------------------------+---------------+
+               |      OPS-REQ-CLIENT-TOOLS |     Strong    |
+               +---------------------------+---------------+
+               |            OPS-REQ-BRIDGE |     Strong    |
+               +---------------------------+---------------+
+               |              OPS-REQ-GLUE |  Nice to have |
+               +---------------------------+---------------+
+               |          OPS-REQ-GUIDANCE |  Nice to have |
+               +---------------------------+---------------+
+
+                   Table 2: Operators Requirements Levels
+
+3.4.  Consolidated Requirements
+
+   This section provides a consolidated view of main requirements that
+   takes into account inputs from actors beyond operators:
+
+   *  Put more focus on service and network data models (OPS-REQ-EASE-
+      EXPOSURE, OPS-REQ-STRENGTHEN-DM) while ensuring that the
+      realization of these abstractions can be easily correlated with
+      underlying functionalities (OPS-REQ-INTEGRATION).
+
+   *  Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM).
+
+   *  Implement minimal functionality, not bells and whistles (OPS-REQ-
+      ITERATE).
+
+   *  Have running code while a specification is under development (OPS-
+      REQ-READILY-IMPLEM, OPS-REQ-TOOLS).
+
+   *  Have vendors and operators on board at the time of developing a
+      network management solution.
+
+   *  Provide independent compliance suites to validate features (OPS-
+      REQ-GUIDE-AND-PROFILE).
+
+   *  Need for means to correlate data learned from different means
+      (OPS-REQ-REUSABILITY).
+
+   *  Investigate approaches to ease adoption and integration into an
+      operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API,
+      OPS-REQ-INTEGRATION).
+
+   *  Network-centric approaches have limits, need to better integrate
+      and learn from techniques in other domains (OPS-REQ-BRIDGE).
+
+4.  Security Considerations
+
+   This document does not define any protocol or architecture.
+
+5.  IANA Considerations
+
+   This document has no IANA actions.
+
+6.  References
+
+6.1.  Normative References
+
+   [RFC3535]  Schoenwaelder, J., "Overview of the 2002 IAB Network
+              Management Workshop", RFC 3535, DOI 10.17487/RFC3535, May
+              2003, <https://www.rfc-editor.org/rfc/rfc3535>.
+
+6.2.  Informative References
+
+   [BCP127]   Best Current Practice 127,
+              <https://www.rfc-editor.org/info/bcp127>.
+              At the time of writing, this BCP comprises the following:
+
+              Audet, F., Ed. and C. Jennings, "Network Address
+              Translation (NAT) Behavioral Requirements for Unicast
+              UDP", BCP 127, RFC 4787, DOI 10.17487/RFC4787, January
+              2007, <https://www.rfc-editor.org/info/rfc4787>.
+
+              Perreault, S., Ed., Yamagata, I., Miyakawa, S., Nakagawa,
+              A., and H. Ashida, "Common Requirements for Carrier-Grade
+              NATs (CGNs)", BCP 127, RFC 6888, DOI 10.17487/RFC6888,
+              April 2013, <https://www.rfc-editor.org/info/rfc6888>.
+
+              Penno, R., Perreault, S., Boucadair, M., Ed., Sivakumar,
+              S., and K. Naito, "Updates to Network Address Translation
+              (NAT) Behavioral Requirements", BCP 127, RFC 7857,
+              DOI 10.17487/RFC7857, April 2016,
+              <https://www.rfc-editor.org/info/rfc7857>.
+
+   [CAMARA]   "CAMARA", <https://camaraproject.org/>.
+
+   [I-D.iab-nemops-workshop-report]
+              Hardaker, W. and D. Dhody, "Report from the IAB Workshop
+              on the Next Era of Network Management Operations
+              (NEMOPS)", Work in Progress, Internet-Draft, draft-iab-
+              nemops-workshop-report-04, 29 August 2025,
+              <https://datatracker.ietf.org/doc/html/draft-iab-nemops-
+              workshop-report-04>.
+
+   [I-D.ietf-bmwg-containerized-infra]
+              Ngọc, T. M., Ko, 7. 9. 1. 1. 1. 1. 1. 3. 7., Rao, S., Lee,
+              J., and Y. Kim, "Considerations for Benchmarking Network
+              Performance in Containerized Infrastructures", Work in
+              Progress, Internet-Draft, draft-ietf-bmwg-containerized-
+              infra-08, 20 October 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
+              containerized-infra-08>.
+
+   [I-D.ietf-core-comi]
+              Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
+              and C. Bormann, "CoAP Management Interface (CORECONF)",
+              Work in Progress, Internet-Draft, draft-ietf-core-comi-21,
+              2 March 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-core-comi-21>.
+
+   [I-D.ietf-core-sid]
+              Veillette, M., Pelov, A., Petrov, I., Bormann, C., and M.
+              Richardson, "YANG Schema Item iDentifier (YANG SID)", Work
+              in Progress, Internet-Draft, draft-ietf-core-sid-24, 22
+              December 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-core-sid-24>.
+
+   [I-D.ietf-grow-peering-api]
+              Aguado, C., Griswold, M., Ramseyer, J., Servin, A.,
+              Strickx, T., and Q. Misell, "Peering API", Work in
+              Progress, Internet-Draft, draft-ietf-grow-peering-api-01,
+              4 July 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-grow-peering-api-01>.
+
+   [I-D.ietf-idr-bgp-model]
+              Jethanandani, M., Patel, K., Hares, S., and J. Haas, "YANG
+              Model for Border Gateway Protocol (BGP-4)", Work in
+              Progress, Internet-Draft, draft-ietf-idr-bgp-model-19, 2
+              March 2026, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-idr-bgp-model-19>.
+
+   [I-D.ietf-isis-sr-yang]
+              Litkowski, S., Qu, Y., Lindem, A., Chen, H., and J.
+              Tantsura, "A YANG Data Model for IS-IS Segment Routing
+              over the MPLS Data Plane", Work in Progress, Internet-
+              Draft, draft-ietf-isis-sr-yang-31, 6 May 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-isis-sr-
+              yang-31>.
+
+   [I-D.ietf-netconf-https-notif]
+              Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
+              for YANG Notifications", Work in Progress, Internet-Draft,
+              draft-ietf-netconf-https-notif-15, 1 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
+              https-notif-15>.
+
+   [I-D.ietf-netconf-udp-notif]
+              Feng, A. H., Francois, P., Zhou, T., Graf, T., and P.
+              Lucente, "UDP-based Transport for Configured
+              Subscriptions", Work in Progress, Internet-Draft, draft-
+              ietf-netconf-udp-notif-25, 28 January 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
+              udp-notif-25>.
+
+   [I-D.marcas-nmop-knowledge-graph-yang]
+              Martinez-Casanueva, I. D., Cabanillas, L., and P.
+              Martinez-Julia, "Knowledge Graphs for YANG-based Network
+              Management", Work in Progress, Internet-Draft, draft-
+              marcas-nmop-knowledge-graph-yang-05, 21 October 2024,
+              <https://datatracker.ietf.org/doc/html/draft-marcas-nmop-
+              knowledge-graph-yang-05>.
+
+   [I-D.openconfig-rtgwg-gnmi-spec]
+              Shakir, R., Shaikh, A., Borman, P., Hines, M., Lebsack,
+              C., and C. Morrow, "gRPC Network Management Interface
+              (gNMI)", Work in Progress, Internet-Draft, draft-
+              openconfig-rtgwg-gnmi-spec-01, 5 March 2018,
+              <https://datatracker.ietf.org/doc/html/draft-openconfig-
+              rtgwg-gnmi-spec-01>.
+
+   [I-D.tailhardat-nmop-incident-management-noria]
+              Tailhardat, L., Troncy, R., Chabot, Y., Ramparany, F.,
+              Folz, P., and B. Kavanagh, "Knowledge Graphs for Enhanced
+              Cross-Operator Incident Management and Network Design",
+              Work in Progress, Internet-Draft, draft-tailhardat-nmop-
+              incident-management-noria-04, 9 February 2026,
+              <https://datatracker.ietf.org/doc/html/draft-tailhardat-
+              nmop-incident-management-noria-04>.
+
+   [LOT2019]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
+              Lopez, M., and R. Garcia-Castro, "LOT: An industrial
+              oriented ontology engineering framework", 2022,
+              <https://doi.org/10.1016/j.engappai.2022.104755>.
+
+   [OC]       "Openconfig", <https://www.openconfig.net/>.
+
+   [ODL]      "Graph Model Overview", 2023,
+              <https://docs.opendaylight.org/projects/bgpcep/en/latest/
+              graph/graph-user-guide-graph-model.html#>.
+
+   [RFC1213]  McCloghrie, K. and M. Rose, "Management Information Base
+              for Network Management of TCP/IP-based internets: MIB-II",
+              STD 17, RFC 1213, DOI 10.17487/RFC1213, March 1991,
+              <https://www.rfc-editor.org/rfc/rfc1213>.
+
+   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
+              DOI 10.17487/RFC5424, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5424>.
+
+   [RFC5472]  Zseby, T., Boschi, E., Brownlee, N., and B. Claise, "IP
+              Flow Information Export (IPFIX) Applicability", RFC 5472,
+              DOI 10.17487/RFC5472, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5472>.
+
+   [RFC5476]  Claise, B., Ed., Johnson, A., and J. Quittek, "Packet
+              Sampling (PSAMP) Protocol Specifications", RFC 5476,
+              DOI 10.17487/RFC5476, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5476>.
+
+   [RFC5477]  Dietz, T., Claise, B., Aitken, P., Dressler, F., and G.
+              Carle, "Information Model for Packet Sampling Exports",
+              RFC 5477, DOI 10.17487/RFC5477, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5477>.
+
+   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
+              the Network Configuration Protocol (NETCONF)", RFC 6020,
+              DOI 10.17487/RFC6020, October 2010,
+              <https://www.rfc-editor.org/rfc/rfc6020>.
+
+   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
+              and A. Bierman, Ed., "Network Configuration Protocol
+              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
+              <https://www.rfc-editor.org/rfc/rfc6241>.
+
+   [RFC6244]  Shafer, P., "An Architecture for Network Management Using
+              NETCONF and YANG", RFC 6244, DOI 10.17487/RFC6244, June
+              2011, <https://www.rfc-editor.org/rfc/rfc6244>.
+
+   [RFC6632]  Ersue, M., Ed. and B. Claise, "An Overview of the IETF
+              Network Management Standards", RFC 6632,
+              DOI 10.17487/RFC6632, June 2012,
+              <https://www.rfc-editor.org/rfc/rfc6632>.
+
+   [RFC7011]  Claise, B., Ed., Trammell, B., Ed., and P. Aitken,
+              "Specification of the IP Flow Information Export (IPFIX)
+              Protocol for the Exchange of Flow Information", STD 77,
+              RFC 7011, DOI 10.17487/RFC7011, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7011>.
+
+   [RFC7012]  Claise, B., Ed. and B. Trammell, Ed., "Information Model
+              for IP Flow Information Export (IPFIX)", RFC 7012,
+              DOI 10.17487/RFC7012, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7012>.
+
+   [RFC7015]  Trammell, B., Wagner, A., and B. Claise, "Flow Aggregation
+              for the IP Flow Information Export (IPFIX) Protocol",
+              RFC 7015, DOI 10.17487/RFC7015, September 2013,
+              <https://www.rfc-editor.org/rfc/rfc7015>.
+
+   [RFC7149]  Boucadair, M. and C. Jacquenet, "Software-Defined
+              Networking: A Perspective from within a Service Provider
+              Environment", RFC 7149, DOI 10.17487/RFC7149, March 2014,
+              <https://www.rfc-editor.org/rfc/rfc7149>.
+
+   [RFC7414]  Duke, M., Braden, R., Eddy, W., Blanton, E., and A.
+              Zimmermann, "A Roadmap for Transmission Control Protocol
+              (TCP) Specification Documents", RFC 7414,
+              DOI 10.17487/RFC7414, February 2015,
+              <https://www.rfc-editor.org/rfc/rfc7414>.
+
+   [RFC7426]  Haleplidis, E., Ed., Pentikousis, K., Ed., Denazis, S.,
+              Hadi Salim, J., Meyer, D., and O. Koufopavlou, "Software-
+              Defined Networking (SDN): Layers and Architecture
+              Terminology", RFC 7426, DOI 10.17487/RFC7426, January
+              2015, <https://www.rfc-editor.org/rfc/rfc7426>.
+
+   [RFC7854]  Scudder, J., Ed., Fernando, R., and S. Stuart, "BGP
+              Monitoring Protocol (BMP)", RFC 7854,
+              DOI 10.17487/RFC7854, June 2016,
+              <https://www.rfc-editor.org/rfc/rfc7854>.
+
+   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
+              RFC 7950, DOI 10.17487/RFC7950, August 2016,
+              <https://www.rfc-editor.org/rfc/rfc7950>.
+
+   [RFC7951]  Lhotka, L., "JSON Encoding of Data Modeled with YANG",
+              RFC 7951, DOI 10.17487/RFC7951, August 2016,
+              <https://www.rfc-editor.org/rfc/rfc7951>.
+
+   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
+              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
+              <https://www.rfc-editor.org/rfc/rfc8040>.
+
+   [RFC8199]  Bogdanovic, D., Claise, B., and C. Moberg, "YANG Module
+              Classification", RFC 8199, DOI 10.17487/RFC8199, July
+              2017, <https://www.rfc-editor.org/rfc/rfc8199>.
+
+   [RFC8309]  Wu, Q., Liu, W., and A. Farrel, "Service Models
+              Explained", RFC 8309, DOI 10.17487/RFC8309, January 2018,
+              <https://www.rfc-editor.org/rfc/rfc8309>.
+
+   [RFC8342]  Bjorklund, M., Schoenwaelder, J., Shafer, P., Watsen, K.,
+              and R. Wilton, "Network Management Datastore Architecture
+              (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
+              <https://www.rfc-editor.org/rfc/rfc8342>.
+
+   [RFC838]   Smallberg, D., "Who talks TCP?", RFC 838,
+              DOI 10.17487/RFC0838, January 1983,
+              <https://www.rfc-editor.org/rfc/rfc838>.
+
+   [RFC8519]  Jethanandani, M., Agarwal, S., Huang, L., and D. Blair,
+              "YANG Data Model for Network Access Control Lists (ACLs)",
+              RFC 8519, DOI 10.17487/RFC8519, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8519>.
+
+   [RFC8528]  Bjorklund, M. and L. Lhotka, "YANG Schema Mount",
+              RFC 8528, DOI 10.17487/RFC8528, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8528>.
+
+   [RFC8557]  Finn, N. and P. Thubert, "Deterministic Networking Problem
+              Statement", RFC 8557, DOI 10.17487/RFC8557, May 2019,
+              <https://www.rfc-editor.org/rfc/rfc8557>.
+
+   [RFC8568]  Bernardos, CJ., Rahman, A., Zuniga, JC., Contreras, LM.,
+              Aranda, P., and P. Lynch, "Network Virtualization Research
+              Challenges", RFC 8568, DOI 10.17487/RFC8568, April 2019,
+              <https://www.rfc-editor.org/rfc/rfc8568>.
+
+   [RFC8639]  Voit, E., Clemm, A., Gonzalez Prieto, A., Nilsen-Nygaard,
+              E., and A. Tripathy, "Subscription to YANG Notifications",
+              RFC 8639, DOI 10.17487/RFC8639, September 2019,
+              <https://www.rfc-editor.org/rfc/rfc8639>.
+
+   [RFC8640]  Voit, E., Clemm, A., Gonzalez Prieto, A., Nilsen-Nygaard,
+              E., and A. Tripathy, "Dynamic Subscription to YANG Events
+              and Datastores over NETCONF", RFC 8640,
+              DOI 10.17487/RFC8640, September 2019,
+              <https://www.rfc-editor.org/rfc/rfc8640>.
+
+   [RFC8641]  Clemm, A. and E. Voit, "Subscription to YANG Notifications
+              for Datastore Updates", RFC 8641, DOI 10.17487/RFC8641,
+              September 2019, <https://www.rfc-editor.org/rfc/rfc8641>.
+
+   [RFC8667]  Previdi, S., Ed., Ginsberg, L., Ed., Filsfils, C.,
+              Bashandy, A., Gredler, H., and B. Decraene, "IS-IS
+              Extensions for Segment Routing", RFC 8667,
+              DOI 10.17487/RFC8667, December 2019,
+              <https://www.rfc-editor.org/rfc/rfc8667>.
+
+   [RFC8955]  Loibl, C., Hares, S., Raszuk, R., McPherson, D., and M.
+              Bacher, "Dissemination of Flow Specification Rules",
+              RFC 8955, DOI 10.17487/RFC8955, December 2020,
+              <https://www.rfc-editor.org/rfc/rfc8955>.
+
+   [RFC8956]  Loibl, C., Ed., Raszuk, R., Ed., and S. Hares, Ed.,
+              "Dissemination of Flow Specification Rules for IPv6",
+              RFC 8956, DOI 10.17487/RFC8956, December 2020,
+              <https://www.rfc-editor.org/rfc/rfc8956>.
+
+   [RFC8969]  Wu, Q., Ed., Boucadair, M., Ed., Lopez, D., Xie, C., and
+              L. Geng, "A Framework for Automating Service and Network
+              Management with YANG", RFC 8969, DOI 10.17487/RFC8969,
+              January 2021, <https://www.rfc-editor.org/rfc/rfc8969>.
+
+   [RFC9232]  Song, H., Qin, F., Martinez-Julia, P., Ciavaglia, L., and
+              A. Wang, "Network Telemetry Framework", RFC 9232,
+              DOI 10.17487/RFC9232, May 2022,
+              <https://www.rfc-editor.org/rfc/rfc9232>.
+
+   [RFC9254]  Veillette, M., Ed., Petrov, I., Ed., Pelov, A., Bormann,
+              C., and M. Richardson, "Encoding of Data Modeled with YANG
+              in the Concise Binary Object Representation (CBOR)",
+              RFC 9254, DOI 10.17487/RFC9254, July 2022,
+              <https://www.rfc-editor.org/rfc/rfc9254>.
+
+   [RFC9315]  Clemm, A., Ciavaglia, L., Granville, L. Z., and J.
+              Tantsura, "Intent-Based Networking - Concepts and
+              Definitions", RFC 9315, DOI 10.17487/RFC9315, October
+              2022, <https://www.rfc-editor.org/rfc/rfc9315>.
+
+   [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
+              Makhijani, K., Contreras, L., and J. Tantsura, "A
+              Framework for Network Slices in Networks Built from IETF
+              Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
+              <https://www.rfc-editor.org/rfc/rfc9543>.
+
+   [RFC9834]  Boucadair, M., Ed., Roberts, R., Ed., Gonzalez de Dios,
+              O., Barguil, S., and B. Wu, "YANG Data Models for Bearers
+              and Attachment Circuits as a Service (ACaaS)", RFC 9834,
+              DOI 10.17487/RFC9834, September 2025,
+              <https://www.rfc-editor.org/rfc/rfc9834>.
+
+   [Widoco2017]
+              Garijo, D., "WIDOCO: a wizard for documenting ontologies",
+              2017, <http://dgarijo.com/papers/widoco-iswc2017.pdf>.
+
+   [YC]       "YANG Catalog, YANG Modules Stats", 2026,
+              <https://www.yangcatalog.org/private-page>.
+
+Acknowledgments
+
+   Thanks to Christian Jacquenet and Jean-Michel Combes for their
+   inputs.
+
+   Thanks to Benoît Claise and Alex Clemm for the comments.
+
+   Many of the requirements were extracted from contributions to the IAB
+   Next Era of Network Management Operations (NEMOPS) Workshop
+   [I-D.iab-nemops-workshop-report].
+
+   Thanks to Ian Farrer, Brad Peters, Chongfeng Xie, and Qin Wu for
+   their contribution to consolidate the requirements.
+
+Contributors
+
+   Lionel Tailhardat
+   Orange
+   Email: lionel.tailhardat@orange.com
+
+
+Authors' Addresses
+
+   Mohamed Boucadair
+   Orange
+   Email: mohamed.boucadair@orange.com
+
+
+   Luis M. Contreras
+   Telefonica
+   Email: luismiguel.contrerasmurillo@telefonica.com
+
+
+   Oscar Gonzalez de Dios
+   Telefonica
+   Email: oscar.gonzalezdedios@telefonica.com
+
+
+   Thomas Graf
+   Swisscom
+   Email: thomas.graf@swisscom.com
+
+
+   Reshad Rahman
+   Equinix
+   Email: rrahman@equinix.com
