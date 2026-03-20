@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 15 September 2026                                 O. G. D. Dios
+Expires: 21 September 2026                                 O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           14 March 2026
+                                                           20 March 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 September 2026.
+   This Internet-Draft will expire on 21 September 2026.
 
 Copyright Notice
 
@@ -104,12 +104,6 @@ Table of Contents
    6.  References
      6.1.  Normative References
      6.2.  Informative References
-   Appendix A.  Assessment of RFC 3535 Operator Requirements
-     A.1.  Detailed Analysis
-     A.2.  Summary
-   Appendix B.  Assessment of RFC 3535 Recommendations
-     B.1.  Detailed Analysis
-     B.2.  Summary
    Acknowledgments
    Contributors
    Authors' Addresses
@@ -163,12 +157,7 @@ Table of Contents
    More than 20 years later after the publication of [RFC3535], new
    requirements on network management operations are emerging from the
    operators.  This document captures these requirements that reflect
-   the progress in this area.
-
-   For completness, the document also provides an assessment of the
-   [RFC3535] recommendations (Appendix A) and to what extent that
-   roadmap was driving network management efforts within the IETF, in
-   particular (Appendix B).  Readers may also refer to
+   the progress in this area.  Readers may also refer to
    [I-D.iab-nemops-workshop-report].
 
 2.  Observations and Operators Requirements
@@ -694,8 +683,8 @@ Table of Contents
       Additionaly, consider independent compliance suites to validate
       functions/features/etc.
 
-   OPS-REQ-ARCH:  Need to promote more arch and framework documents to
-      exemplify the intended use.
+   OPS-REQ-ARCH:  Need to promote more architecture and framework
+      documents to exemplify the intended use.
 
    OPS-REQ-REASSESS:  Reassess the value of some IETF proposals,
       including compared to competing or emerging solutions (e.g.,
@@ -718,21 +707,22 @@ Table of Contents
       based data into the knowledge graph.  Sample use cases to
       illustrate the intended use should be considered as well.
 
-   OPS-REQ-SCALE:  Consider approaches for YANG models to scale,
-      including protocol considerations (transactions, touches, etc.).
-      Specifically, address Telemetry scalability enhancements.
+   OPS-REQ-SCALE:  Consider approaches for YANG data models to scale,
+      including protocol considerations (transactions, etc.).
+      Specifically, address telemetry scalability enhancements.
 
    OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
       lossless mappings between service/network/device data models.
       Means to detect, characterize, and expose loss may be considered.
-      Note that lossless mapping is a enabler for support of
+      Note that lossless mapping is an enabler for support of
       deterministic verification, auditing, and tracing back along
       layers/models.
 
    OPS-REQ-REUSABILITY:  Consider approaches to ensure reuse/consistent
-      data structure across various NM segments.  This will ease
-      correlating data learned from different means (IPFIX, BMP, SYSLOG,
-      etc.).
+      data structure across various network management segments.  This
+      will ease correlating data learned using different means (IPFIX
+      [RFC7011], BGP Monitoring Protocol (BMP) [RFC7854], SYSLOG
+      [RFC5424], etc.).
 
    OPS-REQ-NEW-NEED:  Profiling main network management technologies
       (e.g., recommend customized transport parameters such as timeouts
@@ -784,7 +774,7 @@ Table of Contents
 3.2.  Categorization
 
    Table 1 provides a classification of the requirements listed in
-   Section 3.1.It specifically tag whether a requirement:
+   Section 3.1.  It specifically tag whether a requirement:
 
    *  Belongs to data modeling (DM)
 
@@ -794,7 +784,8 @@ Table of Contents
 
    *  Has implications on integration effort by operators (Integration)
 
-   *  Requires some adaptations to an SDO process (SDO Process)
+   *  Requires some adaptations to a Standards Developing Organization
+      (SDO) process (SDO Process)
 
    *  Allows better coordination (Collaboration & Cooperation)
 
@@ -956,31 +947,31 @@ Table of Contents
    This section provides a consolidated view of main requirements that
    takes into account inputs from actors beyond operators:
 
-   *  Put more focus on service and network data models (OPS-REQ-
-      STRENGTHEN-DM) while ensuring that the realization of these
-      abstractions can be easily correlated with underlying
-      functionalities (OPS-REQ-INTEGRATION)
+   *  Put more focus on service and network data models (OPS-REQ-EASE-
+      EXPOSURE, OPS-REQ-STRENGTHEN-DM) while ensuring that the
+      realization of these abstractions can be easily correlated with
+      underlying functionalities (OPS-REQ-INTEGRATION).
 
-   *  Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM)
+   *  Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM).
 
    *  Implement minimal functionality, not bells and whistles (OPS-REQ-
-      ITERATE)
+      ITERATE).
 
    *  Have running code while a specification is under development (OPS-
-      REQ-READILY-IMPLEM, OPS-REQ-TOOLS)
+      REQ-READILY-IMPLEM, OPS-REQ-TOOLS).
 
-   *  Have vendors and operators on board at the time of developing the
-      solution
+   *  Have vendors and operators on board at the time of developing a
+      network management solution.
 
    *  Provide independent compliance suites to validate features (OPS-
-      REQ-GUIDE-AND-PROFILE)
+      REQ-GUIDE-AND-PROFILE).
 
    *  Need for means to correlate data learned from different means
-      (OPS-REQ-REUSABILITY)
+      (OPS-REQ-REUSABILITY).
 
    *  Investigate approaches to ease adoption and integration into an
       operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API,
-      OPS-REQ-INTEGRATION)
+      OPS-REQ-INTEGRATION).
 
    *  Network-centric approaches have limits, need to better integrate
       and learn from techniques in other domains (OPS-REQ-BRIDGE).
@@ -1093,23 +1084,6 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
               udp-notif-25>.
 
-   [I-D.ietf-opsawg-ntw-attachment-circuit]
-              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
-              and B. Wu, "A Network YANG Data Model for Attachment
-              Circuits", Work in Progress, Internet-Draft, draft-ietf-
-              opsawg-ntw-attachment-circuit-16, 23 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              ntw-attachment-circuit-16>.
-
-   [I-D.ietf-opsawg-teas-attachment-circuit]
-              Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
-              and B. Wu, "YANG Data Models for Bearers and 'Attachment
-              Circuits'-as-a-Service (ACaaS)", Work in Progress,
-              Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
-              20, 23 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-opsawg-
-              teas-attachment-circuit-20>.
-
    [I-D.marcas-nmop-knowledge-graph-yang]
               Martinez-Casanueva, I. D., Cabanillas, L., and P.
               Martinez-Julia, "Knowledge Graphs for YANG-based Network
@@ -1151,32 +1125,9 @@ Table of Contents
               STD 17, RFC 1213, DOI 10.17487/RFC1213, March 1991,
               <https://www.rfc-editor.org/rfc/rfc1213>.
 
-   [RFC3084]  Chan, K., Seligson, J., Durham, D., Gai, S., McCloghrie,
-              K., Herzog, S., Reichmeyer, F., Yavatkar, R., and A.
-              Smith, "COPS Usage for Policy Provisioning (COPS-PR)",
-              RFC 3084, DOI 10.17487/RFC3084, March 2001,
-              <https://www.rfc-editor.org/rfc/rfc3084>.
-
-   [RFC3159]  McCloghrie, K., Fine, M., Seligson, J., Chan, K., Hahn,
-              S., Sahita, R., Smith, A., and F. Reichmeyer, "Structure
-              of Policy Provisioning Information (SPPI)", RFC 3159,
-              DOI 10.17487/RFC3159, August 2001,
-              <https://www.rfc-editor.org/rfc/rfc3159>.
-
-   [RFC3317]  Chan, K., Sahita, R., Hahn, S., and K. McCloghrie,
-              "Differentiated Services Quality of Service Policy
-              Information Base", RFC 3317, DOI 10.17487/RFC3317, March
-              2003, <https://www.rfc-editor.org/rfc/rfc3317>.
-
-   [RFC3318]  Sahita, R., Ed., Hahn, S., Chan, K., and K. McCloghrie,
-              "Framework Policy Information Base", RFC 3318,
-              DOI 10.17487/RFC3318, March 2003,
-              <https://www.rfc-editor.org/rfc/rfc3318>.
-
-   [RFC3571]  Rawlins, D., Kulkarni, A., Ho Chan, K., Bokaemper, M., and
-              D. Dutt, "Framework Policy Information Base for Usage
-              Feedback", RFC 3571, DOI 10.17487/RFC3571, August 2003,
-              <https://www.rfc-editor.org/rfc/rfc3571>.
+   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
+              DOI 10.17487/RFC5424, March 2009,
+              <https://www.rfc-editor.org/rfc/rfc5424>.
 
    [RFC5472]  Zseby, T., Boschi, E., Brownlee, N., and B. Claise, "IP
               Flow Information Export (IPFIX) Applicability", RFC 5472,
@@ -1193,11 +1144,6 @@ Table of Contents
               RFC 5477, DOI 10.17487/RFC5477, March 2009,
               <https://www.rfc-editor.org/rfc/rfc5477>.
 
-   [RFC5706]  Harrington, D., "Guidelines for Considering Operations and
-              Management of New Protocols and Protocol Extensions",
-              RFC 5706, DOI 10.17487/RFC5706, November 2009,
-              <https://www.rfc-editor.org/rfc/rfc5706>.
-
    [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
               the Network Configuration Protocol (NETCONF)", RFC 6020,
               DOI 10.17487/RFC6020, October 2010,
@@ -1211,11 +1157,6 @@ Table of Contents
    [RFC6244]  Shafer, P., "An Architecture for Network Management Using
               NETCONF and YANG", RFC 6244, DOI 10.17487/RFC6244, June
               2011, <https://www.rfc-editor.org/rfc/rfc6244>.
-
-   [RFC6353]  Hardaker, W., "Transport Layer Security (TLS) Transport
-              Model for the Simple Network Management Protocol (SNMP)",
-              STD 78, RFC 6353, DOI 10.17487/RFC6353, July 2011,
-              <https://www.rfc-editor.org/rfc/rfc6353>.
 
    [RFC6632]  Ersue, M., Ed. and B. Claise, "An Overview of the IETF
               Network Management Standards", RFC 6632,
@@ -1260,11 +1201,6 @@ Table of Contents
               DOI 10.17487/RFC7854, June 2016,
               <https://www.rfc-editor.org/rfc/rfc7854>.
 
-   [RFC7860]  Merkle, J., Ed. and M. Lochter, "HMAC-SHA-2 Authentication
-              Protocols in User-Based Security Model (USM) for SNMPv3",
-              RFC 7860, DOI 10.17487/RFC7860, April 2016,
-              <https://www.rfc-editor.org/rfc/rfc7860>.
-
    [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/rfc/rfc7950>.
@@ -1281,19 +1217,9 @@ Table of Contents
               Classification", RFC 8199, DOI 10.17487/RFC8199, July
               2017, <https://www.rfc-editor.org/rfc/rfc8199>.
 
-   [RFC8299]  Wu, Q., Ed., Litkowski, S., Tomotaki, L., and K. Ogaki,
-              "YANG Data Model for L3VPN Service Delivery", RFC 8299,
-              DOI 10.17487/RFC8299, January 2018,
-              <https://www.rfc-editor.org/rfc/rfc8299>.
-
    [RFC8309]  Wu, Q., Liu, W., and A. Farrel, "Service Models
               Explained", RFC 8309, DOI 10.17487/RFC8309, January 2018,
               <https://www.rfc-editor.org/rfc/rfc8309>.
-
-   [RFC8341]  Bierman, A. and M. Bjorklund, "Network Configuration
-              Access Control Model", STD 91, RFC 8341,
-              DOI 10.17487/RFC8341, March 2018,
-              <https://www.rfc-editor.org/rfc/rfc8341>.
 
    [RFC8342]  Bjorklund, M., Schoenwaelder, J., Shafer, P., Watsen, K.,
               and R. Wilton, "Network Management Datastore Architecture
@@ -1303,11 +1229,6 @@ Table of Contents
    [RFC838]   Smallberg, D., "Who talks TCP?", RFC 838,
               DOI 10.17487/RFC0838, January 1983,
               <https://www.rfc-editor.org/rfc/rfc838>.
-
-   [RFC8466]  Wen, B., Fioccola, G., Ed., Xie, C., and L. Jalil, "A YANG
-              Data Model for Layer 2 Virtual Private Network (L2VPN)
-              Service Delivery", RFC 8466, DOI 10.17487/RFC8466, October
-              2018, <https://www.rfc-editor.org/rfc/rfc8466>.
 
    [RFC8519]  Jethanandani, M., Agarwal, S., Huang, L., and D. Blair,
               "YANG Data Model for Network Access Control Lists (ACLs)",
@@ -1348,10 +1269,6 @@ Table of Contents
               DOI 10.17487/RFC8667, December 2019,
               <https://www.rfc-editor.org/rfc/rfc8667>.
 
-   [RFC8791]  Bierman, A., Björklund, M., and K. Watsen, "YANG Data
-              Structure Extensions", RFC 8791, DOI 10.17487/RFC8791,
-              June 2020, <https://www.rfc-editor.org/rfc/rfc8791>.
-
    [RFC8955]  Loibl, C., Hares, S., Raszuk, R., McPherson, D., and M.
               Bacher, "Dissemination of Flow Specification Rules",
               RFC 8955, DOI 10.17487/RFC8955, December 2020,
@@ -1367,22 +1284,6 @@ Table of Contents
               Management with YANG", RFC 8969, DOI 10.17487/RFC8969,
               January 2021, <https://www.rfc-editor.org/rfc/rfc8969>.
 
-   [RFC9132]  Boucadair, M., Ed., Shallow, J., and T. Reddy.K,
-              "Distributed Denial-of-Service Open Threat Signaling
-              (DOTS) Signal Channel Specification", RFC 9132,
-              DOI 10.17487/RFC9132, September 2021,
-              <https://www.rfc-editor.org/rfc/rfc9132>.
-
-   [RFC9144]  Clemm, A., Qu, Y., Tantsura, J., and A. Bierman,
-              "Comparison of Network Management Datastore Architecture
-              (NMDA) Datastores", RFC 9144, DOI 10.17487/RFC9144,
-              December 2021, <https://www.rfc-editor.org/rfc/rfc9144>.
-
-   [RFC9182]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
-              Ed., Munoz, L., and A. Aguado, "A YANG Network Data Model
-              for Layer 3 VPNs", RFC 9182, DOI 10.17487/RFC9182,
-              February 2022, <https://www.rfc-editor.org/rfc/rfc9182>.
-
    [RFC9232]  Song, H., Qin, F., Martinez-Julia, P., Ciavaglia, L., and
               A. Wang, "Network Telemetry Framework", RFC 9232,
               DOI 10.17487/RFC9232, May 2022,
@@ -1394,19 +1295,10 @@ Table of Contents
               RFC 9254, DOI 10.17487/RFC9254, July 2022,
               <https://www.rfc-editor.org/rfc/rfc9254>.
 
-   [RFC9291]  Boucadair, M., Ed., Gonzalez de Dios, O., Ed., Barguil,
-              S., and L. Munoz, "A YANG Network Data Model for Layer 2
-              VPNs", RFC 9291, DOI 10.17487/RFC9291, September 2022,
-              <https://www.rfc-editor.org/rfc/rfc9291>.
-
    [RFC9315]  Clemm, A., Ciavaglia, L., Granville, L. Z., and J.
               Tantsura, "Intent-Based Networking - Concepts and
               Definitions", RFC 9315, DOI 10.17487/RFC9315, October
               2022, <https://www.rfc-editor.org/rfc/rfc9315>.
-
-   [RFC9456]  Vaughn, K., Ed., "Updates to the TLS Transport Model for
-              SNMP", RFC 9456, DOI 10.17487/RFC9456, November 2023,
-              <https://www.rfc-editor.org/rfc/rfc9456>.
 
    [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
               Makhijani, K., Contreras, L., and J. Tantsura, "A
@@ -1426,388 +1318,6 @@ Table of Contents
 
    [YC]       "YANG Catalog, YANG Modules Stats", 2026,
               <https://www.yangcatalog.org/private-page>.
-
-Appendix A.  Assessment of RFC 3535 Operator Requirements
-
-A.1.  Detailed Analysis
-
-   Section 3 of [RFC3535] includes the following recommendations:
-
-   3535-OPS-REQ-EASE-USE:
-
-   |      Ease of use is a key requirement for any network management
-   |        technology from the operators point of view.
-
-   *Status Update*:  This is still a valid requirement.  It is even
-      exacerbated with the amount of techniques and extensions that were
-      specified since then.
-
-   3535-OPS-REQ-CONFIG-OPS-SEPARATE:
-
- |   It is necessary to make a clear distinction between configuration
- |     data, data that describes operational state and statistics.  Some
- |     devices make it very hard to determine which parameters were
- |     administratively configured and which were obtained via other
- |     mechanisms such as routing protocols.
-
-   *Status Update*:  This requirement was taken into account when
-      designing IETF solutions.  Specifically, datastores are a
-      fundamental concept in NETCONF/YANG (e.g., [RFC8342]).
-
-   3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE:
-
-   |   It is required to be able to fetch separately configuration data,
-   |     operational state data, and statistics from devices, and to be
-   |     able to compare these between devices.
-
-   *Status Update*:  This is supported by NETCONF and RESTCONF.
-
-   3535-OPS-REQ-NETWORK-NOT-DEVICE:
-
-   |    It is necessary to enable operators to concentrate on the
-   |      configuration of the network as a whole rather than individual
-   |      devices.
-
-   *Status Update*:  Protocols such as NETCONF supports means to handle
-      transactions at the level of a network.  For example, a controller
-      can establish parallel sessions with a set of devices and make use
-      of confirmed commit.
-
-      Also, [RFC8969] describes how YANG/RESTONF/YANG can be used to
-      manage a network and map it to involves underlying functions/
-      nodes.  Several service and network data models are required for
-      this aim.
-
-      The IETF defined in the past models to manage few servcies such as
-      VPN at both service and network levels (e.g., the Layer 2 Service
-      Model (L2SM) [RFC8466], the Layer 3 Service Model (L3SM)
-      [RFC8299], the Layer 2 Network Model (L2NM) [RFC9291], and the
-      Layer 3 Network Model (L3NM) [RFC9182]).
-
-      A similar effort is currently ongoing for handling attachement
-      circuits at both service and network layers (e.g.,
-      [I-D.ietf-opsawg-teas-attachment-circuit],
-      [I-D.ietf-opsawg-ntw-attachment-circuit]).
-
-      More effort is still needed in this area.
-
-   3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS:
-
-   |   Support for configuration transactions across a number of devices
-   |     would significantly simplify network configuration management.
-
-   *Status Update*:  This feature is supported by NETCONF.
-
-   3535-OPS-REQ-CONFIG-DIFF:
-
- |   Given configuration A and configuration B, it should be possible
- |     to generate the operations necessary to get from A to B with
- |     minimal state changes and effects on network and systems.  It is
- |     important to minimize the impact caused by configuration changes.
-
-   *Status Update*:  This feature is supported by NETCONF.
-
-   3535-OPS-REQ-CONFIG-DUMP-RESTORE:
-
- |   A mechanism to dump and restore configurations is a primitive
- |     operation needed by operators.  Standards for pulling and pushing
- |     configurations from/to devices are desirable.
-
-   *Status Update*:  This feature is supported by NETCONF.
-
-   3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK:
-
-   |     It must be easy to do consistency checks of configurations over
-   |       time and between the ends of a link in order to determine the
-   |       changes between two configurations and whether those
-   |       configurations are consistent.
-
-   *Status Update*:  A mechanism is specified in [RFC9144].
-
-   3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA:
-
-  |   Network wide configurations are typically stored in central
-  |     master databases and transformed into formats that can be pushed
-  |     to devices, either by generating sequences of CLI commands or
-  |     complete configuration files that are pushed to devices.  There
-  |     is no common database schema for network configuration, although
-  |     the models used by various operators are probably very similar.
-  |     It is desirable to extract, document, and standardize the common
-  |     parts of these network wide configuration database schemas.
-
-   *Status Update*:  Covered by current implementations.
-
-   3535-OPS-REQ-TXT-PROCESSING-TOOLS:
-
-   |   It is highly desirable that text processing tools such as diff,
-   |     and version management tools such as RCS or CVS, can be used to
-   |     process configurations, which implies that devices should not
-   |     arbitrarily reorder data such as access control lists.
-
-   *Status Update*:  This is deployment-specific.
-
-   3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC:
-
-   |   The granularity of access control needed on management interfaces
-   |     needs to match operational needs.  Typical requirements are a
-   |     role-based access control model and the principle of least
-   |     privilege, where a user can be given only the minimum access
-   |     necessary to perform a required task.
-
-   *Status Update*:  Role-based Access Control (RBAC) is supported by
-      existing implementation.  Also, the IETF defined [RFC8341] for
-      this purpose.
-
-   3535-OPS-REQ-ACCESS-CONTROL-CHECKS:
-
-   |      It must be possible to do consistency checks of access control
-   |        lists across devices.
-
-   *Status Update*:  This is implementation-specific.
-
-   3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV:
-
-   |     It is important to distinguish between the distribution of
-   |       configurations and the activation of a certain configuration.
-   |       Devices should be able to hold multiple configurations.
-
-   *Status Update*:  This is supported by existing NETCONF methods.
-
-   3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK:
-
- |   SNMP access control is data-oriented, while CLI access control is
- |     usually command (task) oriented.  Depending on the management
- |     function, sometimes data-oriented or task-oriented access control
- |     makes more sense.  As such, it is a requirement to support both
- |     data-oriented and task-oriented access control.
-
-   *Status Update*:  This is supported by [RFC8341].
-
-A.2.  Summary
-
-   +==========================================+=======================+
-   |             RFC3535 Ops Requirement Label|Status                 |
-   +==========================================+=======================+
-   |                     3535-OPS-REQ-EASE-USE|Still Applicable       |
-   +------------------------------------------+-----------------------+
-   |          3535-OPS-REQ-CONFIG-OPS-SEPARATE|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |    3535-OPS-REQ-CONFIG-OPS-FETCH-SEPARATE|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |           3535-OPS-REQ-NETWORK-NOT-DEVICE|Protocol (OK), DM      |
-   |                                          |(Still Applicable)     |
-   +------------------------------------------+-----------------------+
-   |    3535-OPS-REQ-NETWORK-WIDE-TRANSACTIONS|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |                  3535-OPS-REQ-CONFIG-DIFF|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |          3535-OPS-REQ-CONFIG-DUMP-RESTORE|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |     3535-OPS-REQ-CONFIG-CONSISTENCY-CHECK|Implementation-specific|
-   +------------------------------------------+-----------------------+
-   |   3535-OPS-REQ-CONFIG-NETWORK-WIDE-SCHEMA|Still Applicable       |
-   +------------------------------------------+-----------------------+
-   |         3535-OPS-REQ-TXT-PROCESSING-TOOLS|Deployment-specific    |
-   +------------------------------------------+-----------------------+
-   |   3535-OPS-REQ-ACCESS-CONTROL-OPS-CENTRIC|Implementation-specific|
-   +------------------------------------------+-----------------------+
-   |        3535-OPS-REQ-ACCESS-CONTROL-CHECKS|Implementation-specific|
-   +------------------------------------------+-----------------------+
-   |3535-OPS-REQ-CONFIG-SEPARATE-DISTRIB-ACTIV|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-   |3535-OPS-REQ-ACCESS-CONTROL-BOTH-DATA-TASK|A solution was         |
-   |                                          |standarized            |
-   +------------------------------------------+-----------------------+
-
-                                 Table 3
-
-Appendix B.  Assessment of RFC 3535 Recommendations
-
-B.1.  Detailed Analysis
-
-   Section 6 of [RFC3535] includes the following recommendations:
-
-   3535-RECO-STOP-MANDATE-MIB:
-
-  |   The workshop recommended that the IETF stop forcing working groups
-  |     to provide writable MIB modules.  It should be the decision of
-  |     the working group whether they want to provide writable objects
-  |     or not.
-
-   *Status Update*:  In 2014, the IESG published a statement Writable
-      MIB Module, which states that:
-
-         SNMP MIB modules creating and modifying configuration state
-         should only be produced by working groups in cases of clear
-         utility and consensus to use SNMP write operations for
-         configuration, and in consultation with the OPS ADs/MIB
-         doctors.
-
-   3535-RECO-MIB-INVESTIGATE:
-
-  |   The workshop recommended that a group be formed to investigate why
-  |     current MIB modules do not contain all the objects needed by
-  |     operators to monitor their networks.
-
-   *Status Update*:  No such a group was formed in the IETF.
-
-   3535-RECO-SNMP-WG4MONITORING:
-
-  |   The workshop recommended that a group be formed to investigate why
-  |     the current SNMP protocol does not satisfy all the monitoring
-  |     requirements of operators.
-
-   *Status Update*:  No such a group was formed in the IETF.
-
-   3535-RECO-FOCUS-IETF-CONFIG-MECHANISMS:
-
-  |   The workshop recommended, with strong consensus from both protocol
-  |     developers and operators, that the IETF focus resources on the
-  |     standardization of configuration management mechanisms.
-
-   *Status Update*:  The IETF specified NETCONF [RFC6241], RESTCONF
-      [RFC8040], CORECONF [I-D.ietf-core-comi], and YANG.
-
-      YANG is a transport-independent data modeling language.  It can be
-      used independently of NETCONF/RESTCONF.  For example, YANG can be
-      used to define abstract data structures [RFC8791] that can be
-      manipulated by other protocols (e.g., [RFC9132]).
-
-   3535-RECO-FOCUS-XML:
-
-  |   The workshop recommended, with strong consensus from the operators
-  |     and rough consensus from the protocol developers, that the
-  |     IETF/IRTF should spend resources on the development and
-  |     standardization of XML-based device configuration and management
-  |     technologies (such as common XML configuration schemas, exchange
-  |     protocols and so on).
-
-   *Status Update*:  This recommendation was followed in base
-      specifications.  This recommendation was also mirrored in other
-      documents such as [RFC5706].
-
-      However, the IETF integrated support for other encoding such as
-      JSON.
-
-   3535-RECO-NO-HTTP:
-
-  |   The workshop recommended, with strong consensus from the operators
-  |     and rough consensus from the protocol developers, that the
-  |     IETF/IRTF should not spend resources on developing HTML-based or
-  |     HTTP-based methods for configuration management.
-
-   *Status Update*:  The IETF deviated from this recommendation, e.g.,
-      RESTCONF [RFC8040] or CoAP Management Interface (CORECONF)
-      [I-D.ietf-core-comi].
-
-   3535-RECO-MAINTAIN-SMI-SPPI:
-
-  |   The workshop recommended, with rough consensus from the operators
-  |     and strong consensus from the protocol developers, that the IETF
-  |     should continue to spend resources on the evolution of the
-  |     SMI/SPPI data definition languages as being done in the SMIng
-  |     working group.
-
-   *Status Update*:  SMIng WG was concluded in 2003-04-04.
-
-   3535-RECO-IETF2FIX-MIB:
-
-   |   The workshop recommended, with split consensus from the operators
-   |     and rough consensus from the protocol developers, that the IETF
-   |     should spend resources on fixing the MIB development and
-   |     standardization processs.
-
-   *Status Update*:  The IETF dedicated some resources to fix some SNMP
-      shortcomings with a focus on security (e.g., Transport Layer
-      Security (TLS) Transport Model for the SNMP [RFC6353] or
-      [RFC9456], HMAC-SHA-2 Authentication Protocols in User-Based
-      Security Model (USM) for SNMPv3 [RFC7860]).
-
-   Section 6 of [RFC3535] also includes the following but without
-   tagging them as recommendations:
-
-   3535-MISC-NO-CIM:
-
-  |   The workshop had split consensus from the operators and rough
-  |     consensus from the protocol developers, that the IETF should not
-  |     focus resources on CIM extensions.
-
-   *Status Update*:  The IETF didn't dedicate any resources on CIM
-      extensions.
-
-   3535-MISC-ABANDON-PIB:
-
- |   The workshop had rough consensus from the protocol developers
- |     that the IETF should not spend resources on COPS-PR development.
- |     So far, the operators have only very limited experience with
- |     COPS-PR.  In general, however, they felt that further development
- |     of COPS-PR might be a waste of resources as they assume that
- |     COPS-PR does not really address their requirements.
-
-   *Status Update*:  The IETF has reclassified COPS Usage for Policy
-      Provisioning [RFC3084] to Historic status.
-
-   3535-MISC-ABANDON-COPS-PR:
-
- |   The workshop had rough consensus from the protocol developers
- |     that the IETF should not spend resources on SPPI PIB definitions.
- |     The operators had rough consensus that they do not care about
- |     SPPI PIBs.
-
-   *Status Update*:  The IETF has reclassified Structure of Policy
-      Provisioning Information [RFC3159], as well as three Policy
-      Information Bases ([RFC3317], [RFC3318], and [RFC3571]) to
-      Historic status.
-
-B.2.  Summary
-
-     +=======================+======================================+
-     |               RFC3535 | Status                               |
-     |  Recommendation Label |                                      |
-     +=======================+======================================+
-     |       3535-RECO-STOP- | Done, IESG Statement on Writable MIB |
-     |           MANDATE-MIB | Module (2014)                        |
-     +-----------------------+--------------------------------------+
-     |        3535-RECO-MIB- | No such a group was formed           |
-     |           INVESTIGATE |                                      |
-     +-----------------------+--------------------------------------+
-     |       3535-RECO-SNMP- | No such a group was formed           |
-     |         WG4MONITORING |                                      |
-     +-----------------------+--------------------------------------+
-     | 3535-RECO-FOCUS-IETF- | NETCONF/RESTCONF/CORECONF/YANG/COMI/ |
-     |     CONFIG-MECHANISMS | etc.                                 |
-     +-----------------------+--------------------------------------+
-     |   3535-RECO-FOCUS-XML | The recommendation was followed      |
-     +-----------------------+--------------------------------------+
-     |     3535-RECO-NO-HTTP | The IETF deviated from this          |
-     |                       | recommendation, e.g., RESTCONF or    |
-     |                       | CoAP Management Interface (CORECONF) |
-     +-----------------------+--------------------------------------+
-     |   3535-RECO-MAINTAIN- | SMIng WG was concluded in 2003-04-04 |
-     |              SMI-SPPI |                                      |
-     +-----------------------+--------------------------------------+
-     |   3535-RECO-IETF2FIX- | The IETF dedicated resources to fix  |
-     |                   MIB | some SNMP shortcomings with a focus  |
-     |                       | on security                          |
-     +-----------------------+--------------------------------------+
-     |      3535-MISC-NO-CIM | The IETF didn't dedicate any         |
-     |                       | resources on CIM extensions          |
-     +-----------------------+--------------------------------------+
-     |    3535-MISC-ABANDON- | The IETF has reclassified COPS-PR to |
-     |               COPS-PR | Historic status                      |
-     +-----------------------+--------------------------------------+
-     | 3535-MISC-ABANDON-PIB | The IETF has reclassified SPPI, as   |
-     |                       | well as three PIBs to Historic       |
-     |                       | status                               |
-     +-----------------------+--------------------------------------+
-
-                                 Table 4
 
 Acknowledgments
 
