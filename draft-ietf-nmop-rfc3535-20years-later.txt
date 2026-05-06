@@ -121,36 +121,36 @@ Table of Contents
    Since the publication of [RFC3535] major advances were achieved in
    the network managment area, such as (but not limited to):
 
-   *  NETCONF [RFC6241]
-
-   *  YANG [RFC7950]
-
-   *  RESTCONF [RFC8040]
-
    *  SDN and Programmable Networks [RFC7149][RFC7426]
 
    *  Automation [RFC8969]
 
-   *  Virtualization [RFC8568]
+   *  Intent-based approaches [RFC9315]
 
-   *  Containerization [I-D.ietf-bmwg-containerized-infra]
+   *  Telemetry [RFC9232]
 
-   *  Intent-based [RFC9315]
+   *  NETCONF [RFC6241]
 
-   *  Network APIs (e.g., [CAMARA])
+   *  RESTCONF [RFC8040]
+
+   *  CoAP Management Interface (CORECONF) [I-D.ietf-core-comi]
+
+   *  YANG [RFC7950]
+
+   *  JSON Encoding of Data Modeled with YANG [RFC7951]
+
+   *  YANG Schema Item iDentifier (YANG SID) [RFC9595]
+
+   *  YANG to CBOR mapping [RFC9254]
 
    *  Models for management of services, networks, and devices
       [RFC8199][RFC8309]
 
-   *  Telemetry [RFC9232]
+   *  Network APIs (e.g., [CAMARA])
 
-   *  JSON Encoding of Data Modeled with YANG [RFC7951]
+   *  Virtualization [RFC8568]
 
-   *  CoAP Management Interface (CORECONF) [I-D.ietf-core-comi]
-
-   *  YANG to CBOR mapping [RFC9254]
-
-   *  YANG Schema Item iDentifier (YANG SID) [I-D.ietf-core-sid]
+   *  Containerization [I-D.ietf-bmwg-containerized-infra]
 
    See also "An Overview of the IETF Network Management Standards"
    [RFC6632].
@@ -208,8 +208,8 @@ Table of Contents
 
    XaaS designs assume the availability of data models that are
    dynamically instantiated (along with a set of relevant policies) as a
-   function of the "X" (and its design, for that matter). *XaaS services
-   cannot be designed, delivered, and operated without data models.*
+   function of the "X" (and its design, for that matter).  XaaS services
+   cannot be designed, delivered, and operated without data models.
    Standard data models are thus key as they allow to:
 
    *  Ease mapping among many (network/service) layers.
@@ -232,12 +232,12 @@ Table of Contents
       involvement in open-source projects that facilitate access to
       code.
 
-      Particularly, *without data models, a Network API is essentially
-      useless* (see also Section 2.4).
+      Particularly, without data models, a Network API is essentially
+      useless (see also Section 2.4).
 
 2.2.  Fragmented Ecosystem
 
-   The current YANG device models ecosystem is *fragmented*: some
+   The current YANG device models ecosystem is fragmented: some
    standards data models are defined through the IETF, while similar
    ones are defined in other fora such as Openconfig [OC].  Unlike
    service and network models, IETF-defined device models are not widely
@@ -390,7 +390,7 @@ Table of Contents
    enable fast breadth-first search (BFS).
 
    OPS-REQ-Y2KG:  Need for a reference specification to translate YANG-
-      based data into the knowledge graph (KG).
+      based data into the Knowledge Graph (KG).
 
    For example, [I-D.marcas-nmop-knowledge-graph-yang] and
    [I-D.tailhardat-nmop-incident-management-noria] discuss YANG-2-KG
@@ -708,7 +708,7 @@ Table of Contents
       that allows for business goals to be incrementally realized.
 
    OPS-REQ-Y2KG:  Need for reference specifications to translate YANG-
-      based data into the knowledge graph.  Sample use cases to
+      based data into the Knowledge Graph.  Sample use cases to
       illustrate the intended use should be considered as well.
 
    OPS-REQ-SCALE:  Consider approaches for YANG data models to scale,
@@ -782,106 +782,72 @@ Table of Contents
 
    *  Belongs to data modeling (DM)
 
-   *  Requires protocol work (Protocol)
+   *  Requires protocol work (Proto)
 
-   *  Impacts deployability of standardized approaches (Deployability)
+   *  Impacts deployability of standardized approaches (Deploy)
 
-   *  Has implications on integration effort by operators (Integration)
+   *  Has implications on integration effort by operators (Int)
 
    *  Requires some adaptations to a Standards Developing Organization
-      (SDO) process (SDO Process)
+      (SDO) process (Process)
 
-   *  Allows better coordination (Collaboration & Cooperation)
+   *  Allows better coordination (Collaboration & Cooperation (C&C))
 
    *  Is relevant to skills transformations (Skills)
 
-   +===========+==+========+=============+===========+=======+=============+======+
-   |Ops        |DM|Protocol|Deployability|Integration|  SDO  |Collaboration|Skills|
-   |Requirement|  |        |             |           |Process|& Cooperation|      |
-   |Label      |  |        |             |           |       |             |      |
-   +===========+==+========+=============+===========+=======+=============+======+
-   |OPS-REQ-   |X |        |      X      |           |       |             |      |
-   |STRENGTHEN-|  |        |             |           |       |             |      |
-   |DM         |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-DM-|X |        |      X      |           |   X   |      X      |      |
-   |RATIONALIZE|  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |   X    |      X      |     X     |       |             |      |
-   |EASE-      |  |        |             |           |       |             |      |
-   |EXPOSURE   |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-NW-|  |        |      X      |     X     |       |             |      |
-   |API-       |  |        |             |           |       |             |      |
-   |DISCOVERY  |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |           |       |             |      |
-   |DM2API     |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |   X    |      X      |           |       |             |      |
-   |GUIDE-     |  |        |             |           |       |             |      |
-   |PROFILE    |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |   X    |      X      |           |       |             |      |
-   |ARCH       |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |   X    |             |           |       |             |      |
-   |REASSESS   |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |   X    |      X      |           |       |             |      |
-   |QUICK-BUT- |  |        |             |           |       |             |      |
-   |WELL       |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |     X     |   X   |             |      |
-   |INTEGRATION|  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |             |           |   X   |      X      |      |
-   |ITERATE    |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |     X     |       |             |      |
-   |Y2KG       |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |   X    |             |           |       |             |      |
-   |SCALE      |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |     X     |   X   |             |      |
-   |LOSSLESS   |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |   X    |             |     X     |   X   |             |      |
-   |REUSABILITY|  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |   X    |             |           |       |             |      |
-   |NEW-NEED   |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |     X     |       |             |      |
-   |UNSILO     |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |        |      X      |           |       |             |      |
-   |TIMELY-DM  |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |X |   X    |      X      |           |   X   |             |      |
-   |READILY-   |  |        |             |           |       |             |      |
-   |IMPLEM     |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-IT-|  |        |      X      |     X     |       |             |      |
-   |INTEGRATION|  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |             |           |   X   |             |  X   |
-   |IETF-TOOLS |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |     X     |       |             |  X   |
-   |CLIENT-    |  |        |             |           |       |             |      |
-   |TOOLS      |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |             |           |       |      X      |  X   |
-   |BRIDGE     |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |             |     X     |       |             |  X   |
-   |GLUE       |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
-   |OPS-REQ-   |  |        |      X      |           |       |             |      |
-   |GUIDANCE   |  |        |             |           |       |             |      |
-   +-----------+--+--------+-------------+-----------+-------+-------------+------+
+    +==========================+==+=====+======+===+=======+===+======+
+    | Ops Requirement Label    |DM|Proto|Deploy|Int|Process|C&C|Skills|
+    +==========================+==+=====+======+===+=======+===+======+
+    | OPS-REQ-STRENGTHEN-DM    |X |     |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-DM-RATIONALIZE   |X |     |  X   |   |   X   | X |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-EASE-EXPOSURE    |X |  X  |  X   | X |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-NW-API-DISCOVERY |  |     |  X   | X |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-DM2API           |  |     |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-GUIDE-PROFILE    |X |  X  |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-ARCH             |  |  X  |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-REASSESS         |  |  X  |      |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-QUICK-BUT-WELL   |X |  X  |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-INTEGRATION      |  |     |  X   | X |   X   |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-ITERATE          |  |     |      |   |   X   | X |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-Y2KG             |  |     |  X   | X |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-SCALE            |X |  X  |      |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-LOSSLESS         |  |     |  X   | X |   X   |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-REUSABILITY      |  |  X  |      | X |   X   |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-NEW-NEED         |  |  X  |      |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-UNSILO           |  |     |  X   | X |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-TIMELY-DM        |X |     |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-READILY-IMPLEM   |X |  X  |  X   |   |   X   |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-IT-INTEGRATION   |  |     |  X   | X |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-IETF-TOOLS       |  |     |      |   |   X   |   |  X   |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-CLIENT-TOOLS     |  |     |  X   | X |       |   |  X   |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-BRIDGE           |  |     |      |   |       | X |  X   |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ-GLUE             |  |     |      | X |       |   |  X   |
+    +--------------------------+--+-----+------+---+-------+---+------+
+    | OPS-REQ- GUIDANCE        |  |     |  X   |   |       |   |      |
+    +--------------------------+--+-----+------+---+-------+---+------+
 
                     Table 1: Requirements Classification
 
@@ -890,59 +856,59 @@ Table of Contents
    Table 2 provides the requirement level of Section 3.1 from an
    operator perspective.
 
-               +===========================+===============+
-               |     Ops Requirement Label | Overall Level |
-               +===========================+===============+
-               |     OPS-REQ-STRENGTHEN-DM |     Strong    |
-               +---------------------------+---------------+
-               |    OPS-REQ-DM-RATIONALIZE |     Strong    |
-               +---------------------------+---------------+
-               |     OPS-REQ-EASE-EXPOSURE |     Strong    |
-               +---------------------------+---------------+
-               |  OPS-REQ-NW-API-DISCOVERY |  Nice to have |
-               +---------------------------+---------------+
-               |            OPS-REQ-DM2API |     Strong    |
-               +---------------------------+---------------+
-               | OPS-REQ-GUIDE-AND-PROFILE |  Nice to have |
-               +---------------------------+---------------+
-               |              OPS-REQ-ARCH |     Strong    |
-               +---------------------------+---------------+
-               |          OPS-REQ-REASSESS |     Strong    |
-               +---------------------------+---------------+
-               |    OPS-REQ-QUICK-BUT-WELL |     Strong    |
-               +---------------------------+---------------+
-               |       OPS-REQ-INTEGRATION |     Strong    |
-               +---------------------------+---------------+
-               |           OPS-REQ-ITERATE |     Strong    |
-               +---------------------------+---------------+
-               |              OPS-REQ-Y2KG |  Nice to have |
-               +---------------------------+---------------+
-               |             OPS-REQ-SCALE |     Strong    |
-               +---------------------------+---------------+
-               |          OPS-REQ-LOSSLESS |  Nice to have |
-               +---------------------------+---------------+
-               |       OPS-REQ-REUSABILITY |     Strong    |
-               +---------------------------+---------------+
-               |          OPS-REQ-NEW-NEED |  Nice to have |
-               +---------------------------+---------------+
-               |            OPS-REQ-UNSILO |     Strong    |
-               +---------------------------+---------------+
-               |         OPS-REQ-TIMELY-DM |     Strong    |
-               +---------------------------+---------------+
-               |    OPS-REQ-READILY-IMPLEM |     Strong    |
-               +---------------------------+---------------+
-               |    OPS-REQ-IT-INTEGRATION |  Nice to have |
-               +---------------------------+---------------+
-               |        OPS-REQ-IETF-TOOLS |  Nice to have |
-               +---------------------------+---------------+
-               |      OPS-REQ-CLIENT-TOOLS |     Strong    |
-               +---------------------------+---------------+
-               |            OPS-REQ-BRIDGE |     Strong    |
-               +---------------------------+---------------+
-               |              OPS-REQ-GLUE |  Nice to have |
-               +---------------------------+---------------+
-               |          OPS-REQ-GUIDANCE |  Nice to have |
-               +---------------------------+---------------+
+          +===========================+=========================+
+          |     Ops Requirement Label | Overall Operators Level |
+          +===========================+=========================+
+          |     OPS-REQ-STRENGTHEN-DM |          Strong         |
+          +---------------------------+-------------------------+
+          |    OPS-REQ-DM-RATIONALIZE |          Strong         |
+          +---------------------------+-------------------------+
+          |     OPS-REQ-EASE-EXPOSURE |          Strong         |
+          +---------------------------+-------------------------+
+          |  OPS-REQ-NW-API-DISCOVERY |       Nice to have      |
+          +---------------------------+-------------------------+
+          |            OPS-REQ-DM2API |          Strong         |
+          +---------------------------+-------------------------+
+          | OPS-REQ-GUIDE-AND-PROFILE |       Nice to have      |
+          +---------------------------+-------------------------+
+          |              OPS-REQ-ARCH |          Strong         |
+          +---------------------------+-------------------------+
+          |          OPS-REQ-REASSESS |          Strong         |
+          +---------------------------+-------------------------+
+          |    OPS-REQ-QUICK-BUT-WELL |          Strong         |
+          +---------------------------+-------------------------+
+          |       OPS-REQ-INTEGRATION |          Strong         |
+          +---------------------------+-------------------------+
+          |           OPS-REQ-ITERATE |          Strong         |
+          +---------------------------+-------------------------+
+          |              OPS-REQ-Y2KG |       Nice to have      |
+          +---------------------------+-------------------------+
+          |             OPS-REQ-SCALE |          Strong         |
+          +---------------------------+-------------------------+
+          |          OPS-REQ-LOSSLESS |       Nice to have      |
+          +---------------------------+-------------------------+
+          |       OPS-REQ-REUSABILITY |          Strong         |
+          +---------------------------+-------------------------+
+          |          OPS-REQ-NEW-NEED |       Nice to have      |
+          +---------------------------+-------------------------+
+          |            OPS-REQ-UNSILO |          Strong         |
+          +---------------------------+-------------------------+
+          |         OPS-REQ-TIMELY-DM |          Strong         |
+          +---------------------------+-------------------------+
+          |    OPS-REQ-READILY-IMPLEM |          Strong         |
+          +---------------------------+-------------------------+
+          |    OPS-REQ-IT-INTEGRATION |       Nice to have      |
+          +---------------------------+-------------------------+
+          |        OPS-REQ-IETF-TOOLS |       Nice to have      |
+          +---------------------------+-------------------------+
+          |      OPS-REQ-CLIENT-TOOLS |          Strong         |
+          +---------------------------+-------------------------+
+          |            OPS-REQ-BRIDGE |          Strong         |
+          +---------------------------+-------------------------+
+          |              OPS-REQ-GLUE |       Nice to have      |
+          +---------------------------+-------------------------+
+          |          OPS-REQ-GUIDANCE |       Nice to have      |
+          +---------------------------+-------------------------+
 
                    Table 2: Operators Requirements Levels
 
@@ -1049,13 +1015,6 @@ Table of Contents
               Work in Progress, Internet-Draft, draft-ietf-core-comi-21,
               2 March 2026, <https://datatracker.ietf.org/doc/html/
               draft-ietf-core-comi-21>.
-
-   [I-D.ietf-core-sid]
-              Veillette, M., Pelov, A., Petrov, I., Bormann, C., and M.
-              Richardson, "YANG Schema Item iDentifier (YANG SID)", Work
-              in Progress, Internet-Draft, draft-ietf-core-sid-24, 22
-              December 2023, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-core-sid-24>.
 
    [I-D.ietf-grow-peering-api]
               Aguado, C., Griswold, M., Ramseyer, J., Servin, A.,
@@ -1316,6 +1275,11 @@ Table of Contents
               Framework for Network Slices in Networks Built from IETF
               Technologies", RFC 9543, DOI 10.17487/RFC9543, March 2024,
               <https://www.rfc-editor.org/rfc/rfc9543>.
+
+   [RFC9595]  Veillette, M., Ed., Pelov, A., Ed., Petrov, I., Ed.,
+              Bormann, C., and M. Richardson, "YANG Schema Item
+              iDentifier (YANG SID)", RFC 9595, DOI 10.17487/RFC9595,
+              July 2024, <https://www.rfc-editor.org/rfc/rfc9595>.
 
    [RFC9834]  Boucadair, M., Ed., Roberts, R., Ed., Gonzalez de Dios,
               O., Barguil, S., and B. Wu, "YANG Data Models for Bearers
