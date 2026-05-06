@@ -98,21 +98,21 @@ which was instrumental for developing NETCONF {{?RFC6241}} and YANG {{?RFC6020}}
 
 Since the publication of {{!RFC3535}} major advances were achieved in the network managment area, such as (but not limited to):
 
-* NETCONF {{?RFC6241}}
-* YANG {{?RFC7950}}
-* RESTCONF  {{?RFC8040}}
 * SDN and Programmable Networks {{?RFC7149}}{{?RFC7426}}
 * Automation {{?RFC8969}}
+* Intent-based approaches {{?RFC9315}}
+* Telemetry {{?RFC9232}}
+* NETCONF {{?RFC6241}}
+* RESTCONF  {{?RFC8040}}
+* CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}
+* YANG {{?RFC7950}}
+* JSON Encoding of Data Modeled with YANG {{?RFC7951}}
+* YANG Schema Item iDentifier (YANG SID) {{?RFC9595}}
+* YANG to CBOR mapping {{?RFC9254}}
+* Models for management of services, networks, and devices {{?RFC8199}}{{?RFC8309}}
+* Network APIs (e.g., {{CAMARA}})
 * Virtualization {{?RFC8568}}
 * Containerization {{?I-D.ietf-bmwg-containerized-infra}}
-* Intent-based {{?RFC9315}}
-* Network APIs (e.g., {{CAMARA}})
-* Models for management of services, networks, and devices {{?RFC8199}}{{?RFC8309}}
-* Telemetry {{?RFC9232}}
-* JSON Encoding of Data Modeled with YANG {{?RFC7951}}
-* CoAP Management Interface (CORECONF) {{?I-D.ietf-core-comi}}
-* YANG to CBOR mapping {{?RFC9254}}
-* YANG Schema Item iDentifier (YANG SID) {{?I-D.ietf-core-sid}}
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
@@ -134,23 +134,23 @@ More than three decades of "Internet standardization" have shown that the specif
 
 The situation has changed since network "softwarization" strategies have been disclosed by vendors and operators. From a business standpoint, network "softwarization" is seen as a major transformation effort by operators, because of the flexibility and the "a la carte" approach that is promoted by "X-as-a-service" (XaaS) designs, "X" being network, platform, Network Slice {{?RFC9543}}, etc.
 
-XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). **XaaS services cannot be designed, delivered, and operated without data models.** Standard data models are thus key as they allow to:
+XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
 
 *	Ease mapping among many (network/service) layers.
 *	Ease data correlation from distinct sources.
 *	Soften dependency on CLI specifics to vendors.
 *	Support both top-down and bottom-up approaches for operating services:
 
-  - Accurate control loops for adaptive and deterministic service creation, delivery, and maintenance.
-  - Feed an intelligence that will drive appropriate actions to adjust the current status to align with the intended status.
+   - Accurate control loops for adaptive and deterministic service creation, delivery, and maintenance.
+   - Feed an intelligence that will drive appropriate actions to adjust the current status to align with the intended status.
 
 OPS-REQ-STRENGTHEN-DM:
 : Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source projects that facilitate access to code.
-: Particularly, **without data models, a Network API is essentially useless** (see also {{sec-api}}).
+: Particularly, without data models, a Network API is essentially useless (see also {{sec-api}}).
 
 ## Fragmented Ecosystem {#sec-frag}
 
-The current YANG device models ecosystem is **fragmented**: some standards data models are defined through the IETF, while similar ones are defined in other fora such as Openconfig {{OC}}.
+The current YANG device models ecosystem is fragmented: some standards data models are defined through the IETF, while similar ones are defined in other fora such as Openconfig {{OC}}.
 Unlike service and network models, IETF-defined device models are not widely implemented.
 
 OPS-REQ-DM-RATIONALIZE:
@@ -225,7 +225,7 @@ Different approaches using graph theory and compatible with YANG are currently a
 For instance, OpenDaylight {{ODL}} implements an in-memory connected graph version of YANG-based data to enable fast breadth-first search (BFS).
 
 OPS-REQ-Y2KG:
-: Need for a reference specification to translate YANG-based data into the knowledge graph (KG).
+: Need for a reference specification to translate YANG-based data into the Knowledge Graph (KG).
 
 For example, {{?I-D.marcas-nmop-knowledge-graph-yang}} and {{?I-D.tailhardat-nmop-incident-management-noria}} discuss YANG-2-KG proposals to leverage automated reasoning and graph traversal techniques.
 
@@ -392,7 +392,7 @@ OPS-REQ-ITERATE:
 : Need a velocity and approach to standardization that allows for business goals to be incrementally realized.
 
 OPS-REQ-Y2KG:
-: Need for reference specifications to translate YANG-based data into the knowledge graph. Sample use cases to illustrate the intended use should be considered as well.
+: Need for reference specifications to translate YANG-based data into the Knowledge Graph. Sample use cases to illustrate the intended use should be considered as well.
 
 OPS-REQ-SCALE:
 : Consider approaches for YANG data models to scale, including protocol considerations (transactions, etc.). Specifically, address telemetry scalability enhancements.
@@ -438,14 +438,14 @@ OPS-REQ-GUIDANCE:
 {{table-req-cat}} provides a classification of the requirements listed in {{sec-reqs}}. It specifically tag whether a requirement:
 
 * Belongs to data modeling (DM)
-* Requires protocol work (Protocol)
-* Impacts deployability of standardized approaches (Deployability)
-* Has implications on integration effort by operators (Integration)
-* Requires some adaptations to a Standards Developing Organization (SDO) process (SDO Process)
-* Allows better coordination (Collaboration & Cooperation)
+* Requires protocol work (Proto)
+* Impacts deployability of standardized approaches (Deploy)
+* Has implications on integration effort by operators (Int)
+* Requires some adaptations to a Standards Developing Organization (SDO) process (Process)
+* Allows better coordination (Collaboration & Cooperation (C&C))
 * Is relevant to skills transformations (Skills)
 
-|Ops Requirement Label   | DM  | Protocol | Deployability  | Integration    |SDO Process| Collaboration & Cooperation  | Skills         |
+|Ops Requirement Label   | DM  | Proto | Deploy | Int    | Process| C&C  | Skills         |
 |------------------------|:---:|:--------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
 |OPS-REQ-STRENGTHEN-DM   |	X   |	          |      X		   |	              |           |	                           |                |
 |OPS-REQ-DM-RATIONALIZE  |	X   |          |      X 		   |                |    X      |            X                 |                |
@@ -478,7 +478,7 @@ OPS-REQ-GUIDANCE:
 
 {{table-ops-view}} provides the requirement level of {{sec-reqs}} from an operator perspective.
 
-|Ops Requirement Label    | Overall Level  |
+|Ops Requirement Label    | Overall Operators Level  |
 |------------------------:|:--------------:|
 |OPS-REQ-STRENGTHEN-DM    |    Strong      |
 |OPS-REQ-DM-RATIONALIZE   |    Strong      |
