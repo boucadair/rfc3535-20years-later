@@ -793,7 +793,7 @@ Table of Contents
 
    *  Allows better coordination (Collaboration & Cooperation (C&C))
 
-   *  Is relevant to skills transformations (Skills)
+   *  Is relevant to skill transformations (Skills)
 
     +==========================+==+=====+======+===+=======+===+======+
     | Ops Requirement Label    |DM|Proto|Deploy|Int|Process|C&C|Skills|
@@ -846,7 +846,7 @@ Table of Contents
     +--------------------------+--+-----+------+---+-------+---+------+
     | OPS-REQ-GLUE             |  |     |      | X |       |   |  X   |
     +--------------------------+--+-----+------+---+-------+---+------+
-    | OPS-REQ- GUIDANCE        |  |     |  X   |   |       |   |      |
+    | OPS-REQ-GUIDANCE         |  |     |  X   |   |       |   |      |
     +--------------------------+--+-----+------+---+-------+---+------+
 
                     Table 1: Requirements Classification
