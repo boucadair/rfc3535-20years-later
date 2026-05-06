@@ -355,6 +355,8 @@ OPS-REQ-GUIDANCE:
 
 ## Summary {#sec-reqs}
 
+A summary of the operators' requirements discussed in the previous section is provided below:
+
 OPS-REQ-STRENGTHEN-DM:
 : Network softwarization can only happen with a strong, committed standardization effort, complemented by active involvement in open-source
 projects that facilitate access to code.
@@ -520,6 +522,10 @@ This section provides a consolidated view of main requirements that takes into a
 * Need for means to correlate data learned from different means (OPS-REQ-REUSABILITY).
 * Investigate approaches to ease adoption and integration into an operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API, OPS-REQ-INTEGRATION).
 * Network-centric approaches have limits, need to better integrate and learn from techniques in other domains (OPS-REQ-BRIDGE).
+
+# Operational Considerations
+
+This document exclusively focuses on operations and management requirements. These considerations (deployability, integration, complexity, etc.) are not repeated here.
 
 # Security Considerations
 
