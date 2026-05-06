@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 21 September 2026                                 O. G. D. Dios
+Expires: 7 November 2026                                   O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                           20 March 2026
+                                                              6 May 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 September 2026.
+   This Internet-Draft will expire on 7 November 2026.
 
 Copyright Notice
 
@@ -99,11 +99,12 @@ Table of Contents
      3.2.  Categorization
      3.3.  Overall New Requirements Levels: Operators View
      3.4.  Consolidated Requirements
-   4.  Security Considerations
-   5.  IANA Considerations
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   4.  Operational Considerations
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Contributors
    Authors' Addresses
@@ -653,6 +654,9 @@ Table of Contents
 
 3.1.  Summary
 
+   A summary of the operators' requirements discussed in the previous
+   section is provided below:
+
    OPS-REQ-STRENGTHEN-DM:  Network softwarization can only happen with a
       strong, committed standardization effort, complemented by active
       involvement in open-source projects that facilitate access to
@@ -976,23 +980,29 @@ Table of Contents
    *  Network-centric approaches have limits, need to better integrate
       and learn from techniques in other domains (OPS-REQ-BRIDGE).
 
-4.  Security Considerations
+4.  Operational Considerations
+
+   This document exclusively focuses on operations and management
+   requirements.  These considerations (deployability, integration,
+   complexity, etc.) are not repeated here.
+
+5.  Security Considerations
 
    This document does not define any protocol or architecture.
 
-5.  IANA Considerations
+6.  IANA Considerations
 
    This document has no IANA actions.
 
-6.  References
+7.  References
 
-6.1.  Normative References
+7.1.  Normative References
 
    [RFC3535]  Schoenwaelder, J., "Overview of the 2002 IAB Network
               Management Workshop", RFC 3535, DOI 10.17487/RFC3535, May
               2003, <https://www.rfc-editor.org/rfc/rfc3535>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [BCP127]   Best Current Practice 127,
               <https://www.rfc-editor.org/info/bcp127>.
@@ -1029,9 +1039,9 @@ Table of Contents
               J., and Y. Kim, "Considerations for Benchmarking Network
               Performance in Containerized Infrastructures", Work in
               Progress, Internet-Draft, draft-ietf-bmwg-containerized-
-              infra-08, 20 October 2025,
+              infra-09, 12 April 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-08>.
+              containerized-infra-09>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
