@@ -443,7 +443,7 @@ OPS-REQ-GUIDANCE:
 * Has implications on integration effort by operators (Int)
 * Requires some adaptations to a Standards Developing Organization (SDO) process (Process)
 * Allows better coordination (Collaboration & Cooperation (C&C))
-* Is relevant to skills transformations (Skills)
+* Is relevant to skill transformations (Skills)
 
 |Ops Requirement Label   | DM  | Proto | Deploy | Int    | Process| C&C  | Skills         |
 |------------------------|:---:|:--------:|:--------------:|:--------------:|:---------:|:----------------------------:|:--------------:|
@@ -471,7 +471,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-CLIENT-TOOLS    |	    |          |      X		   |      X         |           |            	               |        X       |	
 |OPS-REQ-BRIDGE          |	    |          |       		   |                |           |            X                 |      X         |
 |OPS-REQ-GLUE            |	    |          |       		   |      X         |           |            	               |        X       |
-|OPS-REQ- GUIDANCE       |	    |          |      X  		   |                |           |            	               |                |
+|OPS-REQ-GUIDANCE        |	    |          |      X  		   |                |           |            	               |                |
 {: #table-req-cat title='Requirements Classification'}
 
 ## Overall New Requirements Levels: Operators View
