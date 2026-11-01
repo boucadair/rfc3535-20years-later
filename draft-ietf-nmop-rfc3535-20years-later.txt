@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 7 November 2026                                   O. G. D. Dios
+Expires: 5 May 2027                                        O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                              6 May 2026
+                                                         1 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 November 2026.
+   This Internet-Draft will expire on 5 May 2027.
 
 Copyright Notice
 
@@ -158,8 +158,7 @@ Table of Contents
    More than 20 years later after the publication of [RFC3535], new
    requirements on network management operations are emerging from the
    operators.  This document captures these requirements that reflect
-   the progress in this area.  Readers may also refer to
-   [I-D.iab-nemops-workshop-report].
+   the progress in this area.  Readers may also refer to [RFC9968].
 
 2.  Observations and Operators Requirements
 
@@ -206,6 +205,12 @@ Table of Contents
    the "a la carte" approach that is promoted by "X-as-a-service" (XaaS)
    designs, "X" being network, platform, Network Slice [RFC9543], etc.
 
+   |  Network softwarization refers to the process of softwarization,
+   |  management, and integration in communication networks and the
+   |  associated services.  This usualy involves techniques such as
+   |  Software Defined Networking (SDN) [RFC7149][RFC7426], Network
+   |  Function Virtualization (NFV) [RFC8568], etc.
+
    XaaS designs assume the availability of data models that are
    dynamically instantiated (along with a set of relevant policies) as a
    function of the "X" (and its design, for that matter).  XaaS services
@@ -240,8 +245,9 @@ Table of Contents
    The current YANG device models ecosystem is fragmented: some
    standards data models are defined through the IETF, while similar
    ones are defined in other fora such as Openconfig [OC].  Unlike
-   service and network models, IETF-defined device models are not widely
-   implemented.
+   service and network models (e.g., L2NM/L2SM and L3NM/L3SM), IETF-
+   defined device models are not widely implemented by vendors as
+   proprietary device models are observed.
 
    OPS-REQ-DM-RATIONALIZE:  There is a need to rationalize this space
       and avoid redundant efforts.
@@ -256,7 +262,9 @@ Table of Contents
    applications.  Then, network management is no longer limited to
    collect network status information, but it should be extended to
    permit the exposure of resources, capabilities, functionality, and
-   associated information (e.g., inventory-based data).
+   associated information (e.g., inventory-based data).  This exposure
+   is meant to ease integration and invocation by external networks,
+   services, etc.
 
    OPS-REQ-EASE-EXPOSURE:  Focus on protocols and data models to expose
       network/service capabilities, network-wide services, and related
@@ -331,19 +339,15 @@ Table of Contents
 
    OPS-REQ-QUICK-BUT-WELL:  Develop a more agile process for the
       development and maintenance of YANG modules in the IETF.  RFCs
-      might not be suited for documenting YANG modules.
+      might not be suitable for documenting YANG modules.
 
 2.7.  Integration Complexity
 
    One of the requirements listed in Section 3 of [RFC3535] is the ease
    of use which, according to Section 3.2 of [RFC6244], is claimed to be
-   addressed by NETCONF and YANG.  For configuration this holds true,
-   for network observability it is unfortunately not yet.  This has been
-   confirmed with a set of network operators asking how long it takes
-   from subscribing YANG data to make it accessible to the operator.
-   Minutes, Hours, Days, or Weeks.  None of them answered Minutes or
-   Hours.  All of them responded Days or Weeks.  Hinting manual post
-   processing of YANG data.
+   addressed by NETCONF and YANG.  For configuration this assessment
+   holds true but it is unfortunately not yet true for network
+   observability.
 
    Collecting YANG metrics from networks is already a struggle due to
    late arrival of [RFC8639], [RFC8640], [RFC8641],
@@ -358,13 +362,13 @@ Table of Contents
    the metadata which would ensure machine readability.
 
    When a set of network operators where asked to where operational YANG
-   data needs to be integrated to, the answer homogeneously was Apache
-   Kafka Message Broker and Time Series Databases.  There is a need to
-   specify how YANG-Push can be integrated into Apache Kafka and
-   references needed YANG-Push extensions and YANG schema registry
-   development.  The YANG-Push extensions addressing needs to make YANG-
-   Push messages machine readable and against semantic validate able to
-   ensure a consistent data processing.
+   data needs to be integrated to, the answer homogeneously was message
+   brokers and Time Series Databases.  There is a need to specify how
+   YANG-Push can be integrated into message brokers and references
+   needed YANG-Push extensions and YANG schema registry development.
+   The YANG-Push extensions addressing needs to make YANG-Push messages
+   machine readable and against semantic validate able to ensure a
+   consistent data processing.
 
    Another challenge is that the subscribed YANG data referenced with
    'datastore-subtree-filter' or 'datastore-xpath-filter' breaks
@@ -462,7 +466,7 @@ Table of Contents
 
 2.11.  Proprietary YANG Modules, CLI, and Limited Abstraction
 
-   Leveraging on pluggins, propietary YANG data models or even CLI is
+   Leveraging on plugins, proprietary YANG data models or even CLI is
    still the rule in many operations, sometimes forced by the need of
    operating legacy infrastructures.
 
@@ -992,22 +996,14 @@ Table of Contents
 
    [CAMARA]   "CAMARA", <https://camaraproject.org/>.
 
-   [I-D.iab-nemops-workshop-report]
-              Hardaker, W. and D. Dhody, "Report from the IAB Workshop
-              on the Next Era of Network Management Operations
-              (NEMOPS)", Work in Progress, Internet-Draft, draft-iab-
-              nemops-workshop-report-04, 29 August 2025,
-              <https://datatracker.ietf.org/doc/html/draft-iab-nemops-
-              workshop-report-04>.
-
    [I-D.ietf-bmwg-containerized-infra]
               Ngọc, T. M., Ko, 7. 9. 1. 1. 1. 1. 1. 3. 7., Rao, S., Lee,
               J., and Y. Kim, "Considerations for Benchmarking Network
               Performance in Containerized Infrastructures", Work in
               Progress, Internet-Draft, draft-ietf-bmwg-containerized-
-              infra-09, 12 April 2026,
+              infra-10, 12 October 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-bmwg-
-              containerized-infra-09>.
+              containerized-infra-10>.
 
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
@@ -1026,9 +1022,9 @@ Table of Contents
    [I-D.ietf-idr-bgp-model]
               Jethanandani, M., Patel, K., Hares, S., and J. Haas, "YANG
               Model for Border Gateway Protocol (BGP-4)", Work in
-              Progress, Internet-Draft, draft-ietf-idr-bgp-model-19, 2
-              March 2026, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-idr-bgp-model-19>.
+              Progress, Internet-Draft, draft-ietf-idr-bgp-model-23, 30
+              October 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-idr-bgp-model-23>.
 
    [I-D.ietf-isis-sr-yang]
               Litkowski, S., Qu, Y., Lindem, A., Chen, H., and J.
@@ -1041,20 +1037,20 @@ Table of Contents
    [I-D.ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
               for YANG Notifications", Work in Progress, Internet-Draft,
-              draft-ietf-netconf-https-notif-15, 1 February 2024,
+              draft-ietf-netconf-https-notif-16, 30 June 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              https-notif-15>.
+              https-notif-16>.
 
    [I-D.ietf-netconf-udp-notif]
               Feng, A. H., Francois, P., Zhou, T., Graf, T., and P.
               Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-25, 28 January 2026,
+              ietf-netconf-udp-notif-26, 29 July 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-25>.
+              udp-notif-26>.
 
    [I-D.marcas-nmop-knowledge-graph-yang]
-              Martinez-Casanueva, I. D., Cabanillas, L., and P.
+              Martinez-Casanueva, I. D., Rodriguez, L. C., and P.
               Martinez-Julia, "Knowledge Graphs for YANG-based Network
               Management", Work in Progress, Internet-Draft, draft-
               marcas-nmop-knowledge-graph-yang-05, 21 October 2024,
@@ -1074,9 +1070,9 @@ Table of Contents
               Folz, P., and B. Kavanagh, "Knowledge Graphs for Enhanced
               Cross-Operator Incident Management and Network Design",
               Work in Progress, Internet-Draft, draft-tailhardat-nmop-
-              incident-management-noria-04, 9 February 2026,
+              incident-management-noria-05, 7 August 2026,
               <https://datatracker.ietf.org/doc/html/draft-tailhardat-
-              nmop-incident-management-noria-04>.
+              nmop-incident-management-noria-05>.
 
    [LOT2019]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
               Lopez, M., and R. Garcia-Castro, "LOT: An industrial
@@ -1287,6 +1283,11 @@ Table of Contents
               DOI 10.17487/RFC9834, September 2025,
               <https://www.rfc-editor.org/rfc/rfc9834>.
 
+   [RFC9968]  Hardaker, W. and D. Dhody, "Report from the IAB Workshop
+              on the Next Era of Network Management Operations
+              (NEMOPS)", RFC 9968, DOI 10.17487/RFC9968, May 2026,
+              <https://www.rfc-editor.org/rfc/rfc9968>.
+
    [Widoco2017]
               Garijo, D., "WIDOCO: a wizard for documenting ontologies",
               2017, <http://dgarijo.com/papers/widoco-iswc2017.pdf>.
@@ -1299,11 +1300,12 @@ Acknowledgments
    Thanks to Christian Jacquenet and Jean-Michel Combes for their
    inputs.
 
-   Thanks to Benoît Claise and Alex Clemm for the comments.
+   Thanks to Benoît Claise, Alex Clemm, and Jéferson Campos Nobre for
+   the comments.
 
    Many of the requirements were extracted from contributions to the IAB
    Next Era of Network Management Operations (NEMOPS) Workshop
-   [I-D.iab-nemops-workshop-report].
+   [RFC9968].
 
    Thanks to Ian Farrer, Brad Peters, Chongfeng Xie, and Qin Wu for
    their contribution to consolidate the requirements.
