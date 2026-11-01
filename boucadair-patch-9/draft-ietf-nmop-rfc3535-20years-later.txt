@@ -205,11 +205,11 @@ Table of Contents
    the "a la carte" approach that is promoted by "X-as-a-service" (XaaS)
    designs, "X" being network, platform, Network Slice [RFC9543], etc.
 
-      Network softwarization refers to the process of softwarization,
-      management, and integration in communication networks and the
-      associated services.  This usualy involves techniques such as
-      Software Defined Networking (SDN) [RFC7149][RFC7426], Network
-      Function Virtualization (NFV) [RFC8568], etc.
+   |  Network softwarization refers to the process of softwarization,
+   |  management, and integration in communication networks and the
+   |  associated services.  This usualy involves techniques such as
+   |  Software Defined Networking (SDN) [RFC7149][RFC7426], Network
+   |  Function Virtualization (NFV) [RFC8568], etc.
 
    XaaS designs assume the availability of data models that are
    dynamically instantiated (along with a set of relevant policies) as a
