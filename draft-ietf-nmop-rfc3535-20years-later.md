@@ -134,6 +134,7 @@ More than three decades of "Internet standardization" have shown that the specif
 
 The situation has changed since network "softwarization" strategies have been disclosed by vendors and operators. From a business standpoint, network "softwarization" is seen as a major transformation effort by operators, because of the flexibility and the "a la carte" approach that is promoted by "X-as-a-service" (XaaS) designs, "X" being network, platform, Network Slice {{?RFC9543}}, etc.
 
+{: quote}
 > Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usualy involves techniques such as  Software Defined Networking (SDN) {{?RFC7149}}{{?RFC7426}}, Network Function Virtualization (NFV) {{?RFC8568}}, etc.
 
 XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
