@@ -205,7 +205,7 @@ OPS-REQ-QUICK-BUT-WELL:
 
 ## Integration Complexity {#sec-int}
 
-One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this assessment holds true but it is unfortunately not yet true for network observability. 
+One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this assessment holds true but it is unfortunately not yet true for network observability.
 
 Collecting YANG metrics from networks is already a struggle due to late arrival of {{?RFC8639}}, {{?RFC8640}}, {{?RFC8641}}, {{?I-D.ietf-netconf-https-notif}}, and {{?I-D.ietf-netconf-udp-notif}} for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in {{?I-D.openconfig-rtgwg-gnmi-spec}} to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.
 
