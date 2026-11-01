@@ -116,7 +116,7 @@ Since the publication of {{!RFC3535}} major advances were achieved in the networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-More than 20 years later after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Readers may also refer to {{?I-D.iab-nemops-workshop-report}}.
+More than 20 years later after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Readers may also refer to {{?RFC9968}}.
 
 # Observations and Operators Requirements {#sec-obs}
 
@@ -133,6 +133,8 @@ More than three decades of "Internet standardization" have shown that the specif
 *	Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.
 
 The situation has changed since network "softwarization" strategies have been disclosed by vendors and operators. From a business standpoint, network "softwarization" is seen as a major transformation effort by operators, because of the flexibility and the "a la carte" approach that is promoted by "X-as-a-service" (XaaS) designs, "X" being network, platform, Network Slice {{?RFC9543}}, etc.
+
+> Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usualy involves techniques such as  Software Defined Networking (SDN) {{?RFC7149}}{{?RFC7426}}, Network Function Virtualization (NFV) {{?RFC8568}}, etc.
 
 XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
 
@@ -151,14 +153,14 @@ OPS-REQ-STRENGTHEN-DM:
 ## Fragmented Ecosystem {#sec-frag}
 
 The current YANG device models ecosystem is fragmented: some standards data models are defined through the IETF, while similar ones are defined in other fora such as Openconfig {{OC}}.
-Unlike service and network models, IETF-defined device models are not widely implemented.
+Unlike service and network models (e.g., L2NM/L2SM and L3NM/L3SM), IETF-defined device models are not widely implemented by vendors as proprietary device models are observed.
 
 OPS-REQ-DM-RATIONALIZE:
 : There is a need to rationalize this space and avoid redundant efforts.
 
 ## The Network Becomes Consumable {#sec-cons}
 
-Network connectivity can support tailored services in terms of Service Level Obejctives (SLOs), for instance, by means of Network Slice Services {{?RFC9543}}. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data).
+Network connectivity can support tailored services in terms of Service Level Obejctives (SLOs), for instance, by means of Network Slice Services {{?RFC9543}}. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data). This exposure is meant to ease integration and invocation by external networks, services, etc.
 
 OPS-REQ-EASE-EXPOSURE:
 : Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations.
@@ -199,15 +201,15 @@ An hybrid approach might be investigated for documenting IETF-endorsed YANG modu
 By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2019}} and automatic documentation tools like {{Widoco2017}}.
 
 OPS-REQ-QUICK-BUT-WELL:
-: Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
+: Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suitable for documenting YANG modules.
 
 ## Integration Complexity {#sec-int}
 
-One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this holds true, for network observability it is unfortunately not yet. This has been confirmed with a set of network operators asking how long it takes from subscribing YANG data to make it accessible to the operator. Minutes, Hours, Days, or Weeks. None of them answered Minutes or Hours. All of them responded Days or Weeks. Hinting manual post processing of YANG data.
+One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use which, according to {{Section 3.2 of ?RFC6244}}, is claimed to be addressed by NETCONF and YANG. For configuration this assessment holds true but it is unfortunately not yet true for network observability. 
 
 Collecting YANG metrics from networks is already a struggle due to late arrival of {{?RFC8639}}, {{?RFC8640}}, {{?RFC8641}}, {{?I-D.ietf-netconf-https-notif}}, and {{?I-D.ietf-netconf-udp-notif}} for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in {{?I-D.openconfig-rtgwg-gnmi-spec}} to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.
 
-When a set of network operators where asked to where operational YANG data needs to be integrated to, the answer homogeneously was Apache Kafka Message Broker and Time Series Databases. There is a need to specify how YANG-Push can be integrated into Apache Kafka and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantic validate able to ensure a consistent data processing.
+When a set of network operators where asked to where operational YANG data needs to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantic validate able to ensure a consistent data processing.
 
 Another challenge is that the subscribed YANG data referenced with 'datastore-subtree-filter' or 'datastore-xpath-filter' breaks semantic integrity which needs to be addressed by either updating {{Section 4 of ?RFC8641}} or proposing a new YANG module being used at the YANG-Push receiver.
 
@@ -256,7 +258,7 @@ OPS-REQ-REUSABILITY:
 
 ## Proprietary YANG Modules, CLI, and Limited Abstraction {#sec-limit}
 
-Leveraging on pluggins, propietary YANG data models or even CLI is still the rule in many operations, sometimes forced by the need of operating legacy infrastructures.
+Leveraging on plugins, proprietary YANG data models or even CLI is still the rule in many operations, sometimes forced by the need of operating legacy infrastructures.
 
 The complexity of developing and maintaining these means of operation is huge, as it is required to to cover many OSes and vendors along the lifetime of the network device.
 
@@ -542,8 +544,8 @@ This document has no IANA actions.
 
 Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.
 
-Thanks to Benoît Claise and Alex Clemm for the comments.
+Thanks to Benoît Claise, Alex Clemm, and Jéferson Campos Nobre for the comments.
 
-Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?I-D.iab-nemops-workshop-report}}.
+Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?RFC9968}}.
 
 Thanks to Ian Farrer, Brad Peters, Chongfeng Xie, and Qin Wu for their contribution to consolidate the requirements.
