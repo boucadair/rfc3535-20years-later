@@ -96,7 +96,7 @@ regarding network management.  The outcome of that workshop
 was documented in the "IAB Network Management Workshop" {{!RFC3535}}
 which was instrumental for developing NETCONF {{?RFC6241}} and YANG {{?RFC6020}}{{?RFC7950}}, in particular.
 
-Since the publication of {{!RFC3535}} major advances were achieved in the network managment area, such as (but not limited to):
+Since the publication of {{!RFC3535}} major advances were achieved in the network management area, such as (but not limited to):
 
 * SDN and Programmable Networks {{?RFC7149}}{{?RFC7426}}
 * Automation {{?RFC8969}}
@@ -128,14 +128,14 @@ Data models can be used to derive required configuration information for both ne
 
 More than three decades of "Internet standardization" have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:
 
-*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standarized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
+*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
 
 *	Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.
 
 The situation has changed since network "softwarization" strategies have been disclosed by vendors and operators. From a business standpoint, network "softwarization" is seen as a major transformation effort by operators, because of the flexibility and the "a la carte" approach that is promoted by "X-as-a-service" (XaaS) designs, "X" being network, platform, Network Slice {{?RFC9543}}, etc.
 
 {: quote}
-> Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usualy involves techniques such as  Software Defined Networking (SDN) {{?RFC7149}}{{?RFC7426}}, Network Function Virtualization (NFV) {{?RFC8568}}, etc.
+> Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usually involves techniques such as  Software Defined Networking (SDN) {{?RFC7149}}{{?RFC7426}}, Network Function Virtualization (NFV) {{?RFC8568}}, etc.
 
 XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
 
@@ -161,7 +161,7 @@ OPS-REQ-DM-RATIONALIZE:
 
 ## The Network Becomes Consumable {#sec-cons}
 
-Network connectivity can support tailored services in terms of Service Level Obejctives (SLOs), for instance, by means of Network Slice Services {{?RFC9543}}. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data). This exposure is meant to ease integration and invocation by external networks, services, etc.
+Network connectivity can support tailored services in terms of Service Level Objectives (SLOs), for instance, by means of Network Slice Services {{?RFC9543}}. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data). This exposure is meant to ease integration and invocation by external networks, services, etc.
 
 OPS-REQ-EASE-EXPOSURE:
 : Focus on protocols and data models to expose network/service capabilities, network-wide services, and related operations.
@@ -181,7 +181,7 @@ OPS-REQ-DM2API:
 Many NETCONF-related features are (being) specified by the IETF, but these features are not widely supported (e.g., YANG-Push {{?RFC8639}}). Some of these are not implemented because of the unbalance between actual operational need vs. complexity.
 
 OPS-REQ-GUIDE-AND-PROFILE:
-: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
+: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
 
 OPS-REQ-ARCH:
 : Need to promote more architecture and framework documents to exemplify the intended use.
@@ -195,9 +195,9 @@ OPS-REQ-REASSESS:
 
 ## Lack of Agile Process for (The Maintenance of) YANG Modules {#sec-agile}
 
-RFCs might not be suited for documenting YANG modules (it takes much too long, especiallly for updates). In the meantime, there is a need for reference data models and "sufficiently stable data models".
+RFCs might not be suited for documenting YANG modules (it takes much too long, especially for updates). In the meantime, there is a need for reference data models and "sufficiently stable data models".
 
-An hybrid approach might be investigated for documenting IETF-endorsed YANG modules, such as considering an RFC to describe the initial module sketch and objectives and an official IETF repository for maintaining intermediate YANG versions.
+A hybrid approach might be investigated for documenting IETF-endorsed YANG modules, such as considering an RFC to describe the initial module sketch and objectives and an official IETF repository for maintaining intermediate YANG versions.
 
 By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2019}} and automatic documentation tools like {{Widoco2017}}.
 
@@ -210,7 +210,7 @@ One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use w
 
 Collecting YANG metrics from networks is already a struggle due to late arrival of {{?RFC8639}}, {{?RFC8640}}, {{?RFC8641}}, {{?I-D.ietf-netconf-https-notif}}, and {{?I-D.ietf-netconf-udp-notif}} for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in {{?I-D.openconfig-rtgwg-gnmi-spec}} to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.
 
-When a set of network operators where asked to where operational YANG data needs to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantic validate able to ensure a consistent data processing.
+When a set of network operators were asked to which operational YANG data need to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantically validatable to ensure a consistent data processing.
 
 Another challenge is that the subscribed YANG data referenced with 'datastore-subtree-filter' or 'datastore-xpath-filter' breaks semantic integrity which needs to be addressed by either updating {{Section 4 of ?RFC8641}} or proposing a new YANG module being used at the YANG-Push receiver.
 
@@ -248,7 +248,7 @@ OPS-REQ-LOSSLESS:
 
 Network Telemetry, as described in {{?RFC9232}}, involve a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) {{?RFC7854}} adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX {{?RFC7011}}{{?RFC7012}} can be applied according to {{?RFC5472}} to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in {{?RFC5476}} and applied to IPFIX in {{?RFC5477}} and aggregation as defined in {{?RFC7015}} for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.
 
-{{?RFC9232}} is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly good aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In {{Section 4.2 of ?RFC7854}} timestamps are optional and sysName {{?RFC1213}} is only carried in the BMP initiation message ({{Section 4.3 of ?RFC7854}}), while the message header of IPFIX defined in {{Section 4.3 of ?RFC7011}} lacks the 'sysName' definition.
+{{?RFC9232}} is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly well aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In {{Section 4.2 of ?RFC7854}} timestamps are optional and sysName {{?RFC1213}} is only carried in the BMP initiation message ({{Section 4.3 of ?RFC7854}}), while the message header of IPFIX defined in {{Section 4.3 of ?RFC7011}} lacks the 'sysName' definition.
 
 The lack of information from where the data is being pushed from is only known to the Network Telemetry data collection due to the transport session being established from the network node exporting the information. When Network Telemetry messages are being transformed and forwarded, this information is being lost. Therefore, it is common among network operators to augment 'sysName' and other metadata at the data collection.
 
@@ -261,9 +261,9 @@ OPS-REQ-REUSABILITY:
 
 Leveraging on plugins, proprietary YANG data models or even CLI is still the rule in many operations, sometimes forced by the need of operating legacy infrastructures.
 
-The complexity of developing and maintaining these means of operation is huge, as it is required to to cover many OSes and vendors along the lifetime of the network device.
+The complexity of developing and maintaining these means of operation is huge, as it is required to cover many OSes and vendors along the lifetime of the network device.
 
-Network models for the realization of services provide some "level" of abstraction and then allows for for more automation.
+Network models for the realization of services provide some "level" of abstraction and then allows for more automation.
 
 ## Distinct Networks, Distinct Management Requirements {#sec-distinct}
 
@@ -274,7 +274,7 @@ Likewise, such diversity of services also require different management capabilit
 This reality is different from the one existing at the time of {{?RFC3535}}, and as such, the new identified needs can require from novel approaches to guarantee the aforementioned co-existence of services. Some networks have specific network management requirements such as the need for asynchronous operations or constraints on data compactness. An example of such networks is Delay-Tolerant Networking (DTN) {{?RFC4838}} or DetNet {{?RFC8557}}.
 
 OPS-REQ-NEW-NEED:
-: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.
+: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended rather than defining network management technologies that are applicable to a single deployment context.
 
 ## Implications of External Dependency {#sec-dep}
 
@@ -306,10 +306,10 @@ New solutions proposed by WGs such as NETMOD and NETCONF very often lack an impl
 
 Schema-mount allegedly has only one known implementation because of the complexity of the solution. That means the IETF most likely spent lots of cycles for something which won't be deployed ever.
 
-While hackathons have improved the situation, the availablability of implementations is concerning. For open-source, 'sysrepo'/'libyang' are decent choices.
+While hackathons have improved the situation, the availability of implementations is concerning. For open-source, 'sysrepo'/'libyang' are decent choices.
 
 OPS-REQ-READILY-IMPLEM:
-: The availablability of implementations is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.
+: The availability of implementations is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.
 
 ## Tooling & Skills
 
@@ -340,14 +340,14 @@ OPS-REQ-BRIDGE:
 
 ## New Service Approaches {#sec-new}
 
-The virtualization trend have made posible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this appraoch seems to be insuficient for future services demanding stringent requirements in terms of SLOs.
+The virtualization trend have made possible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this approach seems to be insufficient for future services demanding stringent requirements in terms of SLOs.
 
 OPS-REQ-GLUE:
 : The distinct approaches followed in both the compute and the network environments makes necessary to define suitable mechanisms for enabling an efficient interplay, while highly automating the overall service delivery procedure.
 
-## Many Solutions for the Same Problem, but Lack of Clear Applicably Guidance {#sec-guid}
+## Many Solutions for the Same Problem, but Lack of Clear Applicability Guidance {#sec-guid}
 
-There are several solutions that were standardized for network management purposes. For example, management of ACLs by means to BGP FlowSpec {{?RFC8955}}{{?RFC8956}} or  by means of NETCONF/YANG {{?RFC8519}}. There is no cross referencing between the two standards or delimits its applicability scope vs the other approach.
+There are several solutions that were standardized for network management purposes. For example, management of ACLs by means of BGP FlowSpec {{?RFC8955}}{{?RFC8956}} or  by means of NETCONF/YANG {{?RFC8519}}. There is no cross referencing between the two standards or delimits its applicability scope vs the other approach.
 
 Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.
 
@@ -545,7 +545,7 @@ This document has no IANA actions.
 
 Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.
 
-Thanks to Benoît Claise, Alex Clemm, and Jéferson Campos Nobre for the comments.
+Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, and Paul Aitken for the comments.
 
 Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?RFC9968}}.
 
