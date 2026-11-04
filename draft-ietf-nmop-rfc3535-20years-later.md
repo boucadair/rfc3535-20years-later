@@ -191,7 +191,7 @@ OPS-REQ-ARCH:
 > Such a document would serve as a guide and reference for implementers and others seeking information on 'NETCONF/RESTCONF/YANG'-related RFCs.
 
 OPS-REQ-REASSESS:
-: Additionally, reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
+: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
 
 ## Lack of Agile Process for (The Maintenance of) YANG Modules {#sec-agile}
 
@@ -320,7 +320,7 @@ OPS-REQ-IT-INTEGRATION:
 
 ### IETF Support for Better YANG Integration {#sec-ietf-in}
 
-OPS-REQ-IETF-TOOLS
+OPS-REQ-IETF-TOOLS:
 : Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration.
 
 ### Open-source Tools {#sec-client}
@@ -383,7 +383,7 @@ OPS-REQ-ARCH:
 : Need to promote more architecture and framework documents to exemplify the intended use.
 
 OPS-REQ-REASSESS:
-: Reassess the value of some IETF proposals, including compared to competing or emerging solutions (e.g., gNMI).
+: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
 
 OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
@@ -455,7 +455,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-EASE-EXPOSURE   |	X   |     X    |      X		   |      X         |           |            	               |                |
 |OPS-REQ-NW-API-DISCOVERY|	    |          |      X		   |      X         |           |            	               |                |
 |OPS-REQ-DM2API          |	    |          |      X		   |                |           |            	               |                |
-|OPS-REQ-GUIDE-PROFILE   |	X   |     X    |      X		   |                |           |            	               |                |
+|OPS-REQ-GUIDE-AND-PROFILE   |	X   |     X    |      X		   |                |           |            	               |                |
 |OPS-REQ-ARCH            |     |     X    |      X		   |                |           |            	               |                |
 |OPS-REQ-REASSESS        |	    |     X    |       		   |                |           |            	               |                |
 |OPS-REQ-QUICK-BUT-WELL  |	X   |     X    |      X		   |                |           |            	               |                |	
@@ -519,11 +519,11 @@ This section provides a consolidated view of main requirements that takes into a
   can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION).
 * Progress much faster (OPS-REQ-QUICK-BUT-WELL, OPS-REQ-TIMELY-DM).
 * Implement minimal functionality, not bells and whistles (OPS-REQ-ITERATE).
-* Have running code while a specification is under development (OPS-REQ-READILY-IMPLEM, OPS-REQ-TOOLS).
+* Have running code while a specification is under development (OPS-REQ-READILY-IMPLEM, OPS-REQ-CLIENT-TOOLS).
 * Have vendors and operators on board at the time of developing a network management solution.
 * Provide independent compliance suites to validate features (OPS-REQ-GUIDE-AND-PROFILE).
 * Need for means to correlate data learned from different means (OPS-REQ-REUSABILITY).
-* Investigate approaches to ease adoption and integration into an operator’s environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API, OPS-REQ-INTEGRATION).
+* Investigate approaches to ease adoption and integration into an operator's environments (OPS-REQ-EASE-EXPOSURE, OPS-REQ-DM2API, OPS-REQ-INTEGRATION).
 * Network-centric approaches have limits, need to better integrate and learn from techniques in other domains (OPS-REQ-BRIDGE).
 
 # Operational Considerations
@@ -533,6 +533,8 @@ This document exclusively focuses on operations and management requirements. The
 # Security Considerations
 
 This document does not define any protocol or architecture.
+
+A requirement related to security management aspects of network management is covered in OPS-REQ-GUIDE-AND-PROFILE.
 
 # IANA Considerations
 
