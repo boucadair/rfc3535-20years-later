@@ -116,7 +116,7 @@ Since the publication of {{!RFC3535}} major advances were achieved in the networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-More than 20 years later after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Readers may also refer to {{?RFC9968}}.
+More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Readers may also refer to {{?RFC9968}}.
 
 # Observations and Operators Requirements {#sec-obs}
 
@@ -128,7 +128,7 @@ Data models can be used to derive required configuration information for both ne
 
 More than three decades of "Internet standardization" have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:
 
-*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
+*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specifi data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
 
 *	Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.
 
@@ -246,7 +246,7 @@ OPS-REQ-LOSSLESS:
 
 ## (In)Consistent Data Structures in Network Protocols for Data Export {#sec-con}
 
-Network Telemetry, as described in {{?RFC9232}}, involve a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) {{?RFC7854}} adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX {{?RFC7011}}{{?RFC7012}} can be applied according to {{?RFC5472}} to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in {{?RFC5476}} and applied to IPFIX in {{?RFC5477}} and aggregation as defined in {{?RFC7015}} for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.
+Network Telemetry, as described in {{?RFC9232}}, involves a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) {{?RFC7854}} adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX {{?RFC7011}}{{?RFC7012}} can be applied according to {{?RFC5472}} to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in {{?RFC5476}} and applied to IPFIX in {{?RFC5477}} and aggregation as defined in {{?RFC7015}} for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.
 
 {{?RFC9232}} is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly well aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In {{Section 4.2 of ?RFC7854}} timestamps are optional and sysName {{?RFC1213}} is only carried in the BMP initiation message ({{Section 4.3 of ?RFC7854}}), while the message header of IPFIX defined in {{Section 4.3 of ?RFC7011}} lacks the 'sysName' definition.
 
@@ -296,7 +296,7 @@ OPS-REQ-TIMELY-DM:
 : Consider having YANG as part of the protocol specification/change where possible, or have the YANG document progress in parallel.
 That may slow down the protocol specification, though.
 
-## Lack of Implementation of Proposed Solutions {#sec-impl}
+## Lack of Implementations of Proposed Solutions {#sec-impl}
 
 New solutions proposed by WGs such as NETMOD and NETCONF very often lack an implementation or only have a partial implementation. The situation has improved with the last hackathons (e.g., for YANG-Push), but these solutions became RFCs without a known implementation:
 
