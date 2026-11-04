@@ -334,7 +334,7 @@ Table of Contents
    By drawing a parallel between YANG data models and the concept of
    ontology used in the field of Semantic Web, the topic of YANG module
    maintenance could greatly benefit from proven methodologies in
-   knowledge engineering such as [LOT2019] and automatic documentation
+   knowledge engineering such as [LOT2022] and automatic documentation
    tools like [Widoco2017].
 
    OPS-REQ-QUICK-BUT-WELL:  Develop a more agile process for the
@@ -1074,7 +1074,7 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-tailhardat-
               nmop-incident-management-noria-05>.
 
-   [LOT2019]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
+   [LOT2022]  Poveda-Villalon, M., Fernandez-Izquierdo, A., Fernandez-
               Lopez, M., and R. Garcia-Castro, "LOT: An industrial
               oriented ontology engineering framework", 2022,
               <https://doi.org/10.1016/j.engappai.2022.104755>.
