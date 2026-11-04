@@ -186,8 +186,8 @@ Table of Contents
 
    *  For more than 30 years, legacy network equipment manufacturers
       have considered their technology as a competitive advantage,
-      thereby leading to proprietary, vendor-specifi data models and the
-      burden of vendor lock-ins.  For example, there are more YANG
+      thereby leading to proprietary, vendor-specific data models and
+      the burden of vendor lock-ins.  For example, there are more YANG
       proprietary modules than standardized ones.  At the time of
       writing, [YC] lists 13661 unique proprietary YANG modules vs. 991
       Standards modules.
