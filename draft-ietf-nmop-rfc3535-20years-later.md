@@ -69,7 +69,7 @@ informative:
     author:
       - name: Daniel Garijo
     target: http://dgarijo.com/papers/widoco-iswc2017.pdf
-  LOT2019:
+  LOT2022:
     title: "LOT: An industrial oriented ontology engineering framework"
     date: 2022
     author:
@@ -199,7 +199,7 @@ RFCs might not be suited for documenting YANG modules (it takes much too long, e
 
 A hybrid approach might be investigated for documenting IETF-endorsed YANG modules, such as considering an RFC to describe the initial module sketch and objectives and an official IETF repository for maintaining intermediate YANG versions.
 
-By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2019}} and automatic documentation tools like {{Widoco2017}}.
+By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as {{LOT2022}} and automatic documentation tools like {{Widoco2017}}.
 
 OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suitable for documenting YANG modules.
