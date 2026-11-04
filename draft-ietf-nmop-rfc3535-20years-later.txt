@@ -85,7 +85,7 @@ Table of Contents
      2.13. Implications of External Dependency
      2.14. Too Much Time Between Publication of New Networking
             Functionality and the Associated YANG
-     2.15. Lack of Implementation of Proposed Solutions
+     2.15. Lack of Implementations of Proposed Solutions
      2.16. Tooling & Skills
        2.16.1.  Integration with "native" IT Tooling
        2.16.2.  IETF Support for Better YANG Integration
@@ -155,7 +155,7 @@ Table of Contents
    See also "An Overview of the IETF Network Management Standards"
    [RFC6632].
 
-   More than 20 years later after the publication of [RFC3535], new
+   More than 20 years after the publication of [RFC3535], new
    requirements on network management operations are emerging from the
    operators.  This document captures these requirements that reflect
    the progress in this area.  Readers may also refer to [RFC9968].
@@ -186,8 +186,8 @@ Table of Contents
 
    *  For more than 30 years, legacy network equipment manufacturers
       have considered their technology as a competitive advantage,
-      thereby leading to proprietary, vendor-specific, data models and
-      the burden of vendor lock-ins.  For example, there are more YANG
+      thereby leading to proprietary, vendor-specifi data models and the
+      burden of vendor lock-ins.  For example, there are more YANG
       proprietary modules than standardized ones.  At the time of
       writing, [YC] lists 13661 unique proprietary YANG modules vs. 991
       Standards modules.
@@ -420,7 +420,7 @@ Table of Contents
 2.10.  (In)Consistent Data Structures in Network Protocols for Data
        Export
 
-   Network Telemetry, as described in [RFC9232], involve a set of
+   Network Telemetry, as described in [RFC9232], involves a set of
    protocols.  Due to the different requirements, one Network Telemetry
    protocol doesn't address all needs.  This is mainly due to the nature
    of the subscribed data.  BGP Monitoring Protocol (BMP) [RFC7854] adds
@@ -561,7 +561,7 @@ Table of Contents
       progress in parallel.  That may slow down the protocol
       specification, though.
 
-2.15.  Lack of Implementation of Proposed Solutions
+2.15.  Lack of Implementations of Proposed Solutions
 
    New solutions proposed by WGs such as NETMOD and NETCONF very often
    lack an implementation or only have a partial implementation.  The
