@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 5 May 2027                                        O. G. D. Dios
+Expires: 8 May 2027                                        O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         1 November 2026
+                                                         4 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 May 2027.
+   This Internet-Draft will expire on 8 May 2027.
 
 Copyright Notice
 
@@ -93,7 +93,7 @@ Table of Contents
        2.16.4.  Skills
      2.17. New Service Approaches
      2.18. Many Solutions for the Same Problem, but Lack of Clear
-            Applicably Guidance
+            Applicability Guidance
    3.  Updated Operators' Requirements
      3.1.  Summary
      3.2.  Categorization
@@ -119,7 +119,7 @@ Table of Contents
    NETCONF [RFC6241] and YANG [RFC6020][RFC7950], in particular.
 
    Since the publication of [RFC3535] major advances were achieved in
-   the network managment area, such as (but not limited to):
+   the network management area, such as (but not limited to):
 
    *  SDN and Programmable Networks [RFC7149][RFC7426]
 
@@ -188,7 +188,7 @@ Table of Contents
       have considered their technology as a competitive advantage,
       thereby leading to proprietary, vendor-specific, data models and
       the burden of vendor lock-ins.  For example, there are more YANG
-      proprietary modules than standarized ones.  At the time of
+      proprietary modules than standardized ones.  At the time of
       writing, [YC] lists 13661 unique proprietary YANG modules vs. 991
       Standards modules.
 
@@ -207,7 +207,7 @@ Table of Contents
 
    |  Network softwarization refers to the process of softwarization,
    |  management, and integration in communication networks and the
-   |  associated services.  This usualy involves techniques such as
+   |  associated services.  This usually involves techniques such as
    |  Software Defined Networking (SDN) [RFC7149][RFC7426], Network
    |  Function Virtualization (NFV) [RFC8568], etc.
 
@@ -255,7 +255,7 @@ Table of Contents
 2.3.  The Network Becomes Consumable
 
    Network connectivity can support tailored services in terms of
-   Service Level Obejctives (SLOs), for instance, by means of Network
+   Service Level Objectives (SLOs), for instance, by means of Network
    Slice Services [RFC9543].  This approach of "consuming the network"
    flexibly and dynamically is made possible by enabling means of
    exposing network capabilities to either internal or external
@@ -302,7 +302,7 @@ Table of Contents
       key features, along with appropriate justifications, will help
       foster more implementations that meet operators’ needs).  This
       also covers security management aspects of network management.
-      Additionaly, consider independent compliance suites to validate
+      Additionally, consider independent compliance suites to validate
       functions/features/etc.
 
    OPS-REQ-ARCH:  Need to promote more architecture and framework
@@ -323,13 +323,13 @@ Table of Contents
 2.6.  Lack of Agile Process for (The Maintenance of) YANG Modules
 
    RFCs might not be suited for documenting YANG modules (it takes much
-   too long, especiallly for updates).  In the meantime, there is a need
+   too long, especially for updates).  In the meantime, there is a need
    for reference data models and "sufficiently stable data models".
 
-   An hybrid approach might be investigated for documenting IETF-
-   endorsed YANG modules, such as considering an RFC to describe the
-   initial module sketch and objectives and an official IETF repository
-   for maintaining intermediate YANG versions.
+   A hybrid approach might be investigated for documenting IETF-endorsed
+   YANG modules, such as considering an RFC to describe the initial
+   module sketch and objectives and an official IETF repository for
+   maintaining intermediate YANG versions.
 
    By drawing a parallel between YANG data models and the concept of
    ontology used in the field of Semantic Web, the topic of YANG module
@@ -361,13 +361,13 @@ Table of Contents
    Systems (OSes) due to the lack of standardization, specifically for
    the metadata which would ensure machine readability.
 
-   When a set of network operators where asked to where operational YANG
-   data needs to be integrated to, the answer homogeneously was message
+   When a set of network operators were asked to which operational YANG
+   data need to be integrated to, the answer homogeneously was message
    brokers and Time Series Databases.  There is a need to specify how
    YANG-Push can be integrated into message brokers and references
    needed YANG-Push extensions and YANG schema registry development.
    The YANG-Push extensions addressing needs to make YANG-Push messages
-   machine readable and against semantic validate able to ensure a
+   machine readable and against semantically validatable to ensure a
    consistent data processing.
 
    Another challenge is that the subscribed YANG data referenced with
@@ -437,7 +437,7 @@ Table of Contents
    [RFC9232] is an informational document and does not specify what
    these Network Telemetry protocols should have in common to ensure
    consistent data structures for data export.  While data types are
-   fairly good aligned, a lack of metadata standardization among the
+   fairly well aligned, a lack of metadata standardization among the
    Network Telemetry protocols is observed.  In particular describing
    from where the metrics has been exported from and timestamping.  In
    Section 4.2 of [RFC7854] timestamps are optional and sysName
@@ -471,11 +471,11 @@ Table of Contents
    operating legacy infrastructures.
 
    The complexity of developing and maintaining these means of operation
-   is huge, as it is required to to cover many OSes and vendors along
-   the lifetime of the network device.
+   is huge, as it is required to cover many OSes and vendors along the
+   lifetime of the network device.
 
    Network models for the realization of services provide some "level"
-   of abstraction and then allows for for more automation.
+   of abstraction and then allows for more automation.
 
 2.12.  Distinct Networks, Distinct Management Requirements
 
@@ -505,9 +505,9 @@ Table of Contents
 
    OPS-REQ-NEW-NEED:  Profiling main network management technologies
       (e.g., recommend customized transport parameters such as timeouts
-      and transport services) is recommended than defining network
-      management technologies that are applicable to a single deployment
-      context.
+      and transport services) is recommended rather than defining
+      network management technologies that are applicable to a single
+      deployment context.
 
 2.13.  Implications of External Dependency
 
@@ -579,11 +579,11 @@ Table of Contents
    the complexity of the solution.  That means the IETF most likely
    spent lots of cycles for something which won't be deployed ever.
 
-   While hackathons have improved the situation, the availablability of
+   While hackathons have improved the situation, the availability of
    implementations is concerning.  For open-source, 'sysrepo'/'libyang'
    are decent choices.
 
-   OPS-REQ-READILY-IMPLEM:  The availablability of implementations is
+   OPS-REQ-READILY-IMPLEM:  The availability of implementations is
       concerning.  Consider catalyst approaches to trigger more (open)
       implementations, especially during the development of protocols/
       extensions.
@@ -624,14 +624,14 @@ Table of Contents
 
 2.17.  New Service Approaches
 
-   The virtualization trend have made posible to dynamically instantiate
-   Service Functions (SFs) in distributed compute facilities in the form
-   of virtual machines or containers, as micro-services.  The
-   instantiation of the SFs is governed by cloud management systems, as
-   it is the connectivity among the different instances or micro-
+   The virtualization trend have made possible to dynamically
+   instantiate Service Functions (SFs) in distributed compute facilities
+   in the form of virtual machines or containers, as micro-services.
+   The instantiation of the SFs is governed by cloud management systems,
+   as it is the connectivity among the different instances or micro-
    services.  That connectivity is typically realized by using overlay
    mechanisms, without any further interaction with the network.
-   However, this appraoch seems to be insuficient for future services
+   However, this approach seems to be insufficient for future services
    demanding stringent requirements in terms of SLOs.
 
    OPS-REQ-GLUE:  The distinct approaches followed in both the compute
@@ -639,11 +639,11 @@ Table of Contents
       mechanisms for enabling an efficient interplay, while highly
       automating the overall service delivery procedure.
 
-2.18.  Many Solutions for the Same Problem, but Lack of Clear Applicably
-       Guidance
+2.18.  Many Solutions for the Same Problem, but Lack of Clear
+       Applicability Guidance
 
    There are several solutions that were standardized for network
-   management purposes.  For example, management of ACLs by means to BGP
+   management purposes.  For example, management of ACLs by means of BGP
    FlowSpec [RFC8955][RFC8956] or by means of NETCONF/YANG [RFC8519].
    There is no cross referencing between the two standards or delimits
    its applicability scope vs the other approach.
@@ -1008,9 +1008,9 @@ Table of Contents
    [I-D.ietf-core-comi]
               Veillette, M., Van der Stok, P., Pelov, A., Bierman, A.,
               and C. Bormann, "CoAP Management Interface (CORECONF)",
-              Work in Progress, Internet-Draft, draft-ietf-core-comi-21,
-              2 March 2026, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-core-comi-21>.
+              Work in Progress, Internet-Draft, draft-ietf-core-comi-22,
+              2 November 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-core-comi-22>.
 
    [I-D.ietf-grow-peering-api]
               Aguado, C., Griswold, M., Ramseyer, J., Servin, A.,
@@ -1300,8 +1300,8 @@ Acknowledgments
    Thanks to Christian Jacquenet and Jean-Michel Combes for their
    inputs.
 
-   Thanks to Benoît Claise, Alex Clemm, and Jéferson Campos Nobre for
-   the comments.
+   Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, and Paul
+   Aitken for the comments.
 
    Many of the requirements were extracted from contributions to the IAB
    Next Era of Network Management Operations (NEMOPS) Workshop

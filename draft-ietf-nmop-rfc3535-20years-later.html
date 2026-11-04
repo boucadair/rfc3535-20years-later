@@ -15,24 +15,24 @@
 These requirements reflect advances in this field since the publication of "IAB Network Management Workshop" (RFC 3535), which
 was instrumental for developing many key technologies that are widely deployed. 
     ' name="description">
-<meta content="xml2rfc 3.34.1" name="generator">
+<meta content="xml2rfc 3.35.0" name="generator">
 <meta content="network management" name="keyword">
 <meta content="future networks" name="keyword">
 <meta content="draft-ietf-nmop-rfc3535-20years-later-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.1
-    Python 3.14.8
-    ConfigArgParse 1.8.0
+  xml2rfc 3.35.0
+    Python 3.14.10
+    ConfigArgParse 1.9.0
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.13.4
+    platformdirs 4.14.3
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.9.2
+    wcwidth 0.9.4
 -->
 <link href="draft-ietf-nmop-rfc3535-20years-later.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1052,7 +1052,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Boucadair, et al.</td>
-<td class="center">Expires 5 May 2027</td>
+<td class="center">Expires 8 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg {
 <dd class="internet-draft">draft-ietf-nmop-rfc3535-20years-later-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-11-01" class="published">1 November 2026</time>
+<time datetime="2026-11-04" class="published">4 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-05">5 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-08">8 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1130,7 +1130,7 @@ was instrumental for developing many key technologies that are widely deployed.<
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 5 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1231,7 +1231,7 @@ was instrumental for developing many key technologies that are widely deployed.<
                 <p id="section-toc.1-1.2.2.17.1"><a href="#section-2.17" class="auto internal xref">2.17</a>. <a href="#name-new-service-approaches" class="internal xref">New Service Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.18">
-                <p id="section-toc.1-1.2.2.18.1"><a href="#section-2.18" class="auto internal xref">2.18</a>. <a href="#name-many-solutions-for-the-same" class="internal xref">Many Solutions for the Same Problem, but Lack of Clear Applicably Guidance</a></p>
+                <p id="section-toc.1-1.2.2.18.1"><a href="#section-2.18" class="auto internal xref">2.18</a>. <a href="#name-many-solutions-for-the-same" class="internal xref">Many Solutions for the Same Problem, but Lack of Clear Applicability Guidance</a></p>
 </li>
             </ul>
 </li>
@@ -1296,7 +1296,7 @@ protocol developers, and to guide the IETF to focus on work
 regarding network management.  The outcome of that workshop
 was documented in the "IAB Network Management Workshop" <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>
 which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span> and YANG <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]</span><span>[<a href="#RFC7950" class="cite xref">RFC7950</a>]</span>, in particular.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">Since the publication of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> major advances were achieved in the network managment area, such as (but not limited to):<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">Since the publication of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> major advances were achieved in the network management area, such as (but not limited to):<a href="#section-1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-3.1">
           <p id="section-1-3.1.1">SDN and Programmable Networks <span>[<a href="#RFC7149" class="cite xref">RFC7149</a>]</span><span>[<a href="#RFC7426" class="cite xref">RFC7426</a>]</span><a href="#section-1-3.1.1" class="pilcrow">¶</a></p>
@@ -1363,7 +1363,7 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
 <p id="section-2.1-3">More than three decades of "Internet standardization" have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.1-4.1">
-            <p id="section-2.1-4.1.1">For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standarized ones. At the time of writing, <span>[<a href="#YC" class="cite xref">YC</a>]</span> lists 13661 unique proprietary YANG modules vs. 991 Standards modules.<a href="#section-2.1-4.1.1" class="pilcrow">¶</a></p>
+            <p id="section-2.1-4.1.1">For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific, data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, <span>[<a href="#YC" class="cite xref">YC</a>]</span> lists 13661 unique proprietary YANG modules vs. 991 Standards modules.<a href="#section-2.1-4.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-2.1-4.2">
             <p id="section-2.1-4.2.1">Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.<a href="#section-2.1-4.2.1" class="pilcrow">¶</a></p>
@@ -1371,7 +1371,7 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
         </ul>
 <p id="section-2.1-5">The situation has changed since network "softwarization" strategies have been disclosed by vendors and operators. From a business standpoint, network "softwarization" is seen as a major transformation effort by operators, because of the flexibility and the "a la carte" approach that is promoted by "X-as-a-service" (XaaS) designs, "X" being network, platform, Network Slice <span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span>, etc.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
 <blockquote id="section-2.1-6">
-          <p id="section-2.1-6.1">Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usualy involves techniques such as  Software Defined Networking (SDN) <span>[<a href="#RFC7149" class="cite xref">RFC7149</a>]</span><span>[<a href="#RFC7426" class="cite xref">RFC7426</a>]</span>, Network Function Virtualization (NFV) <span>[<a href="#RFC8568" class="cite xref">RFC8568</a>]</span>, etc.<a href="#section-2.1-6.1" class="pilcrow">¶</a></p>
+          <p id="section-2.1-6.1">Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usually involves techniques such as  Software Defined Networking (SDN) <span>[<a href="#RFC7149" class="cite xref">RFC7149</a>]</span><span>[<a href="#RFC7426" class="cite xref">RFC7426</a>]</span>, Network Function Virtualization (NFV) <span>[<a href="#RFC8568" class="cite xref">RFC8568</a>]</span>, etc.<a href="#section-2.1-6.1" class="pilcrow">¶</a></p>
 </blockquote>
 <p id="section-2.1-7">XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:<a href="#section-2.1-7" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1429,7 +1429,7 @@ Unlike service and network models (e.g., L2NM/L2SM and L3NM/L3SM), IETF-defined 
         <h3 id="name-the-network-becomes-consuma">
 <a href="#section-2.3" class="section-number selfRef">2.3. </a><a href="#name-the-network-becomes-consuma" class="section-name selfRef">The Network Becomes Consumable</a>
         </h3>
-<p id="section-2.3-1">Network connectivity can support tailored services in terms of Service Level Obejctives (SLOs), for instance, by means of Network Slice Services <span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span>. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data). This exposure is meant to ease integration and invocation by external networks, services, etc.<a href="#section-2.3-1" class="pilcrow">¶</a></p>
+<p id="section-2.3-1">Network connectivity can support tailored services in terms of Service Level Objectives (SLOs), for instance, by means of Network Slice Services <span>[<a href="#RFC9543" class="cite xref">RFC9543</a>]</span>. This approach of "consuming the network" flexibly and dynamically is made possible by enabling means of exposing network capabilities to either internal or external applications. Then, network management is no longer limited to collect network status information, but it should be extended to permit the exposure of resources, capabilities, functionality, and associated information (e.g., inventory-based data). This exposure is meant to ease integration and invocation by external networks, services, etc.<a href="#section-2.3-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.3-2">
           <dt id="section-2.3-2.1">OPS-REQ-EASE-EXPOSURE:</dt>
           <dd style="margin-left: 1.5em" id="section-2.3-2.2">
@@ -1468,7 +1468,7 @@ Unlike service and network models (e.g., L2NM/L2SM and L3NM/L3SM), IETF-defined 
 <span class="break"></span><dl class="dlParallel" id="section-2.5-2">
           <dt id="section-2.5-2.1">OPS-REQ-GUIDE-AND-PROFILE:</dt>
           <dd style="margin-left: 1.5em" id="section-2.5-2.2">
-            <p id="section-2.5-2.2.1">The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.<a href="#section-2.5-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-2.5-2.2.1">The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.<a href="#section-2.5-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-2.5-2.3">OPS-REQ-ARCH:</dt>
@@ -1498,8 +1498,8 @@ Such a document would serve as a guide and reference for implementers and others
         <h3 id="name-lack-of-agile-process-for-t">
 <a href="#section-2.6" class="section-number selfRef">2.6. </a><a href="#name-lack-of-agile-process-for-t" class="section-name selfRef">Lack of Agile Process for (The Maintenance of) YANG Modules</a>
         </h3>
-<p id="section-2.6-1">RFCs might not be suited for documenting YANG modules (it takes much too long, especiallly for updates). In the meantime, there is a need for reference data models and "sufficiently stable data models".<a href="#section-2.6-1" class="pilcrow">¶</a></p>
-<p id="section-2.6-2">An hybrid approach might be investigated for documenting IETF-endorsed YANG modules, such as considering an RFC to describe the initial module sketch and objectives and an official IETF repository for maintaining intermediate YANG versions.<a href="#section-2.6-2" class="pilcrow">¶</a></p>
+<p id="section-2.6-1">RFCs might not be suited for documenting YANG modules (it takes much too long, especially for updates). In the meantime, there is a need for reference data models and "sufficiently stable data models".<a href="#section-2.6-1" class="pilcrow">¶</a></p>
+<p id="section-2.6-2">A hybrid approach might be investigated for documenting IETF-endorsed YANG modules, such as considering an RFC to describe the initial module sketch and objectives and an official IETF repository for maintaining intermediate YANG versions.<a href="#section-2.6-2" class="pilcrow">¶</a></p>
 <p id="section-2.6-3">By drawing a parallel between YANG data models and the concept of ontology used in the field of Semantic Web, the topic of YANG module maintenance could greatly benefit from proven methodologies in knowledge engineering such as <span>[<a href="#LOT2019" class="cite xref">LOT2019</a>]</span> and automatic documentation tools like <span>[<a href="#Widoco2017" class="cite xref">Widoco2017</a>]</span>.<a href="#section-2.6-3" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.6-4">
           <dt id="section-2.6-4.1">OPS-REQ-QUICK-BUT-WELL:</dt>
@@ -1517,7 +1517,7 @@ Such a document would serve as a guide and reference for implementers and others
         </h3>
 <p id="section-2.7-1">One of the requirements listed in <span><a href="https://rfc-editor.org/rfc/rfc3535#section-3" class="relref">Section 3</a> of [<a href="#RFC3535" class="cite xref">RFC3535</a>]</span> is the ease of use which, according to <span><a href="https://rfc-editor.org/rfc/rfc6244#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC6244" class="cite xref">RFC6244</a>]</span>, is claimed to be addressed by NETCONF and YANG. For configuration this assessment holds true but it is unfortunately not yet true for network observability.<a href="#section-2.7-1" class="pilcrow">¶</a></p>
 <p id="section-2.7-2">Collecting YANG metrics from networks is already a struggle due to late arrival of <span>[<a href="#RFC8639" class="cite xref">RFC8639</a>]</span>, <span>[<a href="#RFC8640" class="cite xref">RFC8640</a>]</span>, <span>[<a href="#RFC8641" class="cite xref">RFC8641</a>]</span>, <span>[<a href="#I-D.ietf-netconf-https-notif" class="cite xref">I-D.ietf-netconf-https-notif</a>]</span>, and <span>[<a href="#I-D.ietf-netconf-udp-notif" class="cite xref">I-D.ietf-netconf-udp-notif</a>]</span> for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in <span>[<a href="#I-D.openconfig-rtgwg-gnmi-spec" class="cite xref">I-D.openconfig-rtgwg-gnmi-spec</a>]</span> to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.<a href="#section-2.7-2" class="pilcrow">¶</a></p>
-<p id="section-2.7-3">When a set of network operators where asked to where operational YANG data needs to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantic validate able to ensure a consistent data processing.<a href="#section-2.7-3" class="pilcrow">¶</a></p>
+<p id="section-2.7-3">When a set of network operators were asked to which operational YANG data need to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantically validatable to ensure a consistent data processing.<a href="#section-2.7-3" class="pilcrow">¶</a></p>
 <p id="section-2.7-4">Another challenge is that the subscribed YANG data referenced with 'datastore-subtree-filter' or 'datastore-xpath-filter' breaks semantic integrity which needs to be addressed by either updating <span><a href="https://rfc-editor.org/rfc/rfc8641#section-4" class="relref">Section 4</a> of [<a href="#RFC8641" class="cite xref">RFC8641</a>]</span> or proposing a new YANG module being used at the YANG-Push receiver.<a href="#section-2.7-4" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.7-5">
           <dt id="section-2.7-5.1">OPS-REQ-INTEGRATION:</dt>
@@ -1582,7 +1582,7 @@ is no programmatic approach to ensure lossless mappings.<a href="#section-2.9-1"
 <a href="#section-2.10" class="section-number selfRef">2.10. </a><a href="#name-inconsistent-data-structure" class="section-name selfRef">(In)Consistent Data Structures in Network Protocols for Data Export</a>
         </h3>
 <p id="section-2.10-1">Network Telemetry, as described in <span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span>, involve a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) <span>[<a href="#RFC7854" class="cite xref">RFC7854</a>]</span> adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX <span>[<a href="#RFC7011" class="cite xref">RFC7011</a>]</span><span>[<a href="#RFC7012" class="cite xref">RFC7012</a>]</span> can be applied according to <span>[<a href="#RFC5472" class="cite xref">RFC5472</a>]</span> to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in <span>[<a href="#RFC5476" class="cite xref">RFC5476</a>]</span> and applied to IPFIX in <span>[<a href="#RFC5477" class="cite xref">RFC5477</a>]</span> and aggregation as defined in <span>[<a href="#RFC7015" class="cite xref">RFC7015</a>]</span> for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.<a href="#section-2.10-1" class="pilcrow">¶</a></p>
-<p id="section-2.10-2"><span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span> is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly good aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In <span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span> timestamps are optional and sysName <span>[<a href="#RFC1213" class="cite xref">RFC1213</a>]</span> is only carried in the BMP initiation message (<span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span>), while the message header of IPFIX defined in <span><a href="https://rfc-editor.org/rfc/rfc7011#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7011" class="cite xref">RFC7011</a>]</span> lacks the 'sysName' definition.<a href="#section-2.10-2" class="pilcrow">¶</a></p>
+<p id="section-2.10-2"><span>[<a href="#RFC9232" class="cite xref">RFC9232</a>]</span> is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly well aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In <span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span> timestamps are optional and sysName <span>[<a href="#RFC1213" class="cite xref">RFC1213</a>]</span> is only carried in the BMP initiation message (<span><a href="https://rfc-editor.org/rfc/rfc7854#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7854" class="cite xref">RFC7854</a>]</span>), while the message header of IPFIX defined in <span><a href="https://rfc-editor.org/rfc/rfc7011#section-4.3" class="relref">Section 4.3</a> of [<a href="#RFC7011" class="cite xref">RFC7011</a>]</span> lacks the 'sysName' definition.<a href="#section-2.10-2" class="pilcrow">¶</a></p>
 <p id="section-2.10-3">The lack of information from where the data is being pushed from is only known to the Network Telemetry data collection due to the transport session being established from the network node exporting the information. When Network Telemetry messages are being transformed and forwarded, this information is being lost. Therefore, it is common among network operators to augment 'sysName' and other metadata at the data collection.<a href="#section-2.10-3" class="pilcrow">¶</a></p>
 <p id="section-2.10-4">The same common principle applies to when observation timestamping is missing in the Network Telemetry message. Since the data collection is the closest element to the network, a time stamp is added to give the network operator at least the information when the Network Telemetry message was collected. However, since Network Telemetry addresses real-time streaming needs, this is often not accurate enough for data correlation.<a href="#section-2.10-4" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.10-5">
@@ -1600,8 +1600,8 @@ is no programmatic approach to ensure lossless mappings.<a href="#section-2.9-1"
 <a href="#section-2.11" class="section-number selfRef">2.11. </a><a href="#name-proprietary-yang-modules-cl" class="section-name selfRef">Proprietary YANG Modules, CLI, and Limited Abstraction</a>
         </h3>
 <p id="section-2.11-1">Leveraging on plugins, proprietary YANG data models or even CLI is still the rule in many operations, sometimes forced by the need of operating legacy infrastructures.<a href="#section-2.11-1" class="pilcrow">¶</a></p>
-<p id="section-2.11-2">The complexity of developing and maintaining these means of operation is huge, as it is required to to cover many OSes and vendors along the lifetime of the network device.<a href="#section-2.11-2" class="pilcrow">¶</a></p>
-<p id="section-2.11-3">Network models for the realization of services provide some "level" of abstraction and then allows for for more automation.<a href="#section-2.11-3" class="pilcrow">¶</a></p>
+<p id="section-2.11-2">The complexity of developing and maintaining these means of operation is huge, as it is required to cover many OSes and vendors along the lifetime of the network device.<a href="#section-2.11-2" class="pilcrow">¶</a></p>
+<p id="section-2.11-3">Network models for the realization of services provide some "level" of abstraction and then allows for more automation.<a href="#section-2.11-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-distinct">
@@ -1615,7 +1615,7 @@ is no programmatic approach to ensure lossless mappings.<a href="#section-2.9-1"
 <span class="break"></span><dl class="dlParallel" id="section-2.12-4">
           <dt id="section-2.12-4.1">OPS-REQ-NEW-NEED:</dt>
           <dd style="margin-left: 1.5em" id="section-2.12-4.2">
-            <p id="section-2.12-4.2.1">Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.<a href="#section-2.12-4.2.1" class="pilcrow">¶</a></p>
+            <p id="section-2.12-4.2.1">Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended rather than defining network management technologies that are applicable to a single deployment context.<a href="#section-2.12-4.2.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -1686,11 +1686,11 @@ That may slow down the protocol specification, though.<a href="#section-2.14-2.2
 </li>
         </ul>
 <p id="section-2.15-3">Schema-mount allegedly has only one known implementation because of the complexity of the solution. That means the IETF most likely spent lots of cycles for something which won't be deployed ever.<a href="#section-2.15-3" class="pilcrow">¶</a></p>
-<p id="section-2.15-4">While hackathons have improved the situation, the availablability of implementations is concerning. For open-source, 'sysrepo'/'libyang' are decent choices.<a href="#section-2.15-4" class="pilcrow">¶</a></p>
+<p id="section-2.15-4">While hackathons have improved the situation, the availability of implementations is concerning. For open-source, 'sysrepo'/'libyang' are decent choices.<a href="#section-2.15-4" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.15-5">
           <dt id="section-2.15-5.1">OPS-REQ-READILY-IMPLEM:</dt>
           <dd style="margin-left: 1.5em" id="section-2.15-5.2">
-            <p id="section-2.15-5.2.1">The availablability of implementations is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.<a href="#section-2.15-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-2.15-5.2.1">The availability of implementations is concerning. Consider catalyst approaches to trigger more (open) implementations, especially during the development of protocols/extensions.<a href="#section-2.15-5.2.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -1767,7 +1767,7 @@ For example, "ygot" generates structures from YANG models and these can easily b
         <h3 id="name-new-service-approaches">
 <a href="#section-2.17" class="section-number selfRef">2.17. </a><a href="#name-new-service-approaches" class="section-name selfRef">New Service Approaches</a>
         </h3>
-<p id="section-2.17-1">The virtualization trend have made posible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this appraoch seems to be insuficient for future services demanding stringent requirements in terms of SLOs.<a href="#section-2.17-1" class="pilcrow">¶</a></p>
+<p id="section-2.17-1">The virtualization trend have made possible to dynamically instantiate Service Functions (SFs) in distributed compute facilities in the form of virtual machines or containers, as micro-services. The instantiation of the SFs is governed by cloud management systems, as it is the connectivity among the different instances or micro-services. That connectivity is typically realized by using overlay mechanisms, without any further interaction with the network. However, this approach seems to be insufficient for future services demanding stringent requirements in terms of SLOs.<a href="#section-2.17-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.17-2">
           <dt id="section-2.17-2.1">OPS-REQ-GLUE:</dt>
           <dd style="margin-left: 1.5em" id="section-2.17-2.2">
@@ -1780,9 +1780,9 @@ For example, "ygot" generates structures from YANG models and these can easily b
 <div id="sec-guid">
 <section id="section-2.18">
         <h3 id="name-many-solutions-for-the-same">
-<a href="#section-2.18" class="section-number selfRef">2.18. </a><a href="#name-many-solutions-for-the-same" class="section-name selfRef">Many Solutions for the Same Problem, but Lack of Clear Applicably Guidance</a>
+<a href="#section-2.18" class="section-number selfRef">2.18. </a><a href="#name-many-solutions-for-the-same" class="section-name selfRef">Many Solutions for the Same Problem, but Lack of Clear Applicability Guidance</a>
         </h3>
-<p id="section-2.18-1">There are several solutions that were standardized for network management purposes. For example, management of ACLs by means to BGP FlowSpec <span>[<a href="#RFC8955" class="cite xref">RFC8955</a>]</span><span>[<a href="#RFC8956" class="cite xref">RFC8956</a>]</span> or  by means of NETCONF/YANG <span>[<a href="#RFC8519" class="cite xref">RFC8519</a>]</span>. There is no cross referencing between the two standards or delimits its applicability scope vs the other approach.<a href="#section-2.18-1" class="pilcrow">¶</a></p>
+<p id="section-2.18-1">There are several solutions that were standardized for network management purposes. For example, management of ACLs by means of BGP FlowSpec <span>[<a href="#RFC8955" class="cite xref">RFC8955</a>]</span><span>[<a href="#RFC8956" class="cite xref">RFC8956</a>]</span> or  by means of NETCONF/YANG <span>[<a href="#RFC8519" class="cite xref">RFC8519</a>]</span>. There is no cross referencing between the two standards or delimits its applicability scope vs the other approach.<a href="#section-2.18-1" class="pilcrow">¶</a></p>
 <p id="section-2.18-2">Likewise, BGP FlowSpec did not reuse the IPFIX Information Elements.<a href="#section-2.18-2" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.18-3">
           <dt id="section-2.18-3.1">OPS-REQ-GUIDANCE:</dt>
@@ -2473,7 +2473,7 @@ can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION).<
 <dd class="break"></dd>
 <dt id="I-D.ietf-core-comi">[I-D.ietf-core-comi]</dt>
         <dd>
-<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-21</span>, <time datetime="2026-03-02" class="refDate">2 March 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-21">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-21</a>&gt;</span>. </dd>
+<span class="refAuthor">Veillette, M.</span>, <span class="refAuthor">Van der Stok, P.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bierman, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"CoAP Management Interface (CORECONF)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-core-comi-22</span>, <time datetime="2026-11-02" class="refDate">2 November 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-22">https://datatracker.ietf.org/doc/html/draft-ietf-core-comi-22</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-grow-peering-api">[I-D.ietf-grow-peering-api]</dt>
         <dd>
@@ -2702,7 +2702,7 @@ can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION).<
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
 <p id="appendix-A-1">Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">Thanks to Benoît Claise, Alex Clemm, and Jéferson Campos Nobre for the comments.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, and Paul Aitken for the comments.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
 <p id="appendix-A-3">Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop <span>[<a href="#RFC9968" class="cite xref">RFC9968</a>]</span>.<a href="#appendix-A-3" class="pilcrow">¶</a></p>
 <p id="appendix-A-4">Thanks to Ian Farrer, Brad Peters, Chongfeng Xie, and Qin Wu for their contribution to consolidate the requirements.<a href="#appendix-A-4" class="pilcrow">¶</a></p>
 </section>
