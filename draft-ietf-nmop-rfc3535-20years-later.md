@@ -62,7 +62,7 @@ informative:
   YC:
     title: YANG Catalog, YANG Modules Stats
     date: 2026
-    target: https://www.yangcatalog.org/private-page
+    target: https://www.yangcatalog.org
   Widoco2017:
     title: "WIDOCO: a wizard for documenting ontologies"
     date: 2017
@@ -181,7 +181,7 @@ OPS-REQ-DM2API:
 Many NETCONF-related features are (being) specified by the IETF, but these features are not widely supported (e.g., YANG-Push {{?RFC8639}}). Some of these are not implemented because of the unbalance between actual operational need vs. complexity.
 
 OPS-REQ-GUIDE-AND-PROFILE:
-: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
+: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators' needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
 
 OPS-REQ-ARCH:
 : Need to promote more architecture and framework documents to exemplify the intended use.
@@ -210,7 +210,7 @@ One of the requirements listed in {{Section 3 of !RFC3535}} is the ease of use w
 
 Collecting YANG metrics from networks is already a struggle due to late arrival of {{?RFC8639}}, {{?RFC8640}}, {{?RFC8641}}, {{?I-D.ietf-netconf-https-notif}}, and {{?I-D.ietf-netconf-udp-notif}} for configured subscription transport protocols which defined YANG-Push in the industry. This caused network vendors to implement alternative solutions to collect real-time streaming data in the meanwhile, such as gNMI which was proposed in 2018 in {{?I-D.openconfig-rtgwg-gnmi-spec}} to the IETF but not followed up on. Unfortunately, these implementations differ between network Operating Systems (OSes) due to the lack of standardization, specifically for the metadata which would ensure machine readability.
 
-When a set of network operators were asked to which operational YANG data need to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. The YANG-Push extensions addressing needs to make YANG-Push messages machine readable and against semantically validatable to ensure a consistent data processing.
+When a set of network operators were asked to which operational YANG data need to be integrated to, the answer homogeneously was message brokers and Time Series Databases. There is a need to specify how YANG-Push can be integrated into message brokers and references needed YANG-Push extensions and YANG schema registry development. YANG-Push extensions are needed to make YANG-Push messages machine-readable and semantically validatable, to ensure consistent data processing.
 
 Another challenge is that the subscribed YANG data referenced with 'datastore-subtree-filter' or 'datastore-xpath-filter' breaks semantic integrity which needs to be addressed by either updating {{Section 4 of ?RFC8641}} or proposing a new YANG module being used at the YANG-Push receiver.
 
@@ -248,7 +248,7 @@ OPS-REQ-LOSSLESS:
 
 Network Telemetry, as described in {{?RFC9232}}, involves a set of protocols. Due to the different requirements, one Network Telemetry protocol doesn't address all needs. This is mainly due to the nature of the subscribed data. BGP Monitoring Protocol (BMP) {{?RFC7854}} adds monitoring and tracing capabilities natively to the BGP process to minimize the processing overhead. While IPFIX {{?RFC7011}}{{?RFC7012}} can be applied according to {{?RFC5472}} to gain visibility into the data and forwarding planes, due to the amount of data, sampling as defined in {{?RFC5476}} and applied to IPFIX in {{?RFC5477}} and aggregation as defined in {{?RFC7015}} for IPFIX is needed to reduce the amount of exposed data. While YANG-Push focuses on exposing already YANG modelled data, which eases the correlation among network configuration and operational data.
 
-{{?RFC9232}} is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly well aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing from where the metrics has been exported from and timestamping. In {{Section 4.2 of ?RFC7854}} timestamps are optional and sysName {{?RFC1213}} is only carried in the BMP initiation message ({{Section 4.3 of ?RFC7854}}), while the message header of IPFIX defined in {{Section 4.3 of ?RFC7011}} lacks the 'sysName' definition.
+{{?RFC9232}} is an informational document and does not specify what these Network Telemetry protocols should have in common to ensure consistent data structures for data export. While data types are fairly well aligned, a lack of metadata standardization among the Network Telemetry protocols is observed. In particular describing timestamping and where the metrics were exported from. In {{Section 4.2 of ?RFC7854}} timestamps are optional and sysName {{?RFC1213}} is only carried in the BMP initiation message ({{Section 4.3 of ?RFC7854}}), while the message header of IPFIX defined in {{Section 4.3 of ?RFC7011}} lacks the 'sysName' definition.
 
 The lack of information from where the data is being pushed from is only known to the Network Telemetry data collection due to the transport session being established from the network node exporting the information. When Network Telemetry messages are being transformed and forwarded, this information is being lost. Therefore, it is common among network operators to augment 'sysName' and other metadata at the data collection.
 
@@ -267,7 +267,7 @@ Network models for the realization of services provide some "level" of abstracti
 
 ## Distinct Networks, Distinct Management Requirements {#sec-distinct}
 
-From the time {{!RFC3535}} was released up to now, new kind of services and applications have been developed and deployed over the time, with very diverse, and some times contradicting, requirements. Those services have been engineered on top of multi-service networks for the sake of efficiency and simplicity, accommodating such a variety of needs. As a result, services requiring mobility, data replication, large capacity, adaptability, multi-path support, determinism, etc., coexist on the same shared network, needing from it mechanisms for graceful operation.
+From the time {{!RFC3535}} was released up to now, new kinds of services and applications have been developed and deployed over time, with very diverse, and sometimes contradicting, requirements. Those services have been engineered on top of multi-service networks for the sake of efficiency and simplicity, accommodating such a variety of needs. As a result, services requiring mobility, data replication, large capacity, adaptability, multi-path support, determinism, etc., coexist on the same shared network, needing from it mechanisms for graceful operation.
 
 Likewise, such diversity of services also require different management capabilities. For example, session continuity, distribution trees, traffic engineering, congestion status notification, reordering, or on-time delivery impose very different management needs to be satisfied.
 
@@ -377,7 +377,7 @@ OPS-REQ-DM2API:
 : Readily available API specifications should be generalized from YANG modules for fast development, prototyping, and validation.
 
 OPS-REQ-GUIDE-AND-PROFILE:
-: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators’ needs). This also covers security management aspects of network management. Additionaly, consider independent compliance suites to validate functions/features/etc.
+: The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators' needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
 
 OPS-REQ-ARCH:
 : Need to promote more architecture and framework documents to exemplify the intended use.
@@ -407,7 +407,7 @@ OPS-REQ-REUSABILITY:
 : Consider approaches to ensure reuse/consistent data structure across various network management segments. This will ease correlating data learned using different means (IPFIX {{?RFC7011}},  BGP Monitoring Protocol (BMP) {{?RFC7854}}, SYSLOG {{?RFC5424}}, etc.).
 
 OPS-REQ-NEW-NEED:
-: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended than defining network management technologies that are applicable to a single deployment context.
+: Profiling main network management technologies (e.g., recommend customized transport parameters such as timeouts and transport services) is recommended rather than defining network management technologies that are applicable to a single deployment context.
 
 OPS-REQ-UNSILO:
 : Necessity to handle the heterogeneity of data, configuration, and network management/requirements. Resolving such issue could draw on insights from parallel technical fields such as knowledge engineering practices and concepts associated with Linked Data in the Semantic Web, areas where it is common to manage problems of heterogeneity and data reconciliation across various application domains.
@@ -438,7 +438,7 @@ OPS-REQ-GUIDANCE:
 
 ## Categorization
 
-{{table-req-cat}} provides a classification of the requirements listed in {{sec-reqs}}. It specifically tag whether a requirement:
+{{table-req-cat}} provides a classification of the requirements listed in {{sec-reqs}}. It specifically tags whether a requirement:
 
 * Belongs to data modeling (DM)
 * Requires protocol work (Proto)
