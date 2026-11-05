@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 8 May 2027                                        O. G. D. Dios
+Expires: 9 May 2027                                        O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         4 November 2026
+                                                         5 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 May 2027.
+   This Internet-Draft will expire on 9 May 2027.
 
 Copyright Notice
 
@@ -300,7 +300,7 @@ Table of Contents
       network management approach should be documented (e.g., edit
       profile documents that outline a set of recommendations for core/
       key features, along with appropriate justifications, will help
-      foster more implementations that meet operators’ needs).  This
+      foster more implementations that meet operators' needs).  This
       also covers security management aspects of network management.
       Additionally, consider independent compliance suites to validate
       functions/features/etc.
@@ -366,9 +366,9 @@ Table of Contents
    brokers and Time Series Databases.  There is a need to specify how
    YANG-Push can be integrated into message brokers and references
    needed YANG-Push extensions and YANG schema registry development.
-   The YANG-Push extensions addressing needs to make YANG-Push messages
-   machine readable and against semantically validatable to ensure a
-   consistent data processing.
+   YANG-Push extensions are needed to make YANG-Push messages machine-
+   readable and semantically validatable, to ensure consistent data
+   processing.
 
    Another challenge is that the subscribed YANG data referenced with
    'datastore-subtree-filter' or 'datastore-xpath-filter' breaks
@@ -439,7 +439,7 @@ Table of Contents
    consistent data structures for data export.  While data types are
    fairly well aligned, a lack of metadata standardization among the
    Network Telemetry protocols is observed.  In particular describing
-   from where the metrics has been exported from and timestamping.  In
+   timestamping and where the metrics were exported from.  In
    Section 4.2 of [RFC7854] timestamps are optional and sysName
    [RFC1213] is only carried in the BMP initiation message (Section 4.3
    of [RFC7854]), while the message header of IPFIX defined in
@@ -479,9 +479,9 @@ Table of Contents
 
 2.12.  Distinct Networks, Distinct Management Requirements
 
-   From the time [RFC3535] was released up to now, new kind of services
-   and applications have been developed and deployed over the time, with
-   very diverse, and some times contradicting, requirements.  Those
+   From the time [RFC3535] was released up to now, new kinds of services
+   and applications have been developed and deployed over time, with
+   very diverse, and sometimes contradicting, requirements.  Those
    services have been engineered on top of multi-service networks for
    the sake of efficiency and simplicity, accommodating such a variety
    of needs.  As a result, services requiring mobility, data
@@ -686,9 +686,9 @@ Table of Contents
       network management approach should be documented (e.g., edit
       profile documents that outline a set of recommendations for core/
       key features, along with appropriate justifications, will help
-      foster more implementations that meet operators’ needs).  This
+      foster more implementations that meet operators' needs).  This
       also covers security management aspects of network management.
-      Additionaly, consider independent compliance suites to validate
+      Additionally, consider independent compliance suites to validate
       functions/features/etc.
 
    OPS-REQ-ARCH:  Need to promote more architecture and framework
@@ -734,9 +734,9 @@ Table of Contents
 
    OPS-REQ-NEW-NEED:  Profiling main network management technologies
       (e.g., recommend customized transport parameters such as timeouts
-      and transport services) is recommended than defining network
-      management technologies that are applicable to a single deployment
-      context.
+      and transport services) is recommended rather than defining
+      network management technologies that are applicable to a single
+      deployment context.
 
    OPS-REQ-UNSILO:  Necessity to handle the heterogeneity of data,
       configuration, and network management/requirements.  Resolving
@@ -782,7 +782,7 @@ Table of Contents
 3.2.  Categorization
 
    Table 1 provides a classification of the requirements listed in
-   Section 3.1.  It specifically tag whether a requirement:
+   Section 3.1.  It specifically tags whether a requirement:
 
    *  Belongs to data modeling (DM)
 
@@ -1296,7 +1296,7 @@ Table of Contents
               2017, <http://dgarijo.com/papers/widoco-iswc2017.pdf>.
 
    [YC]       "YANG Catalog, YANG Modules Stats", 2026,
-              <https://www.yangcatalog.org/private-page>.
+              <https://www.yangcatalog.org>.
 
 Acknowledgments
 
