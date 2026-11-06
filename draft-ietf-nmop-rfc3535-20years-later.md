@@ -493,7 +493,7 @@ OPS-REQ-GUIDANCE:
 
 ## Overall New Requirements Levels: Operators View {#sec-level}
 
-{{table-ops-view}} provides the requirement level of {{sec-reqs}} from an operator perspective. Refer to {{SOURCE}} for the data that was used to establish this table. 
+{{table-ops-view}} provides the requirement level of {{sec-reqs}} from an operator perspective. Refer to {{SOURCE}} for the data that was used to establish this table.
 
 |Ops Requirement Label    | Overall Operators Level  |
 |------------------------:|:--------------:|
