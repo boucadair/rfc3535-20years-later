@@ -216,7 +216,7 @@ By drawing a parallel between YANG data models and the concept of ontology used 
 OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suitable for documenting YANG modules.
 
-Refer to {{?I-D.ietf-opsawg-veloce-yang}} for a related work.
+Refer to {{?I-D.ietf-opsawg-veloce-yang}} for related work.
 
 ## Integration Complexity {#sec-int}
 
