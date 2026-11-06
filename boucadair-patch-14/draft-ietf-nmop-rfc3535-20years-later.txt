@@ -365,7 +365,7 @@ Table of Contents
       development and maintenance of YANG modules in the IETF.  RFCs
       might not be suitable for documenting YANG modules.
 
-   Refer to [I-D.ietf-opsawg-veloce-yang] for a related work.
+   Refer to [I-D.ietf-opsawg-veloce-yang] for related work.
 
 2.7.  Integration Complexity
 
