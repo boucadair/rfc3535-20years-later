@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 10 May 2027                                       O. G. D. Dios
+Expires: 13 May 2027                                       O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         6 November 2026
+                                                         9 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 May 2027.
+   This Internet-Draft will expire on 13 May 2027.
 
 Copyright Notice
 
@@ -160,7 +160,8 @@ Table of Contents
    outcomes and results of the 2002 IAB workshop (current deployments,
    state of the art) and identify any operational barriers that prevent
    these technologies from being widely implemented (limitations,
-   hurdles).
+   hurdles).  The finalization of updated requirements is left to the
+   IETF; and is thus beyond [RFC9968].
 
    More than 20 years after the publication of [RFC3535], new
    requirements on network management operations are emerging from the
