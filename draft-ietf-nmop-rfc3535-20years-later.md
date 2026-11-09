@@ -82,6 +82,13 @@ informative:
     title: Requirements Level
     date: 2025
     target: https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/nemops-session2-summary.md#requirements-level
+  NEMOPS-READOUT:
+    title: IAB Next Era of Network Management Operations (NEMOPS) Workshop Report
+    date: 2025
+    author:
+      - name: Dhruv Dhody
+      - name: Wes Hardaker
+    target: https://datatracker.ietf.org/meeting/122/materials/slides-122-opsawg-opsarea-nemops-workshop-readout-00
 
 --- abstract
 
@@ -120,9 +127,9 @@ Since the publication of {{!RFC3535}} major advances were achieved in the networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) {{?RFC9968}} to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond {{?RFC9968}}.
+Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) {{?RFC9968}} to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond {{?RFC9968}}. Refer also to the NEMOPS Workshop Call for Action {{NEMOPS-READOUT}}.
 
-More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Overall, these requirements fall under the following categories:
+More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area ({{sec-reqs}}). Overall, these requirements fall under the following categories:
 
 - Recommendations to guide future protocol and data model specifications.
 - Recommendations for IETF working practices.
@@ -130,7 +137,7 @@ More than 20 years after the publication of {{!RFC3535}}, new requirements on ne
 
 {{sec-categ}} further elaborates on the classification of the requirements identified in this document. {{sec-consolidated}} provides a consolidated view of main requirements that takes into account inputs from actors beyond operators.
 
-# Observations and Operators Requirements {#sec-obs}
+# Observations, Motivations, and Operators Requirements {#sec-obs}
 
 ## On the Importance of Data Models {#sec-dm}
 
@@ -246,6 +253,8 @@ OPS-REQ-Y2KG:
 
 For example, {{?I-D.marcas-nmop-knowledge-graph-yang}} and {{?I-D.tailhardat-nmop-incident-management-noria}} discuss YANG-2-KG proposals to leverage automated reasoning and graph traversal techniques.
 
+Moreover, configuration of large-scale networks and services often contain repetitive data structures that appear under various structures. Some data models (e.g., {{?RFC9182}} or {{?RFC9834}}) are designed to factorize data and ensure compact files. However, not all data models offer such property by design, which is suboptimal in some deployments (e.g., YANG-based Optical Network Units (ONU) management).
+
 OPS-REQ-SCALE:
 : Consider approaches for YANG data models to scale.
 
@@ -329,10 +338,14 @@ OPS-REQ-READILY-IMPLEM:
 
 ### Integration with "native" IT Tooling {#sec-it}
 
+To provision and deliver added value services, operators have to integrate tools at various layers (network domains, IT, etc.). These tools are managed by distinct teams and are usually adhering to architectures defined by distinct bodies. For example, the TM Forum standardizes Service Ordering, Activation and Configuration, Service Catalog, and other relevant APIs. The IT stratum has to interwork with the underlying network management components (including configuration) to provision and operate a service. This leads to an integration complexity and also suboptimal design solutions as same functions may be implemented (differently) at distinct layers.
+
 OPS-REQ-IT-INTEGRATION:
 : There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").
 
 ### IETF Support for Better YANG Integration {#sec-ietf-in}
+
+In addition to the inter-layer integrating ({{sec-it}}), there are still concerns about application integration to invoke network management librairies.
 
 OPS-REQ-IETF-TOOLS:
 : Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration.
