@@ -1386,7 +1386,7 @@ Acknowledgments
    inputs.
 
    Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, Paul
-   Aitken, and Dhruv Dhody for the comments.
+   Aitken, Dhruv Dhody, and Qin Wu for the comments.
 
    Many of the requirements were extracted from contributions to the IAB
    Next Era of Network Management Operations (NEMOPS) Workshop
