@@ -67,7 +67,7 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Observations and Operators Requirements
+   2.  Observations, Motivations, and Operators Requirements
      2.1.  On the Importance of Data Models
      2.2.  Fragmented Ecosystem
      2.3.  The Network Becomes Consumable
@@ -161,13 +161,14 @@ Table of Contents
    state of the art) and identify any operational barriers that prevent
    these technologies from being widely implemented (limitations,
    hurdles).  The finalization of updated requirements is left to the
-   IETF; and is thus beyond [RFC9968].
+   IETF; and is thus beyond [RFC9968].  Refer also to the NEMOPS
+   Workshop Call for Action [NEMOPS-READOUT].
 
    More than 20 years after the publication of [RFC3535], new
    requirements on network management operations are emerging from the
    operators.  This document captures these requirements that reflect
-   the progress in this area.  Overall, these requirements fall under
-   the following categories:
+   the progress in this area (Section 3.1).  Overall, these requirements
+   fall under the following categories:
 
    *  Recommendations to guide future protocol and data model
       specifications.
@@ -181,7 +182,7 @@ Table of Contents
    consolidated view of main requirements that takes into account inputs
    from actors beyond operators.
 
-2.  Observations and Operators Requirements
+2.  Observations, Motivations, and Operators Requirements
 
 2.1.  On the Importance of Data Models
 
@@ -428,6 +429,14 @@ Table of Contents
    proposals to leverage automated reasoning and graph traversal
    techniques.
 
+   Moreover, configuration of large-scale networks and services often
+   contain repetitive data structures that appear under various
+   structures.  Some data models (e.g., [RFC9182] or [RFC9834]) are
+   designed to factorize data and ensure compact files.  However, not
+   all data models offer such property by design, which is suboptimal in
+   some deployments (e.g., YANG-based Optical Network Units (ONU)
+   management).
+
    OPS-REQ-SCALE:  Consider approaches for YANG data models to scale.
 
 2.9.  Translation and Mapping Between Service/Network and Device Models
@@ -623,11 +632,26 @@ Table of Contents
 
 2.16.1.  Integration with "native" IT Tooling
 
+   To provision and deliver added value services, operators have to
+   integrate tools at various layers (network domains, IT, etc.).  These
+   tools are managed by distinct teams and are usually adhering to
+   architectures defined by distinct bodies.  For example, the TM Forum
+   standardizes Service Ordering, Activation and Configuration, Service
+   Catalog, and other relevant APIs.  The IT stratum has to interwork
+   with the underlying network management components (including
+   configuration) to provision and operate a service.  This leads to an
+   integration complexity and also suboptimal design solutions as same
+   functions may be implemented (differently) at distinct layers.
+
    OPS-REQ-IT-INTEGRATION:  There is a need to ease the integration of
       low-level/network-oriented solution with native "IT tooling"
       (e.g., "https://opentelemetry.io/").
 
 2.16.2.  IETF Support for Better YANG Integration
+
+   In addition to the inter-layer integrating (Section 2.16.1), there
+   are still concerns about application integration to invoke network
+   management librairies.
 
    OPS-REQ-IETF-TOOLS:  Ease exposure of libraries and host tools (e.g.,
       yangkit) to ease integration.
@@ -1125,6 +1149,12 @@ Table of Contents
               oriented ontology engineering framework", 2022,
               <https://doi.org/10.1016/j.engappai.2022.104755>.
 
+   [NEMOPS-READOUT]
+              Dhody, D. and W. Hardaker, "IAB Next Era of Network
+              Management Operations (NEMOPS) Workshop Report", 2025,
+              <https://datatracker.ietf.org/meeting/122/materials/
+              slides-122-opsawg-opsarea-nemops-workshop-readout-00>.
+
    [OC]       "Openconfig", <https://www.openconfig.net/>.
 
    [ODL]      "Graph Model Overview", 2023,
@@ -1295,6 +1325,11 @@ Table of Contents
               L. Geng, "A Framework for Automating Service and Network
               Management with YANG", RFC 8969, DOI 10.17487/RFC8969,
               January 2021, <https://www.rfc-editor.org/rfc/rfc8969>.
+
+   [RFC9182]  Barguil, S., Gonzalez de Dios, O., Ed., Boucadair, M.,
+              Ed., Munoz, L., and A. Aguado, "A YANG Network Data Model
+              for Layer 3 VPNs", RFC 9182, DOI 10.17487/RFC9182,
+              February 2022, <https://www.rfc-editor.org/rfc/rfc9182>.
 
    [RFC9232]  Song, H., Qin, F., Martinez-Julia, P., Ciavaglia, L., and
               A. Wang, "Network Telemetry Framework", RFC 9232,

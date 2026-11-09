@@ -1163,7 +1163,7 @@ was instrumental for developing many key technologies that are widely deployed.<
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-observations-and-operators-" class="internal xref">Observations and Operators Requirements</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-observations-motivations-an" class="internal xref">Observations, Motivations, and Operators Requirements</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
                 <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-on-the-importance-of-data-m" class="internal xref">On the Importance of Data Models</a></p>
@@ -1345,8 +1345,8 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
 </li>
       </ul>
 <p id="section-1-4">See also "An Overview of the IETF Network Management Standards" <span>[<a href="#RFC6632" class="cite xref">RFC6632</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) <span>[<a href="#RFC9968" class="cite xref">RFC9968</a>]</span> to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond <span>[<a href="#RFC9968" class="cite xref">RFC9968</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">More than 20 years after the publication of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Overall, these requirements fall under the following categories:<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-5">Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) <span>[<a href="#RFC9968" class="cite xref">RFC9968</a>]</span> to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond <span>[<a href="#RFC9968" class="cite xref">RFC9968</a>]</span>. Refer also to the NEMOPS Workshop Call for Action <span>[<a href="#NEMOPS-READOUT" class="cite xref">NEMOPS-READOUT</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-6">More than 20 years after the publication of <span>[<a href="#RFC3535" class="cite xref">RFC3535</a>]</span>, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area (<a href="#sec-reqs" class="auto internal xref">Section 3.1</a>). Overall, these requirements fall under the following categories:<a href="#section-1-6" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-7.1">
           <p id="section-1-7.1.1">Recommendations to guide future protocol and data model specifications.<a href="#section-1-7.1.1" class="pilcrow">¶</a></p>
@@ -1363,8 +1363,8 @@ which was instrumental for developing NETCONF <span>[<a href="#RFC6241" class="c
 </div>
 <div id="sec-obs">
 <section id="section-2">
-      <h2 id="name-observations-and-operators-">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-observations-and-operators-" class="section-name selfRef">Observations and Operators Requirements</a>
+      <h2 id="name-observations-motivations-an">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-observations-motivations-an" class="section-name selfRef">Observations, Motivations, and Operators Requirements</a>
       </h2>
 <div id="sec-dm">
 <section id="section-2.1">
@@ -1564,10 +1564,11 @@ For instance, OpenDaylight <span>[<a href="#ODL" class="cite xref">ODL</a>]</spa
         <dd class="break"></dd>
 </dl>
 <p id="section-2.8-3">For example, <span>[<a href="#I-D.marcas-nmop-knowledge-graph-yang" class="cite xref">I-D.marcas-nmop-knowledge-graph-yang</a>]</span> and <span>[<a href="#I-D.tailhardat-nmop-incident-management-noria" class="cite xref">I-D.tailhardat-nmop-incident-management-noria</a>]</span> discuss YANG-2-KG proposals to leverage automated reasoning and graph traversal techniques.<a href="#section-2.8-3" class="pilcrow">¶</a></p>
-<span class="break"></span><dl class="dlParallel" id="section-2.8-4">
-          <dt id="section-2.8-4.1">OPS-REQ-SCALE:</dt>
-          <dd style="margin-left: 1.5em" id="section-2.8-4.2">
-            <p id="section-2.8-4.2.1">Consider approaches for YANG data models to scale.<a href="#section-2.8-4.2.1" class="pilcrow">¶</a></p>
+<p id="section-2.8-4">Moreover, configuration of large-scale networks and services often contain repetitive data structures that appear under various structures. Some data models (e.g., <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span> or <span>[<a href="#RFC9834" class="cite xref">RFC9834</a>]</span>) are designed to factorize data and ensure compact files. However, not all data models offer such property by design, which is suboptimal in some deployments (e.g., YANG-based Optical Network Units (ONU) management).<a href="#section-2.8-4" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2.8-5">
+          <dt id="section-2.8-5.1">OPS-REQ-SCALE:</dt>
+          <dd style="margin-left: 1.5em" id="section-2.8-5.2">
+            <p id="section-2.8-5.2.1">Consider approaches for YANG data models to scale.<a href="#section-2.8-5.2.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -1720,10 +1721,11 @@ That may slow down the protocol specification, though.<a href="#section-2.14-2.2
           <h4 id="name-integration-with-native-it-">
 <a href="#section-2.16.1" class="section-number selfRef">2.16.1. </a><a href="#name-integration-with-native-it-" class="section-name selfRef">Integration with "native" IT Tooling</a>
           </h4>
-<span class="break"></span><dl class="dlParallel" id="section-2.16.1-1">
-            <dt id="section-2.16.1-1.1">OPS-REQ-IT-INTEGRATION:</dt>
-            <dd style="margin-left: 1.5em" id="section-2.16.1-1.2">
-              <p id="section-2.16.1-1.2.1">There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").<a href="#section-2.16.1-1.2.1" class="pilcrow">¶</a></p>
+<p id="section-2.16.1-1">To provision and deliver added value services, operators have to integrate tools at various layers (network domains, IT, etc.). These tools are managed by distinct teams and are usually adhering to architectures defined by distinct bodies. For example, the TM Forum standardizes Service Ordering, Activation and Configuration, Service Catalog, and other relevant APIs. The IT stratum has to interwork with the underlying network management components (including configuration) to provision and operate a service. This leads to an integration complexity and also suboptimal design solutions as same functions may be implemented (differently) at distinct layers.<a href="#section-2.16.1-1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2.16.1-2">
+            <dt id="section-2.16.1-2.1">OPS-REQ-IT-INTEGRATION:</dt>
+            <dd style="margin-left: 1.5em" id="section-2.16.1-2.2">
+              <p id="section-2.16.1-2.2.1">There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").<a href="#section-2.16.1-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
@@ -1734,10 +1736,11 @@ That may slow down the protocol specification, though.<a href="#section-2.14-2.2
           <h4 id="name-ietf-support-for-better-yan">
 <a href="#section-2.16.2" class="section-number selfRef">2.16.2. </a><a href="#name-ietf-support-for-better-yan" class="section-name selfRef">IETF Support for Better YANG Integration</a>
           </h4>
-<span class="break"></span><dl class="dlParallel" id="section-2.16.2-1">
-            <dt id="section-2.16.2-1.1">OPS-REQ-IETF-TOOLS:</dt>
-            <dd style="margin-left: 1.5em" id="section-2.16.2-1.2">
-              <p id="section-2.16.2-1.2.1">Ease exposure of libraries and host tools (e.g., <code>yangkit</code>) to ease integration.<a href="#section-2.16.2-1.2.1" class="pilcrow">¶</a></p>
+<p id="section-2.16.2-1">In addition to the inter-layer integrating (<a href="#sec-it" class="auto internal xref">Section 2.16.1</a>), there are still concerns about application integration to invoke network management librairies.<a href="#section-2.16.2-1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2.16.2-2">
+            <dt id="section-2.16.2-2.1">OPS-REQ-IETF-TOOLS:</dt>
+            <dd style="margin-left: 1.5em" id="section-2.16.2-2.2">
+              <p id="section-2.16.2-2.2.1">Ease exposure of libraries and host tools (e.g., <code>yangkit</code>) to ease integration.<a href="#section-2.16.2-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
@@ -2530,6 +2533,10 @@ can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION).<
         <dd>
 <span class="refAuthor">Poveda-Villalon, M.</span>, <span class="refAuthor">Fernandez-Izquierdo, A.</span>, <span class="refAuthor">Fernandez-Lopez, M.</span>, and <span class="refAuthor">R. Garcia-Castro</span>, <span class="refTitle">"LOT: An industrial oriented ontology engineering framework"</span>, <time datetime="2022" class="refDate">2022</time>, <span>&lt;<a href="https://doi.org/10.1016/j.engappai.2022.104755">https://doi.org/10.1016/j.engappai.2022.104755</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="NEMOPS-READOUT">[NEMOPS-READOUT]</dt>
+        <dd>
+<span class="refAuthor">Dhody, D.</span> and <span class="refAuthor">W. Hardaker</span>, <span class="refTitle">"IAB Next Era of Network Management Operations (NEMOPS) Workshop Report"</span>, <time datetime="2025" class="refDate">2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/meeting/122/materials/slides-122-opsawg-opsarea-nemops-workshop-readout-00">https://datatracker.ietf.org/meeting/122/materials/slides-122-opsawg-opsarea-nemops-workshop-readout-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="OC">[OC]</dt>
         <dd>
 <span class="refTitle">"Openconfig"</span>, <span>&lt;<a href="https://www.openconfig.net/">https://www.openconfig.net/</a>&gt;</span>. </dd>
@@ -2673,6 +2680,10 @@ can be easily correlated with underlying functionalities (OPS-REQ-INTEGRATION).<
 <dt id="RFC8969">[RFC8969]</dt>
         <dd>
 <span class="refAuthor">Wu, Q., Ed.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Lopez, D.</span>, <span class="refAuthor">Xie, C.</span>, and <span class="refAuthor">L. Geng</span>, <span class="refTitle">"A Framework for Automating Service and Network Management with YANG"</span>, <span class="seriesInfo">RFC 8969</span>, <span class="seriesInfo">DOI 10.17487/RFC8969</span>, <time datetime="2021-01" class="refDate">January 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8969">https://www.rfc-editor.org/rfc/rfc8969</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9182">[RFC9182]</dt>
+        <dd>
+<span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Gonzalez de Dios, O., Ed.</span>, <span class="refAuthor">Boucadair, M., Ed.</span>, <span class="refAuthor">Munoz, L.</span>, and <span class="refAuthor">A. Aguado</span>, <span class="refTitle">"A YANG Network Data Model for Layer 3 VPNs"</span>, <span class="seriesInfo">RFC 9182</span>, <span class="seriesInfo">DOI 10.17487/RFC9182</span>, <time datetime="2022-02" class="refDate">February 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9182">https://www.rfc-editor.org/rfc/rfc9182</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9232">[RFC9232]</dt>
         <dd>
