@@ -120,7 +120,7 @@ Since the publication of {{!RFC3535}} major advances were achieved in the networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) {{?RFC9968}} to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles).
+Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) {{?RFC9968}} to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond {{?RFC9968}}.
 
 More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Overall, these requirements fall under the following categories:
 
