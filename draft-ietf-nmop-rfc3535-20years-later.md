@@ -574,7 +574,7 @@ This document has no IANA actions.
 
 Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.
 
-Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, Paul Aitken, and Dhruv Dhody for the comments.
+Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, Paul Aitken, Dhruv Dhody, and Qin Wu for the comments.
 
 Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?RFC9968}}.
 
