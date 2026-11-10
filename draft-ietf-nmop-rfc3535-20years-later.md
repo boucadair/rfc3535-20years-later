@@ -78,6 +78,17 @@ informative:
       - name: Mariano Fernandez-Lopez
       - name: Raul Garcia-Castro
     target: https://doi.org/10.1016/j.engappai.2022.104755
+  SOURCE:
+    title: Requirements Level
+    date: 2025
+    target: https://github.com/boucadair/rfc3535-20years-later/blob/main/Prez/NEMOPS/nemops-session2-summary.md#requirements-level
+  NEMOPS-READOUT:
+    title: IAB Next Era of Network Management Operations (NEMOPS) Workshop Report
+    date: 2025
+    author:
+      - name: Dhruv Dhody
+      - name: Wes Hardaker
+    target: https://datatracker.ietf.org/meeting/122/materials/slides-122-opsawg-opsarea-nemops-workshop-readout-00
 
 --- abstract
 
@@ -116,9 +127,17 @@ Since the publication of {{!RFC3535}} major advances were achieved in the networ
 
 See also "An Overview of the IETF Network Management Standards" {{?RFC6632}}.
 
-More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area. Readers may also refer to {{?RFC9968}}.
+Note that the IAB has organized a workshop in 2024 on the Next Era of Network Management Operations (NEMOPS) {{?RFC9968}} to review the outcomes and results of the 2002 IAB workshop (current deployments, state of the art) and identify any operational barriers that prevent these technologies from being widely implemented (limitations, hurdles). The finalization of updated requirements is left to the IETF; and is thus beyond {{?RFC9968}}. Refer also to the NEMOPS Workshop Call for Action {{NEMOPS-READOUT}}.
 
-# Observations and Operators Requirements {#sec-obs}
+More than 20 years after the publication of {{!RFC3535}}, new requirements on network management operations are emerging from the operators. This document captures these requirements that reflect the progress in this area ({{sec-reqs}}). Overall, these requirements fall under the following categories:
+
+- Recommendations to guide future protocol and data model specifications.
+- Recommendations for IETF working practices.
+- Broader ecosystem issues requiring coordination beyond the IETF.
+
+{{sec-categ}} further elaborates on the classification of the requirements identified in this document. {{sec-consolidated}} provides a consolidated view of main requirements that takes into account inputs from actors beyond operators.
+
+# Observations, Motivations, and Operators Requirements {#sec-obs}
 
 ## On the Importance of Data Models {#sec-dm}
 
@@ -126,9 +145,9 @@ An appealing aspect about network automation techniques is that they almost appl
 
 Data models can be used to derive required configuration information for both network and service components, and state information that will be monitored and tracked. Likewise, they can be used during the service/network management life cycle (e.g., service instantiation, provisioning, optimization, monitoring, diagnostic, and assurance).
 
-More than three decades of "Internet standardization" have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:
+More than three decades of Internet standardization have shown that the specification of data models is not that straightforward. This is because of at least two major reasons:
 
-*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, {{YC}} lists 13661 unique proprietary YANG modules vs. 991 Standards modules.
+*	For more than 30 years, legacy network equipment manufacturers have considered their technology as a competitive advantage, thereby leading to proprietary, vendor-specific data models and the burden of vendor lock-ins. For example, there are more YANG proprietary modules than standardized ones. At the time of writing, {{YC}} lists 14906 unique proprietary YANG modules vs. 1067 Standards modules per data published in November 2026.
 
 *	Over the same period, operators have also developed their savoir-faire as a key competitive advantage. Such savoir-faire had to rely upon these proprietary data models (and their own ones). Operators were reluctant in the past to share their design and management practices.
 
@@ -137,7 +156,7 @@ The situation has changed since network "softwarization" strategies have been di
 {: quote}
 > Network softwarization refers to the process of softwarization, management, and integration in communication networks and the associated services. This usually involves techniques such as  Software Defined Networking (SDN) {{?RFC7149}}{{?RFC7426}}, Network Function Virtualization (NFV) {{?RFC8568}}, etc.
 
-XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS services cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
+XaaS designs assume the availability of data models that are dynamically instantiated (along with a set of relevant policies) as a function of the "X" (and its design, for that matter). XaaS offers cannot be designed, delivered, and operated without data models. Standard data models are thus key as they allow to:
 
 *	Ease mapping among many (network/service) layers.
 *	Ease data correlation from distinct sources.
@@ -191,7 +210,7 @@ OPS-REQ-ARCH:
 > Such a document would serve as a guide and reference for implementers and others seeking information on 'NETCONF/RESTCONF/YANG'-related RFCs.
 
 OPS-REQ-REASSESS:
-: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
+: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gNMI vs. YANG-Push) would be beneficial. This includes checking the value proposal of some IETF solution to take into account the operational reality. This effort may result in obsoleting existing specifications if the margin for adoption is null, typically.
 
 ## Lack of Agile Process for (The Maintenance of) YANG Modules {#sec-agile}
 
@@ -203,6 +222,8 @@ By drawing a parallel between YANG data models and the concept of ontology used 
 
 OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suitable for documenting YANG modules.
+
+Refer to {{?I-D.ietf-opsawg-veloce-yang}} for related work.
 
 ## Integration Complexity {#sec-int}
 
@@ -232,6 +253,8 @@ OPS-REQ-Y2KG:
 
 For example, {{?I-D.marcas-nmop-knowledge-graph-yang}} and {{?I-D.tailhardat-nmop-incident-management-noria}} discuss YANG-2-KG proposals to leverage automated reasoning and graph traversal techniques.
 
+Moreover, configuration of large-scale networks and services often contain repetitive data structures that appear under various structures. Some data models (e.g., {{?RFC9182}} or {{?RFC9834}}) are designed to factorize data and ensure compact files. However, not all data models offer such property by design, which is suboptimal in some deployments (e.g., YANG-based Optical Network Units (ONU) management).
+
 OPS-REQ-SCALE:
 : Consider approaches for YANG data models to scale.
 
@@ -239,10 +262,10 @@ OPS-REQ-SCALE:
 
 Navigating among multiple levels of the hierarchy (service, network, device) relies
 currently on proprietary solutions to graft and translate between two layers. There
-is no programmatic approach to ensure lossless mappings.
+is no programmatic approach to ensure cross-layer mappings. "Cross-layer mapping" means the ability to navigate between layers (and translate) with deterministic correlation between objects defined in upper and lower layers. This mapping does not require exposing in upper layers all granular information that is meaningful for lower layers.
 
-OPS-REQ-LOSSLESS:
-: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
+OPS-REQ-MAPPING:
+: Consider programmatic approaches to ensure deterministic mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that the cross-layer mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 ## (In)Consistent Data Structures in Network Protocols for Data Export {#sec-con}
 
@@ -315,10 +338,14 @@ OPS-REQ-READILY-IMPLEM:
 
 ### Integration with "native" IT Tooling {#sec-it}
 
+To provision and deliver added value services, operators have to integrate tools at various layers (network domains, IT, etc.). These tools are managed by distinct teams and are usually adhering to architectures defined by distinct bodies. For example, the TM Forum standardizes Service Ordering, Activation and Configuration, Service Catalog, and other relevant APIs. The IT stratum has to interwork with the underlying network management components (including configuration) to provision and operate a service. This leads to an integration complexity and also suboptimal design solutions as same functions may be implemented (differently) at distinct layers.
+
 OPS-REQ-IT-INTEGRATION:
 : There is a need to ease the integration of low-level/network-oriented solution with native "IT tooling" (e.g., "https://opentelemetry.io/").
 
 ### IETF Support for Better YANG Integration {#sec-ietf-in}
+
+In addition to the inter-layer integrating ({{sec-it}}), there are still concerns about application integration to invoke network management librairies.
 
 OPS-REQ-IETF-TOOLS:
 : Ease exposure of libraries and host tools (e.g., `yangkit`) to ease integration.
@@ -383,7 +410,7 @@ OPS-REQ-ARCH:
 : Need to promote more architecture and framework documents to exemplify the intended use.
 
 OPS-REQ-REASSESS:
-: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gRPC vs. YANG-Push) would be beneficial.
+: Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gNMI vs. YANG-Push) would be beneficial. This includes checking the value proposal of some IETF solution to take into account the operational reality. This effort may result in obsoleting existing specifications if the margin for adoption is null, typically.
 
 OPS-REQ-QUICK-BUT-WELL:
 : Develop a more agile process for the development and maintenance of YANG modules in the IETF. RFCs might not be suited for documenting YANG modules.
@@ -400,8 +427,8 @@ OPS-REQ-Y2KG:
 OPS-REQ-SCALE:
 : Consider approaches for YANG data models to scale, including protocol considerations (transactions, etc.). Specifically, address telemetry scalability enhancements.
 
-OPS-REQ-LOSSLESS:
-: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
+OPS-REQ-MAPPING:
+: Consider programmatic approaches to ensure deterministic mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that the cross-layer mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 OPS-REQ-REUSABILITY:
 : Consider approaches to ensure reuse/consistent data structure across various network management segments. This will ease correlating data learned using different means (IPFIX {{?RFC7011}},  BGP Monitoring Protocol (BMP) {{?RFC7854}}, SYSLOG {{?RFC5424}}, etc.).
@@ -436,7 +463,7 @@ OPS-REQ-GLUE:
 OPS-REQ-GUIDANCE:
 : The target application/applicability of a network management approach should be integrated in the specification itself.
 
-## Categorization
+## Categorization {#sec-categ}
 
 {{table-req-cat}} provides a classification of the requirements listed in {{sec-reqs}}. It specifically tags whether a requirement:
 
@@ -463,7 +490,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-ITERATE         |	    |          |       		   |                |    X      |            X                 |                |		
 |OPS-REQ-Y2KG            |	    |          |      X		   |      X         |           |            	               |                |
 |OPS-REQ-SCALE           |	X   |      X   |       		   |                |           |            	               |                |
-|OPS-REQ-LOSSLESS        |	    |          |      X		   |      X         |    X      |            	               |                |
+|OPS-REQ-MAPPING         |	    |          |      X		   |      X         |    X      |            	               |                |
 |OPS-REQ-REUSABILITY     |	    |      X   |       		   |      X         |    X      |            	               |                |
 |OPS-REQ-NEW-NEED        |	    |      X   |       		   |                |           |            	               |                |
 |OPS-REQ-UNSILO          |	    |          |      X		   |      X         |           |            	               |                |	
@@ -477,9 +504,9 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-GUIDANCE        |	    |          |      X  		   |                |           |            	               |                |
 {: #table-req-cat title='Requirements Classification'}
 
-## Overall New Requirements Levels: Operators View
+## Overall New Requirements Levels: Operators View {#sec-level}
 
-{{table-ops-view}} provides the requirement level of {{sec-reqs}} from an operator perspective.
+{{table-ops-view}} provides the requirement level of {{sec-reqs}} from an operator perspective. Refer to {{SOURCE}} for the data that was used to establish this table.
 
 |Ops Requirement Label    | Overall Operators Level  |
 |------------------------:|:--------------:|
@@ -496,7 +523,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-ITERATE          |    Strong      |
 |OPS-REQ-Y2KG             |  Nice to have  |
 |OPS-REQ-SCALE            |    Strong      |
-|OPS-REQ-LOSSLESS         |  Nice to have  |
+|OPS-REQ-MAPPING          |  Nice to have  |
 |OPS-REQ-REUSABILITY      |    Strong      |
 |OPS-REQ-NEW-NEED         |  Nice to have  |
 |OPS-REQ-UNSILO           |    Strong      |
@@ -511,7 +538,7 @@ OPS-REQ-GUIDANCE:
 {: #table-ops-view title='Operators Requirements Levels'}
 
 
-## Consolidated Requirements
+## Consolidated Requirements {#sec-consolidated}
 
 This section provides a consolidated view of main requirements that takes into account inputs from actors beyond operators:
 
@@ -547,7 +574,7 @@ This document has no IANA actions.
 
 Thanks to Christian Jacquenet and Jean-Michel Combes for their inputs.
 
-Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, and Paul Aitken for the comments.
+Thanks to Benoît Claise, Alex Clemm, Jéferson Campos Nobre, Paul Aitken, Dhruv Dhody, and Qin Wu for the comments.
 
 Many of the requirements were extracted from contributions to the IAB Next Era of Network Management Operations (NEMOPS) Workshop {{?RFC9968}}.
 
