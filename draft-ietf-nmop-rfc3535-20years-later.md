@@ -262,10 +262,10 @@ OPS-REQ-SCALE:
 
 Navigating among multiple levels of the hierarchy (service, network, device) relies
 currently on proprietary solutions to graft and translate between two layers. There
-is no programmatic approach to ensure lossless mappings. "Lossless mapping" means the ability to navigate between layers (and translate) with deterministic correlation between objects defined in upper and lower layers. "Lossless mapping" does not require exposing in upper layers all granular information that is meaningful for lower layers.
+is no programmatic approach to ensure cross-layer mappings. "Cross-layer mapping" means the ability to navigate between layers (and translate) with deterministic correlation between objects defined in upper and lower layers. This mapping does not require exposing in upper layers all granular information that is meaningful for lower layers.
 
-OPS-REQ-LOSSLESS:
-: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
+OPS-REQ-MAPPING:
+: Consider programmatic approaches to ensure deterministic mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that the cross-layer mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 ## (In)Consistent Data Structures in Network Protocols for Data Export {#sec-con}
 
@@ -427,8 +427,8 @@ OPS-REQ-Y2KG:
 OPS-REQ-SCALE:
 : Consider approaches for YANG data models to scale, including protocol considerations (transactions, etc.). Specifically, address telemetry scalability enhancements.
 
-OPS-REQ-LOSSLESS:
-: Consider programmatic approaches to ensure lossless mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that lossless mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
+OPS-REQ-MAPPING:
+: Consider programmatic approaches to ensure deterministic mappings between service/network/device data models. Means to detect, characterize, and expose loss may be considered. Note that the cross-layer mapping is an enabler for support of deterministic verification, auditing, and tracing back along layers/models.
 
 OPS-REQ-REUSABILITY:
 : Consider approaches to ensure reuse/consistent data structure across various network management segments. This will ease correlating data learned using different means (IPFIX {{?RFC7011}},  BGP Monitoring Protocol (BMP) {{?RFC7854}}, SYSLOG {{?RFC5424}}, etc.).
@@ -490,7 +490,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-ITERATE         |	    |          |       		   |                |    X      |            X                 |                |		
 |OPS-REQ-Y2KG            |	    |          |      X		   |      X         |           |            	               |                |
 |OPS-REQ-SCALE           |	X   |      X   |       		   |                |           |            	               |                |
-|OPS-REQ-LOSSLESS        |	    |          |      X		   |      X         |    X      |            	               |                |
+|OPS-REQ-MAPPING         |	    |          |      X		   |      X         |    X      |            	               |                |
 |OPS-REQ-REUSABILITY     |	    |      X   |       		   |      X         |    X      |            	               |                |
 |OPS-REQ-NEW-NEED        |	    |      X   |       		   |                |           |            	               |                |
 |OPS-REQ-UNSILO          |	    |          |      X		   |      X         |           |            	               |                |	
@@ -523,7 +523,7 @@ OPS-REQ-GUIDANCE:
 |OPS-REQ-ITERATE          |    Strong      |
 |OPS-REQ-Y2KG             |  Nice to have  |
 |OPS-REQ-SCALE            |    Strong      |
-|OPS-REQ-LOSSLESS         |  Nice to have  |
+|OPS-REQ-MAPPING          |  Nice to have  |
 |OPS-REQ-REUSABILITY      |    Strong      |
 |OPS-REQ-NEW-NEED         |  Nice to have  |
 |OPS-REQ-UNSILO           |    Strong      |
