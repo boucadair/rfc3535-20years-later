@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 13 May 2027                                       O. G. D. Dios
+Expires: 14 May 2027                                       O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                         9 November 2026
+                                                        10 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 May 2027.
+   This Internet-Draft will expire on 14 May 2027.
 
 Copyright Notice
 
@@ -444,16 +444,16 @@ Table of Contents
    Navigating among multiple levels of the hierarchy (service, network,
    device) relies currently on proprietary solutions to graft and
    translate between two layers.  There is no programmatic approach to
-   ensure lossless mappings.  "Lossless mapping" means the ability to
-   navigate between layers (and translate) with deterministic
-   correlation between objects defined in upper and lower layers.
-   "Lossless mapping" does not require exposing in upper layers all
-   granular information that is meaningful for lower layers.
+   ensure cross-layer mappings.  "Cross-layer mapping" means the ability
+   to navigate between layers (and translate) with deterministic
+   correlation between objects defined in upper and lower layers.  This
+   mapping does not require exposing in upper layers all granular
+   information that is meaningful for lower layers.
 
-   OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
-      lossless mappings between service/network/device data models.
+   OPS-REQ-MAPPING:  Consider programmatic approaches to ensure
+      deterministic mappings between service/network/device data models.
       Means to detect, characterize, and expose loss may be considered.
-      Note that lossless mapping is an enabler for support of
+      Note that the cross-layer mapping is an enabler for support of
       deterministic verification, auditing, and tracing back along
       layers/models.
 
@@ -778,10 +778,10 @@ Table of Contents
       including protocol considerations (transactions, etc.).
       Specifically, address telemetry scalability enhancements.
 
-   OPS-REQ-LOSSLESS:  Consider programmatic approaches to ensure
-      lossless mappings between service/network/device data models.
+   OPS-REQ-MAPPING:  Consider programmatic approaches to ensure
+      deterministic mappings between service/network/device data models.
       Means to detect, characterize, and expose loss may be considered.
-      Note that lossless mapping is an enabler for support of
+      Note that the cross-layer mapping is an enabler for support of
       deterministic verification, auditing, and tracing back along
       layers/models.
 
@@ -887,7 +887,7 @@ Table of Contents
    +---------------------------+--+-----+------+---+-------+---+------+
    | OPS-REQ-SCALE             |X |  X  |      |   |       |   |      |
    +---------------------------+--+-----+------+---+-------+---+------+
-   | OPS-REQ-LOSSLESS          |  |     |  X   | X |   X   |   |      |
+   | OPS-REQ-MAPPING           |  |     |  X   | X |   X   |   |      |
    +---------------------------+--+-----+------+---+-------+---+------+
    | OPS-REQ-REUSABILITY       |  |  X  |      | X |   X   |   |      |
    +---------------------------+--+-----+------+---+-------+---+------+
@@ -949,7 +949,7 @@ Table of Contents
           +---------------------------+-------------------------+
           |             OPS-REQ-SCALE |          Strong         |
           +---------------------------+-------------------------+
-          |          OPS-REQ-LOSSLESS |       Nice to have      |
+          |           OPS-REQ-MAPPING |       Nice to have      |
           +---------------------------+-------------------------+
           |       OPS-REQ-REUSABILITY |          Strong         |
           +---------------------------+-------------------------+
