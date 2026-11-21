@@ -5,13 +5,13 @@
 Network Working Group                                       M. Boucadair
 Internet-Draft                                                    Orange
 Intended status: Informational                           L. M. Contreras
-Expires: 14 May 2027                                       O. G. D. Dios
+Expires: 25 May 2027                                       O. G. D. Dios
                                                               Telefonica
                                                                  T. Graf
                                                                 Swisscom
                                                                R. Rahman
                                                                  Equinix
-                                                        10 November 2026
+                                                        21 November 2026
 
 
 An Update of Operators Requirements on Network Management Protocols and
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 May 2027.
+   This Internet-Draft will expire on 25 May 2027.
 
 Copyright Notice
 
@@ -327,8 +327,14 @@ Table of Contents
       Additionally, consider independent compliance suites to validate
       functions/features/etc.
 
+   Moreover, operators need to position a given network management
+   solution defined by the IETF in the overall ecosystem.  This helps to
+   assess how a given network management proposal fits operator business
+   objectives.
+
    OPS-REQ-ARCH:  Need to promote more architecture and framework
-      documents to exemplify the intended use.
+      documents to exemplify the intended use of IETF network management
+      technologies.
 
       Examples of such profile documents are the various RFCs that were
       published by the Behavior Engineering for Hindrance Avoidance
@@ -747,7 +753,8 @@ Table of Contents
       functions/features/etc.
 
    OPS-REQ-ARCH:  Need to promote more architecture and framework
-      documents to exemplify the intended use.
+      documents to exemplify the intended use of IETF network management
+      technologies.
 
    OPS-REQ-REASSESS:  Reassessing the value of some IETF proposals
       compared to competing or emerging solutions (e.g., gNMI vs. YANG-
@@ -1108,9 +1115,9 @@ Table of Contents
               Feng, A. H., Francois, P., Zhou, T., Graf, T., and P.
               Lucente, "UDP-based Transport for Configured
               Subscriptions", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-udp-notif-26, 29 July 2026,
+              ietf-netconf-udp-notif-27, 17 November 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              udp-notif-26>.
+              udp-notif-27>.
 
    [I-D.ietf-opsawg-veloce-yang]
               Wu, Q., Richardson, M., and D. Dhody, "YANG deVELpment
