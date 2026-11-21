@@ -202,8 +202,10 @@ Many NETCONF-related features are (being) specified by the IETF, but these featu
 OPS-REQ-GUIDE-AND-PROFILE:
 : The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators' needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
 
+Moreover, operators need to position a given network management solution defined by the IETF in the overall ecosystem. This helps to assess how a given network management proposal fits operator business objectives.
+
 OPS-REQ-ARCH:
-: Need to promote more architecture and framework documents to exemplify the intended use.
+: Need to promote more architecture and framework documents to exemplify the intended use of IETF network management technologies.
 
 > Examples of such profile documents are the various RFCs that were published by the Behavior Engineering for Hindrance Avoidance (behave) WG {{?BCP127}}.
 > Another approach is to consider a model similar to the "Roadmap for Transmission Control Protocol (TCP) Specification Documents" {{?RFC7414}}.
@@ -407,7 +409,7 @@ OPS-REQ-GUIDE-AND-PROFILE:
 : The target application/applicability of a network management approach should be documented (e.g., edit profile documents that outline a set of recommendations for core/key features, along with appropriate justifications, will help foster more implementations that meet operators' needs). This also covers security management aspects of network management. Additionally, consider independent compliance suites to validate functions/features/etc.
 
 OPS-REQ-ARCH:
-: Need to promote more architecture and framework documents to exemplify the intended use.
+: Need to promote more architecture and framework documents to exemplify the intended use of IETF network management technologies.
 
 OPS-REQ-REASSESS:
 : Reassessing the value of some IETF proposals compared to competing or emerging solutions (e.g., gNMI vs. YANG-Push) would be beneficial. This includes checking the value proposal of some IETF solution to take into account the operational reality. This effort may result in obsoleting existing specifications if the margin for adoption is null, typically.
